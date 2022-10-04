@@ -1,0 +1,11 @@
+version: '2.4'
+
+services:
+  backend:
+    build:
+        context: ./
+        dockerfile: ./Dockerfile
+    command: >
+      sh -c "uvicorn app.main:app --reload --port 8080 --host 0.0.0.0"
+    ports:
+      - 8080:8080

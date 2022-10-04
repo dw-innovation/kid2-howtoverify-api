@@ -1,0 +1,349 @@
+@prefix dw: <http://dw.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+dw:Background_Removal a dw:SoftwareApplication,
+        dw:Task ;
+    dw:parentNode dw:Reverse_Image_Search ;
+    rdfs:comment "Photo Scissors is a background removal tool...",
+        "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
+    schema:aboutUrl "" ;
+    schema:applicationUrl "https://photoscissors.com/" ;
+    schema:name "Background removal",
+        "Photo Scissors" ;
+    schema:publisher "..." ;
+    schema:usageInfo "paid / free" .
+
+dw:Baidu a dw:SoftwareApplication ;
+    dw:parentNode dw:Reverse_Image_Search ;
+    rdfs:comment "Baidu Reverse Image Search..." ;
+    schema:aboutUrl "" ;
+    schema:applicationUrl "https://image.baidu.com" ;
+    schema:name "Baidu" ;
+    schema:publisher "Baidu" ;
+    schema:usageInfo "paid / free" .
+
+dw:Exif_Data a dw:SoftwareApplication ;
+    dw:parentNode dw:Metadata ;
+    dw:relatedMediaType dw:Image ;
+    rdfs:comment "Exif Data helps you find all available metadata" ;
+    schema:aboutUrl "https://exifdata.com/about" ;
+    schema:applicationUrl "https://exifdata.com/" ;
+    schema:name "Exif Data" ;
+    schema:publisher "Bladibla Productions" ;
+    schema:usageInfo "paid / free" .
+
+dw:File_Name a dw:Task ;
+    rdfs:comment "unstructured text" ;
+    schema:name "File Name" .
+
+dw:GPS_Data a dw:Task ;
+    dw:parentNode dw:Where ;
+    dw:relatedMediaType dw:Image ;
+    rdfs:comment "GPS Data can help you ...." ;
+    schema:name "GPS Data" .
+
+dw:Geohints a dw:SoftwareApplication ;
+    dw:parentNode dw:Object_identification ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Geohints" ;
+    schema:url "https://geohints.com/" .
+
+dw:Google_Earth a dw:SoftwareApplication ;
+    dw:parentNode dw:Manual_geolocation ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Google Earth" ;
+    schema:url "https://earth.google.com/" .
+
+dw:Google_Lens a dw:SoftwareApplication ;
+    dw:parentNode dw:Reverse_Image_Search ;
+    rdfs:comment """Generel description: What is this tool for (in one sentence)?
+
+**Generel how to use it in x steps description**
+
+**How to read/interpret the results**
+
+**How to improve results**
+--> Further steps that can lead to better results, e.g. cropping, enhancing of resolution, contrast-enhancement etc.
+--> switch to standard version of google image search
+
+**Advantages/Strengths and how to make use of them**
+
+[//]: # (  - in regional use)
+
+[//]: # (  - in use on locations, landmarks, persons, crowds of people, singular faces, )
+
+[//]: # (  - in type of decetion algorithm)
+
+**Disadvantages/Weaknesses and how to overcome these**
+
+**Differences to alternatives (?)**
+
+[//]: # (- works with algorighm a instead of b)
+
+**Alternantives to use (links to those tools)**
+
+[//]: # (- standard google image search)
+
+[//]: # (  - yandex)""" ;
+    schema:aboutUrl """leads to about page of the tool or to wikpedia page about the tool
+e.g. https://en.wikipedia.org/wiki/Google_Lens
+
+**Examples of usage and/or Explainer Articles or Videos (if available)**
+Link to articles or videos that show the usage of the tool in an examplery way""" ;
+    schema:applicationUrl "https://images.google.com" ;
+    schema:name "Google Lens" ;
+    schema:publisher "Google Inc." ;
+    schema:usageInfo """paid / free
+
+**Best to use on**
+mobile/app
+desktop""" .
+
+dw:Landmark_recognition a dw:SoftwareApplication ;
+    dw:parentNode dw:Object_identification ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Landmark Recognition" ;
+    schema:url "https://landmark.toolpie.com/" .
+
+dw:LatLong a dw:SoftwareApplication ;
+    dw:parentNode dw:Manual_geolocation,
+        dw:Metadata ;
+    rdfs:comment "LatLong helps you find all available metadata on location" ;
+    schema:aboutUrl "" ;
+    schema:applicationUrl "https://www.latlong.net/" ;
+    schema:name "LatLong" ;
+    schema:publisher "Bladibla Productions" ;
+    schema:usageInfo "paid / free" .
+
+dw:Lets_enhance_io a dw:SoftwareApplication ;
+    dw:parentNode dw:Enhance_Image ;
+    rdfs:comment "Lets enhance io is an image enhancer" ;
+    schema:aboutUrl "https://letsenhance.io/about" ;
+    schema:applicationUrl "https://letsenhance.io/" ;
+    schema:name "Lets enhance io" ;
+    schema:publisher "Bladibla Productions" ;
+    schema:usageInfo "paid / free" .
+
+dw:Manipulation_detection a dw:Task ;
+    dw:parentNode dw:How,
+        dw:What,
+        dw:When,
+        dw:Where,
+        dw:Who ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "Manipulation detection can be used for ......" ;
+    schema:name "Manipulation Analyses" .
+
+dw:Mapillary a dw:SoftwareApplication ;
+    dw:parentNode dw:Manual_geolocation ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Mapillary" ;
+    schema:url "https://www.mapillary.com/app/" .
+
+dw:Metadata2Go a dw:SoftwareApplication ;
+    dw:parentNode dw:Metadata ;
+    rdfs:comment "Matadata2Go helps you find all available metadata" ;
+    schema:aboutUrl "" ;
+    schema:applicationUrl "https://www.metadata2go.com/" ;
+    schema:name "Metadata2Go" ;
+    schema:publisher "Bladibla Productions" ;
+    schema:usageInfo "paid / free" .
+
+dw:Microsoft_Video_Indexer a dw:SoftwareApplication ;
+    dw:parentNode dw:Who_is_in_content ;
+    rdfs:comment "Google lens ..." ;
+    schema:aboutUrl "" ;
+    schema:applicationUrl "https://vi.microsoft.com/" ;
+    schema:name "Microsoft Video Indexer" ;
+    schema:publisher "Microsoft" ;
+    schema:usageInfo "paid / free" .
+
+dw:Peakfinder a dw:SoftwareApplication ;
+    dw:parentNode dw:Landscape_identification ;
+    rdfs:comment "Peakfinder can help you find all available metadata" ;
+    schema:aboutUrl "" ;
+    schema:applicationUrl "https://peakfinder.com" ;
+    schema:name "Peakfinder" ;
+    schema:publisher "Bladibla Productions" ;
+    schema:usageInfo "paid / free" .
+
+dw:Pipl a dw:SoftwareApplication ;
+    dw:parentNode dw:Person_identification,
+        dw:Who_is_in_content ;
+    rdfs:comment "Pipl ..." ;
+    schema:aboutUrl "" ;
+    schema:applicationUrl "https://pipl.com" ;
+    schema:name "Pipl" ;
+    schema:publisher "Pipl" ;
+    schema:usageInfo "paid / free" .
+
+dw:Suncalc a dw:SoftwareApplication ;
+    dw:parentNode dw:Shadow_Analyses ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Suncalc" ;
+    schema:url "https://www.suncalc.org/" .
+
+dw:Timestamp a dw:Task ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Image Tasks/Timestamp" .
+
+dw:Upload_Time a dw:Task ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Image Tasks/Upload Time" .
+
+dw:Visual_Intelligence a dw:Task ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Visual Intelligence" .
+
+dw:Wikimapia a dw:SoftwareApplication ;
+    dw:parentNode dw:Manual_geolocation ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Wikimapia" ;
+    schema:url "http://wikimapia.org/" .
+
+dw:WolframAlpha a dw:SoftwareApplication ;
+    dw:parentNode dw:Weather_Analyses ;
+    rdfs:comment "unstructured text" ;
+    schema:name "WolframAlpha" ;
+    schema:url "https://www.wolframalpha.com/" .
+
+dw:Yandex a dw:SoftwareApplication ;
+    dw:parentNode dw:Reverse_Image_Search ;
+    rdfs:comment "Yandex Reverse Image Search..." ;
+    schema:aboutUrl "" ;
+    schema:applicationUrl "https://yandex.com/images" ;
+    schema:name "Yandex RIS" ;
+    schema:publisher "Yandex" ;
+    schema:usageInfo "paid / free" .
+
+dw:Enhance_Image a dw:Task ;
+    dw:parentNode dw:Reverse_Image_Search ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    schema:name "Enhance Image" .
+
+dw:How a dw:Question ;
+    dw:parentNode dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    rdfs:comment "This How can be used for all mediaObjects" ;
+    schema:name "How" .
+
+dw:Landscape_identification a dw:Task ;
+    dw:parentNode dw:Where ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "Landscape can be used for ......" ;
+    schema:name "Landscape Identification" .
+
+dw:Person_identification a dw:Task ;
+    dw:parentNode dw:Who,
+        dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "Person Identification can be used for ......" ;
+    schema:name "Person Identification" .
+
+dw:Shadow_Analyses a dw:Task ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Shadow Analyses" .
+
+dw:Weather_Analyses a dw:Task ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Image Tasks/Weather Analyses" .
+
+dw:What a dw:Question ;
+    dw:parentNode dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    rdfs:comment "This What can be used for all mediaObjects" ;
+    schema:name "What" .
+
+dw:When a dw:Question ;
+    dw:parentNode dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    rdfs:comment "This When can be used for all mediaObjects" ;
+    schema:name "When" .
+
+dw:Who_created_content a dw:SubQuestion ;
+    dw:parentNode dw:Who ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "Unstructured text" ;
+    schema:name "Who created content" .
+
+dw:Object_identification a dw:Task ;
+    rdfs:comment "unstructured text" ;
+    schema:name "Object identification" .
+
+dw:Metadata a dw:Task ;
+    dw:parentNode dw:Where,
+        dw:Who_created_content,
+        dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "Metadata can help you ...." ;
+    schema:name "Metadata" .
+
+dw:Manual_geolocation a dw:Task ;
+    dw:parentNode dw:Where ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "Landscape can be used for ......" ;
+    schema:name "Manual Geolocation" .
+
+dw:Who a dw:Question ;
+    dw:parentNode dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    rdfs:comment "This Who can be used for all mediaObjects" ;
+    schema:name "Who" .
+
+dw:Audio a dw:MediaObject ;
+    schema:name "Audio" .
+
+dw:Reverse_Image_Search a dw:Task ;
+    dw:parentNode dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "RIS can be used for ......" ;
+    schema:name "Reverse Image Search" .
+
+dw:Source a dw:MediaObject ;
+    schema:name "Source" .
+
+dw:Text a dw:MediaObject ;
+    schema:name "Text" .
+
+dw:Where a dw:Question ;
+    dw:parentNode dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    rdfs:comment "This Where can be used for all mediaObjects" ;
+    schema:name "Where" .
+
+dw:Who_is_in_content a dw:SubQuestion ;
+    dw:parentNode dw:Who ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "bladibla" ;
+    schema:name "Who is in content" .
+
+dw:Video a dw:MediaObject ;
+    schema:name "Video" .
+
+dw:Image a dw:MediaObject ;
+    schema:name "Image" .
+
