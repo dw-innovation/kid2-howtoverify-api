@@ -27,6 +27,6 @@ class Response(BaseModel):
     links: List
 
 
-@app.post("/graph", response_model=Response)
+@app.get("/graph", response_model=Response)
 def find_similar(click_history: Request):
     return create_subgraph(click_history.click_history)
