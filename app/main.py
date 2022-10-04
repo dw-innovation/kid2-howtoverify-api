@@ -24,7 +24,7 @@ class Request(BaseModel):
 
 class Response(BaseModel):
     nodes: List
-    edges: List
+    links: List
 
 
 @app.post("/graph", response_model=Response)

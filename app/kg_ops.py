@@ -18,19 +18,19 @@ def create_subgraph(click_history: List):
     root_node = node_features(root_node_id)
     clicked_node = node_features(clicked_node_id)
 
-    children_nodes, children_edges = get_children(clicked_node_id)
+    children_nodes, children_links = get_children(clicked_node_id)
 
-    parent_nodes, parent_edges = get_parents(clicked_node,root_node)
+    parent_nodes, parent_links = get_parents(clicked_node,root_node)
 
     return {
         'nodes': parent_nodes + children_nodes + [clicked_node, root_node],
-        'edges': children_edges + parent_edges
+        'links': children_links + parent_links
     }
 
 
 def get_parents(child_node, root_node):
     nodes = []
-    edges = []
+    links = []
     q = prepareQuery(
         """
         SELECT ?parentNode ?childNode where {
@@ -52,27 +52,27 @@ def get_parents(child_node, root_node):
 
         nodes.append(parent_node)
 
-        edges.append({
+        links.append({
             'source': parent_node["id"],
             'target': str(row.childNode)
         })
 
-    return parents, edges
+    return parents, links
 
 
 def get_children(parent_id):
     nodes = []
-    edges = []
+    links = []
     for subject in g.subjects(predicate=DW['parentNode'], object=URIRef(parent_id)):
         childNode = node_features(subject)
         nodes.append(childNode)
-        edges.append(
+        links.append(
             {
                 'source': parent_id,
                 'target': childNode['id']
             }
         )
-    return nodes, edges
+    return nodes, links
 
 
 def node_features(node_id):

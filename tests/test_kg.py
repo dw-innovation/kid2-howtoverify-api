@@ -17,7 +17,7 @@ class TestKGMethods(unittest.TestCase):
                       {'id': 'http://dw.com/When', 'name': 'When', 'type': 'http://dw.com/Question'},
                       {'id': 'http://dw.com/Who', 'name': 'Who', 'type': 'http://dw.com/Question'},
                       {'id': 'http://dw.com/Where', 'name': 'Where', 'type': 'http://dw.com/Question'}],
-            'edges': [{'source': 'http://dw.com/Image', 'target': 'http://dw.com/How'},
+            'links': [{'source': 'http://dw.com/Image', 'target': 'http://dw.com/How'},
                       {'source': 'http://dw.com/Image', 'target': 'http://dw.com/What'},
                       {'source': 'http://dw.com/Image', 'target': 'http://dw.com/When'},
                       {'source': 'http://dw.com/Image', 'target': 'http://dw.com/Who'},
