@@ -20,7 +20,11 @@ def create_subgraph(click_history: List):
 
     children_nodes, children_links = get_children(clicked_node_id)
 
+    print(children_nodes)
+
     parent_nodes, parent_links = get_parents(clicked_node,root_node)
+
+    print(parent_nodes)
 
     return {
         'nodes': parent_nodes + children_nodes + [clicked_node, root_node],
@@ -29,7 +33,7 @@ def create_subgraph(click_history: List):
 
 
 def get_parents(child_node, root_node):
-    nodes = []
+    parents = []
     links = []
     q = prepareQuery(
         """
@@ -40,7 +44,6 @@ def get_parents(child_node, root_node):
         initNs={"dw": DW}
     )
 
-    parents = []
     for row in g.query(q, initBindings={'childNode': URIRef(child_node['id'])}):
 
         if row.parentNode == row.childNode:
@@ -50,7 +53,7 @@ def get_parents(child_node, root_node):
         if parent_node["id"] != root_node["id"] and parent_node["type"] == root_node["type"]:
             continue
 
-        nodes.append(parent_node)
+        parents.append(parent_node)
 
         links.append({
             'source': parent_node["id"],
