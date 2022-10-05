@@ -23,10 +23,10 @@ def create_subgraph(click_history: List):
     parent_nodes, parent_links = get_parents(clicked_node, root_node)
 
     if len(children_nodes) == 0:
-        children_nodes.append(clicked_node)
+        children_nodes = []
 
     return {
-        'nodes': parent_nodes + children_nodes,
+        'nodes': parent_nodes + children_nodes + [clicked_node],
         'links': children_links + parent_links
     }
 
@@ -68,6 +68,10 @@ def get_children(parent_id):
     links = []
     for subject in g.subjects(predicate=DW['parentNode'], object=URIRef(parent_id)):
         childNode = node_features(subject)
+
+        if parent_id == childNode["id"]:
+            continue
+
         nodes.append(childNode)
         links.append(
             {
