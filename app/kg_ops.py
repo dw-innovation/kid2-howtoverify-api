@@ -20,47 +20,47 @@ def create_subgraph(click_history: List):
 
     children_nodes, children_links = get_children(clicked_node_id)
 
-    print(children_nodes)
+    parent_nodes, parent_links = get_parents(clicked_node, root_node)
 
-    parent_nodes, parent_links = get_parents(clicked_node,root_node)
-
-    print(parent_nodes)
+    if len(children_nodes) == 0:
+        children_nodes.append(clicked_node)
 
     return {
-        'nodes': parent_nodes + children_nodes + [clicked_node, root_node],
+        'nodes': parent_nodes + children_nodes,
         'links': children_links + parent_links
     }
 
 
-def get_parents(child_node, root_node):
-    parents = []
-    links = []
-    q = prepareQuery(
-        """
-        SELECT ?parentNode ?childNode where {
-          ?childNode dw:parentNode* ?parentNode
-        }
-        """,
-        initNs={"dw": DW}
-    )
+def get_parents(child_node, root_node, parents={}, links={}):
+    parent_node = None
 
-    for row in g.query(q, initBindings={'childNode': URIRef(child_node['id'])}):
+    if child_node["id"] == root_node["id"]:
+        return [], []
 
-        if row.parentNode == row.childNode:
+    for parent in g.objects(predicate=DW['parentNode'], subject=URIRef(child_node["id"])):
+
+        parent_node = node_features(parent)
+
+        if child_node["type"] == root_node["type"]:
+            print(child_node)
             continue
 
-        parent_node = node_features(row.parentNode)
         if parent_node["id"] != root_node["id"] and parent_node["type"] == root_node["type"]:
             continue
 
-        parents.append(parent_node)
+        if parent_node["id"] not in parents:
+            parents[parent_node["id"]] = parent_node
 
-        links.append({
-            'source': parent_node["id"],
-            'target': str(row.childNode)
-        })
+        if f'{parent_node["name"]}_{child_node["name"]}' not in links:
+            links[f'{parent_node["name"]}_{child_node["name"]}'] = {
+                'source': parent_node["id"],
+                'target': str(child_node["id"])
+            }
 
-    return parents, links
+    if not parent_node:
+        return list(parents.values()), list(links.values())
+
+    return get_parents(child_node=parent_node, root_node=root_node, parents=parents, links=links)
 
 
 def get_children(parent_id):
