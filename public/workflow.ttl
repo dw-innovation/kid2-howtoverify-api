@@ -151,15 +151,6 @@ dw:Metadata2Go a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
 
-dw:Microsoft_Video_Indexer a dw:SoftwareApplication ;
-    dw:parentNode dw:Who_is_in_content ;
-    rdfs:comment "Google lens ..." ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://vi.microsoft.com/" ;
-    schema:name "Microsoft Video Indexer" ;
-    schema:publisher "Microsoft" ;
-    schema:usageInfo "paid / free" .
-
 dw:Peakfinder a dw:SoftwareApplication ;
     dw:parentNode dw:Landscape_identification ;
     rdfs:comment "Peakfinder can help you find all available metadata" ;
@@ -170,8 +161,7 @@ dw:Peakfinder a dw:SoftwareApplication ;
     schema:usageInfo "paid / free" .
 
 dw:Pipl a dw:SoftwareApplication ;
-    dw:parentNode dw:Person_identification,
-        dw:Who_is_in_content ;
+    dw:parentNode dw:Person_identification;
     rdfs:comment "Pipl ..." ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://pipl.com" ;
