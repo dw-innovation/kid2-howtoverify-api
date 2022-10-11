@@ -1,8 +1,9 @@
-from rdflib import Graph, Namespace
 from typing import List
-from rdflib.namespace import RDF
-from rdflib.plugins.sparql import prepareQuery
+
+from rdflib import Graph, Namespace
 from rdflib import URIRef
+from rdflib.namespace import RDFS, RDF
+from rdflib.plugins.sparql import prepareQuery
 
 SCHEMA = Namespace("https://schema.org/")
 DW = Namespace("http://dw.com/")
@@ -16,69 +17,118 @@ def create_subgraph(click_history: List):
     root_node_id = click_history[0]
 
     root_node = node_features(root_node_id)
+
     clicked_node = node_features(clicked_node_id)
 
-    children_nodes, children_links = get_children(clicked_node_id)
+    children_nodes, children_links = get_children(clicked_node, root_node)
 
-    parent_nodes, parent_links = get_parents(clicked_node, root_node)
+    parent_nodes, parent_links = get_parents(clicked_node, root_node, click_history)
+
+    if len(parent_nodes) == 0:
+        parent_nodes.append(clicked_node)
 
     if len(children_nodes) == 0:
         children_nodes = []
+        children_links = []
 
     return {
-        'nodes': parent_nodes + children_nodes + [clicked_node],
+        'nodes': parent_nodes + children_nodes,
         'links': children_links + parent_links
     }
 
 
-def get_parents(child_node, root_node, parents={}, links={}):
-    parent_node = None
+def get_parents(clicked_node, root_node, click_history):
+    query = '''
+    SELECT ?parentOfBeginNode ?parentOfParentNode
+    WHERE
+    {
+        ?beginNode dw:parentNode* ?parentOfBeginNode .
+        ?parentOfBeginNode ?y ?parentOfParentNode .
+        FILTER(?y = dw:parentNode)
+        ?parentOfParentNode dw:parentNode* ?endNode .
+    }
+    '''
+    q = prepareQuery(query,
+                     initNs={"dw": DW},
+                     )
 
-    if child_node["id"] == root_node["id"]:
-        return [], []
+    results = g.query(q, initBindings={'beginNode': URIRef(clicked_node['id']), 'endNode': URIRef(root_node['id'])})
 
-    for parent in g.objects(predicate=DW['parentNode'], subject=URIRef(child_node["id"])):
+    links = None
+    node_ids = None
+    for idx, result in enumerate(results):
+        if idx == 0:
+            links = []
+            node_ids = set()
 
-        parent_node = node_features(parent)
-
-        if child_node["type"] == root_node["type"]:
-            print(child_node)
+        if str(result.parentOfParentNode) not in click_history or str(result.parentOfBeginNode) not in click_history:
+            print('The node is not in click history.')
             continue
 
-        if parent_node["id"] != root_node["id"] and parent_node["type"] == root_node["type"]:
-            continue
+        node_ids.add(str(result.parentOfParentNode))
+        node_ids.add(str(result.parentOfBeginNode))
 
-        if parent_node["id"] not in parents:
-            parents[parent_node["id"]] = parent_node
-
-        if f'{parent_node["name"]}_{child_node["name"]}' not in links:
-            links[f'{parent_node["name"]}_{child_node["name"]}'] = {
-                'source': parent_node["id"],
-                'target': str(child_node["id"])
-            }
-
-    if not parent_node:
-        return list(parents.values()), list(links.values())
-
-    return get_parents(child_node=parent_node, root_node=root_node, parents=parents, links=links)
-
-
-def get_children(parent_id):
-    nodes = []
-    links = []
-    for subject in g.subjects(predicate=DW['parentNode'], object=URIRef(parent_id)):
-        childNode = node_features(subject)
-
-        if parent_id == childNode["id"]:
-            continue
-
-        nodes.append(childNode)
         links.append(
             {
-                'source': parent_id,
-                'target': childNode['id']
+                'source': str(result.parentOfParentNode),
+                'target': str(result.parentOfBeginNode)
             }
         )
+
+        # TODO: add to candidate_paths
+
+    # TODO: select best candidate similar to user clicked
+
+    if not node_ids:
+        return [], []
+
+    nodes = [node_features(node_id) for node_id in node_ids]
+    return nodes, links
+
+
+def get_children(parent_node, root_node):
+    query = '''
+     SELECT ?childNode
+     WHERE
+     {
+         ?childNode dw:parentNode ?beginNode .
+         OPTIONAL{
+         ?beginNode dw:parentNode* ?parentOfBeginNode .
+         ?parentOfBeginNode ?y ?parentOfParentNode .
+         ?parentOfParentNode dw:parentNode* ?endNode .
+         }
+     }
+     '''
+    q = prepareQuery(query,
+                     initNs={"dw": DW},
+                     )
+
+    results = g.query(q, initBindings={'beginNode': URIRef(parent_node['id']), 'endNode': URIRef(root_node['id'])})
+
+    links = None
+    node_ids = None
+    for idx, result in enumerate(results):
+        if idx == 0:
+            links = []
+            node_ids = set()
+
+        node_ids.add(str(result.childNode))
+
+        links.append(
+            {
+                'source': str(result.childNode),
+                'target': parent_node['id']
+            }
+        )
+
+        # TODO: add to candidate_paths
+
+    # TODO: select best candidate similar to user clicked
+
+    if not node_ids:
+        return [], []
+
+    nodes = [node_features(node_id) for node_id in node_ids]
     return nodes, links
 
 
