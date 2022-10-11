@@ -1,8 +1,7 @@
 from typing import List
-
 from rdflib import Graph, Namespace
 from rdflib import URIRef
-from rdflib.namespace import RDFS, RDF
+from rdflib.namespace import RDF
 from rdflib.plugins.sparql import prepareQuery
 
 SCHEMA = Namespace("https://schema.org/")
@@ -10,6 +9,30 @@ DW = Namespace("http://dw.com/")
 
 g = Graph()
 g.parse("public/workflow.ttl")
+
+
+# def assign_level_helper(all_nodes, all_links, begin_node, level):
+#     links = all_links[all_links["source"] == begin_node["id"]]
+#
+#     for link in links:
+#         return assign_level_helper(all_nodes, all_links, begin_node=link, level=level + 1)
+
+
+def assign_levels(all_nodes, all_links, begin_node_id, level, level_dict={}):
+    # filter(lambda person: person['name'] == begin_node_id, people)
+    # all_nodes.loc[all_nodes.id == begin_node_id, "level"] = level
+
+    links = list(filter(lambda link: link['source'] == begin_node_id, all_links))
+
+    if len(links) == 0:
+        level_dict[begin_node_id] = level
+        # all_nodes.loc[all_nodes.id == begin_node_id, "level"] = level
+
+    for link in links:
+        level_dict[begin_node_id] = level
+        assign_levels(all_nodes, all_links, begin_node_id=link["target"], level=level + 1, level_dict=level_dict)
+
+    return level_dict
 
 
 def create_subgraph(click_history: List):
@@ -22,7 +45,7 @@ def create_subgraph(click_history: List):
 
     children_nodes, children_links = get_children(clicked_node, root_node)
 
-    parent_nodes, parent_links = get_parents(clicked_node, root_node, click_history)
+    parent_nodes, parent_links = get_parents(clicked_node, root_node, click_history, children_nodes)
 
     if len(parent_nodes) == 0:
         parent_nodes.append(clicked_node)
@@ -31,19 +54,34 @@ def create_subgraph(click_history: List):
         children_nodes = []
         children_links = []
 
+    all_nodes = parent_nodes + children_nodes
+    all_links = children_links + parent_links
+    all_links = [dict(t) for t in {tuple(d.items()) for d in all_links}]
+
+    del parent_nodes, children_nodes, parent_links, children_links
+
+    level_dict = assign_levels(all_nodes, all_links, begin_node_id=root_node["id"], level=0)
+
+    for node in all_nodes:
+        node.update({"level": level_dict[node["id"]]})
+
     return {
-        'nodes': parent_nodes + children_nodes,
-        'links': children_links + parent_links
+        'nodes': all_nodes,
+        'links': all_links
     }
 
 
-def get_parents(clicked_node, root_node, click_history):
+def get_parents(clicked_node, root_node, click_history, children_nodes):
+    children_ids = [children_node["id"] for children_node in children_nodes]
     query = '''
-    SELECT ?parentOfBeginNode ?parentOfParentNode
+    SELECT ?parentOfBeginNode ?parentOfParentNode ?childNode
     WHERE
     {
         ?beginNode dw:parentNode* ?parentOfBeginNode .
         ?parentOfBeginNode ?y ?parentOfParentNode .
+        OPTIONAL {
+            ?childNode dw:parentNode ?parentOfParentNode .
+        }
         FILTER(?y = dw:parentNode)
         ?parentOfParentNode dw:parentNode* ?endNode .
     }
@@ -75,9 +113,16 @@ def get_parents(clicked_node, root_node, click_history):
             }
         )
 
-        # TODO: add to candidate_paths
+        # add child nodes of subParent nodes
+        if str(result.childNode) not in node_ids and str(result.childNode) not in children_ids:
+            node_ids.add(str(result.childNode))
 
-    # TODO: select best candidate similar to user clicked
+            links.append(
+                {
+                    'source': str(result.parentOfParentNode),
+                    'target': str(result.childNode)
+                }
+            )
 
     if not node_ids:
         return [], []
@@ -116,19 +161,16 @@ def get_children(parent_node, root_node):
 
         links.append(
             {
-                'source': str(result.childNode),
-                'target': parent_node['id']
+                'source': parent_node['id'],
+                'target': str(result.childNode)
             }
         )
-
-        # TODO: add to candidate_paths
-
-    # TODO: select best candidate similar to user clicked
 
     if not node_ids:
         return [], []
 
     nodes = [node_features(node_id) for node_id in node_ids]
+
     return nodes, links
 
 
