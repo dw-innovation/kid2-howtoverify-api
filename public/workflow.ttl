@@ -230,8 +230,7 @@ dw:Landscape_identification a dw:Task ;
     schema:name "Landscape Identification" .
 
 dw:Person_identification a dw:Task ;
-    dw:parentNode dw:Who,
-        dw:Who_is_in_content ;
+    dw:parentNode dw:Who_is_in_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     rdfs:comment "Person Identification can be used for ......" ;
