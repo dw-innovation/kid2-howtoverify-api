@@ -5,6 +5,8 @@
 dw:Background_Removal a dw:SoftwareApplication,
         dw:Task ;
     dw:parentNode dw:Reverse_Image_Search ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     rdfs:comment "Photo Scissors is a background removal tool...",
         "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
     schema:aboutUrl "" ;
@@ -39,7 +41,8 @@ dw:File_Name a dw:Task ;
 
 dw:GPS_Data a dw:Task ;
     dw:parentNode dw:Where ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     rdfs:comment "GPS Data can help you ...." ;
     schema:name "GPS Data" .
 
@@ -151,6 +154,15 @@ dw:Metadata2Go a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
 
+dw:Microsoft_Video_Indexer a dw:SoftwareApplication ;
+    dw:parentNode dw:Who_is_in_content ;
+    rdfs:comment "Google lens ..." ;
+    schema:aboutUrl "" ;
+    schema:applicationUrl "https://vi.microsoft.com/" ;
+    schema:name "Microsoft Video Indexer" ;
+    schema:publisher "Microsoft" ;
+    schema:usageInfo "paid / free" .
+
 dw:Peakfinder a dw:SoftwareApplication ;
     dw:parentNode dw:Landscape_identification ;
     rdfs:comment "Peakfinder can help you find all available metadata" ;
@@ -168,6 +180,20 @@ dw:Pipl a dw:SoftwareApplication ;
     schema:name "Pipl" ;
     schema:publisher "Pipl" ;
     schema:usageInfo "paid / free" .
+
+dw:RIS_\(Image\) a dw:Task ;
+    dw:parentNode dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Image ;
+    rdfs:comment "RIS can be used for ......" ;
+    rdfs:subClassOf dw:Reverse_Image_Search ;
+    schema:name "Reverse Image Search for images" .
+
+dw:RIS_\(Video\) a dw:Task ;
+    dw:parentNode dw:KeyframeExtraction ;
+    dw:relatedMediaType dw:Video ;
+    rdfs:comment "RIS can be used for ......" ;
+    rdfs:subClassOf dw:Reverse_Image_Search ;
+    schema:name "Reverse Image Search for video objects" .
 
 dw:Suncalc a dw:SoftwareApplication ;
     dw:parentNode dw:Shadow_Analyses ;
@@ -307,14 +333,6 @@ dw:Manual_geolocation a dw:Task ;
 dw:Audio a dw:MediaObject ;
     schema:name "Audio" .
 
-dw:Reverse_Image_Search a dw:Task ;
-    dw:parentNode dw:KeyframeExtraction,
-        dw:Who_is_in_content ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    rdfs:comment "RIS can be used for ......" ;
-    schema:name "Reverse Image Search" .
-
 dw:Source a dw:MediaObject ;
     schema:name "Source" .
 
@@ -337,9 +355,15 @@ dw:Who_is_in_content a dw:SubQuestion ;
     rdfs:comment "bladibla" ;
     schema:name "Who is in content" .
 
-dw:Video a dw:MediaObject ;
-    schema:name "Video" .
+dw:Reverse_Image_Search a dw:Task ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "RIS can be used for ......" ;
+    schema:name "Reverse Image Search" .
 
 dw:Image a dw:MediaObject ;
     schema:name "Image" .
+
+dw:Video a dw:MediaObject ;
+    schema:name "Video" .
 

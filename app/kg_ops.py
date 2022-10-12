@@ -1,7 +1,7 @@
 from typing import List
 from rdflib import Graph, Namespace
 from rdflib import URIRef
-from rdflib.namespace import RDF
+from rdflib.namespace import RDF, RDFS
 from rdflib.plugins.sparql import prepareQuery
 
 SCHEMA = Namespace("https://schema.org/")
@@ -11,17 +11,7 @@ g = Graph()
 g.parse("public/workflow.ttl")
 
 
-# def assign_level_helper(all_nodes, all_links, begin_node, level):
-#     links = all_links[all_links["source"] == begin_node["id"]]
-#
-#     for link in links:
-#         return assign_level_helper(all_nodes, all_links, begin_node=link, level=level + 1)
-
-
 def assign_levels(all_nodes, all_links, begin_node_id, level, level_dict={}):
-    # filter(lambda person: person['name'] == begin_node_id, people)
-    # all_nodes.loc[all_nodes.id == begin_node_id, "level"] = level
-
     links = list(filter(lambda link: link['source'] == begin_node_id, all_links))
 
     if len(links) == 0:
@@ -43,9 +33,10 @@ def create_subgraph(click_history: List):
 
     clicked_node = node_features(clicked_node_id)
 
+    parent_nodes, parent_links, children_nodes, children_links = [], [], [], []
     children_nodes, children_links = get_children(clicked_node, root_node)
-
-    parent_nodes, parent_links = get_parents(clicked_node, root_node, click_history, children_nodes)
+    if root_node["id"] != clicked_node_id:
+        parent_nodes, parent_links = get_parents(clicked_node, root_node, click_history, children_nodes)
 
     if len(parent_nodes) == 0:
         parent_nodes.append(clicked_node)
@@ -73,49 +64,38 @@ def create_subgraph(click_history: List):
 
 def get_parents(clicked_node, root_node, click_history, children_nodes):
     children_ids = [children_node["id"] for children_node in children_nodes]
+    results = g.query(query_parents(),
+                      initBindings={'beginNode': URIRef(clicked_node['id']), 'endNode': URIRef(root_node['id'])})
+    links = []
+    node_ids = set()
 
-    query = '''
-    SELECT ?parentOfBeginNode ?parentOfParentNode ?childNode ?parentOfParentRelatedMediaType ?parentOfBeginNodeRelatedMediaType ?childNodeMediaType
-    WHERE
-    {
-        ?beginNode dw:parentNode* ?parentOfBeginNode .
-        ?parentOfBeginNode ?y ?parentOfParentNode .
-        OPTIONAL {
-            ?childNode dw:parentNode ?parentOfParentNode .
-        }
-        OPTIONAL {
-               ?parentOfParentNode a dw:Task.
-               ?parentOfParentNode dw:relatedMediaType ?parentOfParentRelatedMediaType .
-        }
-        OPTIONAL {
-               ?parentOfBeginNode a dw:Task.
-               ?parentOfBeginNode dw:relatedMediaType ?parentOfBeginNodeRelatedMediaType .
-        }
-        
-        OPTIONAL {
-               ?childNode a dw:Task.
-               ?childNode dw:relatedMediaType ?childNodeMediaType .
-        }
-        FILTER(?y = dw:parentNode)
-        ?parentOfParentNode dw:parentNode* ?endNode .
-    }
-    '''
-    q = prepareQuery(query,
-                     initNs={"dw": DW},
-                     )
+    if len(results) == 0:
+        sub_class_of_clicked_node = g.value(URIRef(clicked_node["id"]), DW["parentNode"])
+        begin_node = None
+        for subject in g.subjects(predicate=RDFS.subClassOf, object=sub_class_of_clicked_node):
+            if root_node["id"] == str(g.value(subject, DW["relatedMediaType"])):
+                begin_node = subject
+                pass
+        results_subclass = g.query(query_children(), initBindings={'beginNode': sub_class_of_clicked_node,
+                                                                   'endNode': URIRef(root_node['id'])})
+        for result in results_subclass:
+            if str(result) not in children_ids:
 
-    results = g.query(q, initBindings={'beginNode': URIRef(clicked_node['id']), 'endNode': URIRef(root_node['id'])})
+                    node_ids.add(str(result.childNode))
 
-    links = None
-    node_ids = None
+                    links.append(
+                        {
+                            'source': str(begin_node),
+                            'target': str(result.childNode)
+                        }
+                    )
+        results = g.query(query_parents(), initBindings={'beginNode': begin_node, 'endNode': URIRef(root_node['id'])})
+
     for idx, result in enumerate(results):
-        if idx == 0:
-            links = []
-            node_ids = set()
 
         if str(result.parentOfParentNode) not in click_history or str(result.parentOfBeginNode) not in click_history:
             continue
-
+        #
         if str(result.parentOfParentRelatedMediaType) != root_node['id'] and result.parentOfParentRelatedMediaType:
             continue
 
@@ -138,6 +118,7 @@ def get_parents(clicked_node, root_node, click_history, children_nodes):
             continue
 
         # add child nodes of subParent nodes
+
         if str(result.childNode) not in node_ids and str(result.childNode) not in children_ids:
             node_ids.add(str(result.childNode))
 
@@ -155,28 +136,71 @@ def get_parents(clicked_node, root_node, click_history, children_nodes):
     return nodes, links
 
 
-def get_children(parent_node, root_node):
+def query_parents():
     query = '''
-     SELECT ?childNode ?relatedMediaType
-     WHERE
-     {
-         ?childNode dw:parentNode ?beginNode
-         OPTIONAL{
-         ?beginNode dw:parentNode* ?parentOfBeginNode .
-         ?parentOfBeginNode ?y ?parentOfParentNode .
-         ?parentOfParentNode dw:parentNode* ?endNode .
-         }
+    SELECT ?parentOfBeginNode ?parentOfParentNode ?childNode ?parentOfParentRelatedMediaType ?parentOfBeginNodeRelatedMediaType ?childNodeMediaType
+    WHERE
+    {
+        ?beginNode dw:parentNode* ?parentOfBeginNode .
+        ?parentOfBeginNode ?y ?parentOfParentNode .
         OPTIONAL {
-           ?childNode a dw:Task .
-           ?childNode dw:relatedMediaType ?relatedMediaType .
+            ?childNode dw:parentNode ?parentOfParentNode .
         }
-     }
-     '''
+        OPTIONAL {
+               ?parentOfParentNode a dw:Task.
+               ?parentOfParentNode dw:relatedMediaType ?parentOfParentRelatedMediaType .
+        }
+        OPTIONAL {
+               ?parentOfBeginNode a dw:Task.
+               ?parentOfBeginNode dw:relatedMediaType ?parentOfBeginNodeRelatedMediaType .
+        }
+        
+        OPTIONAL {
+               ?childNode a dw:Task.
+               ?childNode dw:relatedMediaType ?childNodeMediaType .
+        }
+        
+        FILTER(?y = dw:parentNode)
+        ?parentOfParentNode dw:parentNode* ?endNode .
+    }
+    '''
     q = prepareQuery(query,
                      initNs={"dw": DW},
                      )
+    return q
+
+
+def get_children(parent_node, root_node):
+    q = query_children()
 
     results = g.query(q, initBindings={'beginNode': URIRef(parent_node['id']), 'endNode': URIRef(root_node['id'])})
+
+    if len(results) == 0:
+        query = '''
+         SELECT ?childNode ?relatedMediaType ?parentClassNode ?beginNode
+         WHERE
+         {  
+            ?beginNode rdfs:subClassOf ?parentClassNode .
+            ?childNode dw:parentNode ?parentClassNode .
+            
+            OPTIONAL{
+             ?parentClassNode dw:parentNode* ?parentOfBeginNode .
+             ?parentOfBeginNode ?y ?parentOfParentNode .
+             ?parentOfParentNode dw:parentNode* ?endNode .
+             }
+
+            OPTIONAL {
+               ?parentClassNode a dw:Task .
+               ?parentClassNode dw:relatedMediaType ?relatedMediaType .
+            }
+
+         }
+         '''
+        q = prepareQuery(query,
+                         initNs={"dw": DW, "rdfs": RDFS},
+                         )
+
+        results = g.query(q, initBindings={'beginNode': URIRef(parent_node['id']), 'endNode': URIRef(root_node['id'])})
 
     links = None
     node_ids = None
@@ -203,6 +227,31 @@ def get_children(parent_node, root_node):
     nodes = [node_features(node_id) for node_id in node_ids]
 
     return nodes, links
+
+
+def query_children():
+    query = '''
+     SELECT ?childNode ?relatedMediaType ?beginNode
+     WHERE
+     {
+        ?childNode dw:parentNode ?beginNode
+        OPTIONAL{
+         ?beginNode dw:parentNode* ?parentOfBeginNode .
+         ?parentOfBeginNode ?y ?parentOfParentNode .
+         ?parentOfParentNode dw:parentNode* ?endNode .
+         }
+    
+        OPTIONAL {
+           ?childNode a dw:Task .
+           ?childNode dw:relatedMediaType ?relatedMediaType .
+        }
+        
+     }
+     '''
+    q = prepareQuery(query,
+                     initNs={"dw": DW, "rdfs": RDFS},
+                     )
+    return q
 
 
 def node_features(node_id):
