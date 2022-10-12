@@ -222,6 +222,12 @@ dw:How a dw:Question ;
     rdfs:comment "This How can be used for all mediaObjects" ;
     schema:name "How" .
 
+dw:KeyframeExtraction a dw:Task ;
+    dw:parentNode dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Video ;
+    rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
+    schema:name "Keyframe Extraction" .
+
 dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Image,
@@ -282,13 +288,6 @@ dw:Metadata a dw:Task ;
     rdfs:comment "Metadata can help you ...." ;
     schema:name "Metadata" .
 
-dw:Manual_geolocation a dw:Task ;
-    dw:parentNode dw:Where ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    rdfs:comment "Landscape can be used for ......" ;
-    schema:name "Manual Geolocation" .
-
 dw:Who a dw:Question ;
     dw:parentNode dw:Audio,
         dw:Image,
@@ -298,11 +297,19 @@ dw:Who a dw:Question ;
     rdfs:comment "This Who can be used for all mediaObjects" ;
     schema:name "Who" .
 
+dw:Manual_geolocation a dw:Task ;
+    dw:parentNode dw:Where ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    rdfs:comment "Landscape can be used for ......" ;
+    schema:name "Manual Geolocation" .
+
 dw:Audio a dw:MediaObject ;
     schema:name "Audio" .
 
 dw:Reverse_Image_Search a dw:Task ;
-    dw:parentNode dw:Who_is_in_content ;
+    dw:parentNode dw:KeyframeExtraction,
+        dw:Who_is_in_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     rdfs:comment "RIS can be used for ......" ;

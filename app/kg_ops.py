@@ -73,14 +73,28 @@ def create_subgraph(click_history: List):
 
 def get_parents(clicked_node, root_node, click_history, children_nodes):
     children_ids = [children_node["id"] for children_node in children_nodes]
+
     query = '''
-    SELECT ?parentOfBeginNode ?parentOfParentNode ?childNode
+    SELECT ?parentOfBeginNode ?parentOfParentNode ?childNode ?parentOfParentRelatedMediaType ?parentOfBeginNodeRelatedMediaType ?childNodeMediaType
     WHERE
     {
         ?beginNode dw:parentNode* ?parentOfBeginNode .
         ?parentOfBeginNode ?y ?parentOfParentNode .
         OPTIONAL {
             ?childNode dw:parentNode ?parentOfParentNode .
+        }
+        OPTIONAL {
+               ?parentOfParentNode a dw:Task.
+               ?parentOfParentNode dw:relatedMediaType ?parentOfParentRelatedMediaType .
+        }
+        OPTIONAL {
+               ?parentOfBeginNode a dw:Task.
+               ?parentOfBeginNode dw:relatedMediaType ?parentOfBeginNodeRelatedMediaType .
+        }
+        
+        OPTIONAL {
+               ?childNode a dw:Task.
+               ?childNode dw:relatedMediaType ?childNodeMediaType .
         }
         FILTER(?y = dw:parentNode)
         ?parentOfParentNode dw:parentNode* ?endNode .
@@ -100,7 +114,13 @@ def get_parents(clicked_node, root_node, click_history, children_nodes):
             node_ids = set()
 
         if str(result.parentOfParentNode) not in click_history or str(result.parentOfBeginNode) not in click_history:
-            print('The node is not in click history.')
+            continue
+
+        if str(result.parentOfParentRelatedMediaType) != root_node['id'] and result.parentOfParentRelatedMediaType:
+            continue
+
+        if str(result.parentOfBeginNodeRelatedMediaType) != root_node[
+            'id'] and result.parentOfBeginNodeRelatedMediaType:
             continue
 
         node_ids.add(str(result.parentOfParentNode))
@@ -112,6 +132,10 @@ def get_parents(clicked_node, root_node, click_history, children_nodes):
                 'target': str(result.parentOfBeginNode)
             }
         )
+
+        if str(result.childNodeMediaType) != root_node[
+            'id'] and result.childNodeMediaType:
+            continue
 
         # add child nodes of subParent nodes
         if str(result.childNode) not in node_ids and str(result.childNode) not in children_ids:
@@ -133,15 +157,19 @@ def get_parents(clicked_node, root_node, click_history, children_nodes):
 
 def get_children(parent_node, root_node):
     query = '''
-     SELECT ?childNode
+     SELECT ?childNode ?relatedMediaType
      WHERE
      {
-         ?childNode dw:parentNode ?beginNode .
+         ?childNode dw:parentNode ?beginNode
          OPTIONAL{
          ?beginNode dw:parentNode* ?parentOfBeginNode .
          ?parentOfBeginNode ?y ?parentOfParentNode .
          ?parentOfParentNode dw:parentNode* ?endNode .
          }
+        OPTIONAL {
+           ?childNode a dw:Task .
+           ?childNode dw:relatedMediaType ?relatedMediaType .
+        }
      }
      '''
     q = prepareQuery(query,
@@ -156,6 +184,9 @@ def get_children(parent_node, root_node):
         if idx == 0:
             links = []
             node_ids = set()
+
+        if str(result.relatedMediaType) != root_node['id'] and result.relatedMediaType:
+            continue
 
         node_ids.add(str(result.childNode))
 
