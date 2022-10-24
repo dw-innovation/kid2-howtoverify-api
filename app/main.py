@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from app.kg_ops import create_subgraph
+from app.kg_ops import KIDGraph
 from typing import Dict, Any, AnyStr, List
 from dotenv import load_dotenv
 from fastapi import FastAPI
@@ -29,4 +29,6 @@ class Response(BaseModel):
 
 @app.post("/graph", response_model=Response)
 def find_similar(click_history: Request):
-    return create_subgraph(click_history.click_history)
+    subgraph = KIDGraph(click_history=click_history.click_history)
+    return subgraph.construct()
+    # return create_subgraph(click_history.click_history)
