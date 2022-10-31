@@ -29,6 +29,7 @@ class Response(BaseModel):
 
 @app.post("/graph", response_model=Response)
 def find_similar(click_history: Request):
+
     subgraph = KIDGraph(click_history=click_history.click_history)
     return subgraph.construct()
     # return create_subgraph(click_history.click_history)
