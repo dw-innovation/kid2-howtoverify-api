@@ -1,13 +1,11 @@
+from typing import List
 from rdflib import Graph, Namespace
 from rdflib import URIRef
 from rdflib.namespace import RDF, RDFS, DCTERMS
 from rdflib.plugins.sparql import prepareQuery
-from diskcache import Cache
 
 SCHEMA = Namespace("https://schema.org/")
 DW = Namespace("http://dw.com/")
-
-CACHE = Cache('tmp')
 
 NS_MAPPING = {
     str(RDF.type): "type",
@@ -58,7 +56,6 @@ class KIDGraph:
 
         return level_dict
 
-    @CACHE.memoize(expire=300)
     def construct(self):
         self.get_children()
 
