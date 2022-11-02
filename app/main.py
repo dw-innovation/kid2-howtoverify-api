@@ -4,9 +4,11 @@ from typing import Dict, Any, AnyStr, List
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from diskcache import Cache
 
 app = FastAPI()
 load_dotenv()
+CACHE = Cache('tmp')
 
 origins = origins = ["*"]
 app.add_middleware(
@@ -33,6 +35,7 @@ class Response(BaseModel):
     links: List
 
 
+@CACHE.memoize(expire=1)
 @app.post("/graph", response_model=Response)
 def find_similar(click_history: Request):
     subgraph = KIDGraph(click_history=click_history.click_history)
