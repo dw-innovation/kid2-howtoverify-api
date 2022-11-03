@@ -35,7 +35,7 @@ class Response(BaseModel):
     links: List
 
 
-@CACHE.memoize(expire=1)
+@CACHE.memoize()
 @app.post("/graph", response_model=Response)
 def find_similar(click_history: Request):
     subgraph = KIDGraph(click_history=click_history.click_history)
