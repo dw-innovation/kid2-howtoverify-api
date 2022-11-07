@@ -129,9 +129,6 @@ class KIDGraph:
             if str(result.parentOfBeginNodeRelatedMediaType) != self.root_node and result.parentOfBeginNodeRelatedMediaType:
                 continue
 
-            self.node_ids.add(str(result.parentOfParentNode))
-            self.node_ids.add(str(result.parentOfBeginNode))
-
             link_key = str(result.parentOfParentNode) + "_" + str(result.parentOfBeginNode)
 
             if link_key not in self.links:
@@ -152,6 +149,9 @@ class KIDGraph:
                         'source': str(result.parentOfParentNode),
                         'target': str(result.childNode)
                     }
+
+            self.node_ids.add(str(result.parentOfParentNode))
+            self.node_ids.add(str(result.parentOfBeginNode))
 
     @staticmethod
     def query_parents():
