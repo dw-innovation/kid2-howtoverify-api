@@ -39,7 +39,7 @@ class KIDGraph:
         self.clicked_node = click_history[-1]
         self.root_node = click_history[0]
         self.node_ids = set()
-        self.links = list()
+        self.links = {}
 
         self.node_ids.add(self.clicked_node)
 
@@ -62,8 +62,7 @@ class KIDGraph:
         if self.root_node != self.clicked_node:
             self.get_parents()
 
-        self.links = [dict(t) for t in {tuple(d.items()) for d in self.links}]
-
+        self.links = list(self.links.values())
         level_dict = self.assign_levels(begin_node_id=self.root_node, level=0)
 
         all_nodes = list(map(lambda node_id: self.get_feats(level_dict, node_id), self.node_ids))
@@ -89,30 +88,37 @@ class KIDGraph:
                           initBindings={'beginNode': URIRef(self.clicked_node), 'endNode': URIRef(self.root_node)})
 
         if len(results) == 0:
-            sub_class_of_clicked_node = g.value(URIRef(self.clicked_node), DW["parentNode"])
+            # e.g. Reverse Image Search
+            parent_class_clicked_node = g.value(URIRef(self.clicked_node), DW["parentNode"])
+
+            # e.g this will read the node whose media type is equal to root
             begin_node = None
-            for subject in g.subjects(predicate=RDFS.subClassOf, object=sub_class_of_clicked_node):
+            for subject in g.subjects(predicate=RDFS.subClassOf, object=parent_class_clicked_node):
                 if self.root_node == str(g.value(subject, DW["relatedMediaType"])):
                     begin_node = subject
-                    pass
+                    break
 
-            results_subclass = g.query(self.query_children(), initBindings={'beginNode': sub_class_of_clicked_node,
-                                                                            'endNode': URIRef(self.root_node)})
-            for result in results_subclass:
-                if str(result) not in self.node_ids:
-                    self.node_ids.add(str(result.childNode))
+            result_of_parent_Class = g.query(self.query_children(),
+                                             initBindings={'beginNode': parent_class_clicked_node,
+                                                           'endNode': URIRef(self.root_node)})
+            for result in result_of_parent_Class:
+                if str(result.relatedMediaType) != self.root_node and result.relatedMediaType:
+                    continue
 
-                    self.links.append(
-                        {
-                            'source': str(begin_node),
-                            'target': str(result.childNode)
-                        }
-                    )
+                self.node_ids.add(str(result.childNode))
+
+                link_key = str(begin_node) + "_" + str(result.childNode)
+
+                if link_key not in self.links:
+                    self.links[link_key] = {
+                        'source': str(begin_node),
+                        'target': str(result.childNode)
+                    }
+
             results = g.query(self.query_parents(),
                               initBindings={'beginNode': begin_node, 'endNode': URIRef(self.root_node)})
 
         for result in results:
-
             if str(result.parentOfParentNode) not in self.click_history or str(
                     result.parentOfBeginNode) not in self.click_history:
                 continue
@@ -123,84 +129,84 @@ class KIDGraph:
             if str(result.parentOfBeginNodeRelatedMediaType) != self.root_node and result.parentOfBeginNodeRelatedMediaType:
                 continue
 
-            self.node_ids.add(str(result.parentOfParentNode))
-            self.node_ids.add(str(result.parentOfBeginNode))
+            link_key = str(result.parentOfParentNode) + "_" + str(result.parentOfBeginNode)
 
-            self.links.append(
-                {
+            if link_key not in self.links:
+                self.links[link_key] = {
                     'source': str(result.parentOfParentNode),
                     'target': str(result.parentOfBeginNode)
                 }
-            )
 
             if str(result.childNodeMediaType) != self.root_node and result.childNodeMediaType:
                 continue
 
             # add child nodes of subParent nodes
-            if str(result.childNode) not in self.node_ids:
-                self.node_ids.add(str(result.childNode))
+            self.node_ids.add(str(result.childNode))
+            link_key = str(result.parentOfParentNode) + "_" + str(result.childNode)
+            if link_key not in self.links:
+                self.links[link_key] = {
+                    'source': str(result.parentOfParentNode),
+                    'target': str(result.childNode)
+                }
 
-                self.links.append(
-                    {
-                        'source': str(result.parentOfParentNode),
-                        'target': str(result.childNode)
-                    }
-                )
+            self.node_ids.add(str(result.parentOfParentNode))
+            self.node_ids.add(str(result.parentOfBeginNode))
 
-    def query_parents(self):
+    @staticmethod
+    def query_parents():
         query = '''
-        SELECT ?parentOfBeginNode ?parentOfParentNode ?childNode ?parentOfParentRelatedMediaType ?parentOfBeginNodeRelatedMediaType ?childNodeMediaType
-        WHERE
-        {
-            ?beginNode dw:parentNode* ?parentOfBeginNode .
-            ?parentOfBeginNode ?y ?parentOfParentNode .
-            OPTIONAL {
-                ?childNode dw:parentNode ?parentOfParentNode .
-            }
-            OPTIONAL {
-                   ?parentOfParentNode a dw:Task.
-                   ?parentOfParentNode dw:relatedMediaType ?parentOfParentRelatedMediaType .
-            }
-            OPTIONAL {
-                   ?parentOfBeginNode a dw:Task.
-                   ?parentOfBeginNode dw:relatedMediaType ?parentOfBeginNodeRelatedMediaType .
-            }
+            SELECT DISTINCT ?parentOfBeginNode ?parentOfParentNode ?childNode ?parentOfParentRelatedMediaType ?parentOfBeginNodeRelatedMediaType ?childNodeMediaType
+            WHERE
+            {
+                ?beginNode dw:parentNode* ?parentOfBeginNode .
+                ?parentOfBeginNode dw:parentNode ?parentOfParentNode .
+                OPTIONAL {
+                    ?childNode dw:parentNode ?parentOfParentNode .
+                }
+                OPTIONAL {
+                       ?parentOfParentNode a dw:Task.
+                       ?parentOfParentNode dw:relatedMediaType ?parentOfParentRelatedMediaType .
+                }
+                OPTIONAL {
+                       ?parentOfBeginNode a dw:Task.
+                       ?parentOfBeginNode dw:relatedMediaType ?parentOfBeginNodeRelatedMediaType .
+                }
+                
+                OPTIONAL {
+                       ?childNode a dw:Task.
+                       ?childNode dw:relatedMediaType ?childNodeMediaType .
+                }
             
-            OPTIONAL {
-                   ?childNode a dw:Task.
-                   ?childNode dw:relatedMediaType ?childNodeMediaType .
+                ?parentOfParentNode dw:parentNode* ?endNode .
             }
-            
-            FILTER(?y = dw:parentNode)
-            ?parentOfParentNode dw:parentNode* ?endNode .
-        }
-        '''
+            '''
         q = prepareQuery(query,
                          initNs={"dw": DW},
                          )
         return q
 
-    def query_children(self):
+    @staticmethod
+    def query_children():
         query = '''
-         SELECT ?childNode ?relatedMediaType ?beginNode
-         WHERE
-         {
-            ?childNode dw:parentNode ?beginNode
-            OPTIONAL{
-             ?beginNode dw:parentNode* ?parentOfBeginNode .
-             ?parentOfBeginNode ?y ?parentOfParentNode .
-             ?parentOfParentNode dw:parentNode* ?endNode .
+             SELECT DISTINCT ?childNode ?relatedMediaType
+             WHERE
+             {
+                ?childNode dw:parentNode ?beginNode
+                OPTIONAL{
+                 ?beginNode dw:parentNode* ?parentOfBeginNode .
+                 ?parentOfBeginNode ?y ?parentOfParentNode .
+                 ?parentOfParentNode dw:parentNode* ?endNode .
+                 }
+                
+                OPTIONAL {
+                   ?childNode a dw:Task.
+                   ?childNode dw:relatedMediaType ?relatedMediaType .
+                }
+                
              }
-    
-            OPTIONAL {
-               ?childNode a dw:Task .
-               ?childNode dw:relatedMediaType ?relatedMediaType .
-            }
-    
-         }
-         '''
+             '''
         q = prepareQuery(query,
-                         initNs={"dw": DW, "rdfs": RDFS},
+                         initNs={"dw": DW},
                          )
         return q
 
@@ -217,17 +223,10 @@ class KIDGraph:
                 continue
 
             self.node_ids.add(str(result.childNode))
+            link_key = self.clicked_node + "_" + str(result.childNode)
 
-            self.links.append(
-                {
+            if link_key not in self.links:
+                self.links[link_key] = {
                     'source': self.clicked_node,
                     'target': str(result.childNode)
                 }
-            )
-
-    def node_features(self, node_id):
-        return {
-            'id': str(node_id),
-            'name': str(g.value(URIRef(node_id), SCHEMA.name)),
-            'type': str(g.value(URIRef(node_id), RDF.type))
-        }
