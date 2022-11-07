@@ -141,14 +141,13 @@ class KIDGraph:
                 continue
 
             # add child nodes of subParent nodes
-            if str(result.childNode) not in self.node_ids:
-                self.node_ids.add(str(result.childNode))
-                link_key = str(result.parentOfParentNode) + "_" + str(result.childNode)
-                if link_key not in self.links:
-                    self.links[link_key] = {
-                        'source': str(result.parentOfParentNode),
-                        'target': str(result.childNode)
-                    }
+            self.node_ids.add(str(result.childNode))
+            link_key = str(result.parentOfParentNode) + "_" + str(result.childNode)
+            if link_key not in self.links:
+                self.links[link_key] = {
+                    'source': str(result.parentOfParentNode),
+                    'target': str(result.childNode)
+                }
 
             self.node_ids.add(str(result.parentOfParentNode))
             self.node_ids.add(str(result.parentOfBeginNode))
