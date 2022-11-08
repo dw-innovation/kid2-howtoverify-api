@@ -38,7 +38,7 @@ dw:Boom_3D a dw:SoftwareApplication ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Boom 3D is..." ;
     schema:aboutUrl "" ;
-    schema:applicationUrl "LIST of enhancers https://fixthephoto.com/best-free-audio-enhancers.html" ;
+    schema:applicationUrl "https://fixthephoto.com/best-free-audio-enhancers.html" ;
     schema:name "Boom 3D" ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
@@ -127,7 +127,7 @@ dw:Geohints a dw:SoftwareApplication ;
     dw:parentNode <http://dw.com/Task/Visual_elements> ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['Tips to watch out for https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf']" ;
+    dw:remarks "['Tips to watch out for this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf)']" ;
     rdfs:comment "What is:" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://geohints.com/" ;
@@ -140,7 +140,7 @@ dw:Google_Advanced_Search a dw:SoftwareApplication ;
     dw:parentNode dw:Author,
         <http://dw.com/Task/General_Search> ;
     dw:relatedMediaType dw:Source ;
-    dw:remarks "['Scholar search https://scholar.google.com/ ']" ;
+    dw:remarks "['Scholar search at this [link](https://scholar.google.com/) ']" ;
     rdfs:comment "" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
@@ -257,7 +257,7 @@ dw:How a dw:Question ;
     schema:name "How" .
 
 dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
-    dw:howTo "['https://citizenevidence.org/2013/10/20/how-to-creating-a-panoramic-picture-from-a-video/', 'step 2']" ;
+    dw:howTo "['You can watch at this [link](https://citizenevidence.org/2013/10/20/how-to-creating-a-panoramic-picture-from-a-video/)', 'step 2']" ;
     dw:parentNode dw:Panorama_stitch ;
     dw:relatedMediaType dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -291,7 +291,7 @@ dw:Instagram_search a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Instagram ;
     dw:relatedMediaType dw:Source ;
-    dw:remarks "['Explore locations https://www.instagram.com/explore/locations/', 'remark 2']" ;
+    dw:remarks "['Explore locations at this [link](https://www.instagram.com/explore/locations/)', 'remark 2']" ;
     rdfs:comment "Instagram search .." ;
     schema:applicationUrl "https://www.instagram.com/search/" ;
     schema:name "Instagram search" ;
@@ -374,7 +374,7 @@ dw:LinkedIn a dw:SoftwareApplication ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "LinkedIn is a" ;
     schema:applicationUrl "https://www.linkedin.com/" ;
-    schema:name "LinkedIn" ;
+    schema:name "" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Listen_to_the_audio a dw:Task ;
