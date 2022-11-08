@@ -111,20 +111,9 @@ dw:GPS_Data a dw:Task ;
     rdfs:comment "GPS Data can help you ...." ;
     schema:name "GPS Data" .
 
-dw:General_Search a dw:Task ;
-    dw:parentNode dw:Topic,
-        dw:What ;
-    dw:relatedMediaType dw:Audio,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "General search" .
-
 dw:Geohints a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode <http://dw.com/Task/Visual_elements> ;
+    dw:parentNode dw:Visual_elements ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['Tips to watch out for this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf)']" ;
@@ -138,7 +127,7 @@ dw:Geohints a dw:SoftwareApplication ;
 dw:Google_Advanced_Search a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Author,
-        <http://dw.com/Task/General_Search> ;
+        dw:General_Search ;
     dw:relatedMediaType dw:Source ;
     dw:remarks "['Scholar search at this [link](https://scholar.google.com/) ']" ;
     rdfs:comment "" ;
@@ -162,7 +151,7 @@ dw:Google_Earth a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Landscape_identification,
         dw:Manual_geolocation,
-        <http://dw.com/Task/Visual_elements> ;
+        dw:Visual_elements ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -196,7 +185,7 @@ desktop""" .
 dw:Google_Maps a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation,
-        <http://dw.com/Task/Visual_elements> ;
+        dw:Visual_elements ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1']" ;
@@ -410,7 +399,7 @@ dw:MapSwitcher a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Landscape_identification,
         dw:Manual_geolocation,
-        <http://dw.com/Task/Visual_elements> ;
+        dw:Visual_elements ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -424,7 +413,7 @@ dw:MapSwitcher a dw:SoftwareApplication ;
 dw:Mapillary a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation,
-        <http://dw.com/Task/Visual_elements> ;
+        dw:Visual_elements ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -763,14 +752,6 @@ dw:ViewDNS a dw:SoftwareApplication ;
     schema:name "ViewDNS" ;
     schema:publisher "Bladibla Productions" .
 
-dw:Visual_elements a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
-    schema:name "Visual elements" .
-
 dw:Visual_elements_1 a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
@@ -821,7 +802,7 @@ dw:WhatsMyName a dw:SoftwareApplication ;
     rdfs:comment "WhatsMyName is" ;
     schema:applicationUrl "https://whatsmyname.app/" ;
     schema:name "WhatsMyName" ;
-    schema:publisher "WebBreacher, C3n7ral051nt4g3ncy, Munchko, L0r3m1p5um, lehuff, janbinx, bcoles, arnydo, mccartney, salaheldinaz, camhoff, jocephus, swedishmike, soxoj, jspinel, ef1500, zewen, jocejocejoe, P3run, seintpl, djahren, K2SOsint, Sector035, AccentuSoft, OSINT Combine" .
+    schema:publisher "WebBreacher" .
 
 dw:WhoIs a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -873,7 +854,7 @@ dw:Whois_Domain a dw:SoftwareApplication ;
 dw:Wikimapia a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation,
-        <http://dw.com/Task/Visual_elements> ;
+        dw:Visual_elements ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -979,6 +960,17 @@ dw:File_Name a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "File Name" .
+
+dw:General_Search a dw:Task ;
+    dw:parentNode dw:Topic,
+        dw:What ;
+    dw:relatedMediaType dw:Audio,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "General search" .
 
 dw:IP_address a dw:Task ;
     dw:parentNode dw:Domain_name,
@@ -1236,6 +1228,14 @@ dw:Visual_Intelligence a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Visual Intelligence" .
+
+dw:Visual_elements a dw:Task ;
+    dw:parentNode dw:Visual_Intelligence ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
+    schema:name "Visual elements" .
 
 dw:Who_created_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
