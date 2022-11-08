@@ -904,7 +904,7 @@ dw:Yandex_Images a dw:SoftwareApplication ;
 dw:Yandex_Maps a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation,
-        <http://dw.com/Task/Visual_elements> ;
+        dw:Visual_elements ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -1229,14 +1229,6 @@ dw:Visual_Intelligence a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Visual Intelligence" .
 
-dw:Visual_elements a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
-    schema:name "Visual elements" .
-
 dw:Who_created_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
     dw:relatedMediaType dw:Image,
@@ -1250,6 +1242,14 @@ dw:Social_Media_profiles a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Social Media profiles" .
+
+dw:Visual_elements a dw:Task ;
+    dw:parentNode dw:Visual_Intelligence ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
+    schema:name "Visual elements" .
 
 dw:Manual_geolocation a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
