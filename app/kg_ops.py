@@ -22,7 +22,9 @@ NS_MAPPING = {
     str(SCHEMA.name): "name",
     str(SCHEMA.isPartOf): "isPartOf",
     str(DW.parentNode): "parentNode",
-    str(DW.relatedMediaType): "relatedMediaType"
+    str(DW.relatedMediaType): "relatedMediaType",
+    str(DW.remarks): "remarks",
+    str(DW.howTo): "howTo"
 
 }
 
