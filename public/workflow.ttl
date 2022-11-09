@@ -70,6 +70,24 @@ dw:Edit_photo a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
 
+dw:Enhance_Image_1 a dw:Task ;
+    dw:parentNode dw:KeyframeExtraction ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    rdfs:subClassOf dw:Enhance_Image ;
+    schema:name "Enhance Image" .
+
+dw:Enhance_Image_2 a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    rdfs:subClassOf dw:Enhance_Image ;
+    schema:name "Enhance Image" .
+
 dw:Epios a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:eMail ;
@@ -113,7 +131,7 @@ dw:GPS_Data a dw:Task ;
 
 dw:Geohints a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Visual_elements ;
+    dw:parentNode dw:Visual_search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['Tips to watch out for this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf)']" ;
@@ -127,8 +145,10 @@ dw:Geohints a dw:SoftwareApplication ;
 dw:Google_Advanced_Search a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Author,
-        dw:General_Search ;
-    dw:relatedMediaType dw:Source ;
+        dw:General_Search,
+        dw:What ;
+    dw:relatedMediaType dw:Image,
+        dw:Source ;
     dw:remarks "['Scholar search at this [link](https://scholar.google.com/) ']" ;
     rdfs:comment "" ;
     schema:aboutUrl "" ;
@@ -151,7 +171,7 @@ dw:Google_Earth a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Landscape_identification,
         dw:Manual_geolocation,
-        dw:Visual_elements ;
+        dw:Visual_search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -185,7 +205,7 @@ desktop""" .
 dw:Google_Maps a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation,
-        dw:Visual_elements ;
+        dw:Visual_search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1']" ;
@@ -333,8 +353,7 @@ dw:Landmark_recognition a dw:SoftwareApplication ;
 
 dw:LatLong a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Manual_geolocation,
-        dw:Metadata ;
+    dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "LatLong helps you find all available metadata on location" ;
@@ -399,7 +418,7 @@ dw:MapSwitcher a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Landscape_identification,
         dw:Manual_geolocation,
-        dw:Visual_elements ;
+        dw:Visual_search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -413,7 +432,7 @@ dw:MapSwitcher a dw:SoftwareApplication ;
 dw:Mapillary a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation,
-        dw:Visual_elements ;
+        dw:Visual_search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -447,8 +466,8 @@ unstructured text""" ;
 
 dw:Microsoft_Video_Indexer a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode "" ;
-    dw:relatedMediaType dw:Image ;
+    dw:parentNode dw:Person_identification ;
+    dw:relatedMediaType dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Microsoft Video Indexer" ;
     schema:applicationUrl "https://vi.microsoft.com/" ;
@@ -529,7 +548,9 @@ dw:Pipl a dw:SoftwareApplication ;
 
 dw:RIS_\(Image\) a dw:Task ;
     dw:parentNode dw:Enhance_Image,
-        dw:Object_identification ;
+        dw:Object_identification,
+        dw:Person_identification,
+        dw:What ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
@@ -558,14 +579,6 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     schema:name "Sentinel Hub EO Browser" ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "free" .
-
-dw:Shadow_Analyses a dw:Task ;
-    dw:parentNode dw:Timestamp ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Shadow Analyses" .
 
 dw:Sources a dw:Task ;
     dw:parentNode dw:What ;
@@ -598,7 +611,7 @@ dw:Spoken_language_identifier a dw:SoftwareApplication ;
 
 dw:Suncalc a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Timestamp ;
+    dw:parentNode dw:Shadow_Analyses ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -678,6 +691,21 @@ dw:TimeandDate a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
 
+dw:Timestamp a dw:Task ;
+    dw:parentNode dw:When ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Upload time does not mean the timing when the content was created. It is important to double check when was the content posted online versus when was it created." ;
+    schema:name "Timestamp" .
+
+dw:Topic a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Topic" .
+
 dw:Tweetbeaver_\(Twitter\) a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Social_Media_activities,
@@ -706,11 +734,9 @@ dw:USearch a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "When searching for news, Google sometimes shows news items from your local area, and with the ability to target a very specific area, this might come in very handy." ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://usearchfrom.com/" ;
     schema:name "USearch" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Unix_timestamp a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -752,20 +778,20 @@ dw:ViewDNS a dw:SoftwareApplication ;
     schema:name "ViewDNS" ;
     schema:publisher "Bladibla Productions" .
 
+dw:Visual_elements a dw:Task ;
+    dw:parentNode dw:Visual_Intelligence ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
+    schema:name "Visual elements" .
+
 dw:Visual_elements_1 a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "photos, graphics" ;
     schema:name "Visual elements" .
-
-dw:Weather_Analyses a dw:Task ;
-    dw:parentNode dw:Timestamp ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Weather can hint you to the date when the footage was created. It can also narrow down the continent to detmine the location." ;
-    schema:name "Weather Analyses" .
 
 dw:Web_Archive a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -854,7 +880,7 @@ dw:Whois_Domain a dw:SoftwareApplication ;
 dw:Wikimapia a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation,
-        dw:Visual_elements ;
+        dw:Visual_search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -867,7 +893,7 @@ dw:Wikimapia a dw:SoftwareApplication ;
 
 dw:WolframAlpha a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Timestamp ;
+    dw:parentNode dw:Weather_Analyses ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -904,7 +930,7 @@ dw:Yandex_Images a dw:SoftwareApplication ;
 dw:Yandex_Maps a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation,
-        dw:Visual_elements ;
+        dw:Visual_search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -962,9 +988,9 @@ dw:File_Name a dw:Task ;
     schema:name "File Name" .
 
 dw:General_Search a dw:Task ;
-    dw:parentNode dw:Topic,
-        dw:What ;
+    dw:parentNode dw:What ;
     dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
@@ -973,8 +999,7 @@ dw:General_Search a dw:Task ;
     schema:name "General search" .
 
 dw:IP_address a dw:Task ;
-    dw:parentNode dw:Domain_name,
-        dw:Where ;
+    dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
@@ -1001,14 +1026,6 @@ dw:Panorama_stitch a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Panorama stitch" .
 
-dw:Person_identification a dw:Task ;
-    dw:parentNode dw:Who_is_in_content ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Person Identification can be used for ......" ;
-    schema:name "Person Identification" .
-
 dw:Phone_number a dw:Task ;
     dw:parentNode dw:Author ;
     dw:relatedMediaType dw:Text ;
@@ -1016,12 +1033,13 @@ dw:Phone_number a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Phone number" .
 
-dw:Topic a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Text ;
+dw:Shadow_Analyses a dw:Task ;
+    dw:parentNode dw:When ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
-    schema:name "Topic" .
+    schema:name "Shadow Analyses" .
 
 dw:Tweetbeaver a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -1032,6 +1050,14 @@ dw:Tweetbeaver a dw:SoftwareApplication ;
     schema:applicationUrl "https://tweetbeaver.com/" ;
     schema:name "Tweetbeaver" ;
     schema:publisher "Bladibla Productions" .
+
+dw:Weather_Analyses a dw:Task ;
+    dw:parentNode dw:When ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Weather can hint you to the date when the footage was created. It can also narrow down the continent to detmine the location." ;
+    schema:name "Weather Analyses" .
 
 dw:Websites_Analyses_\(Source\) a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
@@ -1053,6 +1079,13 @@ dw:Business_name a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Business Name" .
+
+dw:Domain_name a dw:Task ;
+    dw:parentNode dw:Website ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Domain name" .
 
 dw:Historic_versions a dw:Task ;
     dw:parentNode dw:What,
@@ -1078,7 +1111,7 @@ dw:Telegram a dw:Task ;
     schema:name "Telegram" .
 
 dw:Timecodes a dw:Task ;
-    dw:parentNode dw:Timestamp ;
+    dw:parentNode dw:When ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -1106,19 +1139,23 @@ dw:eMail a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "eMail" .
 
-dw:Domain_name a dw:Task ;
-    dw:parentNode dw:Website ;
-    dw:relatedMediaType dw:Text ;
+dw:Metadata a dw:Task ;
+    dw:parentNode dw:When,
+        dw:Where,
+        dw:Who_created_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Domain name" .
+    rdfs:comment "Metadata can help you" ;
+    schema:name "Metadata" .
 
-dw:KeyframeExtraction a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Video ;
+dw:Person_identification a dw:Task ;
+    dw:parentNode dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Keyframe Extraction" .
+    rdfs:comment "Person Identification can be used for ......" ;
+    schema:name "Person Identification" .
 
 dw:Person_name a dw:Task ;
     dw:parentNode dw:Author,
@@ -1128,29 +1165,22 @@ dw:Person_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Person Name" .
 
-dw:Who_is_in_content a dw:SubQuestion ;
-    dw:parentNode dw:Who ;
-    dw:relatedMediaType dw:Image,
-        dw:Text,
-        dw:Video ;
-    rdfs:comment "bladibla" ;
-    schema:name "Who is in content" .
-
 dw:Digital_Footprint a dw:Task ;
-    dw:parentNode dw:Who_created_content ;
-    dw:relatedMediaType dw:Source ;
+    dw:parentNode dw:Who_created_content,
+        dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Digital footprint" .
 
-dw:Enhance_Image a dw:Task ;
-    dw:parentNode dw:KeyframeExtraction,
-        dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
+dw:KeyframeExtraction a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
-    schema:name "Enhance Image" .
+    rdfs:comment "is a" ;
+    schema:name "Keyframe Extraction" .
 
 dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
@@ -1159,24 +1189,6 @@ dw:Landscape_identification a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Landscape Identification" .
-
-dw:Metadata a dw:Task ;
-    dw:parentNode dw:Timestamp,
-        dw:Where,
-        dw:Who_created_content ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Metadata can help you" ;
-    schema:name "Metadata" .
-
-dw:Object_identification a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Object Identification" .
 
 dw:Website a dw:Task ;
     dw:parentNode dw:Digital_Footprint,
@@ -1187,14 +1199,13 @@ dw:Website a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Website" .
 
-dw:When a dw:Question ;
-    dw:parentNode dw:Audio,
-        dw:Image,
-        dw:Source,
+dw:Who_is_in_content a dw:SubQuestion ;
+    dw:parentNode dw:Who ;
+    dw:relatedMediaType dw:Image,
         dw:Text,
         dw:Video ;
-    rdfs:comment "This When can be used for all mediaObjects" ;
-    schema:name "When" .
+    rdfs:comment "bladibla" ;
+    schema:name "Who is in content" .
 
 dw:Author a dw:Task ;
     dw:parentNode dw:Who_created_content ;
@@ -1202,6 +1213,14 @@ dw:Author a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Author" .
+
+dw:Object_identification a dw:Task ;
+    dw:parentNode dw:Visual_Intelligence ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Object Identification" .
 
 dw:Who a dw:Question ;
     dw:parentNode dw:Audio,
@@ -1211,14 +1230,6 @@ dw:Who a dw:Question ;
         dw:Video ;
     rdfs:comment "This Who can be used for all mediaObjects" ;
     schema:name "Who" .
-
-dw:Timestamp a dw:Task ;
-    dw:parentNode dw:When ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Upload time does not mean the timing when the content was created. It is important to double check when was the content posted online versus when was it created." ;
-    schema:name "Timestamp" .
 
 dw:Visual_Intelligence a dw:Task ;
     dw:parentNode dw:What,
@@ -1236,6 +1247,16 @@ dw:Who_created_content a dw:SubQuestion ;
     rdfs:comment "Unstructured text" ;
     schema:name "Who created content" .
 
+dw:Enhance_Image a dw:Task ;
+    dw:relatedMediaType dw:Enhance_Image,
+        dw:Image,
+        dw:KeyframeExtraction,
+        dw:Object_identification,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Enhance Image Search" .
+
 dw:Social_Media_profiles a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
     dw:relatedMediaType dw:Source ;
@@ -1243,13 +1264,13 @@ dw:Social_Media_profiles a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Social Media profiles" .
 
-dw:Visual_elements a dw:Task ;
+dw:Visual_search a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
-    schema:name "Visual elements" .
+    schema:name "Visual search" .
 
 dw:Manual_geolocation a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
@@ -1258,6 +1279,15 @@ dw:Manual_geolocation a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Landscape can be used for ......" ;
     schema:name "Manual Geolocation" .
+
+dw:When a dw:Question ;
+    dw:parentNode dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    rdfs:comment "This When can be used for all mediaObjects" ;
+    schema:name "When" .
 
 dw:Social_Media_activities a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
