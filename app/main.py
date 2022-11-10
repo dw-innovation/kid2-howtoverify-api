@@ -20,7 +20,7 @@ app.add_middleware(
 )
 
 
-class Request(BaseModel):
+class ClickHistoryRequest(BaseModel):
     click_history: List
 
     @validator('click_history', each_item=True, always=True)
@@ -30,15 +30,27 @@ class Request(BaseModel):
         return v
 
 
+class SearchRequest(BaseModel):
+    query = str
+    category: str
+
+
 class Response(BaseModel):
     nodes: List
     links: List
 
+class SearchResponse(BaseModel):
+    List
+
 
 @app.post("/graph", response_model=Response)
-def subgraph(click_history: Request):
+def subgraph(click_history: ClickHistoryRequest):
     return construct_subgraph(click_history)
-    # return create_subgraph(click_history.click_history)
+
+
+@app.post("/search", response_model=SearchResponse)
+def search(query:SearchRequest):
+    return KIDGraph.search(query)
 
 
 @CACHE.memoize()
