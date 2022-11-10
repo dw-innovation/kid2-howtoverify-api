@@ -10,7 +10,7 @@ app = FastAPI()
 load_dotenv()
 CACHE = Cache('tmp')
 
-origins = origins = ["*.howtoverify.info"]
+origins = ["*.howtoverify.info"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
