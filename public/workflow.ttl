@@ -2,13 +2,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 
-dw:Adress a dw:Task ;
-    dw:parentNode dw:Author ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Adress" .
-
 dw:Baidu a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Reverse_Image_Search ;
@@ -26,11 +19,9 @@ dw:Baidu_Images a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Baidu Reverse Image Search..." ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://image.baidu.com" ;
     schema:name "Baidu Images" ;
-    schema:publisher "Baidu" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Baidu" .
 
 dw:Boom_3D a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -72,15 +63,6 @@ dw:Edit_photo a dw:SoftwareApplication ;
 
 dw:Enhance_Image_1 a dw:Task ;
     dw:parentNode dw:KeyframeExtraction ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
-    rdfs:subClassOf dw:Enhance_Image ;
-    schema:name "Enhance Image" .
-
-dw:Enhance_Image_2 a dw:Task ;
-    dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -365,15 +347,13 @@ dw:LatLong a dw:SoftwareApplication ;
 
 dw:Lets_enhance_io a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Enhance_Image ;
+    dw:parentNode dw:Enhance_Image_2 ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Lets enhance io is an image enhancer" ;
-    schema:aboutUrl "https://letsenhance.io/about" ;
     schema:applicationUrl "https://letsenhance.io/" ;
     schema:name "Lets enhance io" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:LinkedIn a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -474,6 +454,17 @@ dw:Microsoft_Video_Indexer a dw:SoftwareApplication ;
     schema:applicationUrl "https://vi.microsoft.com/" ;
     schema:name "Microsoft Video Indexer" ;
     schema:publisher "Microsoft" .
+
+dw:Mooncalc a dw:SoftwareApplication ;
+    dw:howTo "['step 1', 'step 2']" ;
+    dw:parentNode dw:Shadow_Analyses ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Shadow Analyses is" ;
+    schema:applicationUrl "https://www.mondverlauf.de/" ;
+    schema:name "Mooncalc" ;
+    schema:publisher "Bladibla Productions" .
 
 dw:Namechk a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -617,11 +608,9 @@ dw:Suncalc a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Shadow Analyses is" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://www.suncalc.org/" ;
     schema:name "Suncalc" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Telemetrio a dw:SoftwareApplication ;
     dw:howTo "['In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.\\nExample: https://t.me/s/MOHreport/1', 'step 2']" ;
@@ -686,11 +675,9 @@ dw:TimeandDate a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "UTC means Universal Time Coordinated, i.e. the world time. UTC allows a simple conversion into different time zoneswith TimeandDate." ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://www.timeanddate.com/" ;
     schema:name "TimeandDate" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Timestamp a dw:Task ;
     dw:parentNode dw:When ;
@@ -746,11 +733,9 @@ dw:Unix_timestamp a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "A machine-readable, mostly ten-digit representation of time. On January 1, 1970, counting began at 0, +1 is calculated per second. Conversion: As of January 1st, 2022 0:00 the counter was at 1640991600. Conversions are possible with Unix Timestamp." ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://www.unixtimestamp.com/" ;
     schema:name "Unix Timestamp" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Upload_Time a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -952,6 +937,13 @@ dw:newsgathering a dw:Task ;
     rdfs:comment "is a process to collect and analyse more content on the incident to create a timeline of it." ;
     schema:name "newsgathering" .
 
+dw:Adress a dw:Task ;
+    dw:parentNode dw:Author ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Adress" .
+
 dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
@@ -968,19 +960,21 @@ dw:Audio_from_video_extraction a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Audio from video extraction" .
 
-dw:Background_Removal a dw:Task ;
-    dw:parentNode dw:Reverse_Image_Search ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
-    schema:name "Background removal" .
-
 dw:CropRotateFlip a dw:Task ;
-    dw:parentNode dw:Reverse_Image_Search ;
+    dw:parentNode dw:Background_Removal ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "CropRotateFlip" .
+
+dw:Enhance_Image_2 a dw:Task ;
+    dw:parentNode dw:Modification ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    rdfs:subClassOf dw:Enhance_Image ;
+    schema:name "Enhance Image" .
 
 dw:Facebook a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
@@ -1020,6 +1014,13 @@ dw:Manipulation_detection a dw:Task ;
     rdfs:comment "Manipulation detection can be used for ......" ;
     schema:name "Manipulation detection" .
 
+dw:Modification a dw:Task ;
+    dw:parentNode dw:Reverse_Image_Search ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Modification" .
+
 dw:Panorama_stitch a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Video ;
@@ -1033,14 +1034,6 @@ dw:Phone_number a dw:Task ;
     dw:remarks "['Google-Suche (evtl. mit Emoji)', 'Klassiker: Rückwärtssuche im Telefonbuch', 'Whatsapp(bild)', 'In Telegram speichern & Nummer löschen -->\\xa0zeigt Nutzername an', 'für Profis: Github-Skript [_\"phoneinfoga_](https://github.com/sundowndev/phoneinfoga)\"']" ;
     rdfs:comment "is a" ;
     schema:name "Phone number" .
-
-dw:Shadow_Analyses a dw:Task ;
-    dw:parentNode dw:When ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Shadow Analyses" .
 
 dw:Tweetbeaver a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -1089,8 +1082,7 @@ dw:Domain_name a dw:Task ;
     schema:name "Domain name" .
 
 dw:File_Name a dw:Task ;
-    dw:parentNode dw:What,
-        dw:Who ;
+    dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -1133,6 +1125,14 @@ dw:Language_detection a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Language detection" .
 
+dw:Shadow_Analyses a dw:Task ;
+    dw:parentNode dw:When ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Shadow Analyses" .
+
 dw:Telegram a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
     dw:relatedMediaType dw:Source ;
@@ -1168,6 +1168,13 @@ dw:eMail a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "eMail" .
+
+dw:Background_Removal a dw:Task ;
+    dw:parentNode dw:Background_Removal ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
+    schema:name "Background removal" .
 
 dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
@@ -1237,6 +1244,15 @@ dw:Website a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Website" .
 
+dw:Who a dw:Question ;
+    dw:parentNode dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    rdfs:comment "This Who can be used for all mediaObjects" ;
+    schema:name "Who" .
+
 dw:Who_is_in_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
     dw:relatedMediaType dw:Image,
@@ -1251,15 +1267,6 @@ dw:Author a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Author" .
-
-dw:Who a dw:Question ;
-    dw:parentNode dw:Audio,
-        dw:Image,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    rdfs:comment "This Who can be used for all mediaObjects" ;
-    schema:name "Who" .
 
 dw:Enhance_Image a dw:Task ;
     dw:relatedMediaType dw:Image,
@@ -1301,7 +1308,8 @@ dw:Visual_search a dw:Task ;
     schema:name "Visual search" .
 
 dw:Manual_geolocation a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
+    dw:parentNode dw:Adress,
+        dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -1316,6 +1324,16 @@ dw:When a dw:Question ;
         dw:Video ;
     rdfs:comment "This When can be used for all mediaObjects" ;
     schema:name "When" .
+
+dw:Reverse_Image_Search a dw:Task ;
+    dw:relatedMediaType dw:Enhance_Image,
+        dw:Image,
+        dw:KeyframeExtraction,
+        dw:Object_identification,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Reverse Image Search" .
 
 dw:Social_Media_activities a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
@@ -1334,16 +1352,6 @@ dw:Where a dw:Question ;
         dw:Video ;
     rdfs:comment "This Where can be used for all mediaObjects" ;
     schema:name "Where" .
-
-dw:Reverse_Image_Search a dw:Task ;
-    dw:relatedMediaType dw:Enhance_Image,
-        dw:Image,
-        dw:KeyframeExtraction,
-        dw:Object_identification,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Reverse Image Search" .
 
 dw:Audio a dw:MediaObject ;
     schema:name "Audio" .
