@@ -1,4 +1,4 @@
-# KID Knowledge Web Backend
+# KID howtoverify.info backend
 
 It is a repository that contains the source code for implementing the backend of the website. 
 Given user click history, the code retrieves a subgraph of the knowledge graph, and then returns a dictionary containing nodes and edges of the subgraph.
