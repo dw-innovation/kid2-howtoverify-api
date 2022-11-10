@@ -38,7 +38,7 @@ dw:Boom_3D a dw:SoftwareApplication ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Boom 3D is..." ;
     schema:aboutUrl "" ;
-    schema:applicationUrl "https://fixthephoto.com/best-free-audio-enhancers.html" ;
+    schema:applicationUrl "LIST of enhancers https://fixthephoto.com/best-free-audio-enhancers.html" ;
     schema:name "Boom 3D" ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
@@ -80,7 +80,7 @@ dw:Enhance_Image_1 a dw:Task ;
     schema:name "Enhance Image" .
 
 dw:Enhance_Image_2 a dw:Task ;
-    dw:parentNode dw:What ;
+    dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -109,6 +109,16 @@ dw:Exif_Data a dw:SoftwareApplication ;
     schema:name "Exif Data" ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
+
+dw:Eyewitness a dw:Task ;
+    dw:parentNode dw:Interviews ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks "['the person might be emotional affect', 'remark 2']" ;
+    rdfs:comment "is a person you recorded the footage and/or saw what has happened and might share more information how it enfolded." ;
+    schema:name "eyewitness" .
 
 dw:Fotoforensic a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -145,17 +155,16 @@ dw:Geohints a dw:SoftwareApplication ;
 dw:Google_Advanced_Search a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Author,
-        dw:General_Search,
-        dw:What ;
-    dw:relatedMediaType dw:Image,
+        dw:File_Name,
+        dw:General_Search ;
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source ;
     dw:remarks "['Scholar search at this [link](https://scholar.google.com/) ']" ;
     rdfs:comment "" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
     schema:name "Google Advanced Search" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Google_Cache a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -255,15 +264,6 @@ dw:Headline a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Headline" .
-
-dw:How a dw:Question ;
-    dw:parentNode dw:Audio,
-        dw:Image,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    rdfs:comment "This How can be used for all mediaObjects" ;
-    schema:name "How" .
 
 dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
     dw:howTo "['You can watch at this [link](https://citizenevidence.org/2013/10/20/how-to-creating-a-panoramic-picture-from-a-video/)', 'step 2']" ;
@@ -382,7 +382,8 @@ dw:LinkedIn a dw:SoftwareApplication ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "LinkedIn is a" ;
     schema:applicationUrl "https://www.linkedin.com/" ;
-    schema:name "" ;
+    schema:name "",
+        "LinkedIn" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Listen_to_the_audio a dw:Task ;
@@ -555,7 +556,7 @@ dw:RIS_\(Image\) a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
-    schema:name "Reverse Image Search for images" .
+    schema:name "Reverse Image Search" .
 
 dw:RIS_\(Video\) a dw:Task ;
     dw:parentNode dw:KeyframeExtraction,
@@ -729,7 +730,7 @@ dw:Twitter a dw:Task ;
 dw:USearch a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:File_Name,
-        <http://dw.com/Task/General_Search> ;
+        dw:General_Search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -941,6 +942,16 @@ dw:Yandex_Maps a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "free" .
 
+dw:newsgathering a dw:Task ;
+    dw:parentNode dw:How ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks "['shared excel sheet']" ;
+    rdfs:comment "is a process to collect and analyse more content on the incident to create a timeline of it." ;
+    schema:name "newsgathering" .
+
 dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
@@ -978,26 +989,6 @@ dw:Facebook a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Facebook" .
 
-dw:File_Name a dw:Task ;
-    dw:parentNode dw:What,
-        dw:Who ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "File Name" .
-
-dw:General_Search a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Audio,
-        dw:Image,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "General search" .
-
 dw:IP_address a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Text ;
@@ -1011,6 +1002,16 @@ dw:Instagram a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Instagram" .
+
+dw:Interviews a dw:Task ;
+    dw:parentNode dw:How ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks "['Monitoring system ', 'remark 2']" ;
+    rdfs:comment "is essential to understand what has happened before and after. Find more data and talk to sources on the ground like journalists and eyewitnesses." ;
+    schema:name "interviews" .
 
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:What ;
@@ -1087,6 +1088,26 @@ dw:Domain_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Domain name" .
 
+dw:File_Name a dw:Task ;
+    dw:parentNode dw:What,
+        dw:Who ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "File Name" .
+
+dw:General_Search a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "General search" .
+
 dw:Historic_versions a dw:Task ;
     dw:parentNode dw:What,
         dw:When ;
@@ -1094,6 +1115,15 @@ dw:Historic_versions a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Historic versions" .
+
+dw:How a dw:Question ;
+    dw:parentNode dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    rdfs:comment "This How can be used for all mediaObjects" ;
+    schema:name "How" .
 
 dw:Language_detection a dw:Task ;
     dw:parentNode dw:What,
@@ -1139,6 +1169,13 @@ dw:eMail a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "eMail" .
 
+dw:KeyframeExtraction a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Keyframe Extraction" .
+
 dw:Metadata a dw:Task ;
     dw:parentNode dw:When,
         dw:Where,
@@ -1175,13 +1212,6 @@ dw:Digital_Footprint a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Digital footprint" .
 
-dw:KeyframeExtraction a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Keyframe Extraction" .
-
 dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
@@ -1189,6 +1219,14 @@ dw:Landscape_identification a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Landscape Identification" .
+
+dw:Object_identification a dw:Task ;
+    dw:parentNode dw:Visual_Intelligence ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Object Identification" .
 
 dw:Website a dw:Task ;
     dw:parentNode dw:Digital_Footprint,
@@ -1214,14 +1252,6 @@ dw:Author a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Author" .
 
-dw:Object_identification a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Object Identification" .
-
 dw:Who a dw:Question ;
     dw:parentNode dw:Audio,
         dw:Image,
@@ -1231,13 +1261,19 @@ dw:Who a dw:Question ;
     rdfs:comment "This Who can be used for all mediaObjects" ;
     schema:name "Who" .
 
-dw:Visual_Intelligence a dw:Task ;
-    dw:parentNode dw:What,
-        dw:Where ;
+dw:Enhance_Image a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
+    schema:name "Enhance Image Search" .
+
+dw:Visual_Intelligence a dw:Task ;
+    dw:parentNode dw:Where ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['Sharpening your senses with the interactive quizzes https://digger-project.com/sharpen-your-senses/', 'Writing down 20 hints you can detect in the visual like street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks. ']" ;
+    rdfs:comment "is a way to gather information and facts about what is there in the visual. You combine those in your search and narrow down step by step." ;
     schema:name "Visual Intelligence" .
 
 dw:Who_created_content a dw:SubQuestion ;
@@ -1247,19 +1283,11 @@ dw:Who_created_content a dw:SubQuestion ;
     rdfs:comment "Unstructured text" ;
     schema:name "Who created content" .
 
-dw:Enhance_Image a dw:Task ;
-    dw:relatedMediaType dw:Enhance_Image,
-        dw:Image,
-        dw:KeyframeExtraction,
-        dw:Object_identification,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Enhance Image Search" .
-
 dw:Social_Media_profiles a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
-    dw:relatedMediaType dw:Source ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Social Media profiles" .
@@ -1291,7 +1319,9 @@ dw:When a dw:Question ;
 
 dw:Social_Media_activities a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
-    dw:relatedMediaType dw:Source ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Social Media activities" .
