@@ -268,6 +268,9 @@ class KIDGraph:
     @staticmethod
     def search(begin_node: str, root_node: str):
         begin_node_id = g.value(None, SCHEMA.name, Literal(begin_node))
+        if not KIDGraph.check_path(begin_node_id, root_node):
+            return []
+
         paths = KIDGraph.search_by_id(begin_node_id, root_node)
         return paths
 
@@ -275,6 +278,7 @@ class KIDGraph:
     def search_by_id(begin_node_id, root_node):
         results = g.query(query_paths(),
                           initBindings={'endNode': URIRef(root_node), 'beginNode': URIRef(begin_node_id)})
+
         nx_g = nx.DiGraph()
         target_node = None
         if not target_node:
