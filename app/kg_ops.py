@@ -116,8 +116,8 @@ class KIDGraph:
             self.click_history = click_history
             self.clicked_node = click_history[-1]
             self.root_node = click_history[0]
-            self.node_ids.add(self.clicked_node)
             self.node_ids = set()
+            self.node_ids.add(self.clicked_node)
             self.links = {}
 
     def assign_levels(self, begin_node_id, level, level_dict={}):
