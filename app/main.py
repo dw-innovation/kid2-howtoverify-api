@@ -45,9 +45,13 @@ def subgraph(click_history: ClickHistoryRequest):
     return construct_subgraph(click_history)
 
 
-@CACHE.memoize()
 @app.post("/search", response_model=List)
 def search(search_request: SearchRequest):
+    return _search(search_request)
+
+
+@CACHE.memoize()
+def _search(search_request):
     return KIDGraph.search(begin_node=search_request.query, root_node=search_request.category)
 
 
