@@ -1,5 +1,5 @@
 from rdflib import Graph, Namespace
-from rdflib import URIRef
+from rdflib import URIRef, Literal
 from rdflib.namespace import RDF, RDFS, DCTERMS
 from rdflib.plugins.sparql import prepareQuery
 import networkx as nx
@@ -68,17 +68,15 @@ def query_parents():
     return q
 
 
-def query_paths(keyword):
+def query_paths():
     query = '''
         SELECT DISTINCT ?midEnd ?midStart ?beginNode
         WHERE
         {   
-            ?beginNode schema:name "''' + keyword + '''" .
             ?beginNode dw:parentNode* ?midEnd .
             ?midEnd dw:parentNode ?midStart .
             ?midStart dw:parentNode* ?endNode .
         }
-        ORDER BY ?endNode ?beginNode
         '''
     q = prepareQuery(query,
                      initNs={"dw": DW, "schema": SCHEMA},
@@ -269,25 +267,47 @@ class KIDGraph:
 
     @staticmethod
     def search(begin_node: str, root_node: str):
-        q = query_paths(begin_node)
-        results = g.query(q, initBindings={'endNode': URIRef(root_node)})
+        begin_node_id = g.value(None, SCHEMA.name, Literal(begin_node))
+        results = g.query(query_paths(), initBindings={'endNode': URIRef(root_node), 'beginNode': begin_node_id})
 
         nx_g = nx.DiGraph()
         target_node = None
-        for idx, result in enumerate(results):
-            if not target_node:
-                target_node = str(result.beginNode)
-                nx_g.add_nodes_from([target_node, root_node])
 
-            mid_start = str(result.midStart)
-            mid_end = str(result.midEnd)
-            nx_g.add_nodes_from([mid_start, mid_end])
-            nx_g.add_edge(mid_start, mid_end)
+        if not target_node:
+            target_node = begin_node_id
+            nx_g.add_nodes_from([str(target_node), str(root_node)])
+
+        if len(results) == 0:
+            parent_node = g.value(subject=begin_node_id, predicate=DW.parentNode)
+
+            for subject in g.subjects(predicate=RDFS.subClassOf, object=parent_node):
+
+                results = g.query(query_paths(),
+                                  initBindings={'endNode': URIRef(root_node), 'beginNode': subject})
+                if len(results) > 0:
+                    nx_g.add_edge(str(subject), str(target_node))
+                    KIDGraph.search_graph(nx_g, results, root_node)
+        else:
+            KIDGraph.search_graph(nx_g, results, root_node)
 
         feats = {x: {"id": x, "name": str(g.value(URIRef(x), SCHEMA.name))} for x in nx_g.nodes}
 
         paths = []
-        for path in nx.all_simple_paths(nx_g, target=target_node, source=root_node):
+        for path in nx.all_simple_paths(nx_g, target=str(target_node), source=str(root_node)):
             paths.append(list(map(lambda node: feats[node], path)))
 
         return paths
+
+    @staticmethod
+    def search_graph(nx_g, results, root):
+        end_result = None
+        for idx, result in enumerate(results):
+            mid_start = str(result.midStart)
+            mid_end = str(result.midEnd)
+
+            end_result = mid_end
+
+            nx_g.add_nodes_from([mid_start, mid_end])
+            nx_g.add_edge(mid_start, mid_end)
+
+        nx_g.add_edge(end_result, str(root))

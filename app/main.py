@@ -31,7 +31,7 @@ class ClickHistoryRequest(BaseModel):
 
 
 class SearchRequest(BaseModel):
-    query = str
+    query: str
     category: str
 
 
@@ -39,18 +39,16 @@ class Response(BaseModel):
     nodes: List
     links: List
 
-class SearchResponse(BaseModel):
-    List
-
 
 @app.post("/graph", response_model=Response)
 def subgraph(click_history: ClickHistoryRequest):
     return construct_subgraph(click_history)
 
 
-@app.post("/search", response_model=SearchResponse)
-def search(query:SearchRequest):
-    return KIDGraph.search(query)
+@CACHE.memoize()
+@app.post("/search", response_model=List)
+def search(search_request: SearchRequest):
+    return KIDGraph.search(begin_node=search_request.query, root_node=search_request.category)
 
 
 @CACHE.memoize()
