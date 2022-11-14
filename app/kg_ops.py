@@ -70,7 +70,7 @@ def query_parents():
 
 def query_paths():
     query = '''
-        SELECT DISTINCT ?midEnd ?midStart ?beginNode
+        SELECT DISTINCT ?midEnd ?midStart ?beginNode ?endNode
         WHERE
         {   
             ?beginNode dw:parentNode* ?midEnd .
@@ -268,11 +268,15 @@ class KIDGraph:
     @staticmethod
     def search(begin_node: str, root_node: str):
         begin_node_id = g.value(None, SCHEMA.name, Literal(begin_node))
-        results = g.query(query_paths(), initBindings={'endNode': URIRef(root_node), 'beginNode': begin_node_id})
+        paths = KIDGraph.search_by_id(begin_node_id, root_node)
+        return paths
 
+    @staticmethod
+    def search_by_id(begin_node_id, root_node):
+        results = g.query(query_paths(),
+                          initBindings={'endNode': URIRef(root_node), 'beginNode': URIRef(begin_node_id)})
         nx_g = nx.DiGraph()
         target_node = None
-
         if not target_node:
             target_node = begin_node_id
             nx_g.add_nodes_from([str(target_node), str(root_node)])
@@ -280,23 +284,33 @@ class KIDGraph:
         if len(results) == 0:
             parent_node = g.value(subject=begin_node_id, predicate=DW.parentNode)
 
-            for subject in g.subjects(predicate=RDFS.subClassOf, object=parent_node):
+            if parent_node:
+                for subject in g.subjects(predicate=RDFS.subClassOf, object=parent_node):
 
-                results = g.query(query_paths(),
-                                  initBindings={'endNode': URIRef(root_node), 'beginNode': subject})
-                if len(results) > 0:
-                    nx_g.add_edge(str(subject), str(target_node))
-                    KIDGraph.search_graph(nx_g, results, root_node)
+                    results = g.query(query_paths(),
+                                      initBindings={'endNode': URIRef(root_node), 'beginNode': subject})
+                    if len(results) > 0:
+                        nx_g.add_edge(str(subject), str(target_node))
+                        KIDGraph.search_graph(nx_g, results, root_node)
         else:
             KIDGraph.search_graph(nx_g, results, root_node)
-
         feats = {x: {"id": x, "name": str(g.value(URIRef(x), SCHEMA.name))} for x in nx_g.nodes}
-
         paths = []
         for path in nx.all_simple_paths(nx_g, target=str(target_node), source=str(root_node)):
             paths.append(list(map(lambda node: feats[node], path)))
-
         return paths
+
+    @staticmethod
+    def check_path(begin_node_id, root_node):
+        for object in g.objects(URIRef(begin_node_id), DW.parentNode):
+
+            media_types = g.objects(object, DW.relatedMediaType)
+
+            for media_type in media_types:
+                if str(media_type) == str(root_node):
+                    return True
+
+        return False
 
     @staticmethod
     def search_graph(nx_g, results, root):
@@ -311,3 +325,26 @@ class KIDGraph:
             nx_g.add_edge(mid_start, mid_end)
 
         nx_g.add_edge(end_result, str(root))
+
+    @staticmethod
+    def get_index():
+        media_objects = []
+        for s in g.subjects(RDF.type, DW.MediaObject):
+            media_objects.append(s)
+
+        index = []
+        for app in g.subjects(RDF.type, DW.SoftwareApplication):
+            id_app = str(app)
+
+            categories = []
+            for media_object in media_objects:
+                id_media_object = str(media_object)
+
+                if KIDGraph.check_path(begin_node_id=id_app, root_node=id_media_object):
+                    categories.append(id_media_object)
+
+            index.append({'id': id_app,
+                          'name': str(g.value(app, SCHEMA.name)),
+                          'categories': categories
+                          })
+        return index

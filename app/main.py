@@ -50,6 +50,16 @@ def search(search_request: SearchRequest):
     return _search(search_request)
 
 
+@app.get("/getIndex", response_model=List)
+def search():
+    return get_index()
+
+
+@CACHE.memoize()
+def get_index():
+    return KIDGraph.get_index()
+
+
 @CACHE.memoize()
 def _search(search_request):
     return KIDGraph.search(begin_node=search_request.query, root_node=search_request.category)
