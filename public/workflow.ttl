@@ -2,17 +2,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 
-dw:Baidu a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Reverse_Image_Search ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Baidu Reverse Image Search..." ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://image.baidu.com" ;
-    schema:name "Baidu" ;
-    schema:publisher "Baidu" ;
-    schema:usageInfo "paid / free" .
-
 dw:Baidu_Images a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Reverse_Image_Search ;
@@ -261,7 +250,8 @@ dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
 
 dw:Impressum a dw:Task ;
     dw:parentNode dw:Website ;
-    dw:relatedMediaType dw:Text ;
+    dw:relatedMediaType dw:Source,
+        dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Impressum" .
@@ -281,25 +271,14 @@ dw:InVid a dw:SoftwareApplication ;
 dw:Instagram_search a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Instagram ;
-    dw:relatedMediaType dw:Source ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['Explore locations at this [link](https://www.instagram.com/explore/locations/)', 'remark 2']" ;
     rdfs:comment "Instagram search .." ;
     schema:applicationUrl "https://www.instagram.com/search/" ;
     schema:name "Instagram search" ;
     schema:publisher "Bladibla Productions" .
-
-dw:Instagram_search_\(Instagram\) a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Social_Media_activities,
-        dw:Social_Media_profiles ;
-    dw:relatedMediaType dw:Source ;
-    dw:remarks "['Explore locations https://www.instagram.com/explore/locations/', 'remark 2']" ;
-    rdfs:comment "Channel search and analyses" ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://www.instagram.com/search/" ;
-    schema:name "Instagram search" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
 
 dw:IntelligenceX a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -495,13 +474,6 @@ dw:North_Data a dw:SoftwareApplication ;
     schema:name "North Data" ;
     schema:publisher "" .
 
-dw:Ownership a dw:Task ;
-    dw:parentNode dw:Website ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Ownership" .
-
 dw:Peakfinder a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Landscape_identification ;
@@ -527,23 +499,13 @@ dw:Photo_Scissors a dw:SoftwareApplication ;
     schema:publisher "..." ;
     schema:usageInfo "paid / free" .
 
-dw:Pipl a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Person_identification ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Pipl ..." ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://pipl.com" ;
-    schema:name "Pipl" ;
-    schema:publisher "Pipl" ;
-    schema:usageInfo "paid / free" .
-
 dw:RIS_\(Image\) a dw:Task ;
     dw:parentNode dw:Enhance_Image,
         dw:Object_identification,
         dw:Person_identification,
         dw:What ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Source ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
@@ -615,48 +577,26 @@ dw:Suncalc a dw:SoftwareApplication ;
 dw:Telemetrio a dw:SoftwareApplication ;
     dw:howTo "['In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.\\nExample: https://t.me/s/MOHreport/1', 'step 2']" ;
     dw:parentNode dw:Telegram ;
-    dw:relatedMediaType dw:Source ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Channel search and analyses" ;
     schema:applicationUrl "https://telemetr.io/" ;
-    schema:name "Tgstat" ;
+    schema:name "Telemetrio" ;
     schema:publisher "Bladibla Productions" .
-
-dw:Telemetrio_\(Telegram\) a dw:SoftwareApplication ;
-    dw:howTo "['In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.\\nExample: https://t.me/s/MOHreport/1', 'step 2']" ;
-    dw:parentNode dw:Social_Media_activities,
-        dw:Social_Media_profiles ;
-    dw:relatedMediaType dw:Source ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Channel search and analyses" ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://telemetr.io/" ;
-    schema:name "Tgstat" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
 
 dw:Tgstat a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Telegram ;
-    dw:relatedMediaType dw:Source ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.\\nExample: https://t.me/s/MOHreport/1', 'remark 2']" ;
     rdfs:comment "Channel search and analyses" ;
     schema:applicationUrl "https://tgstat.com/" ;
     schema:name "Tgstat" ;
     schema:publisher "Bladibla Productions" .
-
-dw:Tgstat_\(Telegram\) a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Social_Media_activities,
-        dw:Social_Media_profiles ;
-    dw:relatedMediaType dw:Source ;
-    dw:remarks "['In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.\\nExample: https://t.me/s/MOHreport/1', 'remark 2']" ;
-    rdfs:comment "Channel search and analyses" ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://tgstat.com/" ;
-    schema:name "Tgstat" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
 
 dw:ThatsThem a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -679,14 +619,6 @@ dw:TimeandDate a dw:SoftwareApplication ;
     schema:name "TimeandDate" ;
     schema:publisher "Bladibla Productions" .
 
-dw:Timestamp a dw:Task ;
-    dw:parentNode dw:When ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Upload time does not mean the timing when the content was created. It is important to double check when was the content posted online versus when was it created." ;
-    schema:name "Timestamp" .
-
 dw:Topic a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
@@ -694,25 +626,17 @@ dw:Topic a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Topic" .
 
-dw:Tweetbeaver_\(Twitter\) a dw:SoftwareApplication ;
+dw:Tweetbeaver a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Social_Media_activities,
-        dw:Social_Media_profiles ;
-    dw:relatedMediaType dw:Source ;
+    dw:parentNode dw:Twitter ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Tweetbeaver is a" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://tweetbeaver.com/" ;
     schema:name "Tweetbeaver" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
-
-dw:Twitter a dw:Task ;
-    dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Source ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Twitter" .
+    schema:publisher "Bladibla Productions" .
 
 dw:USearch a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -764,20 +688,12 @@ dw:ViewDNS a dw:SoftwareApplication ;
     schema:name "ViewDNS" ;
     schema:publisher "Bladibla Productions" .
 
-dw:Visual_elements a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
-    schema:name "Visual elements" .
-
-dw:Visual_elements_1 a dw:Task ;
+dw:Visuals a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "photos, graphics" ;
-    schema:name "Visual elements" .
+    schema:name "Visual" .
 
 dw:Web_Archive a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -790,16 +706,10 @@ dw:Web_Archive a dw:SoftwareApplication ;
     schema:name "Web Archive" ;
     schema:publisher "Bladibla Productions" .
 
-dw:Website_Analyses_\(Text\) a dw:Task ;
-    dw:parentNode dw:Where ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Text was found on a specific website" ;
-    schema:name "Website Analyses" .
-
 dw:Website_Analytics a dw:Task ;
     dw:parentNode dw:Website ;
-    dw:relatedMediaType dw:Text ;
+    dw:relatedMediaType dw:Source,
+        dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Text was found on a specific website" ;
     schema:name "Website Analytics" .
@@ -818,8 +728,9 @@ dw:WhatsMyName a dw:SoftwareApplication ;
 
 dw:WhoIs a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Websites_Analyses_\(Source\) ;
-    dw:relatedMediaType dw:Source ;
+    dw:parentNode dw:Website ;
+    dw:relatedMediaType dw:Source,
+        dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "What is:" ;
     schema:aboutUrl "" ;
@@ -831,27 +742,14 @@ dw:WhoIs a dw:SoftwareApplication ;
 dw:WhoPostedWhat a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Facebook ;
-    dw:relatedMediaType dw:Source ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "What is:" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://whopostedwhat.com/" ;
     schema:name "WhoPostedWhat" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
-
-dw:WhoPostedWhat_\(Facebook\) a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Social_Media_activities,
-        dw:Social_Media_profiles ;
-    dw:relatedMediaType dw:Source ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "What is:" ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://whopostedwhat.com/" ;
-    schema:name "WhoPostedWhat" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Whois_Domain a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -978,7 +876,9 @@ dw:Enhance_Image_2 a dw:Task ;
 
 dw:Facebook a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Source ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Facebook" .
@@ -992,7 +892,9 @@ dw:IP_address a dw:Task ;
 
 dw:Instagram a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Source ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Instagram" .
@@ -1021,6 +923,14 @@ dw:Modification a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Modification" .
 
+dw:Ownership a dw:Task ;
+    dw:parentNode dw:Website ;
+    dw:relatedMediaType dw:Ownership,
+        dw:Text ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Ownership" .
+
 dw:Panorama_stitch a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Video ;
@@ -1035,15 +945,14 @@ dw:Phone_number a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Phone number" .
 
-dw:Tweetbeaver a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Tweetbeaver ;
-    dw:relatedMediaType dw:Source ;
+dw:Twitter a dw:Task ;
+    dw:parentNode dw:Social_Media_activities ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Tweetbeaver is a" ;
-    schema:applicationUrl "https://tweetbeaver.com/" ;
-    schema:name "Tweetbeaver" ;
-    schema:publisher "Bladibla Productions" .
+    rdfs:comment "is a" ;
+    schema:name "Twitter" .
 
 dw:Weather_Analyses a dw:Task ;
     dw:parentNode dw:When ;
@@ -1052,13 +961,6 @@ dw:Weather_Analyses a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Weather can hint you to the date when the footage was created. It can also narrow down the continent to detmine the location." ;
     schema:name "Weather Analyses" .
-
-dw:Websites_Analyses_\(Source\) a dw:Task ;
-    dw:parentNode dw:Digital_Footprint ;
-    dw:relatedMediaType dw:Source ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Websites analyses" .
 
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:Enhance_Image ;
@@ -1073,13 +975,6 @@ dw:Business_name a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Business Name" .
-
-dw:Domain_name a dw:Task ;
-    dw:parentNode dw:Website ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Domain name" .
 
 dw:File_Name a dw:Task ;
     dw:parentNode dw:What ;
@@ -1125,6 +1020,14 @@ dw:Language_detection a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Language detection" .
 
+dw:Person_identification a dw:Task ;
+    dw:parentNode dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Person Identification can be used for ......" ;
+    schema:name "Person Identification" .
+
 dw:Shadow_Analyses a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Image,
@@ -1133,10 +1036,21 @@ dw:Shadow_Analyses a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Shadow Analyses" .
 
+dw:Social_Media_profiles a dw:Task ;
+    dw:parentNode dw:Digital_Footprint ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Social Media profiles" .
+
 dw:Telegram a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Source ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
+    dw:remarks "Github https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines" ;
     rdfs:comment "is a" ;
     schema:name "Telegram" .
 
@@ -1176,39 +1090,6 @@ dw:Background_Removal a dw:Task ;
     rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
     schema:name "Background removal" .
 
-dw:KeyframeExtraction a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Keyframe Extraction" .
-
-dw:Metadata a dw:Task ;
-    dw:parentNode dw:When,
-        dw:Where,
-        dw:Who_created_content ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Metadata can help you" ;
-    schema:name "Metadata" .
-
-dw:Person_identification a dw:Task ;
-    dw:parentNode dw:Who_is_in_content ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Person Identification can be used for ......" ;
-    schema:name "Person Identification" .
-
-dw:Person_name a dw:Task ;
-    dw:parentNode dw:Author,
-        dw:Who_is_in_content ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Person Name" .
-
 dw:Digital_Footprint a dw:Task ;
     dw:parentNode dw:Who_created_content,
         dw:Who_is_in_content ;
@@ -1218,6 +1099,39 @@ dw:Digital_Footprint a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Digital footprint" .
+
+dw:Domain_name a dw:Task ;
+    dw:parentNode dw:Website ;
+    dw:relatedMediaType dw:Domain_name,
+        dw:Text ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Domain name" .
+
+dw:KeyframeExtraction a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Keyframe Extraction" .
+
+dw:Metadata a dw:Task ;
+    dw:howTo "is usually attached to an image or video. It includes the photo/video size, recording date and device, location, editing programs and technical details (aperture, ISO, exposure time...)" ;
+    dw:parentNode dw:When,
+        dw:Where,
+        dw:Who_created_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['can easily be maniupualted so also cross-reference the information', 'shared visuals on social networks usually do not have metadata. Exceptions are Telegram (check!!) People can send you the original via email as well. ']" ;
+    schema:name "Metadata" .
+
+dw:Person_name a dw:Task ;
+    dw:parentNode dw:Author,
+        dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Person Name" .
 
 dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
@@ -1235,14 +1149,14 @@ dw:Object_identification a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Object Identification" .
 
-dw:Website a dw:Task ;
-    dw:parentNode dw:Digital_Footprint,
-        dw:Where ;
-    dw:relatedMediaType dw:Source,
-        dw:Text ;
+dw:Social_Media_activities a dw:Task ;
+    dw:parentNode dw:Digital_Footprint ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
-    schema:name "Website" .
+    schema:name "Social Media activities" .
 
 dw:Who a dw:Question ;
     dw:parentNode dw:Audio,
@@ -1283,21 +1197,21 @@ dw:Visual_Intelligence a dw:Task ;
     rdfs:comment "is a way to gather information and facts about what is there in the visual. You combine those in your search and narrow down step by step." ;
     schema:name "Visual Intelligence" .
 
+dw:Website a dw:Task ;
+    dw:parentNode dw:Digital_Footprint,
+        dw:Where ;
+    dw:relatedMediaType dw:Source,
+        dw:Text ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Website" .
+
 dw:Who_created_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    rdfs:comment "Unstructured text" ;
+    dw:remarks "Who created the original piece of content is not necessarily the one who uploaded it on the platform where you found it. It is very easy to download or reshare content from any platform like Youtube or Twitter, then publish that same content to another social platform. You want to verify the primary source who eywitnessed the incident. It can tell you the motivation behind recording it and getting more context." ;
     schema:name "Who created content" .
-
-dw:Social_Media_profiles a dw:Task ;
-    dw:parentNode dw:Digital_Footprint ;
-    dw:relatedMediaType dw:Image,
-        dw:Source,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Social Media profiles" .
 
 dw:Visual_search a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
@@ -1307,15 +1221,6 @@ dw:Visual_search a dw:Task ;
     rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
     schema:name "Visual search" .
 
-dw:Manual_geolocation a dw:Task ;
-    dw:parentNode dw:Adress,
-        dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Landscape can be used for ......" ;
-    schema:name "Manual Geolocation" .
-
 dw:When a dw:Question ;
     dw:parentNode dw:Audio,
         dw:Image,
@@ -1324,6 +1229,15 @@ dw:When a dw:Question ;
         dw:Video ;
     rdfs:comment "This When can be used for all mediaObjects" ;
     schema:name "When" .
+
+dw:Manual_geolocation a dw:Task ;
+    dw:parentNode dw:Adress,
+        dw:Visual_Intelligence ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Landscape can be used for ......" ;
+    schema:name "Manual Geolocation" .
 
 dw:Reverse_Image_Search a dw:Task ;
     dw:relatedMediaType dw:Enhance_Image,
@@ -1335,22 +1249,15 @@ dw:Reverse_Image_Search a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Reverse Image Search" .
 
-dw:Social_Media_activities a dw:Task ;
-    dw:parentNode dw:Digital_Footprint ;
-    dw:relatedMediaType dw:Image,
-        dw:Source,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Social Media activities" .
-
 dw:Where a dw:Question ;
     dw:parentNode dw:Audio,
         dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
-    rdfs:comment "This Where can be used for all mediaObjects" ;
+    dw:remarks """Where was the content captured? Geographic location tied to a particular tweet or Facebook post, but this information can be easily manipulated. Metadata can also be manipulated.
+
+Always independently verify the location with a satellite image or a street view image of a map service.""" ;
     schema:name "Where" .
 
 dw:Audio a dw:MediaObject ;
