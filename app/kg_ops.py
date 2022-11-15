@@ -268,7 +268,7 @@ class KIDGraph:
     @staticmethod
     def search(begin_node: str, root_node: str):
         begin_node_id = g.value(None, SCHEMA.name, Literal(begin_node))
-        if begin_node_id:
+        if not begin_node_id:
             return []
         if not KIDGraph.check_path(begin_node_id, root_node):
             return []
