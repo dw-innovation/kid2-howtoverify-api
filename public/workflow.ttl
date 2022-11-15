@@ -354,7 +354,8 @@ Back ground noise
 What can I tell about what I am hearing""" ;
     schema:name "Listen to the audio" .
 
-dw:Magnifier dw:howTo "['step 1', 'step 2']" ;
+dw:Magnifier a dw:SoftwareApplication ;
+    dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Zoom_in_details ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -491,8 +492,7 @@ dw:Photo_Scissors a dw:SoftwareApplication ;
     schema:usageInfo "paid / free" .
 
 dw:RIS_\(Image\) a dw:Task ;
-    dw:parentNode dw:Enhance_Image,
-        dw:Object_identification,
+    dw:parentNode dw:Object_identification,
         dw:Person_identification,
         dw:What ;
     dw:relatedMediaType dw:Image,
@@ -1090,6 +1090,15 @@ dw:Domain_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Domain name" .
 
+dw:Enhance_Image a dw:Task ;
+    dw:parentNode dw:KeyframeExtraction,
+        dw:Modification ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    schema:name "Enhance Image Search" .
+
 dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Video ;
@@ -1114,15 +1123,6 @@ dw:Person_name a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Person Name" .
-
-dw:Enhance_Image a dw:Task ;
-    dw:parentNode dw:KeyframeExtraction,
-        dw:Modification ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
-    schema:name "Enhance Image Search" .
 
 dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
