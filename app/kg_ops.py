@@ -323,12 +323,27 @@ class KIDGraph:
             mid_start = str(result.midStart)
             mid_end = str(result.midEnd)
 
-            end_result = mid_end
+            if str(g.value(result.midStart, RDF.type)) == "http://dw.com/Task":
 
+                if not KIDGraph.exists_media_type(result.midStart, root):
+                    continue
+
+            if str(g.value(result.midEnd, RDF.type)) == "http://dw.com/Task":
+                if not KIDGraph.exists_media_type(result.midEnd, root):
+                    continue
+
+            end_result = mid_end
             nx_g.add_nodes_from([mid_start, mid_end])
             nx_g.add_edge(mid_start, mid_end)
 
         nx_g.add_edge(end_result, str(root))
+
+    @staticmethod
+    def exists_media_type(subject, reference_media_type):
+        for object in g.objects(subject, DW.relatedMediaType):
+            if str(object) == reference_media_type:
+                return True
+        return False
 
     @staticmethod
     def get_index():
