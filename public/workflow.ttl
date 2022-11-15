@@ -50,15 +50,6 @@ dw:Edit_photo a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
 
-dw:Enhance_Image_1 a dw:Task ;
-    dw:parentNode dw:KeyframeExtraction ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
-    rdfs:subClassOf dw:Enhance_Image ;
-    schema:name "Enhance Image" .
-
 dw:Epios a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:eMail ;
@@ -326,7 +317,7 @@ dw:LatLong a dw:SoftwareApplication ;
 
 dw:Lets_enhance_io a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Enhance_Image_2 ;
+    dw:parentNode dw:Enhance_Image ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Lets enhance io is an image enhancer" ;
@@ -865,15 +856,6 @@ dw:CropRotateFlip a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "CropRotateFlip" .
 
-dw:Enhance_Image_2 a dw:Task ;
-    dw:parentNode dw:Modification ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
-    rdfs:subClassOf dw:Enhance_Image ;
-    schema:name "Enhance Image" .
-
 dw:Facebook a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
     dw:relatedMediaType dw:Image,
@@ -1133,6 +1115,15 @@ dw:Person_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Person Name" .
 
+dw:Enhance_Image a dw:Task ;
+    dw:parentNode dw:KeyframeExtraction,
+        dw:Modification ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    schema:name "Enhance Image Search" .
+
 dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
@@ -1181,13 +1172,6 @@ dw:Author a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Author" .
-
-dw:Enhance_Image a dw:Task ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Enhance Image Search" .
 
 dw:Visual_Intelligence a dw:Task ;
     dw:parentNode dw:Where ;

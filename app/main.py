@@ -65,7 +65,7 @@ def _search(search_request):
     return KIDGraph.search(begin_node=search_request.query, root_node=search_request.category)
 
 
-@CACHE.memoize()
+# @CACHE.memoize()
 def construct_subgraph(click_history):
     subgraph = KIDGraph(click_history=click_history.click_history)
     return subgraph.construct()
