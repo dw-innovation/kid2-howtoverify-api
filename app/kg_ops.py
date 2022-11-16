@@ -35,76 +35,21 @@ g = Graph()
 g.parse("public/workflow.ttl")
 
 
-def query_parents():
-    query = '''
-        SELECT DISTINCT ?parentOfBeginNode ?parentOfParentNode ?childNode ?parentOfParentRelatedMediaType ?parentOfBeginNodeRelatedMediaType ?childNodeMediaType
-        WHERE
-        {
-            ?beginNode dw:parentNode* ?parentOfBeginNode .
-            ?parentOfBeginNode dw:parentNode ?parentOfParentNode .
-            OPTIONAL {
-                ?childNode dw:parentNode ?parentOfParentNode .
-            }
-            OPTIONAL {
-                   ?parentOfParentNode a dw:Task.
-                   ?parentOfParentNode dw:relatedMediaType ?parentOfParentRelatedMediaType .
-            }
-            OPTIONAL {
-                   ?parentOfBeginNode a dw:Task.
-                   ?parentOfBeginNode dw:relatedMediaType ?parentOfBeginNodeRelatedMediaType .
-            }
-
-            OPTIONAL {
-                   ?childNode a dw:Task.
-                   ?childNode dw:relatedMediaType ?childNodeMediaType .
-            }
-
-            ?parentOfParentNode dw:parentNode* ?endNode .
-        }
-        '''
-    q = prepareQuery(query,
-                     initNs={"dw": DW},
-                     )
-    return q
-
-
 def query_paths():
     query = '''
-        SELECT DISTINCT ?midEnd ?midStart ?beginNode ?endNode
+        SELECT DISTINCT ?midEnd ?midStart ?beginNode ?endNode ?childMidStart
         WHERE
         {   
             ?beginNode dw:parentNode* ?midEnd .
             ?midEnd dw:parentNode ?midStart .
             ?midStart dw:parentNode* ?endNode .
+            OPTIONAL {
+                ?childMidStart dw:parentNode ?midStart .
+            }
         }
         '''
     q = prepareQuery(query,
                      initNs={"dw": DW, "schema": SCHEMA},
-                     )
-    return q
-
-
-def query_children():
-    query = '''
-         SELECT DISTINCT ?childNode ?relatedMediaType
-         WHERE
-         {
-            ?childNode dw:parentNode ?beginNode
-            OPTIONAL{
-             ?beginNode dw:parentNode* ?parentOfBeginNode .
-             ?parentOfBeginNode ?y ?parentOfParentNode .
-             ?parentOfParentNode dw:parentNode* ?endNode .
-             }
-
-            OPTIONAL {
-               ?childNode a dw:Task.
-               ?childNode dw:relatedMediaType ?relatedMediaType .
-            }
-
-         }
-         '''
-    q = prepareQuery(query,
-                     initNs={"dw": DW},
                      )
     return q
 
@@ -116,45 +61,56 @@ class KIDGraph:
             self.click_history = click_history
             self.clicked_node = click_history[-1]
             self.root_node = click_history[0]
-            self.node_ids = set()
-            self.node_ids.add(self.clicked_node)
-            self.links = {}
-
-    def assign_levels(self, begin_node_id, level, level_dict={}):
-        links = list(filter(lambda link: link['source'] == begin_node_id, self.links))
-
-        if len(links) == 0:
-            level_dict[begin_node_id] = level
-
-        for link in links:
-            level_dict[begin_node_id] = level
-            self.assign_levels(begin_node_id=link["target"], level=level + 1,
-                               level_dict=level_dict)
-
-        return level_dict
+            self.links = []
+            self.sub_graph = nx.DiGraph()
 
     def construct(self):
-        self.get_children()
+        # construct parent nodes from the click history
+        self.sub_graph.add_nodes_from(self.click_history)
 
-        if self.root_node != self.clicked_node:
-            self.get_parents()
+        for idx in range(len(self.click_history) - 1):
+            self.sub_graph.add_edge(self.click_history[idx], self.click_history[idx + 1])
 
-        self.links = list(self.links.values())
-        level_dict = self.assign_levels(begin_node_id=self.root_node, level=0)
+        for node in self.click_history:
+            parent_class_node = g.value(URIRef(node), RDFS.subClassOf)
+            if parent_class_node:
+                for subject in g.subjects(DW.parentNode, parent_class_node):
+                    if str(g.value(URIRef(subject), RDF.type)) == "http://dw.com/Task":
+                        if not KIDGraph.exists_media_type(subject, self.root_node):
+                            continue
+                    self.sub_graph.add_edge(str(node), str(subject))
+                    self.sub_graph.nodes(str(subject))
+            else:
+                for subject in g.subjects(DW.parentNode, URIRef(node)):
+                    if str(g.value(URIRef(subject), RDF.type)) == "http://dw.com/Task":
+                        if not KIDGraph.exists_media_type(subject, self.root_node):
+                            continue
+                    self.sub_graph.add_edge(str(node), str(subject))
+                    self.sub_graph.nodes(str(subject))
 
-        all_nodes = list(map(lambda node_id: self.get_feats(level_dict, node_id), self.node_ids))
+        for edge in self.sub_graph.edges:
+            source, target = edge
+            self.links.append({"source": source, "target": target})
+
+        nodes = []
+        for node in self.sub_graph.nodes:
+            data = self.get_feats(node)
+            for path in nx.all_simple_paths(self.sub_graph, source=self.root_node, target=node):
+                data["level"] = len(path) - 1
+
+            nodes.append(data)
 
         return {
-            'nodes': all_nodes,
+            'nodes': nodes,
             'links': self.links
         }
 
-    def get_feats(self, level_dict, node_id):
-        node_data = {}
-        node_data['id'] = node_id
-        node_data['type'] = str(g.value(URIRef(node_id), RDF.type))
-        node_data['name'] = str(g.value(URIRef(node_id), SCHEMA.name))
-        node_data['level'] = level_dict[node_id]
+    def get_feats(self, node_id):
+        node_data = {"id": node_id,
+                     "type": str(g.value(URIRef(node_id), RDF.type)),
+                     "name": str(g.value(URIRef(node_id), SCHEMA.name))
+                     }
+
         if node_id == self.clicked_node:
             node_data['comment'] = str(g.value(URIRef(node_id), RDFS.comment))
 
@@ -164,8 +120,8 @@ class KIDGraph:
             if node_data['type'] in ['http://dw.com/SoftwareApplication']:
                 node_data['remarks'] = None
 
-            for pred, obj in g.predicate_objects(URIRef(node_id)):
-                mapped_key = NS_MAPPING[str(pred)]
+            for rel, obj in g.predicate_objects(URIRef(node_id)):
+                mapped_key = NS_MAPPING[str(rel)]
 
                 if mapped_key not in node_data:
                     node_data[mapped_key] = str(obj)
@@ -175,96 +131,6 @@ class KIDGraph:
 
         return node_data
 
-    def get_parents(self):
-        results = g.query(query_parents(),
-                          initBindings={'beginNode': URIRef(self.clicked_node), 'endNode': URIRef(self.root_node)})
-
-        if len(results) == 0:
-            # e.g. Reverse Image Search
-            parent_class_clicked_node = g.value(URIRef(self.clicked_node), DW["parentNode"])
-
-            # e.g this will read the node whose media type is equal to root
-            begin_node = None
-            for subject in g.subjects(predicate=RDFS.subClassOf, object=parent_class_clicked_node):
-                if self.root_node == str(g.value(subject, DW["relatedMediaType"])):
-                    begin_node = subject
-                    break
-
-            result_of_parent_Class = g.query(query_children(),
-                                             initBindings={'beginNode': parent_class_clicked_node,
-                                                           'endNode': URIRef(self.root_node)})
-            for result in result_of_parent_Class:
-                if str(result.relatedMediaType) != self.root_node and result.relatedMediaType:
-                    continue
-
-                self.node_ids.add(str(result.childNode))
-
-                link_key = str(begin_node) + "_" + str(result.childNode)
-
-                if link_key not in self.links:
-                    self.links[link_key] = {
-                        'source': str(begin_node),
-                        'target': str(result.childNode)
-                    }
-
-            results = g.query(query_parents(),
-                              initBindings={'beginNode': begin_node, 'endNode': URIRef(self.root_node)})
-
-        for result in results:
-            if str(result.parentOfParentNode) not in self.click_history or str(
-                    result.parentOfBeginNode) not in self.click_history:
-                continue
-            #
-            if str(result.parentOfParentRelatedMediaType) != self.root_node and result.parentOfParentRelatedMediaType:
-                continue
-
-            if str(result.parentOfBeginNodeRelatedMediaType) != self.root_node and result.parentOfBeginNodeRelatedMediaType:
-                continue
-
-            link_key = str(result.parentOfParentNode) + "_" + str(result.parentOfBeginNode)
-
-            if link_key not in self.links:
-                self.links[link_key] = {
-                    'source': str(result.parentOfParentNode),
-                    'target': str(result.parentOfBeginNode)
-                }
-
-            if str(result.childNodeMediaType) != self.root_node and result.childNodeMediaType:
-                continue
-
-            # add child nodes of subParent nodes
-            self.node_ids.add(str(result.childNode))
-            link_key = str(result.parentOfParentNode) + "_" + str(result.childNode)
-            if link_key not in self.links:
-                self.links[link_key] = {
-                    'source': str(result.parentOfParentNode),
-                    'target': str(result.childNode)
-                }
-
-            self.node_ids.add(str(result.parentOfParentNode))
-            self.node_ids.add(str(result.parentOfBeginNode))
-
-    def get_children(self):
-        q = query_children()
-        results = g.query(q, initBindings={'beginNode': URIRef(self.clicked_node), 'endNode': URIRef(self.root_node)})
-
-        if len(results) == 0:
-            results = g.query(q, initBindings={'beginNode': g.value(URIRef(self.clicked_node), RDFS.subClassOf),
-                                               'endNode': URIRef(self.root_node)})
-
-        for result in results:
-            if str(result.relatedMediaType) != self.root_node and result.relatedMediaType:
-                continue
-
-            self.node_ids.add(str(result.childNode))
-            link_key = self.clicked_node + "_" + str(result.childNode)
-
-            if link_key not in self.links:
-                self.links[link_key] = {
-                    'source': self.clicked_node,
-                    'target': str(result.childNode)
-                }
-
     @staticmethod
     def search(begin_node: str, root_node: str):
         begin_node_id = g.value(None, SCHEMA.name, Literal(begin_node))
@@ -272,9 +138,58 @@ class KIDGraph:
             return []
         if not KIDGraph.check_path(begin_node_id, root_node):
             return []
-
         paths = KIDGraph.search_by_id(begin_node_id, root_node)
         return paths
+
+    @staticmethod
+    def search_helper(begin_node_id, root_node, nx_g):
+        if (None, RDFS.subClassOf, URIRef(begin_node_id)) in g:
+            for child_class_node in g.subjects(RDFS.subClassOf, URIRef(begin_node_id)):
+                if str(g.value(URIRef(child_class_node), RDF.type)) == "http://dw.com/Task":
+                    if not KIDGraph.exists_media_type(child_class_node, root_node):
+                        continue
+                    nx_g.add_node(str(child_class_node))
+                    nx_g.add_edge(str(child_class_node), str(begin_node_id))
+                    results = g.query(query_paths(),
+                                      initBindings={'endNode': URIRef(root_node), 'beginNode': child_class_node})
+                    if len(results) == 0:
+                        KIDGraph.search_helper(begin_node_id=str(child_class_node), root_node=root_node, nx_g=nx_g)
+
+                    KIDGraph.search_graph(nx_g, results, root_node)
+
+        parent_node = g.value(subject=URIRef(begin_node_id), predicate=DW.parentNode)
+        if parent_node:
+            if (None, RDFS.subClassOf, parent_node) in g:
+                for child_class_node in g.subjects(RDFS.subClassOf, parent_node):
+                    if str(g.value(URIRef(child_class_node), RDF.type)) == "http://dw.com/Task":
+                        if not KIDGraph.exists_media_type(child_class_node, root_node):
+                            continue
+                    nx_g.add_node(str(child_class_node))
+                    nx_g.add_edge(str(child_class_node), str(begin_node_id))
+                    results = g.query(query_paths(),
+                                      initBindings={'endNode': URIRef(root_node), 'beginNode': child_class_node})
+                    if len(results) == 0:
+                        KIDGraph.search_helper(begin_node_id=str(child_class_node), root_node=root_node, nx_g=nx_g)
+
+                    KIDGraph.search_graph(nx_g, results, root_node)
+            else:
+                nx_g.add_node(str(parent_node))
+                nx_g.add_edge(str(parent_node), str(begin_node_id))
+                for child_node in g.objects(subject=URIRef(parent_node), predicate=DW.parentNode):
+                    if str(g.value(URIRef(child_node), RDF.type)) == "http://dw.com/Task":
+                        if not KIDGraph.exists_media_type(child_node, root_node):
+                            continue
+                    nx_g.add_node(str(child_node))
+                    nx_g.add_edge(str(child_node), str(parent_node))
+                    results = g.query(query_paths(),
+                                      initBindings={'endNode': URIRef(root_node), 'beginNode': child_node})
+                    if len(results) == 0:
+                        KIDGraph.search_helper(begin_node_id=str(child_node), root_node=root_node, nx_g=nx_g)
+        else:
+            if begin_node_id == root_node:
+                results = g.query(query_paths(),
+                                  initBindings={'endNode': URIRef(begin_node_id), 'beginNode': parent_node})
+                KIDGraph.search_graph(nx_g, results, root_node)
 
     @staticmethod
     def search_by_id(begin_node_id, root_node):
@@ -287,30 +202,24 @@ class KIDGraph:
             target_node = begin_node_id
             nx_g.add_nodes_from([str(target_node), str(root_node)])
 
-        if len(results) == 0:
-            parent_node = g.value(subject=begin_node_id, predicate=DW.parentNode)
-
-            if parent_node:
-                for subject in g.subjects(predicate=RDFS.subClassOf, object=parent_node):
-
-                    results = g.query(query_paths(),
-                                      initBindings={'endNode': URIRef(root_node), 'beginNode': subject})
-                    if len(results) > 0:
-                        nx_g.add_edge(str(subject), str(target_node))
-                        KIDGraph.search_graph(nx_g, results, root_node)
-        else:
+        if len(results) > 0:
             KIDGraph.search_graph(nx_g, results, root_node)
+        else:
+            KIDGraph.search_helper(begin_node_id, root_node, nx_g)
+
         feats = {x: {"id": x, "name": str(g.value(URIRef(x), SCHEMA.name))} for x in nx_g.nodes}
+
         paths = []
         for path in nx.all_simple_paths(nx_g, target=str(target_node), source=str(root_node)):
             paths.append(list(map(lambda node: feats[node], path)))
+
         return paths
 
     @staticmethod
     def check_path(begin_node_id, root_node):
-        for object in g.objects(URIRef(begin_node_id), DW.parentNode):
+        for parent_node in g.objects(URIRef(begin_node_id), DW.parentNode):
 
-            media_types = g.objects(object, DW.relatedMediaType)
+            media_types = g.objects(parent_node, DW.relatedMediaType)
 
             for media_type in media_types:
                 if str(media_type) == str(root_node):
@@ -330,6 +239,8 @@ class KIDGraph:
                 if not KIDGraph.exists_media_type(result.midStart, root):
                     continue
 
+                KIDGraph.handle_child_nodes(nx_g, result)
+
             if str(g.value(result.midEnd, RDF.type)) == "http://dw.com/Task":
                 if not KIDGraph.exists_media_type(result.midEnd, root):
                     continue
@@ -338,12 +249,29 @@ class KIDGraph:
             nx_g.add_nodes_from([mid_start, mid_end])
             nx_g.add_edge(mid_start, mid_end)
 
-        nx_g.add_edge(end_result, str(root))
+        if end_result:
+            nx_g.add_edge(end_result, str(root))
+
+    @staticmethod
+    def handle_child_nodes(nx_g, result):
+        if str(g.value(result.childMidStart, RDF.type)) == "http://dw.com/Task":
+            parent_class = g.value(result.childMidStart, RDFS.subClassOf)
+            if parent_class:
+                for parent_node in g.objects(result.childMidStart, DW.parentNode):
+                    nx_g.add_edge(str(parent_node), str(result.childMidStart))
+
+                for subject in g.subjects(DW.parentNode, parent_class):
+                    if str(g.value(subject, RDF.type)) == "http://dw.com/Task":
+                        nx_g.add_node(str(subject))
+                        nx_g.add_edge(str(result.childMidStart), str(subject))
+
+                        for _g in g.subjects(DW.parentNode, subject):
+                            nx_g.add_edge(str(subject), str(_g))
 
     @staticmethod
     def exists_media_type(subject, reference_media_type):
-        for object in g.objects(subject, DW.relatedMediaType):
-            if str(object) == reference_media_type:
+        for related_media in g.objects(subject, DW.relatedMediaType):
+            if str(related_media) == reference_media_type:
                 return True
         return False
 

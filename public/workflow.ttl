@@ -50,15 +50,6 @@ dw:Edit_photo a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
 
-dw:Enhance_Image_1 a dw:Task ;
-    dw:parentNode dw:KeyframeExtraction ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
-    rdfs:subClassOf dw:Enhance_Image ;
-    schema:name "Enhance Image" .
-
 dw:Epios a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:eMail ;
@@ -280,18 +271,6 @@ dw:Instagram_search a dw:SoftwareApplication ;
     schema:name "Instagram search" ;
     schema:publisher "Bladibla Productions" .
 
-dw:IntelligenceX a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Contact_Info ;
-    dw:relatedMediaType dw:Source ;
-    dw:remarks "['Explore locations https://www.instagram.com/explore/locations/', 'remark 2']" ;
-    rdfs:comment "IntelligenceX" ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://intelx.io/tools?tab=general" ;
-    schema:name "IntelligenceX" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
-
 dw:Keywords a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
@@ -326,7 +305,7 @@ dw:LatLong a dw:SoftwareApplication ;
 
 dw:Lets_enhance_io a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Enhance_Image_2 ;
+    dw:parentNode dw:Enhance_Image ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Lets enhance io is an image enhancer" ;
@@ -363,7 +342,8 @@ Back ground noise
 What can I tell about what I am hearing""" ;
     schema:name "Listen to the audio" .
 
-dw:Magnifier dw:howTo "['step 1', 'step 2']" ;
+dw:Magnifier a dw:SoftwareApplication ;
+    dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Zoom_in_details ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -500,8 +480,7 @@ dw:Photo_Scissors a dw:SoftwareApplication ;
     schema:usageInfo "paid / free" .
 
 dw:RIS_\(Image\) a dw:Task ;
-    dw:parentNode dw:Enhance_Image,
-        dw:Object_identification,
+    dw:parentNode dw:Object_identification,
         dw:Person_identification,
         dw:What ;
     dw:relatedMediaType dw:Image,
@@ -865,15 +844,6 @@ dw:CropRotateFlip a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "CropRotateFlip" .
 
-dw:Enhance_Image_2 a dw:Task ;
-    dw:parentNode dw:Modification ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
-    rdfs:subClassOf dw:Enhance_Image ;
-    schema:name "Enhance Image" .
-
 dw:Facebook a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
     dw:relatedMediaType dw:Image,
@@ -918,7 +888,8 @@ dw:Manipulation_detection a dw:Task ;
 
 dw:Modification a dw:Task ;
     dw:parentNode dw:Reverse_Image_Search ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Modification" .
@@ -1011,6 +982,13 @@ dw:How a dw:Question ;
         dw:Video ;
     rdfs:comment "This How can be used for all mediaObjects" ;
     schema:name "How" .
+
+dw:KeyframeExtraction a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Keyframe Extraction" .
 
 dw:Language_detection a dw:Task ;
     dw:parentNode dw:What,
@@ -1108,12 +1086,13 @@ dw:Domain_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Domain name" .
 
-dw:KeyframeExtraction a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Video ;
+dw:Enhance_Image a dw:Task ;
+    dw:parentNode dw:Modification ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Keyframe Extraction" .
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    schema:name "Enhance Image Search" .
 
 dw:Metadata a dw:Task ;
     dw:howTo "is usually attached to an image or video. It includes the photo/video size, recording date and device, location, editing programs and technical details (aperture, ISO, exposure time...)" ;
@@ -1181,13 +1160,6 @@ dw:Author a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Author" .
-
-dw:Enhance_Image a dw:Task ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Enhance Image Search" .
 
 dw:Visual_Intelligence a dw:Task ;
     dw:parentNode dw:Where ;
