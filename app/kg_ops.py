@@ -133,10 +133,23 @@ class KIDGraph:
 
     @staticmethod
     def search(begin_node: str, root_node: str):
-        begin_node_id = g.value(None, SCHEMA.name, Literal(begin_node))
+        begin_node_id = None
+        for candidate_node in g.subjects(SCHEMA.name, Literal(begin_node)):
+            if (None, RDFS.subClassOf, candidate_node) in g:
+                continue
+            type = str(g.value(candidate_node, RDF.type))
+            if type == "https://dw.com/Task":
+                related_media_type = str(g.value(candidate_node, DW.relatedMediaType))
+                if related_media_type == root_node:
+                    begin_node_id = str(candidate_node)
+                    break
+            else:
+                begin_node_id = str(candidate_node)
+
         if not begin_node_id:
             return []
-        if not KIDGraph.check_path(begin_node_id, root_node):
+        type = g.value(URIRef(begin_node_id), RDF.type)
+        if not KIDGraph.check_path(begin_node_id, root_node, str(type)):
             return []
         paths = KIDGraph.search_by_id(begin_node_id, root_node)
         return paths
@@ -217,10 +230,19 @@ class KIDGraph:
         return paths
 
     @staticmethod
-    def check_path(begin_node_id, root_node):
-        for parent_node in g.objects(URIRef(begin_node_id), DW.parentNode):
+    def check_path(begin_node_id, root_node, type):
+        if type == "http://dw.com/SoftwareApplication":
+            for parent_node in g.objects(URIRef(begin_node_id), DW.parentNode):
 
-            media_types = g.objects(parent_node, DW.relatedMediaType)
+                media_types = g.objects(parent_node, DW.relatedMediaType)
+
+                for media_type in media_types:
+                    if str(media_type) == str(root_node):
+                        return True
+        elif type == "http://dw.com/Task":
+            if (None, RDFS.subClassOf, URIRef(begin_node_id)) in g:
+                return False
+            media_types = g.objects(URIRef(begin_node_id), DW.relatedMediaType)
 
             for media_type in media_types:
                 if str(media_type) == str(root_node):
@@ -291,23 +313,29 @@ class KIDGraph:
 
     @staticmethod
     def get_index():
-        media_objects = []
+        media_objects, index = [], []
         for s in g.subjects(RDF.type, DW.MediaObject):
             media_objects.append(s)
 
-        index = []
-        for app in g.subjects(RDF.type, DW.SoftwareApplication):
-            id_app = str(app)
+        types = [DW.SoftwareApplication, DW.Task]
 
-            categories = []
-            for media_object in media_objects:
-                id_media_object = str(media_object)
+        for type in types:
+            for node in g.subjects(RDF.type, type):
+                id_app = str(node)
 
-                if KIDGraph.check_path(begin_node_id=id_app, root_node=id_media_object):
-                    categories.append(id_media_object)
+                categories = []
+                for media_object in media_objects:
+                    id_media_object = str(media_object)
+                    if KIDGraph.check_path(begin_node_id=id_app, root_node=id_media_object, type=str(type)):
+                        categories.append(id_media_object)
 
-            index.append({'id': id_app,
-                          'name': str(g.value(app, SCHEMA.name)),
-                          'categories': categories
-                          })
+                if len(categories) == 0:
+                    print(f"Check {node}, it has no related media type")
+                    continue
+
+                index.append({'id': id_app,
+                              'name': str(g.value(node, SCHEMA.name)),
+                              'categories': categories
+                              })
+
         return index
