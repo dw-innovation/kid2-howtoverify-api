@@ -271,18 +271,6 @@ dw:Instagram_search a dw:SoftwareApplication ;
     schema:name "Instagram search" ;
     schema:publisher "Bladibla Productions" .
 
-dw:IntelligenceX a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Contact_Info ;
-    dw:relatedMediaType dw:Source ;
-    dw:remarks "['Explore locations https://www.instagram.com/explore/locations/', 'remark 2']" ;
-    rdfs:comment "IntelligenceX" ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://intelx.io/tools?tab=general" ;
-    schema:name "IntelligenceX" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
-
 dw:Keywords a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
@@ -900,7 +888,8 @@ dw:Manipulation_detection a dw:Task ;
 
 dw:Modification a dw:Task ;
     dw:parentNode dw:Reverse_Image_Search ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Modification" .
@@ -993,6 +982,13 @@ dw:How a dw:Question ;
         dw:Video ;
     rdfs:comment "This How can be used for all mediaObjects" ;
     schema:name "How" .
+
+dw:KeyframeExtraction a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Keyframe Extraction" .
 
 dw:Language_detection a dw:Task ;
     dw:parentNode dw:What,
@@ -1091,20 +1087,12 @@ dw:Domain_name a dw:Task ;
     schema:name "Domain name" .
 
 dw:Enhance_Image a dw:Task ;
-    dw:parentNode dw:KeyframeExtraction,
-        dw:Modification ;
+    dw:parentNode dw:Modification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
     schema:name "Enhance Image Search" .
-
-dw:KeyframeExtraction a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Keyframe Extraction" .
 
 dw:Metadata a dw:Task ;
     dw:howTo "is usually attached to an image or video. It includes the photo/video size, recording date and device, location, editing programs and technical details (aperture, ISO, exposure time...)" ;

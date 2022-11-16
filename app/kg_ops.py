@@ -105,28 +105,12 @@ class KIDGraph:
             'links': self.links
         }
 
-    def construct_old(self):
-        self.get_children()
-
-        if self.root_node != self.clicked_node:
-            self.get_parents()
-
-        self.links = list(self.links.values())
-
-        level_dict = self.assign_levels(begin_node_id=self.root_node, level=0)
-
-        all_nodes = list(map(lambda node_id: self.get_feats(level_dict, node_id), self.node_ids))
-
-        return {
-            'nodes': all_nodes,
-            'links': self.links
-        }
-
     def get_feats(self, node_id):
-        node_data = {}
-        node_data['id'] = node_id
-        node_data['type'] = str(g.value(URIRef(node_id), RDF.type))
-        node_data['name'] = str(g.value(URIRef(node_id), SCHEMA.name))
+        node_data = {"id": node_id,
+                     "type": str(g.value(URIRef(node_id), RDF.type)),
+                     "name": str(g.value(URIRef(node_id), SCHEMA.name))
+                     }
+
         if node_id == self.clicked_node:
             node_data['comment'] = str(g.value(URIRef(node_id), RDFS.comment))
 
@@ -136,8 +120,8 @@ class KIDGraph:
             if node_data['type'] in ['http://dw.com/SoftwareApplication']:
                 node_data['remarks'] = None
 
-            for pred, obj in g.predicate_objects(URIRef(node_id)):
-                mapped_key = NS_MAPPING[str(pred)]
+            for rel, obj in g.predicate_objects(URIRef(node_id)):
+                mapped_key = NS_MAPPING[str(rel)]
 
                 if mapped_key not in node_data:
                     node_data[mapped_key] = str(obj)
@@ -154,9 +138,58 @@ class KIDGraph:
             return []
         if not KIDGraph.check_path(begin_node_id, root_node):
             return []
-
         paths = KIDGraph.search_by_id(begin_node_id, root_node)
         return paths
+
+    @staticmethod
+    def search_helper(begin_node_id, root_node, nx_g):
+        if (None, RDFS.subClassOf, URIRef(begin_node_id)) in g:
+            for child_class_node in g.subjects(RDFS.subClassOf, URIRef(begin_node_id)):
+                if str(g.value(URIRef(child_class_node), RDF.type)) == "http://dw.com/Task":
+                    if not KIDGraph.exists_media_type(child_class_node, root_node):
+                        continue
+                    nx_g.add_node(str(child_class_node))
+                    nx_g.add_edge(str(child_class_node), str(begin_node_id))
+                    results = g.query(query_paths(),
+                                      initBindings={'endNode': URIRef(root_node), 'beginNode': child_class_node})
+                    if len(results) == 0:
+                        KIDGraph.search_helper(begin_node_id=str(child_class_node), root_node=root_node, nx_g=nx_g)
+
+                    KIDGraph.search_graph(nx_g, results, root_node)
+
+        parent_node = g.value(subject=URIRef(begin_node_id), predicate=DW.parentNode)
+        if parent_node:
+            if (None, RDFS.subClassOf, parent_node) in g:
+                for child_class_node in g.subjects(RDFS.subClassOf, parent_node):
+                    if str(g.value(URIRef(child_class_node), RDF.type)) == "http://dw.com/Task":
+                        if not KIDGraph.exists_media_type(child_class_node, root_node):
+                            continue
+                    nx_g.add_node(str(child_class_node))
+                    nx_g.add_edge(str(child_class_node), str(begin_node_id))
+                    results = g.query(query_paths(),
+                                      initBindings={'endNode': URIRef(root_node), 'beginNode': child_class_node})
+                    if len(results) == 0:
+                        KIDGraph.search_helper(begin_node_id=str(child_class_node), root_node=root_node, nx_g=nx_g)
+
+                    KIDGraph.search_graph(nx_g, results, root_node)
+            else:
+                nx_g.add_node(str(parent_node))
+                nx_g.add_edge(str(parent_node), str(begin_node_id))
+                for child_node in g.objects(subject=URIRef(parent_node), predicate=DW.parentNode):
+                    if str(g.value(URIRef(child_node), RDF.type)) == "http://dw.com/Task":
+                        if not KIDGraph.exists_media_type(child_node, root_node):
+                            continue
+                    nx_g.add_node(str(child_node))
+                    nx_g.add_edge(str(child_node), str(parent_node))
+                    results = g.query(query_paths(),
+                                      initBindings={'endNode': URIRef(root_node), 'beginNode': child_node})
+                    if len(results) == 0:
+                        KIDGraph.search_helper(begin_node_id=str(child_node), root_node=root_node, nx_g=nx_g)
+        else:
+            if begin_node_id == root_node:
+                results = g.query(query_paths(),
+                                  initBindings={'endNode': URIRef(begin_node_id), 'beginNode': parent_node})
+                KIDGraph.search_graph(nx_g, results, root_node)
 
     @staticmethod
     def search_by_id(begin_node_id, root_node):
@@ -169,31 +202,24 @@ class KIDGraph:
             target_node = begin_node_id
             nx_g.add_nodes_from([str(target_node), str(root_node)])
 
-        if len(results) == 0:
-            parent_node = g.value(subject=begin_node_id, predicate=DW.parentNode)
-
-            if parent_node:
-                for subject in g.subjects(predicate=RDFS.subClassOf, object=parent_node):
-
-                    results = g.query(query_paths(),
-                                      initBindings={'endNode': URIRef(root_node), 'beginNode': subject})
-                    if len(results) > 0:
-                        nx_g.add_edge(str(subject), str(target_node))
-                        KIDGraph.search_graph(nx_g, results, root_node)
-        else:
+        if len(results) > 0:
             KIDGraph.search_graph(nx_g, results, root_node)
+        else:
+            KIDGraph.search_helper(begin_node_id, root_node, nx_g)
 
         feats = {x: {"id": x, "name": str(g.value(URIRef(x), SCHEMA.name))} for x in nx_g.nodes}
+
         paths = []
         for path in nx.all_simple_paths(nx_g, target=str(target_node), source=str(root_node)):
             paths.append(list(map(lambda node: feats[node], path)))
+
         return paths
 
     @staticmethod
     def check_path(begin_node_id, root_node):
-        for object in g.objects(URIRef(begin_node_id), DW.parentNode):
+        for parent_node in g.objects(URIRef(begin_node_id), DW.parentNode):
 
-            media_types = g.objects(object, DW.relatedMediaType)
+            media_types = g.objects(parent_node, DW.relatedMediaType)
 
             for media_type in media_types:
                 if str(media_type) == str(root_node):
@@ -223,15 +249,16 @@ class KIDGraph:
             nx_g.add_nodes_from([mid_start, mid_end])
             nx_g.add_edge(mid_start, mid_end)
 
-        nx_g.add_edge(end_result, str(root))
+        if end_result:
+            nx_g.add_edge(end_result, str(root))
 
     @staticmethod
     def handle_child_nodes(nx_g, result):
         if str(g.value(result.childMidStart, RDF.type)) == "http://dw.com/Task":
             parent_class = g.value(result.childMidStart, RDFS.subClassOf)
             if parent_class:
-                for object in g.objects(result.childMidStart, DW.parentNode):
-                    nx_g.add_edge(str(object), str(result.childMidStart))
+                for parent_node in g.objects(result.childMidStart, DW.parentNode):
+                    nx_g.add_edge(str(parent_node), str(result.childMidStart))
 
                 for subject in g.subjects(DW.parentNode, parent_class):
                     if str(g.value(subject, RDF.type)) == "http://dw.com/Task":
@@ -243,8 +270,8 @@ class KIDGraph:
 
     @staticmethod
     def exists_media_type(subject, reference_media_type):
-        for object in g.objects(subject, DW.relatedMediaType):
-            if str(object) == reference_media_type:
+        for related_media in g.objects(subject, DW.relatedMediaType):
+            if str(related_media) == reference_media_type:
                 return True
         return False
 
