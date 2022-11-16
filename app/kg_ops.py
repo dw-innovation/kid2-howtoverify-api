@@ -148,13 +148,13 @@ class KIDGraph:
                 if str(g.value(URIRef(child_class_node), RDF.type)) == "http://dw.com/Task":
                     if not KIDGraph.exists_media_type(child_class_node, root_node):
                         continue
-                    nx_g.add_node(str(child_class_node))
-                    nx_g.add_edge(str(child_class_node), str(begin_node_id))
+
                     results = g.query(query_paths(),
                                       initBindings={'endNode': URIRef(root_node), 'beginNode': child_class_node})
                     if len(results) == 0:
                         KIDGraph.search_helper(begin_node_id=str(child_class_node), root_node=root_node, nx_g=nx_g)
 
+                    nx_g.add_node(str(child_class_node))
                     KIDGraph.search_graph(nx_g, results, root_node)
 
         parent_node = g.value(subject=URIRef(begin_node_id), predicate=DW.parentNode)
