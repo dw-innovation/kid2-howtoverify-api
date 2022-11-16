@@ -142,7 +142,7 @@ class KIDGraph:
         return paths
 
     @staticmethod
-    def search_helper(begin_node_id, root_node, nx_g):
+    def search_recursive(begin_node_id, root_node, nx_g):
         if (None, RDFS.subClassOf, URIRef(begin_node_id)) in g:
             for child_class_node in g.subjects(RDFS.subClassOf, URIRef(begin_node_id)):
                 if str(g.value(URIRef(child_class_node), RDF.type)) == "http://dw.com/Task":
@@ -152,7 +152,7 @@ class KIDGraph:
                     results = g.query(query_paths(),
                                       initBindings={'endNode': URIRef(root_node), 'beginNode': child_class_node})
                     if len(results) == 0:
-                        KIDGraph.search_helper(begin_node_id=str(child_class_node), root_node=root_node, nx_g=nx_g)
+                        KIDGraph.search_recursive(begin_node_id=str(child_class_node), root_node=root_node, nx_g=nx_g)
 
                     nx_g.add_node(str(child_class_node))
                     KIDGraph.search_graph(nx_g, results, root_node)
@@ -164,12 +164,13 @@ class KIDGraph:
                     if str(g.value(URIRef(child_class_node), RDF.type)) == "http://dw.com/Task":
                         if not KIDGraph.exists_media_type(child_class_node, root_node):
                             continue
+
                     nx_g.add_node(str(child_class_node))
                     nx_g.add_edge(str(child_class_node), str(begin_node_id))
                     results = g.query(query_paths(),
                                       initBindings={'endNode': URIRef(root_node), 'beginNode': child_class_node})
                     if len(results) == 0:
-                        KIDGraph.search_helper(begin_node_id=str(child_class_node), root_node=root_node, nx_g=nx_g)
+                        KIDGraph.search_recursive(begin_node_id=str(child_class_node), root_node=root_node, nx_g=nx_g)
 
                     KIDGraph.search_graph(nx_g, results, root_node)
             else:
@@ -184,7 +185,7 @@ class KIDGraph:
                     results = g.query(query_paths(),
                                       initBindings={'endNode': URIRef(root_node), 'beginNode': child_node})
                     if len(results) == 0:
-                        KIDGraph.search_helper(begin_node_id=str(child_node), root_node=root_node, nx_g=nx_g)
+                        KIDGraph.search_recursive(begin_node_id=str(child_node), root_node=root_node, nx_g=nx_g)
         else:
             if begin_node_id == root_node:
                 results = g.query(query_paths(),
@@ -205,7 +206,7 @@ class KIDGraph:
         if len(results) > 0:
             KIDGraph.search_graph(nx_g, results, root_node)
         else:
-            KIDGraph.search_helper(begin_node_id, root_node, nx_g)
+            KIDGraph.search_recursive(begin_node_id, root_node, nx_g)
 
         feats = {x: {"id": x, "name": str(g.value(URIRef(x), SCHEMA.name))} for x in nx_g.nodes}
 
@@ -239,11 +240,11 @@ class KIDGraph:
                 if not KIDGraph.exists_media_type(result.midStart, root):
                     continue
 
-                KIDGraph.handle_child_nodes(nx_g, result)
-
             if str(g.value(result.midEnd, RDF.type)) == "http://dw.com/Task":
                 if not KIDGraph.exists_media_type(result.midEnd, root):
                     continue
+
+            KIDGraph.handle_child_nodes(nx_g, result, root_node=root)
 
             end_result = mid_end
             nx_g.add_nodes_from([mid_start, mid_end])
@@ -253,19 +254,32 @@ class KIDGraph:
             nx_g.add_edge(end_result, str(root))
 
     @staticmethod
-    def handle_child_nodes(nx_g, result):
+    def handle_child_nodes(nx_g, result, root_node):
         if str(g.value(result.childMidStart, RDF.type)) == "http://dw.com/Task":
             parent_class = g.value(result.childMidStart, RDFS.subClassOf)
             if parent_class:
                 for parent_node in g.objects(result.childMidStart, DW.parentNode):
+                    if str(g.value(URIRef(parent_node), RDF.type)) == "http://dw.com/Task":
+                        if not KIDGraph.exists_media_type(parent_node, root_node):
+                            continue
+
+                    if str(g.value(result.childMidStart, RDF.type)) == "http://dw.com/Task":
+                        if not KIDGraph.exists_media_type(str(result.childMidStart), root_node):
+                            continue
                     nx_g.add_edge(str(parent_node), str(result.childMidStart))
 
                 for subject in g.subjects(DW.parentNode, parent_class):
-                    if str(g.value(subject, RDF.type)) == "http://dw.com/Task":
+                    if str(g.value(URIRef(subject), RDF.type)) == "http://dw.com/Task":
+                        if not KIDGraph.exists_media_type(subject, root_node):
+                            continue
+
                         nx_g.add_node(str(subject))
                         nx_g.add_edge(str(result.childMidStart), str(subject))
 
                         for _g in g.subjects(DW.parentNode, subject):
+                            if str(g.value(URIRef(_g), RDF.type)) == "http://dw.com/Task":
+                                if not KIDGraph.exists_media_type(_g, root_node):
+                                    continue
                             nx_g.add_edge(str(subject), str(_g))
 
     @staticmethod
