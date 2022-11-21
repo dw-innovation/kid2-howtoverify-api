@@ -188,16 +188,14 @@ dw:Google_Maps a dw:SoftwareApplication ;
     schema:usageInfo "free" .
 
 dw:Googles_Images a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Upload or add the URL of an image in the search bar', 'select text and it can translate the words ', 'switch to standard version of google image search and change search terms and use th filter']" ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Google Reverse Image Search..." ;
-    schema:aboutUrl "" ;
+    dw:remarks "['better results, e.g. cropping, enhancing of resolution, contrast-enhancement', 'You can use Google Lens on your mobile phone']" ;
+    rdfs:comment "Google Images is very efficient for reverse image search. You can select parts of a photo and find similar images online." ;
     schema:applicationUrl "https://images.google.com/" ;
     schema:name "Google Images" ;
-    schema:publisher "Google" ;
-    schema:usageInfo "free" .
+    schema:publisher "Google" .
 
 dw:Handelsregister a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -485,8 +483,8 @@ dw:RIS_\(Image\) a dw:Task ;
         dw:What ;
     dw:relatedMediaType dw:Image,
         dw:Source ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
+    dw:remarks "['If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions']" ;
+    rdfs:comment "is a way to check if this images has been pubklished before on any website or a similar one. In the results you find more about the context what is happening here and you might find teh original photo." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -494,8 +492,8 @@ dw:RIS_\(Video\) a dw:Task ;
     dw:parentNode dw:KeyframeExtraction,
         dw:Object_identification ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
+    dw:remarks "['If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions']" ;
+    rdfs:comment "is a way to check if this images has been pubklished before on any website or a similar one. In the results you find more about the context what is happening here and you might find teh original photo." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -639,11 +637,6 @@ dw:Unix_timestamp a dw:SoftwareApplication ;
     schema:applicationUrl "https://www.unixtimestamp.com/" ;
     schema:name "Unix Timestamp" ;
     schema:publisher "Bladibla Productions" .
-
-dw:Upload_Time a dw:Task ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "unstructured text" ;
-    schema:name "Image Tasks/Upload Time" .
 
 dw:VLC_audio_extraction a dw:SoftwareApplication ;
     dw:howTo "['tutorial https://www.kimbley.com/blog/6/1/2021/how-to-extract-audio-from-an-mp4-video-file-to-mp3-using-vlc-media-player ', 'step 2']" ;
@@ -887,7 +880,7 @@ dw:Manipulation_detection a dw:Task ;
     schema:name "Manipulation detection" .
 
 dw:Modification a dw:Task ;
-    dw:parentNode dw:Reverse_Image_Search ;
+    dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -939,6 +932,13 @@ dw:Zoom_in_details a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Zoom in details" .
+
+dw:Background_Removal a dw:Task ;
+    dw:parentNode dw:Reverse_Image_Search ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
+    schema:name "Background removal" .
 
 dw:Business_name a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
@@ -1060,13 +1060,6 @@ dw:eMail a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "eMail" .
-
-dw:Background_Removal a dw:Task ;
-    dw:parentNode dw:Background_Removal ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
-    schema:name "Background removal" .
 
 dw:Digital_Footprint a dw:Task ;
     dw:parentNode dw:Who_created_content,
