@@ -455,7 +455,9 @@ dw:Photo_Scissors a dw:SoftwareApplication ;
     schema:usageInfo "paid / free" .
 
 dw:RIS_\(Image\) a dw:Task ;
-    dw:parentNode dw:Object_identification,
+    dw:parentNode dw:Context,
+        dw:Object_identification,
+        dw:Original,
         dw:Person_identification,
         dw:Visuals ;
     dw:relatedMediaType dw:Image,
@@ -794,6 +796,13 @@ dw:Contact a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Contact" .
 
+dw:Context a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks "" ;
+    rdfs:comment "Context" ;
+    schema:name "Context" .
+
 dw:CropRotateFlip a dw:Task ;
     dw:parentNode dw:Background_Removal ;
     dw:relatedMediaType dw:Image ;
@@ -845,7 +854,7 @@ dw:Interviews a dw:Task ;
     schema:name "interviews" .
 
 dw:Manipulation_detection a dw:Task ;
-    dw:parentNode dw:What ;
+    dw:parentNode dw:Original ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Manipulation detection can be used for ......" ;
@@ -995,6 +1004,13 @@ dw:Language_detection a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Language detection" .
+
+dw:Original a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks "" ;
+    rdfs:comment "Original" ;
+    schema:name "Original" .
 
 dw:Satellite_data a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
