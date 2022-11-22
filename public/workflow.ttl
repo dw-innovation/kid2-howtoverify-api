@@ -153,26 +153,6 @@ dw:Google_Earth a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
 
-dw:Google_Lens a dw:SoftwareApplication ;
-    dw:howTo "['How to improve results', ['Further steps that can lead to better results, e.g. cropping, enhancing of resolution, contrast-enhancement etc.', 'switch to standard version of google image search']]" ;
-    dw:parentNode dw:Reverse_Image_Search ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks "['Advantages/Strengths and how to make use of them- ', ['in regional use', 'in use on locations, landmarks, persons, crowds of people, singular faces, ', 'in type of decetion algorithm'], 'Disadvantages/Weaknesses and how to overcome these-', 'Differences to alternatives (?)- works with algorighm a instead of b', 'Alternantives to use (links to those tools)- ', ['standard google image search', 'yandex']]" ;
-    rdfs:comment "Google Lens" ;
-    schema:aboutUrl """leads to about page of the tool or to wikpedia page about the tool
-e.g. https://en.wikipedia.org/wiki/Google_Lens
-
-**Examples of usage and/or Explainer Articles or Videos (if available)**
-Link to articles or videos that show the usage of the tool in an examplery way""" ;
-    schema:applicationUrl "https://lens.google.com/search?p" ;
-    schema:name "Google Lens" ;
-    schema:publisher "Google Inc." ;
-    schema:usageInfo """paid / free
-
-**Best to use on**
-mobile/app
-desktop""" .
-
 dw:Google_Maps a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation,
@@ -1178,6 +1158,16 @@ dw:Who_created_content a dw:SubQuestion ;
     dw:remarks "Who created the original piece of content is not necessarily the one who uploaded it on the platform where you found it. It is very easy to download or reshare content from any platform like Youtube or Twitter, then publish that same content to another social platform. You want to verify the primary source who eywitnessed the incident. It can tell you the motivation behind recording it and getting more context." ;
     schema:name "Who created content" .
 
+dw:Reverse_Image_Search a dw:Task ;
+    dw:relatedMediaType dw:Enhance_Image,
+        dw:Image,
+        dw:KeyframeExtraction,
+        dw:Object_identification,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Reverse Image Search" .
+
 dw:Visual_search a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
@@ -1203,16 +1193,6 @@ dw:Manual_geolocation a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Landscape can be used for ......" ;
     schema:name "Manual Geolocation" .
-
-dw:Reverse_Image_Search a dw:Task ;
-    dw:relatedMediaType dw:Enhance_Image,
-        dw:Image,
-        dw:KeyframeExtraction,
-        dw:Object_identification,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Reverse Image Search" .
 
 dw:Where a dw:Question ;
     dw:parentNode dw:Audio,
