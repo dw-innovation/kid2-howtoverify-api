@@ -1238,17 +1238,65 @@ dw:What a dw:Question ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
+    dw:remarks "['close your eyes and use headphones to listen carefully ', 'turn off the sound when you watch the video several times']" ;
+    rdfs:comment """In verification you try to answer these questions:
+What has happened?
+Where did it happen?
+When did it happen?
+Who captured the photo or video?
+
+How did it happen? This is a question you gather more information when you look deeper in the incident. 
+
+Audio verification is challenging cause manipulation is difficult but not impossible to detect. Listen carefully what and how something is being said.""" ;
     schema:name "Audio" .
 
 dw:Source a dw:MediaObject ;
+    dw:remarks "['Think about the motivation of the source. Why was this information published?']" ;
+    rdfs:comment """In verification you try to answer these questions:
+What has happened?
+Where did it happen?
+When did it happen?
+Who captured the photo or video?
+
+How did it happen? This is a question you gather more information when you look deeper in the incident. 
+
+Source verification is""" ;
     schema:name "Source" .
 
 dw:Text a dw:MediaObject ;
+    dw:remarks "['never trust a screenshot because it is very easy to manipulate']" ;
+    rdfs:comment """In verification you try to answer these questions:
+What has happened?
+Where did it happen?
+When did it happen?
+Who captured the photo or video?
+
+How did it happen? This is a question you gather more information when you look deeper in the incident. 
+
+Text verification is""" ;
     schema:name "Text" .
 
 dw:Video a dw:MediaObject ;
+    dw:remarks "['watching a video frame-by-frame ', 'turn off the sound when you watch the video several times']" ;
+    rdfs:comment """In verification you try to answer these questions:
+What has happened?
+Where did it happen?
+When did it happen?
+Who captured the photo or video?
+
+How did it happen? This is a question you gather more information when you look deeper in the incident. 
+
+Video verification is challenging but you can also get most info out of it cause you have more visuals and audio.""" ;
     schema:name "Video" .
 
 dw:Image a dw:MediaObject ;
+    dw:remarks "['Look closely at the image before you start digging']" ;
+    rdfs:comment """In verification you try to answer these questions:
+What has happened?
+Where did it happen?
+When did it happen?
+Who captured the photo or video?
+
+How did it happen? This is a question you gather more information when you look deeper in the incident.""" ;
     schema:name "Image" .
 
