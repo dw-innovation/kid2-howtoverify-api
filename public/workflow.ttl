@@ -921,7 +921,8 @@ dw:Background_Removal a dw:Task ;
 
 dw:Business_name a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
-    dw:relatedMediaType dw:Text ;
+    dw:relatedMediaType dw:Audio,
+        dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Business Name" .
@@ -1010,7 +1011,8 @@ dw:Shadow_Analyses a dw:Task ;
 
 dw:Social_Media_profiles a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
@@ -1105,7 +1107,8 @@ dw:Person_identification a dw:Task ;
 dw:Person_name a dw:Task ;
     dw:parentNode dw:Author,
         dw:Who_is_in_content ;
-    dw:relatedMediaType dw:Text ;
+    dw:relatedMediaType dw:Audio,
+        dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Person Name" .
@@ -1127,7 +1130,8 @@ dw:Object_identification a dw:Task ;
 
 dw:Social_Media_activities a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
