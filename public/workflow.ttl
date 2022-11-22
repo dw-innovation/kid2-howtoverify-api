@@ -457,9 +457,10 @@ dw:Photo_Scissors a dw:SoftwareApplication ;
 dw:RIS_\(Image\) a dw:Task ;
     dw:parentNode dw:Object_identification,
         dw:Person_identification,
-        dw:What ;
+        dw:Visuals ;
     dw:relatedMediaType dw:Image,
-        dw:Source ;
+        dw:Source,
+        dw:Text ;
     dw:remarks "['If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions']" ;
     rdfs:comment "is a way to check if this images has been pubklished before on any website or a similar one. In the results you find more about the context what is happening here and you might find teh original photo." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
@@ -576,13 +577,6 @@ dw:TinEye a dw:SoftwareApplication ;
     schema:name "TinEye" ;
     schema:publisher "" .
 
-dw:Topic a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Topic" .
-
 dw:Tweetbeaver a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Twitter ;
@@ -640,13 +634,6 @@ dw:ViewDNS a dw:SoftwareApplication ;
     schema:applicationUrl "https://viewdns.info/" ;
     schema:name "ViewDNS" ;
     schema:publisher "Bladibla Productions" .
-
-dw:Visuals a dw:Task ;
-    dw:parentNode dw:Content_analyses ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "photos, graphics" ;
-    schema:name "Visual" .
 
 dw:Web_Archive a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -902,6 +889,13 @@ dw:Twitter a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Twitter" .
 
+dw:Visuals a dw:Task ;
+    dw:parentNode dw:Content_analyses ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "photos, graphics" ;
+    schema:name "Visual" .
+
 dw:Weather_Analyses a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Image,
@@ -1018,6 +1012,7 @@ dw:Social_Media_profiles a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
     dw:relatedMediaType dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
@@ -1065,7 +1060,8 @@ dw:Digital_Footprint a dw:Task ;
     dw:parentNode dw:Sources,
         dw:Who_created_content,
         dw:Who_is_in_content ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
@@ -1133,6 +1129,7 @@ dw:Social_Media_activities a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
     dw:relatedMediaType dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
@@ -1227,9 +1224,6 @@ dw:Where a dw:Question ;
 Always independently verify the location with a satellite image or a street view image of a map service.""" ;
     schema:name "Where" .
 
-dw:Audio a dw:MediaObject ;
-    schema:name "Audio" .
-
 dw:What a dw:Question ;
     dw:parentNode dw:Audio,
         dw:Image,
@@ -1238,6 +1232,9 @@ dw:What a dw:Question ;
         dw:Video ;
     rdfs:comment "This What can be used for all mediaObjects" ;
     schema:name "What" .
+
+dw:Audio a dw:MediaObject ;
+    schema:name "Audio" .
 
 dw:Source a dw:MediaObject ;
     schema:name "Source" .
