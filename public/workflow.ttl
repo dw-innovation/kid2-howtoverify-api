@@ -1058,7 +1058,7 @@ dw:Enhance_Image a dw:Task ;
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
-    schema:name "Enhance Image Search" .
+    schema:name "Enhance Image" .
 
 dw:Metadata a dw:Task ;
     dw:howTo "is usually attached to an image or video. It includes the photo/video size, recording date and device, location, editing programs and technical details (aperture, ISO, exposure time...)" ;
