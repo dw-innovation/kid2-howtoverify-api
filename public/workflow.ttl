@@ -1067,6 +1067,7 @@ dw:Digital_Footprint a dw:Task ;
         dw:Who_is_in_content ;
     dw:relatedMediaType dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
