@@ -602,7 +602,8 @@ dw:USearch a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "When searching for news, Google sometimes shows news items from your local area, and with the ability to target a very specific area, this might come in very handy." ;
+    rdfs:comment """Here you can search in the region where it is happening. 
+When searching for news, Google sometimes shows news items from your local area, and with the ability to target a very specific area, this might come in very handy.""" ;
     schema:applicationUrl "https://usearchfrom.com/" ;
     schema:name "USearch" ;
     schema:publisher "Bladibla Productions" .
@@ -859,14 +860,6 @@ dw:Manipulation_detection a dw:Task ;
     rdfs:comment "Manipulation detection can be used for ......" ;
     schema:name "Manipulation detection" .
 
-dw:Modification a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Modification" .
-
 dw:Ownership a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Ownership,
@@ -907,14 +900,14 @@ dw:Weather_Analyses a dw:Task ;
     schema:name "Weather Analyses" .
 
 dw:Zoom_in_details a dw:Task ;
-    dw:parentNode dw:Enhance_Image ;
+    dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Zoom in details" .
 
 dw:Background_Removal a dw:Task ;
-    dw:parentNode dw:Reverse_Image_Search ;
+    dw:parentNode dw:Enhance_Image ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
@@ -928,7 +921,7 @@ dw:Business_name a dw:Task ;
     schema:name "Business Name" .
 
 dw:File_Name a dw:Task ;
-    dw:parentNode dw:What ;
+    dw:parentNode dw:Who_created_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -1060,7 +1053,7 @@ dw:Domain_name a dw:Task ;
     schema:name "Domain name" .
 
 dw:Enhance_Image a dw:Task ;
-    dw:parentNode dw:Modification ;
+    dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -1151,13 +1144,6 @@ dw:Website a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Website" .
 
-dw:Who_created_content a dw:SubQuestion ;
-    dw:parentNode dw:Who ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "Who created the original piece of content is not necessarily the one who uploaded it on the platform where you found it. It is very easy to download or reshare content from any platform like Youtube or Twitter, then publish that same content to another social platform. You want to verify the primary source who eywitnessed the incident. It can tell you the motivation behind recording it and getting more context." ;
-    schema:name "Who created content" .
-
 dw:Reverse_Image_Search a dw:Task ;
     dw:relatedMediaType dw:Enhance_Image,
         dw:Image,
@@ -1184,6 +1170,13 @@ dw:When a dw:Question ;
         dw:Video ;
     rdfs:comment "This When can be used for all mediaObjects" ;
     schema:name "When" .
+
+dw:Who_created_content a dw:SubQuestion ;
+    dw:parentNode dw:Who ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "Who created the original piece of content is not necessarily the one who uploaded it on the platform where you found it. It is very easy to download or reshare content from any platform like Youtube or Twitter, then publish that same content to another social platform. You want to verify the primary source who eywitnessed the incident. It can tell you the motivation behind recording it and getting more context." ;
+    schema:name "Who created content" .
 
 dw:Manual_geolocation a dw:Task ;
     dw:parentNode dw:Adress,
