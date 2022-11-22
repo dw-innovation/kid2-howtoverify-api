@@ -974,7 +974,10 @@ dw:How a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    rdfs:comment "This How can be used for all mediaObjects" ;
+    dw:remarks "['check local reports ', 'search cross-medial on different social media platforms', 'reach out to reporters on the ground']" ;
+    rdfs:comment """How did it happend? 
+
+This is a very tricky question to answer. You have to gather more information and talk to eyewitnesses. Try to collect visuals which show what has happened before and from a different perspective.""" ;
     schema:name "How" .
 
 dw:Landscape_identification a dw:Task ;
@@ -1145,7 +1148,11 @@ dw:Who a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    rdfs:comment "This Who can be used for all mediaObjects" ;
+    dw:remarks "['Always have the motivation in mind: Why was the account established, the website created, or the piece of content captured?', 'Contacting the person might give you a chance to get an interview or even the original file ']" ;
+    rdfs:comment """Who has created the content? 
+
+The person who made the claim or captured the visual and adds a claim has to be verified as well. 
+Do not get confused with the uploader cause it might not be the person who created the content.""" ;
     schema:name "Who" .
 
 dw:Who_is_in_content a dw:SubQuestion ;
@@ -1207,7 +1214,10 @@ dw:When a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    rdfs:comment "This When can be used for all mediaObjects" ;
+    dw:remarks "['check local reports ', 'search cross-medial on different social media platforms', 'reach out to reporters on the ground']" ;
+    rdfs:comment """When did it happen? 
+
+Time and date of the event is essential to determine cause it proofs the footage is really captured on that time. Content can be used before or taken completly out of context. It will also help you to find more information about the incident.""" ;
     schema:name "When" .
 
 dw:Who_created_content a dw:SubQuestion ;
@@ -1223,9 +1233,11 @@ dw:Where a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks """Where was the content captured? Geographic location tied to a particular tweet or Facebook post, but this information can be easily manipulated. Metadata can also be manipulated.
+    dw:remarks "['Geographic location tied to a particular tweet or Facebook post, but this information can be easily manipulated.', 'Metadata can also be manipulated.', 'try to find a second source like satellite images or a street view to confirm the location', 'writing down 20 hints that guide you to the location like streets signs, names and architecture', \"ask a friend to double-check if you can't see the tree in teh forest anymore\"]" ;
+    rdfs:comment """Where did it happend? 
 
-Always independently verify the location with a satellite image or a street view image of a map service.""" ;
+Finding the exact location is crucial to know if this incident has happened at this exact place.
+With the location you can verify exact time when the content was captured.""" ;
     schema:name "Where" .
 
 dw:What a dw:Question ;
@@ -1234,15 +1246,22 @@ dw:What a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    rdfs:comment "This What can be used for all mediaObjects" ;
+    dw:remarks "['check local reports ', 'search cross-medial on different social media platforms', 'reach out to reporters on the ground']" ;
+    rdfs:comment """What has happened? 
+
+This is an essential question to understand what are you looking it and why it is important to keep on verifying. It is about getting context to the event as well as making sure you are looking at the original version.""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
     dw:remarks "['close your eyes and use headphones to listen carefully ', 'turn off the sound when you watch the video several times']" ;
     rdfs:comment """In verification you try to answer these questions:
+
 What has happened?
+
 Where did it happen?
+
 When did it happen?
+
 Who captured the photo or video?
 
 How did it happen? This is a question you gather more information when you look deeper in the incident. 
@@ -1253,9 +1272,13 @@ Audio verification is challenging cause manipulation is difficult but not imposs
 dw:Source a dw:MediaObject ;
     dw:remarks "['Think about the motivation of the source. Why was this information published?']" ;
     rdfs:comment """In verification you try to answer these questions:
+
 What has happened?
+
 Where did it happen?
+
 When did it happen?
+
 Who captured the photo or video?
 
 How did it happen? This is a question you gather more information when you look deeper in the incident. 
@@ -1266,9 +1289,13 @@ Source verification is""" ;
 dw:Text a dw:MediaObject ;
     dw:remarks "['never trust a screenshot because it is very easy to manipulate']" ;
     rdfs:comment """In verification you try to answer these questions:
+
 What has happened?
+
 Where did it happen?
+
 When did it happen?
+
 Who captured the photo or video?
 
 How did it happen? This is a question you gather more information when you look deeper in the incident. 
@@ -1279,9 +1306,13 @@ Text verification is""" ;
 dw:Video a dw:MediaObject ;
     dw:remarks "['watching a video frame-by-frame ', 'turn off the sound when you watch the video several times']" ;
     rdfs:comment """In verification you try to answer these questions:
+
 What has happened?
+
 Where did it happen?
+
 When did it happen?
+
 Who captured the photo or video?
 
 How did it happen? This is a question you gather more information when you look deeper in the incident. 
@@ -1292,9 +1323,13 @@ Video verification is challenging but you can also get most info out of it cause
 dw:Image a dw:MediaObject ;
     dw:remarks "['Look closely at the image before you start digging']" ;
     rdfs:comment """In verification you try to answer these questions:
+
 What has happened?
+
 Where did it happen?
+
 When did it happen?
+
 Who captured the photo or video?
 
 How did it happen? This is a question you gather more information when you look deeper in the incident.""" ;
