@@ -139,10 +139,11 @@ class KIDGraph:
                 continue
             type = str(g.value(candidate_node, RDF.type))
             if type == "http://dw.com/Task":
-                related_media_type = str(g.value(candidate_node, DW.relatedMediaType))
-                if related_media_type == root_node:
-                    begin_node_id = str(candidate_node)
-                    break
+                for related_media_type in g.objects(candidate_node, DW.relatedMediaType):
+                    related_media_type = str(related_media_type)
+                    if related_media_type == root_node:
+                        begin_node_id = str(candidate_node)
+                        break
             else:
                 begin_node_id = str(candidate_node)
 
