@@ -282,7 +282,8 @@ dw:LatLong a dw:SoftwareApplication ;
 
 dw:Lets_enhance_io a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Enhance_Image ;
+    dw:parentNode dw:Enhance_Image_\(Image\),
+        dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Lets enhance io is an image enhancer" ;
@@ -917,7 +918,8 @@ dw:Zoom_in_details a dw:Task ;
     schema:name "Zoom in details" .
 
 dw:Background_Removal a dw:Task ;
-    dw:parentNode dw:Enhance_Image ;
+    dw:parentNode dw:Enhance_Image_\(Image\),
+        dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
@@ -929,6 +931,20 @@ dw:Business_name a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Business Name" .
+
+dw:Enhance_Image_\(Image\) a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    schema:name "Enhance Image" .
+
+dw:Enhance_Image_\(Video\) a dw:Task ;
+    dw:parentNode dw:KeyframeExtraction ;
+    dw:relatedMediaType dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    schema:name "Enhance Image" .
 
 dw:File_Name a dw:Task ;
     dw:parentNode dw:Who_created_content ;
@@ -965,13 +981,6 @@ dw:How a dw:Question ;
         dw:Video ;
     rdfs:comment "This How can be used for all mediaObjects" ;
     schema:name "How" .
-
-dw:KeyframeExtraction a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Keyframe Extraction" .
 
 dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
@@ -1078,13 +1087,12 @@ dw:Domain_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Domain name" .
 
-dw:Enhance_Image a dw:Task ;
+dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
+    dw:relatedMediaType dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
-    schema:name "Enhance Image" .
+    rdfs:comment "is a" ;
+    schema:name "Keyframe Extraction" .
 
 dw:Metadata a dw:Task ;
     dw:howTo "is usually attached to an image or video. It includes the photo/video size, recording date and device, location, editing programs and technical details (aperture, ISO, exposure time...)" ;
