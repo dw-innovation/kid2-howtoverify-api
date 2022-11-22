@@ -467,7 +467,8 @@ dw:RIS_\(Image\) a dw:Task ;
 
 dw:RIS_\(Video\) a dw:Task ;
     dw:parentNode dw:KeyframeExtraction,
-        dw:Object_identification ;
+        dw:Object_identification,
+        dw:Person_identification ;
     dw:relatedMediaType dw:Video ;
     dw:remarks "['If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions']" ;
     rdfs:comment "is a way to check if this images has been pubklished before on any website or a similar one. In the results you find more about the context what is happening here and you might find teh original photo." ;
@@ -822,7 +823,8 @@ dw:Facebook a dw:Task ;
 
 dw:GPS_Data a dw:Task ;
     dw:parentNode dw:Where ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "GPS Data can help you ...." ;
     schema:name "GPS Data" .
@@ -987,14 +989,6 @@ dw:Language_detection a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Language detection" .
 
-dw:Person_identification a dw:Task ;
-    dw:parentNode dw:Who_is_in_content ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Person Identification can be used for ......" ;
-    schema:name "Person Identification" .
-
 dw:Satellite_data a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
@@ -1092,6 +1086,14 @@ dw:Metadata a dw:Task ;
         dw:Video ;
     dw:remarks "['can easily be maniupualted so also cross-reference the information', 'shared visuals on social networks usually do not have metadata. Exceptions are Telegram (check!!) People can send you the original via email as well. ']" ;
     schema:name "Metadata" .
+
+dw:Person_identification a dw:Task ;
+    dw:parentNode dw:Who_is_in_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Person Identification can be used for ......" ;
+    schema:name "Person Identification" .
 
 dw:Person_name a dw:Task ;
     dw:parentNode dw:Author,
