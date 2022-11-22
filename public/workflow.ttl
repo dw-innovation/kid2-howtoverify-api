@@ -784,7 +784,7 @@ dw:newsgathering a dw:Task ;
 
 dw:Adress a dw:Task ;
     dw:parentNode dw:Author,
-        dw:Contact_info ;
+        dw:Contact ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -807,12 +807,12 @@ dw:Audio_from_video_extraction a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Audio from video extraction" .
 
-dw:Contact_info a dw:Task ;
+dw:Contact a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Source ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
-    schema:name "Contact info" .
+    schema:name "Contact" .
 
 dw:CropRotateFlip a dw:Task ;
     dw:parentNode dw:Background_Removal ;
