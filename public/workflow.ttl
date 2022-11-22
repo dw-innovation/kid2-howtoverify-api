@@ -805,7 +805,7 @@ dw:Contact a dw:Task ;
     dw:relatedMediaType dw:Source ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
-    schema:name "Contact info" .
+    schema:name "Contact" .
 
 dw:CropRotateFlip a dw:Task ;
     dw:parentNode dw:Background_Removal ;
