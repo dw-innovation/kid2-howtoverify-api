@@ -746,17 +746,6 @@ dw:WolframAlpha a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "paid / free" .
 
-dw:Yandex a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Reverse_Image_Search ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Yandex Reverse Image Search..." ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "https://yandex.com/images" ;
-    schema:name "Yandex RIS" ;
-    schema:publisher "Yandex" ;
-    schema:usageInfo "paid / free" .
-
 dw:Yandex_Images a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Reverse_Image_Search ;
