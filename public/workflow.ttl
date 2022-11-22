@@ -94,16 +94,9 @@ dw:Fotoforensic a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" ;
     schema:usageInfo "free" .
 
-dw:GPS_Data a dw:Task ;
-    dw:parentNode dw:Where ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "GPS Data can help you ...." ;
-    schema:name "GPS Data" .
-
 dw:Geohints a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Visual_search ;
+    dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['Tips to watch out for this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf)']" ;
@@ -140,23 +133,29 @@ dw:Google_Cache a dw:SoftwareApplication ;
 
 dw:Google_Earth a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Landscape_identification,
-        dw:Manual_geolocation,
-        dw:Visual_search ;
+    dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Google Earth" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://earth.google.com/" ;
     schema:name "Google Earth" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
+
+dw:Google_Earth_3D a dw:SoftwareApplication ;
+    dw:howTo "['step 1', 'step 2']" ;
+    dw:parentNode dw:Landscape_identification ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "Google Earth" ;
+    schema:applicationUrl "https://earth.google.com/web" ;
+    schema:name "Google Earth 3D" ;
+    schema:publisher "Bladibla Productions" .
 
 dw:Google_Maps a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Manual_geolocation,
-        dw:Visual_search ;
+    dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1']" ;
@@ -271,7 +270,7 @@ dw:Landmark_recognition a dw:SoftwareApplication ;
 
 dw:LatLong a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Manual_geolocation ;
+    dw:parentNode dw:GPS_Data ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "LatLong helps you find all available metadata on location" ;
@@ -334,9 +333,7 @@ dw:Magnifier a dw:SoftwareApplication ;
 
 dw:MapSwitcher a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Landscape_identification,
-        dw:Manual_geolocation,
-        dw:Visual_search ;
+    dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -349,8 +346,7 @@ dw:MapSwitcher a dw:SoftwareApplication ;
 
 dw:Mapillary a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Manual_geolocation,
-        dw:Visual_search ;
+    dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -479,8 +475,7 @@ dw:RIS_\(Video\) a dw:Task ;
 
 dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Landscape_identification,
-        dw:Manual_geolocation ;
+    dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -575,6 +570,16 @@ dw:TimeandDate a dw:SoftwareApplication ;
     schema:applicationUrl "https://www.timeanddate.com/" ;
     schema:name "TimeandDate" ;
     schema:publisher "Bladibla Productions" .
+
+dw:TinEye a dw:SoftwareApplication ;
+    dw:howTo "['Upload or add the URL of an image in the search bar', 'select text and it can translate the words ', 'switch to standard version of google image search and change search terms and use th filter']" ;
+    dw:parentNode dw:Reverse_Image_Search ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks "['better results, e.g. cropping, enhancing of resolution, contrast-enhancement', 'You can use Google Lens on your mobile phone']" ;
+    rdfs:comment "TinEye is very efficient for reverse image search. You can select parts of a photo and find similar images online." ;
+    schema:applicationUrl "https://tineye.com/" ;
+    schema:name "TinEye" ;
+    schema:publisher "" .
 
 dw:Topic a dw:Task ;
     dw:parentNode dw:What ;
@@ -716,8 +721,7 @@ dw:Whois_Domain a dw:SoftwareApplication ;
 
 dw:Wikimapia a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Manual_geolocation,
-        dw:Visual_search ;
+    dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -766,8 +770,7 @@ dw:Yandex_Images a dw:SoftwareApplication ;
 
 dw:Yandex_Maps a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
-    dw:parentNode dw:Manual_geolocation,
-        dw:Visual_search ;
+    dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -826,6 +829,13 @@ dw:Facebook a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Facebook" .
+
+dw:GPS_Data a dw:Task ;
+    dw:parentNode dw:Where ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "GPS Data can help you ...." ;
+    schema:name "GPS Data" .
 
 dw:IP_address a dw:Task ;
     dw:parentNode dw:Where ;
@@ -963,6 +973,14 @@ dw:KeyframeExtraction a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Keyframe Extraction" .
 
+dw:Landscape_identification a dw:Task ;
+    dw:parentNode dw:Visual_Intelligence ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Landscape Identification" .
+
 dw:Language_detection a dw:Task ;
     dw:parentNode dw:What,
         dw:Where ;
@@ -978,6 +996,14 @@ dw:Person_identification a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Person Identification can be used for ......" ;
     schema:name "Person Identification" .
+
+dw:Satellite_data a dw:Task ;
+    dw:parentNode dw:Visual_Intelligence ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "" ;
+    schema:name "Satellite data" .
 
 dw:Shadow_Analyses a dw:Task ;
     dw:parentNode dw:When ;
@@ -1078,14 +1104,6 @@ dw:Person_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Person Name" .
 
-dw:Landscape_identification a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "Landscape Identification" .
-
 dw:Object_identification a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
@@ -1144,6 +1162,15 @@ dw:Website a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Website" .
 
+dw:Manual_geolocation a dw:Task ;
+    dw:parentNode dw:Adress,
+        dw:Visual_Intelligence ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
+    schema:name "Manual Geolocation" .
+
 dw:Reverse_Image_Search a dw:Task ;
     dw:relatedMediaType dw:Enhance_Image,
         dw:Image,
@@ -1153,14 +1180,6 @@ dw:Reverse_Image_Search a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Reverse Image Search" .
-
-dw:Visual_search a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
-    schema:name "Visual search" .
 
 dw:When a dw:Question ;
     dw:parentNode dw:Audio,
@@ -1177,15 +1196,6 @@ dw:Who_created_content a dw:SubQuestion ;
         dw:Video ;
     dw:remarks "Who created the original piece of content is not necessarily the one who uploaded it on the platform where you found it. It is very easy to download or reshare content from any platform like Youtube or Twitter, then publish that same content to another social platform. You want to verify the primary source who eywitnessed the incident. It can tell you the motivation behind recording it and getting more context." ;
     schema:name "Who created content" .
-
-dw:Manual_geolocation a dw:Task ;
-    dw:parentNode dw:Adress,
-        dw:Visual_Intelligence ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Landscape can be used for ......" ;
-    schema:name "Manual Geolocation" .
 
 dw:Where a dw:Question ;
     dw:parentNode dw:Audio,
