@@ -95,6 +95,8 @@ class KIDGraph:
         nodes = []
         for node in self.sub_graph.nodes:
             data = self.get_feats(node)
+            if str(node) == self.root_node:
+                data["level"] = 0
             for path in nx.all_simple_paths(self.sub_graph, source=self.root_node, target=node):
                 data["level"] = len(path) - 1
 
