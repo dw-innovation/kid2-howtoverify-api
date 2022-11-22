@@ -3,25 +3,25 @@
 @prefix schema: <https://schema.org/> .
 
 dw:Baidu_Images a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Upload or add the URL of an image in the search bar ']" ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "['Baidu is most useful with images from China??']" ;
     rdfs:comment "Baidu Reverse Image Search..." ;
     schema:applicationUrl "https://image.baidu.com" ;
     schema:name "Baidu Images" ;
     schema:publisher "Baidu" .
 
 dw:Boom_3D a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['download the free trial on your desktop ', 'TESTING it!!']" ;
     dw:parentNode dw:Audio_enhancement ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Boom 3D is..." ;
-    schema:aboutUrl "" ;
-    schema:applicationUrl "LIST of enhancers https://fixthephoto.com/best-free-audio-enhancers.html" ;
+    rdfs:comment "Boom 3D can enhance the sounds in your audio file, by cropping, removing unwanted noises. It filters out ambient noises." ;
+    schema:applicationUrl """https://www.globaldelight.com/boom/ 
+
+LIST of enhancers https://fixthephoto.com/best-free-audio-enhancers.html""" ;
     schema:name "Boom 3D" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "XY Productions" .
 
 dw:Codec_Analyses a dw:Task ;
     dw:parentNode dw:Where,
@@ -44,11 +44,9 @@ dw:Edit_photo a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Edit photo is..." ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://edit.photo/" ;
     schema:name "Edit photo" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Epios a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -66,11 +64,9 @@ dw:Exif_Data a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Exif Data helps you find all available metadata" ;
-    schema:aboutUrl "https://exifdata.com/about" ;
     schema:applicationUrl "https://exifdata.com/" ;
     schema:name "Exif Data" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Eyewitness a dw:Task ;
     dw:parentNode dw:Interviews ;
@@ -88,11 +84,9 @@ dw:Fotoforensic a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "What is" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://fotoforensics.com/" ;
     schema:name "Fotoforensics" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Geohints a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -101,11 +95,9 @@ dw:Geohints a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['Tips to watch out for this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf)']" ;
     rdfs:comment "What is:" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://geohints.com/" ;
     schema:name "GeoHint" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Google_Advanced_Search a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -160,11 +152,9 @@ dw:Google_Maps a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['remark 1']" ;
     rdfs:comment "map, street and satellite view" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://www.google.com/maps" ;
     schema:name "Google Maps" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Googles_Images a dw:SoftwareApplication ;
     dw:howTo "['Upload or add the URL of an image in the search bar', 'select text and it can translate the words ', 'switch to standard version of google image search and change search terms and use th filter']" ;
@@ -210,11 +200,9 @@ dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "What is" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://hugin.sourceforge.io/" ;
     schema:name "Hugin - Panorama photo stitcher" ;
-    schema:publisher "..." ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "..." .
 
 dw:Impressum a dw:Task ;
     dw:parentNode dw:Website ;
@@ -230,11 +218,9 @@ dw:InVid a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "InVid" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "InVid" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Instagram_search a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -274,11 +260,9 @@ dw:LatLong a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "LatLong helps you find all available metadata on location" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://www.latlong.net/" ;
     schema:name "LatLong" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Lets_enhance_io a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -326,11 +310,9 @@ dw:Magnifier a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Magnifier is" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "InVid" ;
     schema:name "Magnifier" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:MapSwitcher a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -342,8 +324,7 @@ dw:MapSwitcher a dw:SoftwareApplication ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://chrome.google.com/webstore/detail/map-switcher/fanpjcbgdinjeknjikpfnldfpnnpkelb?hl=en" ;
     schema:name "MapSwitcher" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Mapillary a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -355,8 +336,7 @@ dw:Mapillary a dw:SoftwareApplication ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://www.mapillary.com/app/" ;
     schema:name "Mapillary" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Metadata2Go a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -485,11 +465,9 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Sentinel Hub is a" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://apps.sentinel-hub.com/eo-browser" ;
     schema:name "Sentinel Hub EO Browser" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Speech_to_text_Google a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop']" ;
@@ -675,11 +653,9 @@ dw:WhoIs a dw:SoftwareApplication ;
         dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "What is:" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://www.whois.com/" ;
     schema:name "WhoIs" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:WhoPostedWhat a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -710,11 +686,9 @@ dw:Wikimapia a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "User-crowd based map service" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "http://wikimapia.org/" ;
     schema:name "Wikimapia" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:WolframAlpha a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -723,11 +697,9 @@ dw:WolframAlpha a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "WolframAlpha is a search engine" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://www.wolframalpha.com/" ;
     schema:name "WolframAlpha" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Yandex_Images a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -735,11 +707,9 @@ dw:Yandex_Images a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Yandex Reverse Image Search..." ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://yandex.com/images" ;
     schema:name "Yandex Images" ;
-    schema:publisher "Yandex" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Yandex" .
 
 dw:Yandex_Maps a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -748,11 +718,9 @@ dw:Yandex_Maps a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "What is:" ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://yandex.com/maps" ;
     schema:name "Yandex Maps" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:newsgathering a dw:Task ;
     dw:parentNode dw:How ;
