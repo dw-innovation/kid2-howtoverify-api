@@ -783,8 +783,10 @@ dw:newsgathering a dw:Task ;
     schema:name "newsgathering" .
 
 dw:Adress a dw:Task ;
-    dw:parentNode dw:Author ;
-    dw:relatedMediaType dw:Text ;
+    dw:parentNode dw:Author,
+        dw:Contact_info ;
+    dw:relatedMediaType dw:Source,
+        dw:Text ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Adress" .
@@ -804,6 +806,13 @@ dw:Audio_from_video_extraction a dw:Task ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "is a" ;
     schema:name "Audio from video extraction" .
+
+dw:Contact_info a dw:Task ;
+    dw:parentNode dw:Where ;
+    dw:relatedMediaType dw:Source ;
+    dw:remarks "['remark 1', 'remark 2']" ;
+    rdfs:comment "is a" ;
+    schema:name "Contact info" .
 
 dw:CropRotateFlip a dw:Task ;
     dw:parentNode dw:Background_Removal ;
@@ -1165,6 +1174,8 @@ dw:Manual_geolocation a dw:Task ;
     dw:parentNode dw:Adress,
         dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
