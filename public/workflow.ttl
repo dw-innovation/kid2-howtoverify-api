@@ -443,8 +443,10 @@ dw:RIS_\(Image\) a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Text ;
-    dw:remarks "['If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions']" ;
-    rdfs:comment "is a way to check if this images has been pubklished before on any website or a similar one. In the results you find more about the context what is happening here and you might find teh original photo." ;
+    dw:remarks "['If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to find earlier versions', 'earch search engine has its pros and cons. Use them all to collect information']" ;
+    rdfs:comment """Reverse image search is a way to check if the content has been published before. The search results will also show you similar versions and add more context to the event. 
+
+A reverse image search can be done in one of two ways: either by dragging the photo to a tab or window in your browser open on the reverse image search page, or by using a Chrome extension like InVid.""" ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -1238,84 +1240,72 @@ This is an essential question to understand what are you looking it and why it i
 
 dw:Audio a dw:MediaObject ;
     dw:remarks "['close your eyes and use headphones to listen carefully ', 'turn off the sound when you watch the video several times']" ;
-    rdfs:comment """In verification you try to answer these questions:
+    rdfs:comment """The audio verification process builds on answering the following questions
 
-What has happened?
+Who is the originator of the audio?
+
+What  is the content about?
 
 Where did it happen?
 
 When did it happen?
 
-Who captured the photo or video?
-
-How did it happen? This is a question you gather more information when you look deeper in the incident. 
+An audio can tell a story itself. In this case its crucial to answer the question: How did it happen?
 
 Audio verification is challenging cause manipulation is difficult but not impossible to detect. Listen carefully what and how something is being said.""" ;
     schema:name "Audio" .
 
 dw:Source a dw:MediaObject ;
     dw:remarks "['Think about the motivation of the source. Why was this information published?']" ;
-    rdfs:comment """In verification you try to answer these questions:
+    rdfs:comment """The source verification process builds on answering the following questions
 
-What has happened?
+Who is the source?
 
-Where did it happen?
-
-When did it happen?
-
-Who captured the photo or video?
-
-How did it happen? This is a question you gather more information when you look deeper in the incident. 
-
-Source verification is""" ;
+What does the digital footrprint tells us?""" ;
     schema:name "Source" .
 
 dw:Text a dw:MediaObject ;
     dw:remarks "['never trust a screenshot because it is very easy to manipulate']" ;
-    rdfs:comment """In verification you try to answer these questions:
+    rdfs:comment """The text verification process builds on answering the following questions
 
 What has happened?
 
-Where did it happen?
+Who is the originator of the text?
 
-When did it happen?
+Where was it published?
 
-Who captured the photo or video?
-
-How did it happen? This is a question you gather more information when you look deeper in the incident. 
-
-Text verification is""" ;
+When was it happen?""" ;
     schema:name "Text" .
 
 dw:Video a dw:MediaObject ;
     dw:remarks "['watching a video frame-by-frame ', 'turn off the sound when you watch the video several times']" ;
-    rdfs:comment """In verification you try to answer these questions:
+    rdfs:comment """The video verification process builds on answering the following questions
 
 What has happened?
+
+Who is the originator of the video?
 
 Where did it happen?
 
 When did it happen?
 
-Who captured the photo or video?
+One video can tell a story itself. In this case its crucial to answer the question: How did it happen?
 
-How did it happen? This is a question you gather more information when you look deeper in the incident. 
-
-Video verification is challenging but you can also get most info out of it cause you have more visuals and audio.""" ;
+And what can you find out about the sound?""" ;
     schema:name "Video" .
 
 dw:Image a dw:MediaObject ;
-    dw:remarks "['Look closely at the image before you start digging']" ;
-    rdfs:comment """In verification you try to answer these questions:
+    dw:remarks "['Look closely at the image before you start digging', 'If it looks too good to be true, there might be something fishy about it']" ;
+    rdfs:comment """The image verification process builds on answering the following questions
 
 What has happened?
+
+Who is the originator of the image?
 
 Where did it happen?
 
 When did it happen?
 
-Who captured the photo or video?
-
-How did it happen? This is a question you gather more information when you look deeper in the incident.""" ;
+An image can tell a story itself. In this case its crucial to answer the question: How did it happen?""" ;
     schema:name "Image" .
 
