@@ -438,11 +438,9 @@ dw:Photo_Scissors a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Photo Scissors is a background removal tool..." ;
-    schema:aboutUrl "" ;
     schema:applicationUrl "https://photoscissors.com/" ;
     schema:name "Photo Scissors" ;
-    schema:publisher "..." ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "" .
 
 dw:RIS_\(Image\) a dw:Task ;
     dw:parentNode dw:Context,
@@ -987,8 +985,8 @@ dw:Language_detection a dw:Task ;
 dw:Original a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "" ;
-    rdfs:comment "Original" ;
+    dw:remarks "['the shared content might be taken out of context but was real']" ;
+    rdfs:comment "Are you looking or listening to the original file?" ;
     schema:name "Original" .
 
 dw:Satellite_data a dw:Task ;
@@ -1242,7 +1240,9 @@ dw:What a dw:Question ;
         dw:Text,
         dw:Video ;
     dw:remarks "['check local reports ', 'search cross-medial on different social media platforms', 'reach out to reporters on the ground']" ;
-    rdfs:comment "What you see and what you hear might be new. First, you want to find out what is actually happening here and am I looking or listening to the original file?" ;
+    rdfs:comment """What you see and what you hear might be new news to you. First, you want to find out what is actually happening here and are you looking or listening to the original file?
+
+If the footage is not clear you can enhance it as well.""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
