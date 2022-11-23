@@ -1231,9 +1231,7 @@ dw:What a dw:Question ;
         dw:Text,
         dw:Video ;
     dw:remarks "['check local reports ', 'search cross-medial on different social media platforms', 'reach out to reporters on the ground']" ;
-    rdfs:comment """What has happened? 
-
-This is an essential question to understand what are you looking it and why it is important to keep on verifying. It is about getting context to the event as well as making sure you are looking at the original version.""" ;
+    rdfs:comment "What you see and what you hear might be new. First, you want to find out what is actually happening here and am I looking or listening to the original file?" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
