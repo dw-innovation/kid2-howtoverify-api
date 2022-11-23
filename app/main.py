@@ -1,5 +1,5 @@
 from pydantic import BaseModel, ValidationError, validator
-from app.kg_ops import KIDGraph
+from app.kg_ops import KIDGraph, validate_click_history
 from typing import Dict, Any, AnyStr, List
 from dotenv import load_dotenv
 from fastapi import FastAPI
@@ -23,9 +23,9 @@ app.add_middleware(
 class ClickHistoryRequest(BaseModel):
     click_history: List
 
-    @validator('click_history', each_item=True, always=True)
+    @validator('click_history', always=True)
     def check_items_in_click_history(cls, v):
-        if not v.startswith('http://dw.com/'):
+        if not validate_click_history(v):
             raise ValueError('Not valid input')
         return v
 

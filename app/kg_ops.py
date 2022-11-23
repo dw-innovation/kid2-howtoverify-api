@@ -54,6 +54,15 @@ def query_paths():
     return q
 
 
+def validate_click_history(click_history):
+    for node in click_history:
+        node_type = g.value(URIRef(node), RDF.type)
+        if not node_type:
+            return False
+
+    return True
+
+
 class KIDGraph:
     def __init__(self, click_history=None):
 
