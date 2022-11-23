@@ -779,12 +779,15 @@ dw:Context a dw:Task ;
     rdfs:comment "Our information source might be wrong when a claim is made. So the need for verification starts with asweing the question: What has happened?" ;
     schema:name "Context" .
 
-dw:CropRotateFlip a dw:Task ;
+dw:CropRotateFlip a dw:SoftwareApplication ;
+    dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Background_Removal ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
-    schema:name "CropRotateFlip" .
+    rdfs:comment "CropRotateFlip the image will change the search results on reverse image search." ;
+    schema:applicationUrl "[https://edit.photo/](https://edit.photo/)" ;
+    schema:name "CropRotateFlip" ;
+    schema:publisher "" .
 
 dw:Facebook a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
