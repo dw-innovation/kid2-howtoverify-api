@@ -34,6 +34,12 @@ class SearchRequest(BaseModel):
     query: str
     category: str
 
+    @validator('category', always=True)
+    def check_category(cls, v):
+        if not v.startswith('http://dw.com'):
+            raise ValueError('Not valid input')
+        return v
+
 
 class Response(BaseModel):
     nodes: List
