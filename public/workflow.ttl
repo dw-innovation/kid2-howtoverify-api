@@ -166,16 +166,6 @@ dw:Google_Maps a dw:SoftwareApplication ;
     schema:name "Google Maps" ;
     schema:publisher "Bladibla Productions" .
 
-dw:Googles_Images a dw:SoftwareApplication ;
-    dw:howTo "['Upload or add the URL of an image in the search bar', 'select text and it can translate the words ', 'switch to standard version of google image search and change search terms and use th filter']" ;
-    dw:parentNode dw:Reverse_Image_Search ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks "['better results, e.g. cropping, enhancing of resolution, contrast-enhancement', 'You can use Google Lens on your mobile phone']" ;
-    rdfs:comment "Google Images is very efficient for reverse image search. You can select parts of a photo and find similar images online." ;
-    schema:applicationUrl "https://images.google.com/" ;
-    schema:name "Google Images" ;
-    schema:publisher "Google" .
-
 dw:Handelsregister a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Business_name ;
