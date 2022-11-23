@@ -3,10 +3,10 @@
 @prefix schema: <https://schema.org/> .
 
 dw:Baidu_Images a dw:SoftwareApplication ;
-    dw:howTo "['Upload or add the URL of an image in the search bar ']" ;
+    dw:howTo "['open the link and drag the photo to a tab or window in your browser ', 'upload the image from your desktop']" ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['Baidu is most useful with images from China??']" ;
+    dw:remarks "['results are more efficient with content from China']" ;
     rdfs:comment "Baidu Reverse Image Search..." ;
     schema:applicationUrl "https://image.baidu.com" ;
     schema:name "Baidu Images" ;
@@ -145,6 +145,16 @@ dw:Google_Earth_3D a dw:SoftwareApplication ;
     schema:name "Google Earth 3D" ;
     schema:publisher "Bladibla Productions" .
 
+dw:Google_Images a dw:SoftwareApplication ;
+    dw:howTo "['open the link and drag the photo to a tab or window in your browser ', 'upload the image from your desktop', 'select text and it can translate the words ', 'select \"find image source\" to add keywords and to use the Google tools like time, size and color. ']" ;
+    dw:parentNode dw:Reverse_Image_Search ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks "['play around with adding keywords and using the tools to help Google to show you what you are looking for', 'You can use Google Lens on your mobile phone']" ;
+    rdfs:comment "Google Images is very efficient for reverse image search. You can search for the original, take out text from the visual and translate it and crop specific elements." ;
+    schema:applicationUrl "https://images.google.com/" ;
+    schema:name "Google Images" ;
+    schema:publisher "Google" .
+
 dw:Google_Maps a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
     dw:parentNode dw:Manual_geolocation ;
@@ -265,15 +275,15 @@ dw:LatLong a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:Lets_enhance_io a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['You have to make an account', 'upload the image ']" ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Lets enhance io is an image enhancer" ;
+    dw:remarks "['you have 10 images for free', 'Gigapixel AI is also very useful but you you need to download the software on your computer']" ;
+    rdfs:comment "Lets enhance io is an AI image enhancer. You can enhance the resolution, do contrast-enhancement and much more." ;
     schema:applicationUrl "https://letsenhance.io/" ;
     schema:name "Lets enhance io" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "" .
 
 dw:LinkedIn a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -548,11 +558,11 @@ dw:TimeandDate a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:TinEye a dw:SoftwareApplication ;
-    dw:howTo "['Upload or add the URL of an image in the search bar', 'select text and it can translate the words ', 'switch to standard version of google image search and change search terms and use th filter']" ;
+    dw:howTo "['open the link and drag the photo to a tab or window in your browser ', 'upload the image from your desktop', 'use the filter on the left side to sort the images']" ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['better results, e.g. cropping, enhancing of resolution, contrast-enhancement', 'You can use Google Lens on your mobile phone']" ;
-    rdfs:comment "TinEye is very efficient for reverse image search. You can select parts of a photo and find similar images online." ;
+    dw:remarks "['better results, e.g. cropping, enhancing of resolution, contrast-enhancement', 'good results when using stock images']" ;
+    rdfs:comment "TinEye has a smaller database but is still very efficient fwhen it comes to altered versions and showing results in chronolopgical order." ;
     schema:applicationUrl "https://tineye.com/" ;
     schema:name "TinEye" ;
     schema:publisher "" .
@@ -702,10 +712,10 @@ dw:WolframAlpha a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:Yandex_Images a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['open the link and drag the photo to a tab or window in your browser ', 'upload the image from your desktop ', 'it can automatically detect text and translate the words in Russian', 'crop specific items you do another reverse search']" ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "['Yandex is an Ukrainian search image. Using footage from the region will be more efficient', 'many results might be in Russian so its good to use Google translate plugin for translation', 'you get better results if you enhance your image ']" ;
     rdfs:comment "Yandex Reverse Image Search..." ;
     schema:applicationUrl "https://yandex.com/images" ;
     schema:name "Yandex Images" ;
@@ -908,7 +918,8 @@ dw:Enhance_Image_\(Image\) a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    rdfs:comment """Enhancing an image can help to get better results with visual analyses like reverse image search. 
+You might enhance the resolution, do contrast-enhancement or just take out the background.""" ;
     schema:name "Enhance Image" .
 
 dw:Enhance_Image_\(Video\) a dw:Task ;
