@@ -223,7 +223,7 @@ dw:Impressum a dw:Task ;
     schema:name "Impressum" .
 
 dw:InVid a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Install the browser plugin on Firefox or Chrome', 'step 2']" ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Video ;
     dw:remarks "['remark 1', 'remark 2']" ;
@@ -315,14 +315,14 @@ What can I tell about what I am hearing""" ;
     schema:name "Listen to the audio" .
 
 dw:Magnifier a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Install the browser plugin on Firefox or Chrome', 'open Image in the left menu', 'select maginifier', 'upload the image ', 'browse over the image']" ;
     dw:parentNode dw:Zoom_in_details ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Magnifier is" ;
-    schema:applicationUrl "InVid" ;
+    rdfs:comment "Magnifier highlights elements you select on an image without changing the resolution." ;
+    schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "Magnifier" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "AFP Medialab" .
 
 dw:MapSwitcher a dw:SoftwareApplication ;
     dw:howTo "['step 1', 'step 2']" ;
@@ -894,8 +894,8 @@ dw:Weather_Analyses a dw:Task ;
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "is a" ;
+    dw:remarks "['writing down 20 hints you detect for answering the question what is happening']" ;
+    rdfs:comment "You will be surprised but taking your time and looking closely at an image will give you more information that expected. To rest your eagle eye you want to zoom in without changing the resolution." ;
     schema:name "Zoom in details" .
 
 dw:Background_Removal a dw:Task ;
