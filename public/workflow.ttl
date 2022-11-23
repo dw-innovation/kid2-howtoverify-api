@@ -444,9 +444,7 @@ dw:RIS_\(Image\) a dw:Task ;
         dw:Source,
         dw:Text ;
     dw:remarks "['If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to find earlier versions', 'earch search engine has its pros and cons. Use them all to collect information']" ;
-    rdfs:comment """Reverse image search is a way to check if the content has been published before. The search results will also show you similar versions and add more context to the event. 
-
-A reverse image search can be done in one of two ways: either by dragging the photo to a tab or window in your browser open on the reverse image search page, or by using a Chrome extension like InVid.""" ;
+    rdfs:comment "Reverse image search is a way to check if the content has been published before. The search results will also show you similar versions and add more context to the event." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -769,8 +767,8 @@ dw:Contact a dw:Task ;
 dw:Context a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "" ;
-    rdfs:comment "Context" ;
+    dw:remarks "['The event you are looking at or listening to might be exclusive. Check for local sources and use Google translate for searching in local language']" ;
+    rdfs:comment "Our information source might be wrong when a claim is made. So the need for verification starts with asweing the question: What has happened?" ;
     schema:name "Context" .
 
 dw:CropRotateFlip a dw:Task ;
