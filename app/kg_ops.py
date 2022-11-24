@@ -34,6 +34,10 @@ DW = Namespace("http://dw.com/")
 g = Graph()
 g.parse("public/workflow.ttl")
 
+media_objects = []
+for s in g.subjects(RDF.type, DW.MediaObject):
+    media_objects.append(s)
+
 
 def query_paths():
     query = '''
@@ -143,7 +147,7 @@ class KIDGraph:
         return node_data
 
     @staticmethod
-    def search(begin_node: str, root_node: str):
+    def search_with_category(begin_node: str, root_node: str):
         begin_node_id = None
         for candidate_node in g.subjects(SCHEMA.name, Literal(begin_node)):
             if (None, RDFS.subClassOf, candidate_node) in g:
@@ -165,6 +169,15 @@ class KIDGraph:
             return []
         paths = KIDGraph.search_by_id(begin_node_id, root_node)
         return paths
+
+    @staticmethod
+    def search(begin_node: str):
+        results = {}
+        for media_object in media_objects:
+            media_object = str(media_object)
+            results[media_object] = KIDGraph.search_with_category(begin_node, media_object)
+
+        return results
 
     @staticmethod
     def search_recursive(begin_node_id, root_node, nx_g):
@@ -325,9 +338,7 @@ class KIDGraph:
 
     @staticmethod
     def get_index():
-        media_objects, index = [], []
-        for s in g.subjects(RDF.type, DW.MediaObject):
-            media_objects.append(s)
+        index = []
 
         types = [DW.SoftwareApplication, DW.Task]
 
