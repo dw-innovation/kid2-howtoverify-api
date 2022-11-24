@@ -172,10 +172,19 @@ class KIDGraph:
 
     @staticmethod
     def search(begin_node: str):
-        results = {}
+        results = []
         for media_object in media_objects:
+            media_object_name = str(g.value(media_object, SCHEMA.name))
             media_object = str(media_object)
-            results[media_object] = KIDGraph.search_with_category(begin_node, media_object)
+            results.append(
+                {
+                    "category": {
+                        "id": media_object,
+                        "name": media_object_name
+                    },
+                    "results": KIDGraph.search_with_category(begin_node, media_object)
+                }
+            )
 
         return results
 

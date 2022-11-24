@@ -39,12 +39,17 @@ class Response(BaseModel):
     links: List
 
 
+class SearchResponse(BaseModel):
+    category: Dict
+    results: List
+
+
 @app.post("/graph", response_model=Response)
 def subgraph(click_history: ClickHistoryRequest):
     return construct_subgraph(click_history)
 
 
-@app.post("/search", response_model=Dict)
+@app.post("/search", response_model=List[SearchResponse])
 def search(search_request: SearchRequest):
     return _search(search_request)
 
