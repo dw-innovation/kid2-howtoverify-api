@@ -56,11 +56,11 @@ def search(search_request: SearchRequest):
 
 @app.get("/getIndex", response_model=List)
 def get_index():
-    return get_index()
+    return _get_index()
 
 
 @CACHE.memoize()
-def get_index():
+def _get_index():
     return KIDGraph.get_index()
 
 
