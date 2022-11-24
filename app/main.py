@@ -32,13 +32,6 @@ class ClickHistoryRequest(BaseModel):
 
 class SearchRequest(BaseModel):
     query: str
-    category: str
-
-    @validator('category', always=True)
-    def check_category(cls, v):
-        if not v.startswith('http://dw.com'):
-            raise ValueError('Not valid input')
-        return v
 
 
 class Response(BaseModel):
@@ -46,29 +39,34 @@ class Response(BaseModel):
     links: List
 
 
+class SearchResponse(BaseModel):
+    category: Dict
+    results: List
+
+
 @app.post("/graph", response_model=Response)
 def subgraph(click_history: ClickHistoryRequest):
     return construct_subgraph(click_history)
 
 
-@app.post("/search", response_model=List)
+@app.post("/search", response_model=List[SearchResponse])
 def search(search_request: SearchRequest):
     return _search(search_request)
 
 
 @app.get("/getIndex", response_model=List)
-def search():
-    return get_index()
+def get_index():
+    return _get_index()
 
 
 @CACHE.memoize()
-def get_index():
+def _get_index():
     return KIDGraph.get_index()
 
 
 @CACHE.memoize()
 def _search(search_request):
-    return KIDGraph.search(begin_node=search_request.query, root_node=search_request.category)
+    return KIDGraph.search(begin_node=search_request.query)
 
 
 @CACHE.memoize()
