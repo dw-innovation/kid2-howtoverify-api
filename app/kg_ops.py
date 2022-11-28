@@ -347,27 +347,16 @@ class KIDGraph:
 
     @staticmethod
     def get_index():
-        index = []
+        node_ids = set()
 
         types = [DW.SoftwareApplication, DW.Task]
 
         for type in types:
             for node in g.subjects(RDF.type, type):
-                id_app = str(node)
+                name = str(g.value(node, SCHEMA.name))
+                if len(name) == 0:
+                    print(node)
+                node_ids.add(str(g.value(node, SCHEMA.name)))
 
-                categories = []
-                for media_object in media_objects:
-                    id_media_object = str(media_object)
-                    if KIDGraph.check_path(begin_node_id=id_app, root_node=id_media_object, type=str(type)):
-                        categories.append(id_media_object)
-
-                if len(categories) == 0:
-                    print(f"Check {node}, it has no related media type")
-                    continue
-
-                index.append({'id': id_app,
-                              'name': str(g.value(node, SCHEMA.name)),
-                              'categories': categories
-                              })
-
+        index = list(map(lambda x: {"name": x}, node_ids))
         return index

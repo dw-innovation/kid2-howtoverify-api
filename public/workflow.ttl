@@ -282,8 +282,7 @@ dw:LinkedIn a dw:SoftwareApplication ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "LinkedIn is a" ;
     schema:applicationUrl "https://www.linkedin.com/" ;
-    schema:name "",
-        "LinkedIn" ;
+    schema:name "LinkedIn" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Listen_to_the_audio a dw:Task ;
