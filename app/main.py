@@ -1,13 +1,11 @@
 from pydantic import BaseModel, ValidationError, validator
 from app.kg_ops import KIDGraph, validate_click_history
 from typing import Dict, Any, AnyStr, List
-from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from diskcache import Cache
 
 app = FastAPI()
-load_dotenv()
 CACHE = Cache('tmp')
 
 origins = ["https://preview.howtoverify.info", "https://www.howtoverify.info", "https://howtoverify.info", "http://localhost:3000", "http://localhost:3001"]
