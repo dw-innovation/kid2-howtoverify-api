@@ -1,6 +1,6 @@
-from pydantic import BaseModel, ValidationError, validator
-from app.kg_ops import KIDGraph, validate_click_history
-from typing import Dict, Any, AnyStr, List
+from pydantic import BaseModel,  validator
+import app.kg_ops as kg_ops
+from typing import Dict, List
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from diskcache import Cache
@@ -23,7 +23,7 @@ class ClickHistoryRequest(BaseModel):
 
     @validator('click_history', always=True)
     def check_items_in_click_history(cls, v):
-        if not validate_click_history(v):
+        if not kg_ops.validate_click_history(v):
             raise ValueError('Not valid input')
         return v
 
@@ -59,15 +59,14 @@ def get_index():
 
 @CACHE.memoize()
 def _get_index():
-    return KIDGraph.get_index()
+    return kg_ops.get_index()
 
 
 @CACHE.memoize()
 def _search(search_request):
-    return KIDGraph.search(begin_node=search_request.query)
+    return kg_ops.search(begin_node=search_request.query)
 
 
 @CACHE.memoize()
 def construct_subgraph(click_history):
-    subgraph = KIDGraph(click_history=click_history.click_history)
-    return subgraph.construct()
+    return kg_ops.construct(click_history=click_history.click_history)
