@@ -1208,7 +1208,7 @@ dw:Where a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['Geographic location tied to a particular tweet or Facebook post, but this information can be easily manipulated.', 'Metadata can also be manipulated.', 'try to find a second source like satellite images or a street view to confirm the location', 'writing down 20 hints that guide you to the location like streets signs, names and architecture', \"ask a friend to double-check if you can't see the tree in teh forest anymore\"]" ;
+    dw:remarks "['Geographic location tied to a particular tweet or Facebook post, but this information can be easily manipulated.', 'Metadata can also be manipulated.', 'try to find a second source like satellite images or a street view to confirm the location', 'writing down 20 hints that guide you to the location like streets signs, names and architecture', 'ask a friend to double-check if you can not see the tree in the forest anymore']" ;
     rdfs:comment """Where did it happend? 
 
 Finding the exact location is crucial to know if this incident has happened at this exact place.
