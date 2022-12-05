@@ -518,7 +518,7 @@ dw:Photo_Scissors a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks "remark 1",
         "remark 2" ;
-    rdfs:comment "Photo Scissors is a background removal tool..." ;
+    rdfs:comment "is a background removal tool." ;
     schema:applicationUrl "https://photoscissors.com/" ;
     schema:name "Photo Scissors" ;
     schema:publisher "" .
@@ -533,8 +533,8 @@ dw:RIS_\(Image\) a dw:Task ;
         dw:Source,
         dw:Text ;
     dw:remarks "If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to find earlier versions",
-        "earch search engine has its pros and cons. Use them all to collect information" ;
-    rdfs:comment "Reverse image search is a way to check if the content has been published before. The search results will also show you similar versions and add more context to the event." ;
+        "each search engine has its pros and cons. Use them all to gather information that will help" ;
+    rdfs:comment "is a way to check if you are looking at the orignal version of the footage and if the content has been published before. The search results will also show you similar versions and add more context to the event." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -543,8 +543,9 @@ dw:RIS_\(Video\) a dw:Task ;
         dw:Object_identification,
         dw:Person_identification ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions" ;
-    rdfs:comment "is a way to check if this images has been pubklished before on any website or a similar one. In the results you find more about the context what is happening here and you might find teh original photo." ;
+    dw:remarks "If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions",
+        "each search engine has its pros and cons. Use them all to gather information that will help " ;
+    rdfs:comment "is a way to find out if you are looking at the orignal version of the footage and if the content has been published before. The search results will also show you similar versions and add more context to the event." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -683,19 +684,17 @@ dw:Tweetbeaver a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:USearch a dw:SoftwareApplication ;
-    dw:howTo "step 1",
+    dw:howTo "fill out the ",
         "step 2" ;
     dw:parentNode dw:File_Name,
         dw:General_Search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "remark 1",
-        "remark 2" ;
-    rdfs:comment """Here you can search in the region where it is happening. 
-When searching for news, Google sometimes shows news items from your local area, and with the ability to target a very specific area, this might come in very handy.""" ;
+    dw:remarks "an alternative tool is http://isearchfrom.com/" ;
+    rdfs:comment "can simulate a search from different locations. Google's algorithm will show you results that might be happening in your local area. Here you can geotarget your search." ;
     schema:applicationUrl "https://usearchfrom.com/" ;
     schema:name "USearch" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Kevin Richard" .
 
 dw:Unix_timestamp a dw:SoftwareApplication ;
     dw:howTo "step 1",
@@ -969,9 +968,10 @@ dw:Interviews a dw:Task ;
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:Original ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "remark 1",
-        "remark 2" ;
-    rdfs:comment "Manipulation detection can be used for ......" ;
+    dw:remarks "close your eyes and listen carefully to the sound if there might be jumps",
+        "sharpen your senses here with our training page https://digger-project.com/sharpen-your-senses/",
+        "use your own senses and look at shadow and reflections in the visual " ;
+    rdfs:comment "is used for detecting if this footage has been altered like if elements have been taken out." ;
     schema:name "Manipulation detection" .
 
 dw:Ownership a dw:Task ;
@@ -1048,9 +1048,9 @@ dw:Background_Removal a dw:Task ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "remark 1",
-        "remark 2" ;
-    rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
+    dw:remarks "play around and sometimes it just helps to flip the image ",
+        "remove different parts of the background to see different search results" ;
+    rdfs:comment "Removing the background from an image or a video can help to get better results with visual analyses like a reverse image search." ;
     schema:name "Background removal" .
 
 dw:Business_name a dw:Task ;
@@ -1065,18 +1065,18 @@ dw:Business_name a dw:Task ;
 dw:Enhance_Image_\(Image\) a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "remark 1",
-        "remark 2" ;
-    rdfs:comment """Enhancing an image can help to get better results with visual analyses like reverse image search. 
-You might enhance the resolution, do contrast-enhancement or just take out the background.""" ;
-    schema:name "Enhance Image" .
+    dw:remarks "enhance the resolution and quality",
+        "sharpen the image and contrast-enhancement",
+        "take out the background to focus on the object" ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses like reverse image search." ;
+    schema:name "Enhance Image" ;
+    schema:publisher "Let’s Enhance, Inc." .
 
 dw:Enhance_Image_\(Video\) a dw:Task ;
     dw:parentNode dw:KeyframeExtraction ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "remark 1",
-        "remark 2" ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
+    dw:remarks "enhance the resolution and quality" ;
+    rdfs:comment "Enhancing an image can help to get better results with visual analyses, manually or even with a reverse image search." ;
     schema:name "Enhance Image" .
 
 dw:File_Name a dw:Task ;
@@ -1095,9 +1095,10 @@ dw:General_Search a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "remark 1",
-        "remark 2" ;
-    rdfs:comment "is a" ;
+    dw:remarks "think about keywords you wanna use to narrow down your search",
+        "use more several and trustworthy sources",
+        "write down the questions you want to answer" ;
+    rdfs:comment "is for getting a first glimpse in what is happening here. You can use the information you got by a source or web page and dig deeper to gathered more information" ;
     schema:name "General search" .
 
 dw:Historic_versions a dw:Task ;
@@ -1144,8 +1145,9 @@ dw:Language_detection a dw:Task ;
 dw:Original a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "the shared content might be taken out of context but was real" ;
-    rdfs:comment "Are you looking or listening to the original file?" ;
+    dw:remarks "content is reposted frequentely out of messenger apps or other social platforms. To determine the origin of the footage is getting more complicated. Make sure you have at least the original version",
+        "find the earliest shared version of the content" ;
+    rdfs:comment "means this footage has not been manipulated and it is from event it claims to show. To find out the origin of the footage will also give you information about the owner of the footage and where its coming from." ;
     schema:name "Original" .
 
 dw:Satellite_data a dw:Task ;
@@ -1244,9 +1246,9 @@ dw:Domain_name a dw:Task ;
 dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "remark 1",
+    dw:remarks "VLC player",
         "remark 2" ;
-    rdfs:comment "is a" ;
+    rdfs:comment "is a way to shine the light on specific shots of the video to do a more efficient visual analyses" ;
     schema:name "Keyframe Extraction" .
 
 dw:Metadata a dw:Task ;
@@ -1425,11 +1427,10 @@ dw:What a dw:Question ;
         dw:Text,
         dw:Video ;
     dw:remarks "check local reports ",
+        "if the footage is not clear you can enhance it",
         "reach out to reporters on the ground",
         "search cross-medial on different social media platforms" ;
-    rdfs:comment """What you see and what you hear might be new news to you. First, you want to find out what is actually happening here and are you looking or listening to the original file?
-
-If the footage is not clear you can enhance it as well.""" ;
+    rdfs:comment "What you see and what you hear might be new news to you. First, you want to find out what is actually happening here and are you looking or listening to the original file?" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
