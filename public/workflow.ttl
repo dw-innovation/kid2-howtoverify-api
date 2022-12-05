@@ -3,19 +3,23 @@
 @prefix schema: <https://schema.org/> .
 
 dw:Baidu_Images a dw:SoftwareApplication ;
-    dw:howTo "['open the link, drag and drop the photo to the Baidu search bar in your tab or browser window ', 'upload the image from your desktop by first clicking the little camera icon in the search bar and then the blue button in the search window.']" ;
+    dw:howTo "open the link, drag and drop the photo to the Baidu search bar in your tab or browser window ",
+        "upload the image from your desktop by first clicking the little camera icon in the search bar and then the blue button in the search window." ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['results are more efficient with content from China', 'Using GoogleTranslate to make the site readable breaks the functionality']" ;
+    dw:remarks "Using GoogleTranslate to make the site readable breaks the functionality",
+        "results are more efficient with content from China" ;
     rdfs:comment "Baidu Reverse Image Search is the chinese version of an image serach engine. It works like the other engines, such as Google or Yandex." ;
     schema:applicationUrl "https://image.baidu.com" ;
     schema:name "Baidu Images" ;
     schema:publisher "Baidu, Inc." .
 
 dw:Boom_3D a dw:SoftwareApplication ;
-    dw:howTo "['download the free trial on your desktop ', 'TEST it!!']" ;
+    dw:howTo "TEST it!!",
+        "download the free trial on your desktop " ;
     dw:parentNode dw:Audio_enhancement ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Boom 3D can enhance the sounds in your audio file, by cropping, removing unwanted noises. It filters out ambient noises." ;
     schema:applicationUrl """https://www.globaldelight.com/boom/ 
 
@@ -27,42 +31,55 @@ dw:Codec_Analyses a dw:Task ;
     dw:parentNode dw:Where,
         dw:Who ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "digital footprint - upload (location)" ;
     schema:name "Codec Analyses" .
 
 dw:ENF a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "cut & paste analyse if the audio was manipulated by taken out and/or rechange words, sentences" ;
     schema:name "ENF" .
 
 dw:Edit_photo a dw:SoftwareApplication ;
-    dw:howTo "['Load images by pasting an image URL, dropping an image, or pasting an image file', 'Choose the tool you need from the menue bar at the left', 'Select the detailed functionality from above or below the image', 'Hit the export button at the top right of the image to download your enhanced image']" ;
+    dw:howTo "Choose the tool you need from the menue bar at the left",
+        "Hit the export button at the top right of the image to download your enhanced image",
+        "Load images by pasting an image URL, dropping an image, or pasting an image file",
+        "Select the detailed functionality from above or below the image" ;
     dw:parentNode dw:Background_Removal ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['Your photos are not uploaded, image editing happens in your browser (according to the website owner)', 'You can integrate the image editor in your own website via API']" ;
+    dw:remarks "You can integrate the image editor in your own website via API",
+        "Your photos are not uploaded, image editing happens in your browser (according to the website owner)" ;
     rdfs:comment "Edit photo is an easy online photo editor. It offers you the basics to crop, rotate and flip an image. All of which can help improve the search results on reverse image search." ;
     schema:applicationUrl "https://edit.photo/" ;
     schema:name "Edit photo" ;
     schema:publisher "Pqina / Rik Schennink @rikschennink" .
 
 dw:Epios a dw:SoftwareApplication ;
-    dw:howTo "['Enter the e-mail-address in question into the search field', 'Hit enter or click the search button and answer the security captcha']" ;
+    dw:howTo "Enter the e-mail-address in question into the search field",
+        "Hit enter or click the search button and answer the security captcha" ;
     dw:parentNode dw:eMail ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['The software has three tiers (Visitor, Member and OSINTer) which offer different levels of detail.', 'In the free visitor and the free member (logged in) version, the search is limited to e-mail-addesses (no phone numbers) and the results are limited to specific networks only.', \"Epieos is hosted in Europe, and doesn't log any of your research (according to the owners)\"]" ;
+    dw:remarks "Epieos is hosted in Europe, and does not log any of your research (according to the owners)",
+        "In the free visitor and the free member (logged in) version, the search is limited to e-mail-addresses (no phone numbers) and the results are limited to specific networks only.",
+        "The software has three tiers (Visitor, Member and OSINTer) which offer different levels of detail." ;
     rdfs:comment "Epios is a tool that lets you anonymously find information linked to an e-mail-address, like for which social networks it has been used for. It also works with phone numbers, but only in the paid version." ;
     schema:applicationUrl "https://epieos.com/" ;
     schema:name "Epios" ;
     schema:publisher "Epieos" .
 
 dw:Exif_Data a dw:SoftwareApplication ;
-    dw:howTo "['Open the URL', 'Klick \"Durchsuchen\" to browse for an image on your computer or enter an imge URL in the respective field. ', 'Klick Upload or Submit', 'Scroll through the results']" ;
+    dw:howTo "Klick \"Durchsuchen\" to browse for an image on your computer or enter an imge URL in the respective field. ",
+        "Klick Upload or Submit",
+        "Open the URL",
+        "Scroll through the results" ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['The level of detail depends on what metadata is actually stored with the image', \"Images coming from social media usually don't contain any metadata, as they get erased during the upload process\"]" ;
+    dw:remarks "Images coming from social media usually don't contain any metadata, as they get erased during the upload process",
+        "The level of detail depends on what metadata is actually stored with the image" ;
     rdfs:comment "Exif Data helps you find all available metadata that come with an image, such as shutter speed, exposure compensation or the date and time the image was taken. Some images may even store GPS information." ;
     schema:applicationUrl "https://exifdata.com/" ;
     schema:name "Exif Data" ;
@@ -74,113 +91,139 @@ dw:Eyewitness a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['the person might be emotional affect', 'remark 2']" ;
+    dw:remarks "remark 2",
+        "the person might be emotional affect" ;
     rdfs:comment "is a person you recorded the footage and/or saw what has happened and might share more information how it enfolded." ;
     schema:name "eyewitness" .
 
 dw:Fotoforensic a dw:SoftwareApplication ;
-    dw:howTo "['Open the URL', 'Enter the URL of an image or click the search button to browse for an image on your computer', 'Click the Upload button and let the machine do the analysis', 'Once the analysis is done use the menue on the upper left hand corner to navigate through the different analysis results. ', \"Don't forget to hover your mouse over the image from time to time for a direct comparison of image and analysis output\"]" ;
+    dw:howTo "Click the Upload button and let the machine do the analysis",
+        "Don't forget to hover your mouse over the image from time to time for a direct comparison of image and analysis output",
+        "Enter the URL of an image or click the search button to browse for an image on your computer",
+        "Once the analysis is done use the menue on the upper left hand corner to navigate through the different analysis results. ",
+        "Open the URL" ;
     dw:parentNode dw:Manipulation_detection ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['While these tools can do a lot of analysis, the results are hard to read', \"It's best to read through some of the examples on the website first and/or involve an expert, before jumping to conclusions\"]" ;
+    dw:remarks "It's best to read through some of the examples on the website first and/or involve an expert, before jumping to conclusions",
+        "While these tools can do a lot of analysis, the results are hard to read" ;
     rdfs:comment "FotoForensics is a collection of different photo analysis algorithms allowing you to perform digital photo forensics. Using these algorithms, you can determine if a picture has been modified, and if so, sometimes even how." ;
     schema:applicationUrl "https://fotoforensics.com/" ;
     schema:name "Fotoforensics" ;
     schema:publisher "HackerFactor.com" .
 
 dw:Geohints a dw:SoftwareApplication ;
-    dw:howTo "['Open the URL', \"Choose the category you're interested in \", 'Scroll through the results and see if you can find useful tips']" ;
+    dw:howTo "Choose the category you're interested in ",
+        "Open the URL",
+        "Scroll through the results and see if you can find useful tips" ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['Check out this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf) to get a better understanding of what to look out for when doinng Geolocation']" ;
+    dw:remarks "Check out this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf) to get a better understanding of what to look out for when doinng Geolocation" ;
     rdfs:comment "Geohints is a collection of different lists of items that can help you identify a location more quickly. The information was actually collected for the Game GeoGuesser. It contains sorted lists of roadsigns, house numbers or street markins, but also camera generations and Google Vehicles from the street view data collection." ;
     schema:applicationUrl "https://geohints.com/" ;
     schema:name "GeoHint" ;
     schema:publisher "MouseWithBeer - Discord: MouseWithBeer#0553" .
 
 dw:Google_Advanced_Search a dw:SoftwareApplication ;
-    dw:howTo "['Open the URL', 'Choose the fields that make most sense for your search', 'Experiment for the best combinations']" ;
+    dw:howTo "Choose the fields that make most sense for your search",
+        "Experiment for the best combinations",
+        "Open the URL" ;
     dw:parentNode dw:Author,
         dw:File_Name,
         dw:General_Search ;
     dw:relatedMediaType dw:Audio,
         dw:Image,
         dw:Source ;
-    dw:remarks "['The advanced search features are also available via Google Operators which can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) ', 'For a better understanding of how to best use the advanced serach for better results, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN']" ;
+    dw:remarks "For a better understanding of how to best use the advanced serach for better results, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN",
+        "The advanced search features are also available via Google Operators which can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " ;
     rdfs:comment "Google Advanced Search allows you to specify your search parameters in more details to get better results than just searching for keywords. It allows you for example to combine or exclude search words, but also to add a timeframe in which to search." ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
     schema:name "Google Advanced Search" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Google_Cache a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Historic_versions ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Google Cache" ;
     schema:applicationUrl "" ;
     schema:name "Google Cache" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Google_Earth a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Google Earth" ;
     schema:applicationUrl "https://earth.google.com/" ;
     schema:name "Google Earth" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Google_Earth_3D a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Landscape_identification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Google Earth" ;
     schema:applicationUrl "https://earth.google.com/web" ;
     schema:name "Google Earth 3D" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Google_Images a dw:SoftwareApplication ;
-    dw:howTo "['open the link and drag the photo to a tab or window in your browser ', 'upload the image from your desktop', 'select text and it can translate the words ', 'select \"find image source\" to add keywords and to use the Google tools like time, size and color. ']" ;
+    dw:howTo "open the link and drag the photo to a tab or window in your browser ",
+        "select \"find image source\" to add keywords and to use the Google tools like time, size and color. ",
+        "select text and it can translate the words ",
+        "upload the image from your desktop" ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['play around with adding keywords and using the tools to help Google to show you what you are looking for', 'You can use Google Lens on your mobile phone']" ;
+    dw:remarks "You can use Google Lens on your mobile phone",
+        "play around with adding keywords and using the tools to help Google to show you what you are looking for" ;
     rdfs:comment "Google Images is very efficient for reverse image search. You can search for the original, take out text from the visual and translate it and crop specific elements." ;
     schema:applicationUrl "https://images.google.com/" ;
     schema:name "Google Images" ;
     schema:publisher "Google" .
 
 dw:Google_Maps a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1']" ;
+    dw:remarks "remark 1" ;
     rdfs:comment "map, street and satellite view" ;
     schema:applicationUrl "https://www.google.com/maps" ;
     schema:name "Google Maps" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Handelsregister a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Business_name ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Google Cache" ;
     schema:applicationUrl "https://www.handelsregister.de/" ;
     schema:name "Handelsregister" ;
     schema:publisher "" .
 
 dw:Have_I_been_pwned a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:eMail ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment """is a
 Taucht Mailadresse in Leak/Hack auf? (auch für Tel.nummern)""" ;
     schema:applicationUrl "https://haveibeenpwned.com/" ;
@@ -190,15 +233,18 @@ Taucht Mailadresse in Leak/Hack auf? (auch für Tel.nummern)""" ;
 dw:Headline a dw:Task ;
     dw:parentNode dw:Content_analyses ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Headline" .
 
 dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
-    dw:howTo "['You can watch at this [link](https://citizenevidence.org/2013/10/20/how-to-creating-a-panoramic-picture-from-a-video/)', 'step 2']" ;
+    dw:howTo "You can watch at this [link](https://citizenevidence.org/2013/10/20/how-to-creating-a-panoramic-picture-from-a-video/)",
+        "step 2" ;
     dw:parentNode dw:Panorama_stitch ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "What is" ;
     schema:applicationUrl "https://hugin.sourceforge.io/" ;
     schema:name "Hugin - Panorama photo stitcher" ;
@@ -208,27 +254,32 @@ dw:Impressum a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Impressum" .
 
 dw:InVid a dw:SoftwareApplication ;
-    dw:howTo "['Install the browser plugin on Firefox or Chrome', 'step 2']" ;
+    dw:howTo "Install the browser plugin on Firefox or Chrome",
+        "step 2" ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "InVid" ;
     schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "InVid" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Instagram_search a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Instagram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks "['Explore locations at this [link](https://www.instagram.com/explore/locations/)', 'remark 2']" ;
+    dw:remarks "Explore locations at this [link](https://www.instagram.com/explore/locations/)",
+        "remark 2" ;
     rdfs:comment "Instagram search .." ;
     schema:applicationUrl "https://www.instagram.com/search/" ;
     schema:name "Instagram search" ;
@@ -237,16 +288,19 @@ dw:Instagram_search a dw:SoftwareApplication ;
 dw:Keywords a dw:Task ;
     dw:parentNode dw:Content_analyses ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Keywords" .
 
 dw:Landmark_recognition a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Object_identification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Landmark recognition" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://landmark.toolpie.com/" ;
@@ -255,31 +309,37 @@ dw:Landmark_recognition a dw:SoftwareApplication ;
     schema:usageInfo "paid / free" .
 
 dw:LatLong a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:GPS_Data ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "LatLong helps you find all available metadata on location" ;
     schema:applicationUrl "https://www.latlong.net/" ;
     schema:name "LatLong" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Lets_enhance_io a dw:SoftwareApplication ;
-    dw:howTo "['You have to make an account', 'upload the image ']" ;
+    dw:howTo "You have to make an account",
+        "upload the image " ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['you have 10 images for free', 'Gigapixel AI is also very useful but you you need to download the software on your computer']" ;
+    dw:remarks "Gigapixel AI is also very useful but you you need to download the software on your computer",
+        "you have 10 images for free" ;
     rdfs:comment "Lets enhance io is an AI image enhancer. You can enhance the resolution, do contrast-enhancement and much more." ;
     schema:applicationUrl "https://letsenhance.io/" ;
     schema:name "Lets enhance io" ;
     schema:publisher "" .
 
 dw:LinkedIn a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Person_name ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "LinkedIn is a" ;
     schema:applicationUrl "https://www.linkedin.com/" ;
     schema:name "LinkedIn" ;
@@ -291,7 +351,8 @@ dw:Listen_to_the_audio a dw:Task ;
         dw:Where,
         dw:Who ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment """Listen to the audio. What do you hear?
 People talking
 How many?
@@ -304,21 +365,28 @@ What can I tell about what I am hearing""" ;
     schema:name "Listen to the audio" .
 
 dw:Magnifier a dw:SoftwareApplication ;
-    dw:howTo "['Install the browser plugin on Firefox or Chrome', 'open Image in the left menu', 'select maginifier', 'upload the image ', 'browse over the image']" ;
+    dw:howTo "Install the browser plugin on Firefox or Chrome",
+        "browse over the image",
+        "open Image in the left menu",
+        "select maginifier",
+        "upload the image " ;
     dw:parentNode dw:Zoom_in_details ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Magnifier highlights elements you select on an image without changing the resolution." ;
     schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "Magnifier" ;
     schema:publisher "AFP Medialab" .
 
 dw:MapSwitcher a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "MapSwitcher is" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://chrome.google.com/webstore/detail/map-switcher/fanpjcbgdinjeknjikpfnldfpnnpkelb?hl=en" ;
@@ -326,11 +394,13 @@ dw:MapSwitcher a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:Mapillary a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "User-crowd based map service" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://www.mapillary.com/app/" ;
@@ -338,11 +408,13 @@ dw:Mapillary a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:Metadata2Go a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Matadata2Go helps you find all available metadata" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://www.metadata2go.com/" ;
@@ -353,39 +425,46 @@ dw:Metadata2Go a dw:SoftwareApplication ;
 dw:Microphone_Analyses a dw:Task ;
     dw:parentNode dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment """info about the hardware and software being used like device etc. 
 unstructured text""" ;
     schema:name "Microphone Analyses" .
 
 dw:Microsoft_Video_Indexer a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Person_identification ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Microsoft Video Indexer" ;
     schema:applicationUrl "https://vi.microsoft.com/" ;
     schema:name "Microsoft Video Indexer" ;
     schema:publisher "Microsoft" .
 
 dw:Mooncalc a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Shadow_Analyses ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Shadow Analyses is" ;
     schema:applicationUrl "https://www.mondverlauf.de/" ;
     schema:name "Mooncalc" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Namechk a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Person_name,
         dw:Social_Media_profiles ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Namechk" ;
     schema:applicationUrl "https://namechk.com/" ;
     schema:name "Namechk" ;
@@ -394,26 +473,31 @@ dw:Namechk a dw:SoftwareApplication ;
 dw:Near_duplicate a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "compare audio files to find the original and compare to changes and recording versus publication date" ;
     schema:name "Near duplicate" .
 
 dw:North_Data a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Business_name ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "North Data is a European companies search engine which visualizes registries of names" ;
     schema:applicationUrl "https://whatsmyname.app/" ;
     schema:name "North Data" ;
     schema:publisher "" .
 
 dw:Peakfinder a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Landscape_identification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Peakfinder can help you find all available metadata" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://peakfinder.com" ;
@@ -422,10 +506,12 @@ dw:Peakfinder a dw:SoftwareApplication ;
     schema:usageInfo "paid / free" .
 
 dw:Photo_Scissors a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Background_Removal ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Photo Scissors is a background removal tool..." ;
     schema:applicationUrl "https://photoscissors.com/" ;
     schema:name "Photo Scissors" ;
@@ -440,7 +526,8 @@ dw:RIS_\(Image\) a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Text ;
-    dw:remarks "['If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to find earlier versions', 'earch search engine has its pros and cons. Use them all to collect information']" ;
+    dw:remarks "If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to find earlier versions",
+        "earch search engine has its pros and cons. Use them all to collect information" ;
     rdfs:comment "Reverse image search is a way to check if the content has been published before. The search results will also show you similar versions and add more context to the event." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
@@ -450,26 +537,30 @@ dw:RIS_\(Video\) a dw:Task ;
         dw:Object_identification,
         dw:Person_identification ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "['If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions']" ;
+    dw:remarks "If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions" ;
     rdfs:comment "is a way to check if this images has been pubklished before on any website or a similar one. In the results you find more about the context what is happening here and you might find teh original photo." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
 dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Sentinel Hub is a" ;
     schema:applicationUrl "https://apps.sentinel-hub.com/eo-browser" ;
     schema:name "Sentinel Hub EO Browser" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Speech_to_text_Google a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop']" ;
+    dw:howTo "https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop",
+        "step 1" ;
     dw:parentNode dw:Language_detection ;
-    dw:remarks "['alternative for the web browser https://cloud.ibm.com/catalog/services/speech-to-text', 'remark 2']" ;
+    dw:remarks "alternative for the web browser https://cloud.ibm.com/catalog/services/speech-to-text",
+        "remark 2" ;
     rdfs:comment "Speech to text is a" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://play.google.com/store/apps/details?id=com.google.android.apps.translate&hl=en&gl=US" ;
@@ -478,9 +569,11 @@ dw:Speech_to_text_Google a dw:SoftwareApplication ;
     schema:usageInfo "paid / free" .
 
 dw:Spoken_language_identifier a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Language_detection ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Spoken language identifier is" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "https://translatedlabs.com/spoken-language-identifier" ;
@@ -489,90 +582,109 @@ dw:Spoken_language_identifier a dw:SoftwareApplication ;
     schema:usageInfo "paid / free" .
 
 dw:Suncalc a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Shadow_Analyses ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Shadow Analyses is" ;
     schema:applicationUrl "https://www.suncalc.org/" ;
     schema:name "Suncalc" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Telemetrio a dw:SoftwareApplication ;
-    dw:howTo "['In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.\\nExample: https://t.me/s/MOHreport/1', 'step 2']" ;
+    dw:howTo """In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.
+Example: https://t.me/s/MOHreport/1""",
+        "step 2" ;
     dw:parentNode dw:Telegram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Channel search and analyses" ;
     schema:applicationUrl "https://telemetr.io/" ;
     schema:name "Telemetrio" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Tgstat a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Telegram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks "['In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.\\nExample: https://t.me/s/MOHreport/1', 'remark 2']" ;
+    dw:remarks """In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.
+Example: https://t.me/s/MOHreport/1""",
+        "remark 2" ;
     rdfs:comment "Channel search and analyses" ;
     schema:applicationUrl "https://tgstat.com/" ;
     schema:name "Tgstat" ;
     schema:publisher "Bladibla Productions" .
 
 dw:ThatsThem a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Phone_number ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "ThatsThem is" ;
     schema:applicationUrl "https://thatsthem.com/reverse-phone-lookup" ;
     schema:name "ThatsThem" ;
     schema:publisher "Bladibla Productions" .
 
 dw:TimeandDate a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Timecodes ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "UTC means Universal Time Coordinated, i.e. the world time. UTC allows a simple conversion into different time zoneswith TimeandDate." ;
     schema:applicationUrl "https://www.timeanddate.com/" ;
     schema:name "TimeandDate" ;
     schema:publisher "Bladibla Productions" .
 
 dw:TinEye a dw:SoftwareApplication ;
-    dw:howTo "['open the link and drag the photo to a tab or window in your browser ', 'upload the image from your desktop', 'use the filter on the left side to sort the images']" ;
+    dw:howTo "open the link and drag the photo to a tab or window in your browser ",
+        "upload the image from your desktop",
+        "use the filter on the left side to sort the images" ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['better results, e.g. cropping, enhancing of resolution, contrast-enhancement', 'good results when using stock images']" ;
+    dw:remarks "better results, e.g. cropping, enhancing of resolution, contrast-enhancement",
+        "good results when using stock images" ;
     rdfs:comment "TinEye has a smaller database but is still very efficient fwhen it comes to altered versions and showing results in chronolopgical order." ;
     schema:applicationUrl "https://tineye.com/" ;
     schema:name "TinEye" ;
     schema:publisher "" .
 
 dw:Tweetbeaver a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Twitter ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Tweetbeaver is a" ;
     schema:applicationUrl "https://tweetbeaver.com/" ;
     schema:name "Tweetbeaver" ;
     schema:publisher "Bladibla Productions" .
 
 dw:USearch a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:File_Name,
         dw:General_Search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment """Here you can search in the region where it is happening. 
 When searching for news, Google sometimes shows news items from your local area, and with the ability to target a very specific area, this might come in very handy.""" ;
     schema:applicationUrl "https://usearchfrom.com/" ;
@@ -580,20 +692,24 @@ When searching for news, Google sometimes shows news items from your local area,
     schema:publisher "Bladibla Productions" .
 
 dw:Unix_timestamp a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Timecodes ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "A machine-readable, mostly ten-digit representation of time. On January 1, 1970, counting began at 0, +1 is calculated per second. Conversion: As of January 1st, 2022 0:00 the counter was at 1640991600. Conversions are possible with Unix Timestamp." ;
     schema:applicationUrl "https://www.unixtimestamp.com/" ;
     schema:name "Unix Timestamp" ;
     schema:publisher "Bladibla Productions" .
 
 dw:VLC_audio_extraction a dw:SoftwareApplication ;
-    dw:howTo "['tutorial https://www.kimbley.com/blog/6/1/2021/how-to-extract-audio-from-an-mp4-video-file-to-mp3-using-vlc-media-player ', 'step 2']" ;
+    dw:howTo "step 2",
+        "tutorial https://www.kimbley.com/blog/6/1/2021/how-to-extract-audio-from-an-mp4-video-file-to-mp3-using-vlc-media-player " ;
     dw:parentNode dw:Audio_from_video_extraction ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "VLC Audio extraction is" ;
     schema:aboutUrl "" ;
     schema:applicationUrl "VLC player" ;
@@ -602,22 +718,26 @@ dw:VLC_audio_extraction a dw:SoftwareApplication ;
     schema:usageInfo "paid / free" .
 
 dw:ViewDNS a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Domain_name,
         dw:IP_address ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "ViewDNS is as" ;
     schema:applicationUrl "https://viewdns.info/" ;
     schema:name "ViewDNS" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Web_Archive a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Historic_versions ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Channel search and analyses" ;
     schema:applicationUrl "" ;
     schema:name "Web Archive" ;
@@ -627,93 +747,113 @@ dw:Website_Analytics a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Text was found on a specific website" ;
     schema:name "Website Analytics" .
 
 dw:WhatsMyName a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Person_name,
         dw:Social_Media_profiles ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks "['Source Repository:\\xa0[WebBreacher/WhatsMyName](https://github.com/webbreacher/whatsmyname) ', 'remark 2']" ;
+    dw:remarks "Source Repository: [WebBreacher/WhatsMyName](https://github.com/webbreacher/whatsmyname) ",
+        "remark 2" ;
     rdfs:comment "WhatsMyName is" ;
     schema:applicationUrl "https://whatsmyname.app/" ;
     schema:name "WhatsMyName" ;
     schema:publisher "WebBreacher" .
 
 dw:WhoIs a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "What is:" ;
     schema:applicationUrl "https://www.whois.com/" ;
     schema:name "WhoIs" ;
     schema:publisher "Bladibla Productions" .
 
 dw:WhoPostedWhat a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Facebook ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "What is:" ;
     schema:applicationUrl "https://whopostedwhat.com/" ;
     schema:name "WhoPostedWhat" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Whois_Domain a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Domain_name ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:applicationUrl "https://whois.domaintools.com/" ;
     schema:name "Whois Domain" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Wikimapia a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "User-crowd based map service" ;
     schema:applicationUrl "http://wikimapia.org/" ;
     schema:name "Wikimapia" ;
     schema:publisher "Bladibla Productions" .
 
 dw:WolframAlpha a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Weather_Analyses ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "WolframAlpha is a search engine" ;
     schema:applicationUrl "https://www.wolframalpha.com/" ;
     schema:name "WolframAlpha" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Yandex_Images a dw:SoftwareApplication ;
-    dw:howTo "['open the link and drag the photo to a tab or window in your browser ', 'upload the image from your desktop ', 'it can automatically detect text and translate the words in Russian', 'crop specific items you do another reverse search']" ;
+    dw:howTo "crop specific items you do another reverse search",
+        "it can automatically detect text and translate the words in Russian",
+        "open the link and drag the photo to a tab or window in your browser ",
+        "upload the image from your desktop " ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['Yandex is an Ukrainian search image. Using footage from the region will be more efficient', 'many results might be in Russian so its good to use Google translate plugin for translation', 'you get better results if you enhance your image ']" ;
+    dw:remarks "Yandex is an Ukrainian search image. Using footage from the region will be more efficient",
+        "many results might be in Russian so its good to use Google translate plugin for translation",
+        "you get better results if you enhance your image " ;
     rdfs:comment "Yandex Reverse Image Search..." ;
     schema:applicationUrl "https://yandex.com/images" ;
     schema:name "Yandex Images" ;
     schema:publisher "Yandex" .
 
 dw:Yandex_Maps a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "step 1",
+        "step 2" ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "What is:" ;
     schema:applicationUrl "https://yandex.com/maps" ;
     schema:name "Yandex Maps" ;
@@ -725,7 +865,7 @@ dw:newsgathering a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['shared excel sheet']" ;
+    dw:remarks "shared excel sheet" ;
     rdfs:comment "is a process to collect and analyse more content on the incident to create a timeline of it." ;
     schema:name "newsgathering" .
 
@@ -734,7 +874,8 @@ dw:Adress a dw:Task ;
         dw:Contact ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Adress" .
 
@@ -742,7 +883,8 @@ dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "better quality of the audio" ;
     schema:name "Audio enhancement" .
 
@@ -750,21 +892,23 @@ dw:Audio_from_video_extraction a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Audio from video extraction" .
 
 dw:Contact a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Source ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Contact" .
 
 dw:Context a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['The event you are looking at or listening to might be exclusive. Check for local sources and use Google translate for searching in local language']" ;
+    dw:remarks "The event you are looking at or listening to might be exclusive. Check for local sources and use Google translate for searching in local language" ;
     rdfs:comment "Our information source might be wrong when a claim is made. So the need for verification starts with asweing the question: What has happened?" ;
     schema:name "Context" .
 
@@ -773,7 +917,8 @@ dw:Facebook a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Facebook" .
 
@@ -781,14 +926,16 @@ dw:GPS_Data a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "GPS Data can help you ...." ;
     schema:name "GPS Data" .
 
 dw:IP_address a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "IP address" .
 
@@ -797,7 +944,8 @@ dw:Instagram a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Instagram" .
 
@@ -807,14 +955,16 @@ dw:Interviews a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['Monitoring system ', 'remark 2']" ;
+    dw:remarks "Monitoring system ",
+        "remark 2" ;
     rdfs:comment "is essential to understand what has happened before and after. Find more data and talk to sources on the ground like journalists and eyewitnesses." ;
     schema:name "interviews" .
 
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:Original ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Manipulation detection can be used for ......" ;
     schema:name "Manipulation detection" .
 
@@ -822,28 +972,35 @@ dw:Ownership a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Ownership,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Ownership" .
 
 dw:Panorama_stitch a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Panorama stitch" .
 
 dw:Phone_number a dw:Task ;
     dw:parentNode dw:Author ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['Google-Suche (evtl. mit Emoji)', 'Klassiker: Rückwärtssuche im Telefonbuch', 'Whatsapp(bild)', 'In Telegram speichern & Nummer löschen -->\\xa0zeigt Nutzername an', 'für Profis: Github-Skript [_\"phoneinfoga_](https://github.com/sundowndev/phoneinfoga)\"']" ;
+    dw:remarks "Google-Suche (evtl. mit Emoji)",
+        "In Telegram speichern & Nummer löschen --> zeigt Nutzername an",
+        "Klassiker: Rückwärtssuche im Telefonbuch",
+        "Whatsapp(bild)",
+        "für Profis: Github-Skript [_\"phoneinfoga_](https://github.com/sundowndev/phoneinfoga)\"" ;
     rdfs:comment "is a" ;
     schema:name "Phone number" .
 
 dw:Sources a dw:Task ;
     dw:parentNode dw:Content_analyses ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "mentioned sources like websites or Institutes" ;
     schema:name "Sources" .
 
@@ -852,14 +1009,16 @@ dw:Twitter a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Twitter" .
 
 dw:Visuals a dw:Task ;
     dw:parentNode dw:Content_analyses ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "photos, graphics" ;
     schema:name "Visual" .
 
@@ -867,14 +1026,15 @@ dw:Weather_Analyses a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Weather can hint you to the date when the footage was created. It can also narrow down the continent to detmine the location." ;
     schema:name "Weather Analyses" .
 
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['writing down 20 hints you detect for answering the question what is happening']" ;
+    dw:remarks "writing down 20 hints you detect for answering the question what is happening" ;
     rdfs:comment "You will be surprised but taking your time and looking closely at an image will give you more information that expected. To rest your eagle eye you want to zoom in without changing the resolution." ;
     schema:name "Zoom in details" .
 
@@ -882,7 +1042,8 @@ dw:Background_Removal a dw:Task ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Removing the background from an image can help to get better results with visual analyses, like RIS." ;
     schema:name "Background removal" .
 
@@ -890,14 +1051,16 @@ dw:Business_name a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
     dw:relatedMediaType dw:Audio,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Business Name" .
 
 dw:Enhance_Image_\(Image\) a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment """Enhancing an image can help to get better results with visual analyses like reverse image search. 
 You might enhance the resolution, do contrast-enhancement or just take out the background.""" ;
     schema:name "Enhance Image" .
@@ -905,7 +1068,8 @@ You might enhance the resolution, do contrast-enhancement or just take out the b
 dw:Enhance_Image_\(Video\) a dw:Task ;
     dw:parentNode dw:KeyframeExtraction ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Enhancing an image can help to get better results with visual analyses, like RIS." ;
     schema:name "Enhance Image" .
 
@@ -913,7 +1077,8 @@ dw:File_Name a dw:Task ;
     dw:parentNode dw:Who_created_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "File Name" .
 
@@ -924,7 +1089,8 @@ dw:General_Search a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "General search" .
 
@@ -932,7 +1098,8 @@ dw:Historic_versions a dw:Task ;
     dw:parentNode dw:What,
         dw:When ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Historic versions" .
 
@@ -942,7 +1109,9 @@ dw:How a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['check local reports ', 'search cross-medial on different social media platforms', 'reach out to reporters on the ground']" ;
+    dw:remarks "check local reports ",
+        "reach out to reporters on the ground",
+        "search cross-medial on different social media platforms" ;
     rdfs:comment """How did it happend? 
 
 This is a very tricky question to answer. You have to gather more information and talk to eyewitnesses. Try to collect visuals which show what has happened before and from a different perspective.""" ;
@@ -952,7 +1121,8 @@ dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Landscape Identification" .
 
@@ -960,14 +1130,15 @@ dw:Language_detection a dw:Task ;
     dw:parentNode dw:What,
         dw:Where ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Language detection" .
 
 dw:Original a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['the shared content might be taken out of context but was real']" ;
+    dw:remarks "the shared content might be taken out of context but was real" ;
     rdfs:comment "Are you looking or listening to the original file?" ;
     schema:name "Original" .
 
@@ -975,7 +1146,8 @@ dw:Satellite_data a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "" ;
     schema:name "Satellite data" .
 
@@ -983,7 +1155,8 @@ dw:Shadow_Analyses a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Shadow Analyses" .
 
@@ -994,7 +1167,8 @@ dw:Social_Media_profiles a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Social Media profiles" .
 
@@ -1011,7 +1185,8 @@ dw:Timecodes a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment """The time and date does not show the local time of the user who posted the content.
 check
 Youtube time and date shown in Pacific time. check
@@ -1032,7 +1207,8 @@ WhatsApp shows the time zone of the user viewing the post""" ;
 dw:eMail a dw:Task ;
     dw:parentNode dw:Author ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "eMail" .
 
@@ -1045,7 +1221,8 @@ dw:Digital_Footprint a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Digital footprint" .
 
@@ -1053,14 +1230,16 @@ dw:Domain_name a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Domain_name,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Domain name" .
 
 dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Keyframe Extraction" .
 
@@ -1071,14 +1250,16 @@ dw:Metadata a dw:Task ;
         dw:Who_created_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['can easily be maniupualted so also cross-reference the information', 'shared visuals on social networks usually do not have metadata. Exceptions are Telegram (check!!) People can send you the original via email as well. ']" ;
+    dw:remarks "can easily be maniupualted so also cross-reference the information",
+        "shared visuals on social networks usually do not have metadata. Exceptions are Telegram (check!!) People can send you the original via email as well. " ;
     schema:name "Metadata" .
 
 dw:Person_identification a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "Person Identification can be used for ......" ;
     schema:name "Person Identification" .
 
@@ -1087,14 +1268,16 @@ dw:Person_name a dw:Task ;
         dw:Who_is_in_content ;
     dw:relatedMediaType dw:Audio,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Person Name" .
 
 dw:Content_analyses a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "" ;
     schema:name "Content analyses" .
 
@@ -1102,7 +1285,8 @@ dw:Object_identification a dw:Task ;
     dw:parentNode dw:Visual_Intelligence ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Object Identification" .
 
@@ -1113,7 +1297,8 @@ dw:Social_Media_activities a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Social Media activities" .
 
@@ -1123,7 +1308,8 @@ dw:Who a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['Always have the motivation in mind: Why was the account established, the website created, or the piece of content captured?', 'Contacting the person might give you a chance to get an interview or even the original file ']" ;
+    dw:remarks "Always have the motivation in mind: Why was the account established, the website created, or the piece of content captured?",
+        "Contacting the person might give you a chance to get an interview or even the original file " ;
     rdfs:comment """Who has created the content? 
 
 The person who made the claim or captured the visual and adds a claim has to be verified as well. 
@@ -1141,7 +1327,8 @@ dw:Who_is_in_content a dw:SubQuestion ;
 dw:Author a dw:Task ;
     dw:parentNode dw:Who_created_content ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Author" .
 
@@ -1149,7 +1336,8 @@ dw:Visual_Intelligence a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['Sharpening your senses with the interactive quizzes https://digger-project.com/sharpen-your-senses/', 'Writing down 20 hints you can detect in the visual like street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks. ']" ;
+    dw:remarks "Sharpening your senses with the interactive quizzes https://digger-project.com/sharpen-your-senses/",
+        "Writing down 20 hints you can detect in the visual like street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks. " ;
     rdfs:comment "is a way to gather information and facts about what is there in the visual. You combine those in your search and narrow down step by step." ;
     schema:name "Visual Intelligence" .
 
@@ -1158,7 +1346,8 @@ dw:Website a dw:Task ;
         dw:Where ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Website" .
 
@@ -1169,7 +1358,8 @@ dw:Manual_geolocation a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
     schema:name "Manual Geolocation" .
 
@@ -1179,7 +1369,8 @@ dw:Reverse_Image_Search a dw:Task ;
         dw:KeyframeExtraction,
         dw:Object_identification,
         dw:Video ;
-    dw:remarks "['remark 1', 'remark 2']" ;
+    dw:remarks "remark 1",
+        "remark 2" ;
     rdfs:comment "is a" ;
     schema:name "Reverse Image Search" .
 
@@ -1189,7 +1380,9 @@ dw:When a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['check local reports ', 'search cross-medial on different social media platforms', 'reach out to reporters on the ground']" ;
+    dw:remarks "check local reports ",
+        "reach out to reporters on the ground",
+        "search cross-medial on different social media platforms" ;
     rdfs:comment """When did it happen? 
 
 Time and date of the event is essential to determine cause it proofs the footage is really captured on that time. Content can be used before or taken completly out of context. It will also help you to find more information about the incident.""" ;
@@ -1208,7 +1401,11 @@ dw:Where a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['Geographic location tied to a particular tweet or Facebook post, but this information can be easily manipulated.', 'Metadata can also be manipulated.', 'try to find a second source like satellite images or a street view to confirm the location', 'writing down 20 hints that guide you to the location like streets signs, names and architecture', 'ask a friend to double-check if you can not see the tree in the forest anymore']" ;
+    dw:remarks "Geographic location tied to a particular tweet or Facebook post, but this information can be easily manipulated.",
+        "Metadata can also be manipulated.",
+        "ask a friend to double-check if you can not see the tree in the forest anymore",
+        "try to find a second source like satellite images or a street view to confirm the location",
+        "writing down 20 hints that guide you to the location like streets signs, names and architecture" ;
     rdfs:comment """Where did it happend? 
 
 Finding the exact location is crucial to know if this incident has happened at this exact place.
@@ -1221,14 +1418,17 @@ dw:What a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks "['check local reports ', 'search cross-medial on different social media platforms', 'reach out to reporters on the ground']" ;
+    dw:remarks "check local reports ",
+        "reach out to reporters on the ground",
+        "search cross-medial on different social media platforms" ;
     rdfs:comment """What you see and what you hear might be new news to you. First, you want to find out what is actually happening here and are you looking or listening to the original file?
 
 If the footage is not clear you can enhance it as well.""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
-    dw:remarks "['close your eyes and use headphones to listen carefully ', 'turn off the sound when you watch the video several times']" ;
+    dw:remarks "close your eyes and use headphones to listen carefully ",
+        "turn off the sound when you watch the video several times" ;
     rdfs:comment """The audio verification process builds on answering the following questions
 
 Who is the originator of the audio?
@@ -1245,7 +1445,7 @@ Audio verification is challenging cause manipulation is difficult but not imposs
     schema:name "Audio" .
 
 dw:Source a dw:MediaObject ;
-    dw:remarks "['Think about the motivation of the source. Why was this information published?']" ;
+    dw:remarks "Think about the motivation of the source. Why was this information published?" ;
     rdfs:comment """The source verification process builds on answering the following questions
 
 Who is the source?
@@ -1254,7 +1454,7 @@ What does the digital footrprint tells us?""" ;
     schema:name "Source" .
 
 dw:Text a dw:MediaObject ;
-    dw:remarks "['never trust a screenshot because it is very easy to manipulate']" ;
+    dw:remarks "never trust a screenshot because it is very easy to manipulate" ;
     rdfs:comment """The text verification process builds on answering the following questions
 
 What has happened?
@@ -1267,7 +1467,8 @@ When was it happen?""" ;
     schema:name "Text" .
 
 dw:Video a dw:MediaObject ;
-    dw:remarks "['watching a video frame-by-frame ', 'turn off the sound when you watch the video several times']" ;
+    dw:remarks "turn off the sound when you watch the video several times",
+        "watching a video frame-by-frame " ;
     rdfs:comment """The video verification process builds on answering the following questions
 
 What has happened?
@@ -1284,7 +1485,8 @@ And what can you find out about the sound?""" ;
     schema:name "Video" .
 
 dw:Image a dw:MediaObject ;
-    dw:remarks "['Look closely at the image before you start digging', 'If it looks too good to be true, there might be something fishy about it']" ;
+    dw:remarks "If it looks too good to be true, there might be something fishy about it",
+        "Look closely at the image before you start digging" ;
     rdfs:comment """The image verification process builds on answering the following questions
 
 What has happened?
