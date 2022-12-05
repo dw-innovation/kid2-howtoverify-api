@@ -126,20 +126,23 @@ def get_feats(node_id, clicked_node):
         node_data['comment'] = str(g.value(URIRef(node_id), RDFS.comment))
 
         if node_data['type'] in ['http://dw.com/SoftwareApplication', 'http://dw.com/Task']:
-            node_data['howTo'] = None
+            node_data['howTo'] = []
 
         if node_data['type'] in ['http://dw.com/SoftwareApplication']:
-            node_data['remarks'] = None
+            node_data['remarks'] = []
 
         for rel, obj in g.predicate_objects(URIRef(node_id)):
             mapped_key = NS_MAPPING[str(rel)]
+            if mapped_key in ["remarks", "howTo"]:
+                node_data[mapped_key].append(str(obj))
+            else:
+                mapped_key = NS_MAPPING[str(rel)]
 
-            if mapped_key not in node_data:
-                node_data[mapped_key] = str(obj)
+                if mapped_key not in node_data:
+                    node_data[mapped_key] = str(obj)
 
-            elif not node_data[mapped_key]:
-                node_data[mapped_key] = str(obj)
-
+                elif not node_data[mapped_key]:
+                    node_data[mapped_key] = str(obj)
     return node_data
 
 
@@ -349,9 +352,6 @@ def get_index():
 
     for type in types:
         for node in g.subjects(RDF.type, type):
-            name = str(g.value(node, SCHEMA.name))
-            if len(name) == 0:
-                print(node)
             node_ids.add(str(g.value(node, SCHEMA.name)))
 
     index = list(map(lambda x: {"name": x}, node_ids))
