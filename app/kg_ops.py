@@ -128,15 +128,13 @@ def get_feats(node_id, clicked_node):
         if node_data['type'] in ['http://dw.com/SoftwareApplication', 'http://dw.com/Task']:
             node_data['howTo'] = []
 
-        if node_data['type'] in ['http://dw.com/SoftwareApplication']:
-            node_data['remarks'] = []
+        node_data['remarks'] = []
 
         for rel, obj in g.predicate_objects(URIRef(node_id)):
             mapped_key = NS_MAPPING[str(rel)]
             if mapped_key in ["remarks", "howTo"]:
                 node_data[mapped_key].append(str(obj))
             else:
-                mapped_key = NS_MAPPING[str(rel)]
 
                 if mapped_key not in node_data:
                     node_data[mapped_key] = str(obj)
