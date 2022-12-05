@@ -3,17 +3,17 @@
 @prefix schema: <https://schema.org/> .
 
 dw:Baidu_Images a dw:SoftwareApplication ;
-    dw:howTo "['open the link and drag the photo to a tab or window in your browser ', 'upload the image from your desktop']" ;
+    dw:howTo "['open the link, drag and drop the photo to the Baidu search bar in your tab or browser window ', 'upload the image from your desktop by first clicking the little camera icon in the search bar and then the blue button in the search window.']" ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['results are more efficient with content from China']" ;
-    rdfs:comment "Baidu Reverse Image Search..." ;
+    dw:remarks "['results are more efficient with content from China', 'Using GoogleTranslate to make the site readable breaks the functionality']" ;
+    rdfs:comment "Baidu Reverse Image Search is the chinese version of an image serach engine. It works like the other engines, such as Google or Yandex." ;
     schema:applicationUrl "https://image.baidu.com" ;
     schema:name "Baidu Images" ;
-    schema:publisher "Baidu" .
+    schema:publisher "Baidu, Inc." .
 
 dw:Boom_3D a dw:SoftwareApplication ;
-    dw:howTo "['download the free trial on your desktop ', 'TESTING it!!']" ;
+    dw:howTo "['download the free trial on your desktop ', 'TEST it!!']" ;
     dw:parentNode dw:Audio_enhancement ;
     dw:remarks "['remark 1', 'remark 2']" ;
     rdfs:comment "Boom 3D can enhance the sounds in your audio file, by cropping, removing unwanted noises. It filters out ambient noises." ;
@@ -39,34 +39,34 @@ dw:ENF a dw:Task ;
     schema:name "ENF" .
 
 dw:Edit_photo a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Load images by pasting an image URL, dropping an image, or pasting an image file', 'Choose the tool you need from the menue bar at the left', 'Select the detailed functionality from above or below the image', 'Hit the export button at the top right of the image to download your enhanced image']" ;
     dw:parentNode dw:Background_Removal ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Edit photo will help to crop, roatet and flip features and it will improve the search results on reverse image search." ;
+    dw:remarks "['Your photos are not uploaded, image editing happens in your browser (according to the website owner)', 'You can integrate the image editor in your own website via API']" ;
+    rdfs:comment "Edit photo is an easy online photo editor. It offers you the basics to crop, rotate and flip an image. All of which can help improve the search results on reverse image search." ;
     schema:applicationUrl "https://edit.photo/" ;
     schema:name "Edit photo" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Pqina / Rik Schennink @rikschennink" .
 
 dw:Epios a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Enter the e-mail-address in question into the search field', 'Hit enter or click the search button and answer the security captcha']" ;
     dw:parentNode dw:eMail ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Epios is..." ;
+    dw:remarks "['The software has three tiers (Visitor, Member and OSINTer) which offer different levels of detail.', 'In the free visitor and the free member (logged in) version, the search is limited to e-mail-addesses (no phone numbers) and the results are limited to specific networks only.', \"Epieos is hosted in Europe, and doesn't log any of your research (according to the owners)\"]" ;
+    rdfs:comment "Epios is a tool that lets you anonymously find information linked to an e-mail-address, like for which social networks it has been used for. It also works with phone numbers, but only in the paid version." ;
     schema:applicationUrl "https://epieos.com/" ;
     schema:name "Epios" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Epieos" .
 
 dw:Exif_Data a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Open the URL', 'Klick \"Durchsuchen\" to browse for an image on your computer or enter an imge URL in the respective field. ', 'Klick Upload or Submit', 'Scroll through the results']" ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "Exif Data helps you find all available metadata" ;
+    dw:remarks "['The level of detail depends on what metadata is actually stored with the image', \"Images coming from social media usually don't contain any metadata, as they get erased during the upload process\"]" ;
+    rdfs:comment "Exif Data helps you find all available metadata that come with an image, such as shutter speed, exposure compensation or the date and time the image was taken. Some images may even store GPS information." ;
     schema:applicationUrl "https://exifdata.com/" ;
     schema:name "Exif Data" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Bladibla Productions (Isländische Zentralbank???)" .
 
 dw:Eyewitness a dw:Task ;
     dw:parentNode dw:Interviews ;
@@ -79,36 +79,36 @@ dw:Eyewitness a dw:Task ;
     schema:name "eyewitness" .
 
 dw:Fotoforensic a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Open the URL', 'Enter the URL of an image or click the search button to browse for an image on your computer', 'Click the Upload button and let the machine do the analysis', 'Once the analysis is done use the menue on the upper left hand corner to navigate through the different analysis results. ', \"Don't forget to hover your mouse over the image from time to time for a direct comparison of image and analysis output\"]" ;
     dw:parentNode dw:Manipulation_detection ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks "['remark 1', 'remark 2']" ;
-    rdfs:comment "What is" ;
+    dw:remarks "['While these tools can do a lot of analysis, the results are hard to read', \"It's best to read through some of the examples on the website first and/or involve an expert, before jumping to conclusions\"]" ;
+    rdfs:comment "FotoForensics is a collection of different photo analysis algorithms allowing you to perform digital photo forensics. Using these algorithms, you can determine if a picture has been modified, and if so, sometimes even how." ;
     schema:applicationUrl "https://fotoforensics.com/" ;
     schema:name "Fotoforensics" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "HackerFactor.com" .
 
 dw:Geohints a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Open the URL', \"Choose the category you're interested in \", 'Scroll through the results and see if you can find useful tips']" ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "['Tips to watch out for this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf)']" ;
-    rdfs:comment "What is:" ;
+    dw:remarks "['Check out this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf) to get a better understanding of what to look out for when doinng Geolocation']" ;
+    rdfs:comment "Geohints is a collection of different lists of items that can help you identify a location more quickly. The information was actually collected for the Game GeoGuesser. It contains sorted lists of roadsigns, house numbers or street markins, but also camera generations and Google Vehicles from the street view data collection." ;
     schema:applicationUrl "https://geohints.com/" ;
     schema:name "GeoHint" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "MouseWithBeer - Discord: MouseWithBeer#0553" .
 
 dw:Google_Advanced_Search a dw:SoftwareApplication ;
-    dw:howTo "['step 1', 'step 2']" ;
+    dw:howTo "['Open the URL', 'Choose the fields that make most sense for your search', 'Experiment for the best combinations']" ;
     dw:parentNode dw:Author,
         dw:File_Name,
         dw:General_Search ;
     dw:relatedMediaType dw:Audio,
         dw:Image,
         dw:Source ;
-    dw:remarks "['Scholar search at this [link](https://scholar.google.com/) ']" ;
-    rdfs:comment "" ;
+    dw:remarks "['The advanced search features are also available via Google Operators which can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) ', 'For a better understanding of how to best use the advanced serach for better results, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN']" ;
+    rdfs:comment "Google Advanced Search allows you to specify your search parameters in more details to get better results than just searching for keywords. It allows you for example to combine or exclude search words, but also to add a timeframe in which to search." ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
     schema:name "Google Advanced Search" ;
     schema:publisher "Bladibla Productions" .
