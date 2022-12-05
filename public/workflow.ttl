@@ -58,7 +58,7 @@ dw:Edit_photo a dw:SoftwareApplication ;
     schema:name "Edit photo" ;
     schema:publisher "Pqina / Rik Schennink @rikschennink" .
 
-dw:Epios a dw:SoftwareApplication ;
+dw:Epieos a dw:SoftwareApplication ;
     dw:howTo "Enter the e-mail-address in question into the search field",
         "Hit enter or click the search button and answer the security captcha" ;
     dw:parentNode dw:eMail ;
@@ -66,9 +66,9 @@ dw:Epios a dw:SoftwareApplication ;
     dw:remarks "Epieos is hosted in Europe, and does not log any of your research (according to the owners)",
         "In the free visitor and the free member (logged in) version, the search is limited to e-mail-addresses (no phone numbers) and the results are limited to specific networks only.",
         "The software has three tiers (Visitor, Member and OSINTer) which offer different levels of detail." ;
-    rdfs:comment "Epios is a tool that lets you anonymously find information linked to an e-mail-address, like for which social networks it has been used for. It also works with phone numbers, but only in the paid version." ;
+    rdfs:comment "Epieos is a tool that lets you anonymously find information linked to an e-mail-address, like for which social networks it has been used for. It also works with phone numbers, but only in the paid version." ;
     schema:applicationUrl "https://epieos.com/" ;
-    schema:name "Epios" ;
+    schema:name "Epieos" ;
     schema:publisher "Epieos" .
 
 dw:Exif_Data a dw:SoftwareApplication ;
@@ -142,42 +142,48 @@ dw:Google_Advanced_Search a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:Google_Cache a dw:SoftwareApplication ;
-    dw:howTo "step 1",
-        "step 2" ;
+    dw:howTo "At the top of the cached page you'll see the date and time of when it was cached",
+        "Do your regular google search.",
+        "In the pop-up window select the 'cached' option to open this version of the link/page",
+        "In the results list, click on the three little dots next to the result of interest" ;
     dw:parentNode dw:Historic_versions ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks "remark 1",
-        "remark 2" ;
-    rdfs:comment "Google Cache" ;
-    schema:applicationUrl "" ;
+    dw:remarks "For older versions of a link or website, check out the wayback machine",
+        "it is a great way to figure out if a web page is hacked",
+        "search just for the cached version of a web page by the operator \" cache:URL \" " ;
+    rdfs:comment "is a web archive for each web page. It is helpful to check links and websites that might no longer be available or that might have changed. It's a stored version of the page in question from a previous date." ;
+    schema:applicationUrl "https://www.google.com/" ;
     schema:name "Google Cache" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Google Inc." .
 
 dw:Google_Earth a dw:SoftwareApplication ;
-    dw:howTo "step 1",
-        "step 2" ;
+    dw:howTo "Enter the address you want to check out or surf the globe by navigating with your mouse",
+        "Go the URL and start up the web version of Google Earth" ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "remark 1",
-        "remark 2" ;
-    rdfs:comment "Google Earth" ;
+    dw:remarks "For basic use (e.g. checking satellite images) the web version is enough",
+        "Google Earth has the more detailed satellite images than Google Maps",
+        "Google Earth lets you check when satellite images were last updated in the status bar at the bottom",
+        "The GE desktop version allows for more complex operations (e.g. upload GIS data)" ;
+    rdfs:comment "Google Earth is a 3D representation of Earth based primarily on satellite imagery. It's a great way to check out satellite views of different places on the globe for geolocation." ;
     schema:applicationUrl "https://earth.google.com/" ;
     schema:name "Google Earth" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Google" .
 
 dw:Google_Earth_3D a dw:SoftwareApplication ;
-    dw:howTo "step 1",
-        "step 2" ;
+    dw:howTo "Go to an address of a spot on the globe and zoom in",
+        "Hold down cmd/cntrl of shift on your keyboard ",
+        "Open Google Earth",
+        "Start moving your point of view by clicking and moving around with your mouse " ;
     dw:parentNode dw:Landscape_identification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks "remark 1",
-        "remark 2" ;
-    rdfs:comment "Google Earth" ;
-    schema:applicationUrl "https://earth.google.com/web" ;
+    dw:remarks "Play around with the navigation, it takes some getting used to." ;
+    rdfs:comment "Google Earth is a 3D representation of Earth based primarily on satellite imagery. It's a great way to check out satellite views of different places on the globe for geolocation. It also lets you navigate the world from a 3D perspective, recreating specific points of view on a position." ;
+    schema:applicationUrl "https://earth.google.com/" ;
     schema:name "Google Earth 3D" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Google" .
 
 dw:Google_Images a dw:SoftwareApplication ;
     dw:howTo "open the link and drag the photo to a tab or window in your browser ",
@@ -203,7 +209,7 @@ dw:Google_Maps a dw:SoftwareApplication ;
     rdfs:comment "map, street and satellite view" ;
     schema:applicationUrl "https://www.google.com/maps" ;
     schema:name "Google Maps" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Google" .
 
 dw:Handelsregister a dw:SoftwareApplication ;
     dw:howTo "step 1",
