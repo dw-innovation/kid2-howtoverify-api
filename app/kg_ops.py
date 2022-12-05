@@ -125,7 +125,7 @@ def get_feats(node_id, clicked_node):
     if node_id == clicked_node:
         node_data['comment'] = str(g.value(URIRef(node_id), RDFS.comment))
 
-        if node_data['type'] in ['http://dw.com/SoftwareApplication', 'http://dw.com/Task']:
+        if node_data['type'] == ['http://dw.com/SoftwareApplication']:
             node_data['howTo'] = []
 
         node_data['remarks'] = []
