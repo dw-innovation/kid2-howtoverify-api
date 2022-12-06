@@ -44,7 +44,7 @@ dw:Edit_photo a dw:SoftwareApplication ;
     dw:parentNode dw:Background_Removal ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "Your photos are not uploaded, image editing happens in your browser (according to the website owner)" "You can integrate the image editor in your own website via API" ) ;
-    rdfs:comment "Edit photo is an easy online photo editor. It offers you the basics to crop, rotate and flip an image. All of which can help improve the search results on reverse image search." ;
+    rdfs:comment "is an easy online photo editor. It offers you the basics to crop, rotate and flip an image. All of which can help improve the search results on reverse image search." ;
     schema:applicationUrl "https://edit.photo/" ;
     schema:name "Edit photo" ;
     schema:publisher "Pqina / Rik Schennink @rikschennink" .
@@ -101,18 +101,18 @@ dw:Geohints a dw:SoftwareApplication ;
     schema:publisher "MouseWithBeer - Discord: MouseWithBeer#0553" .
 
 dw:Google_Advanced_Search a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Choose the fields that make most sense for your search" "Experiment for the best combinations" ) ;
+    dw:howTo ( "Open the URL" "Fill out the fields that can might answer your question " "Use the filters like timeframe and colours on the result page" ) ;
     dw:parentNode dw:Author,
-        dw:File_Name,
-        dw:General_Search ;
+        dw:Context,
+        dw:File_Name ;
     dw:relatedMediaType dw:Audio,
         dw:Image,
         dw:Source ;
-    dw:remarks ( "The advanced search features are also available via Google Operators which can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced serach for better results, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN" ) ;
-    rdfs:comment "Google Advanced Search allows you to specify your search parameters in more details to get better results than just searching for keywords. It allows you for example to combine or exclude search words, but also to add a timeframe in which to search." ;
+    dw:remarks ( "The advanced search is also available via Google Operators. If you know them you are much faster. They can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced serach , check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN" ) ;
+    rdfs:comment "allows you to specify your search in more details to get better results. It allows you to combine or exclude search words, searching on one specific web page and by specific file types." ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
     schema:name "Google Advanced Search" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Google" .
 
 dw:Google_Cache a dw:SoftwareApplication ;
     dw:howTo ( "Do your regular google search." "In the results list, click on the three little dots next to the result of interest" "In the pop-up window select the 'cached' option to open this version of the link/page" "At the top of the cached page you'll see the date and time of when it was cached" ) ;
@@ -124,7 +124,18 @@ dw:Google_Cache a dw:SoftwareApplication ;
     schema:name "Google Cache" ;
     schema:publisher "Google Inc." .
 
-dw:Google_Earth a dw:SoftwareApplication ;
+dw:Google_Earth_3D a dw:SoftwareApplication ;
+    dw:howTo ( "Open Google Earth" "Go to an address of a spot on the globe and zoom in" "Hold down cmd/cntrl of shift on your keyboard " "Start moving your point of view by clicking and moving around with your mouse " ) ;
+    dw:parentNode dw:Landscape_identification ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks ( "Most satellite images are delivered by Maxar Technologies" "search for others Apollo Mapping" ) ;
+    rdfs:comment "Google Earth is a 3D representation of Earth based primarily on satellite imagery. It's a great way to check out satellite views of different places on the globe for geolocation. It also lets you navigate the world from a 3D perspective, recreating specific points of view on a position." ;
+    schema:applicationUrl "https://earth.google.com/" ;
+    schema:name "Google Earth 3D" ;
+    schema:publisher "Google" .
+
+dw:Google_Earth_Pro a dw:SoftwareApplication ;
     dw:howTo ( "Go the URL and start up the web version of Google Earth" "Enter the address you want to check out or surf the globe by navigating with your mouse" ) ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
@@ -132,18 +143,7 @@ dw:Google_Earth a dw:SoftwareApplication ;
     dw:remarks ( "Google Earth has the more detailed satellite images than Google Maps" "Google Earth lets you check when satellite images were last updated in the status bar at the bottom" "For basic use (e.g. checking satellite images) the web version is enough" "The GE desktop version allows for more complex operations (e.g. upload GIS data)" ) ;
     rdfs:comment "Google Earth is a 3D representation of Earth based primarily on satellite imagery. It's a great way to check out satellite views of different places on the globe for geolocation." ;
     schema:applicationUrl "https://earth.google.com/" ;
-    schema:name "Google Earth" ;
-    schema:publisher "Google" .
-
-dw:Google_Earth_3D a dw:SoftwareApplication ;
-    dw:howTo ( "Open Google Earth" "Go to an address of a spot on the globe and zoom in" "Hold down cmd/cntrl of shift on your keyboard " "Start moving your point of view by clicking and moving around with your mouse " ) ;
-    dw:parentNode dw:Landscape_identification ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks ( "Play around with the navigation, it takes some getting used to." ) ;
-    rdfs:comment "Google Earth is a 3D representation of Earth based primarily on satellite imagery. It's a great way to check out satellite views of different places on the globe for geolocation. It also lets you navigate the world from a 3D perspective, recreating specific points of view on a position." ;
-    schema:applicationUrl "https://earth.google.com/" ;
-    schema:name "Google Earth 3D" ;
+    schema:name "Google Earth Pro" ;
     schema:publisher "Google" .
 
 dw:Google_Images a dw:SoftwareApplication ;
@@ -271,7 +271,7 @@ dw:Lets_enhance_io a dw:SoftwareApplication ;
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "you have 10 images for free" "Gigapixel AI is also very useful but you you need to download the software on your computer" ) ;
-    rdfs:comment "Lets enhance io is an AI image enhancer. You can enhance the resolution, do contrast-enhancement and much more." ;
+    rdfs:comment "is an AI image enhancer. You can enhance the resolution, do contrast-enhancement and much more." ;
     schema:applicationUrl "https://letsenhance.io/" ;
     schema:name "Lets enhance io" ;
     schema:publisher "" .
@@ -305,12 +305,12 @@ What can I tell about what I am hearing""" ;
     schema:name "Listen to the audio" .
 
 dw:Magnifier a dw:SoftwareApplication ;
-    dw:howTo ( "Install the browser plugin on Firefox or Chrome" "open Image in the left menu" "select maginifier" "upload the image " "browse over the image" ) ;
+    dw:howTo ( "Install the browser plugin on Firefox or Chrome" "a) right click on the image on the web page and select Image Magnifier" "b) click on the plugin and open toolbox, on the left you select Image magnifier and upload your image" "select the zoom by browsing over the image" ) ;
     dw:parentNode dw:Zoom_in_details ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Magnifier highlights elements you select on an image without changing the resolution." ;
-    schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
+    dw:remarks ( "you can upload an image or analyse it directly from the web page" "it highlights elements without changing the resolution. " ) ;
+    rdfs:comment "zooms into the image without changing the resolution." ;
+    schema:applicationUrl "[InVid]https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "Magnifier" ;
     schema:publisher "AFP Medialab" .
 
@@ -381,16 +381,16 @@ dw:Mooncalc a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:Namechk a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Enter the username you want to check" "Cross off the Captcha" "Open up the results lists" ) ;
     dw:parentNode dw:Person_name,
         dw:Social_Media_profiles ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Namechk" ;
+    dw:remarks ( "Red means there is an account with that user name on the platform" "Green means the username is not in use on that platform" "Always double check, the system might not be perfect." ) ;
+    rdfs:comment "is a free username and domain search tool. You can use it to check whether a username exists on different platforms." ;
     schema:applicationUrl "https://namechk.com/" ;
     schema:name "Namechk" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Namechk.com" .
 
 dw:Near_duplicate a dw:Task ;
     dw:parentNode dw:When ;
@@ -414,13 +414,11 @@ dw:Peakfinder a dw:SoftwareApplication ;
     dw:parentNode dw:Landscape_identification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Peakfinder can help you find all available metadata" ;
-    schema:aboutUrl "" ;
+    dw:remarks ( "an alternative is [PeakVisor]https://peakvisor.com/ " ) ;
+    rdfs:comment "is for finding geographic location landmarks in mountainous topographic terrain." ;
     schema:applicationUrl "https://peakfinder.com" ;
     schema:name "Peakfinder" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "Bladibla Productions" .
 
 dw:Photo_Scissors a dw:SoftwareApplication ;
     dw:howTo ( "step 1" "step 2" ) ;
@@ -441,8 +439,9 @@ dw:RIS_\(Image\) a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to find earlier versions" "each search engine has its pros and cons. Use them all to gather information that will help" ) ;
-    rdfs:comment "is a way to check if you are looking at the orignal version of the footage and if the content has been published before. The search results will also show you similar versions and add more context to the event." ;
+    dw:remarks ( "a confirmed match is more informative than the lack of a match. The search engines database might not get access to e.g. social networks to find earlier versions" "each search engine has its pros and cons, to get most out of it check all of them out" ) ;
+    rdfs:comment """is a way to check if you are looking at the orignal version of the footage and if the content has been published before. 
+You will also get more context to the event. You can also identify specific objects in the visual.""" ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -451,7 +450,7 @@ dw:RIS_\(Video\) a dw:Task ;
         dw:Object_identification,
         dw:Person_identification ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "If not results pop up it does not necessarily mean it was not published before. The database might not get access to e.g. social networks to fond earlier versions" "each search engine has its pros and cons. Use them all to gather information that will help " ) ;
+    dw:remarks ( "a confirmed match is more informative than the lack of a match. The search engines database might not get access to e.g. social networks to find earlier versions" "each search engine has its pros and cons, to get most out of it check all of them out" ) ;
     rdfs:comment "is a way to find out if you are looking at the orignal version of the footage and if the content has been published before. The search results will also show you similar versions and add more context to the event." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
@@ -558,25 +557,25 @@ dw:TinEye a dw:SoftwareApplication ;
     schema:publisher "" .
 
 dw:Tweetbeaver a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Connect Tweetbeaver to your twitter account" "Choose the action you want to perform" "Follow the onscreen instructions" ) ;
     dw:parentNode dw:Twitter ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Tweetbeaver is a" ;
+    dw:remarks ( "As with all external tools, this only works as long as Twitter allows it" "There are some limitations on the amoung of data you can get due to the API" ) ;
+    rdfs:comment "gathers the twitter data you need quickly, simply and easily. It digs out the information you need from your or any other public account. It can gather data on any non-private account and returns most searches as a csv for easier filtering and analysis." ;
     schema:applicationUrl "https://tweetbeaver.com/" ;
     schema:name "Tweetbeaver" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "tweetbeaver" .
 
 dw:USearch a dw:SoftwareApplication ;
-    dw:howTo ( "fill out the " "step 2" ) ;
-    dw:parentNode dw:File_Name,
-        dw:General_Search ;
+    dw:howTo ( "type your search query " "select the region where you are investigating" ) ;
+    dw:parentNode dw:Context,
+        dw:File_Name ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "an alternative tool is http://isearchfrom.com/" ) ;
-    rdfs:comment "can simulate a search from different locations. Google's algorithm will show you results that might be happening in your local area. Here you can geotarget your search." ;
+    dw:remarks ( "an alternative tool is [ISearchFrom]http://isearchfrom.com/" ) ;
+    rdfs:comment "can simulate a Google search from different locations. Google's algorithm will show you results that might be happening in your local area. Here you can geotarget your search." ;
     schema:applicationUrl "https://usearchfrom.com/" ;
     schema:name "USearch" ;
     schema:publisher "Kevin Richard" .
@@ -634,27 +633,27 @@ dw:Website_Analytics a dw:Task ;
     schema:name "Website Analytics" .
 
 dw:WhatsMyName a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Enter the username " "select any filters" "click the search icon  " ) ;
     dw:parentNode dw:Person_name,
         dw:Social_Media_profiles ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Source Repository: [WebBreacher/WhatsMyName](https://github.com/webbreacher/whatsmyname) " "remark 2" ) ;
-    rdfs:comment "WhatsMyName is" ;
+    dw:remarks ( "You can check results as icons (left) and in a searchable table (right)" "Green means an account has been found" "Yellow means this might be a false positive" "Red means no account was found" "You can check the sources used in this github repository: [WebBreacher/WhatsMyName](https://github.com/webbreacher/whatsmyname) " ) ;
+    rdfs:comment "is a tool to check if and where a username has already been used across social networks and website-domains." ;
     schema:applicationUrl "https://whatsmyname.app/" ;
     schema:name "WhatsMyName" ;
-    schema:publisher "WebBreacher" .
+    schema:publisher "[Chris Paulter](https://twitter.com/osintcombine)" .
 
 dw:WhoIs a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Enter the domain (e.g. dw.com) or an IP-address into the search field" "Kick off the search" ) ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "What is:" ;
+    dw:remarks ( "Make sure to use the whois search at the top right, not the main domain search" "In may cases you won't get a lot of data, due to privacy resctrictions. But sometimes it helps e.g. with a first contact phone number" ) ;
+    rdfs:comment "is a tool to check on the registration data of a website." ;
     schema:applicationUrl "https://www.whois.com/" ;
     schema:name "WhoIs" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Whois Digital Pte Ltd, Singapore" .
 
 dw:WhoPostedWhat a dw:SoftwareApplication ;
     dw:howTo ( "step 1" "step 2" ) ;
@@ -763,13 +762,6 @@ dw:Contact a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Contact" .
 
-dw:Context a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks ( "The event you are looking at or listening to might be exclusive. Check for local sources and use Google translate for searching in local language" ) ;
-    rdfs:comment "Our information source might be wrong when a claim is made. So the need for verification starts with asweing the question: What has happened?" ;
-    schema:name "Context" .
-
 dw:Facebook a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
     dw:relatedMediaType dw:Image,
@@ -783,8 +775,8 @@ dw:GPS_Data a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "GPS Data can help you ...." ;
+    dw:remarks ( "any map service works with GPS data" "on Google Maps just do a right click and you can copy the data of the selected position" ) ;
+    rdfs:comment "means global positioning system. The latitude and longitude coordinates generated by the GPS are considered the standard for location data." ;
     schema:name "GPS Data" .
 
 dw:IP_address a dw:Task ;
@@ -816,8 +808,8 @@ dw:Interviews a dw:Task ;
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:Original ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "use your own senses and look at shadow and reflections in the visual " "close your eyes and listen carefully to the sound if there might be jumps" "sharpen your senses here with our training page https://digger-project.com/sharpen-your-senses/" ) ;
-    rdfs:comment "is used for detecting if this footage has been altered like if elements have been taken out." ;
+    dw:remarks ( "use your own senses and look at shadow and reflections in the visual " "close your eyes and listen carefully to the sound if there might be jumps" "sharpen your senses here with our training page here [Sharpen your senses]https://digger-project.com/sharpen-your-senses/" ) ;
+    rdfs:comment "means you look for traces of tampering in the footage." ;
     schema:name "Manipulation detection" .
 
 dw:Ownership a dw:Task ;
@@ -829,7 +821,7 @@ dw:Ownership a dw:Task ;
     schema:name "Ownership" .
 
 dw:Panorama_stitch a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
+    dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Video ;
     dw:remarks ( "remark 1" "remark 2" ) ;
     rdfs:comment "is a" ;
@@ -876,8 +868,8 @@ dw:Weather_Analyses a dw:Task ;
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "writing down 20 hints you detect for answering the question what is happening" ) ;
-    rdfs:comment "You will be surprised but taking your time and looking closely at an image will give you more information that expected. To rest your eagle eye you want to zoom in without changing the resolution." ;
+    dw:remarks ( "write down 20 hints you detect for answering the question what is happening on the visual" "organize your hints in scenery, location, time, person" ) ;
+    rdfs:comment "will surprise you how much there is still to detect on a visual.  Take your time and  look closely at the visual." ;
     schema:name "Zoom in details" .
 
 dw:Background_Removal a dw:Task ;
@@ -900,15 +892,14 @@ dw:Enhance_Image_\(Image\) a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "enhance the resolution and quality" "sharpen the image and contrast-enhancement" "take out the background to focus on the object" ) ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses like reverse image search." ;
-    schema:name "Enhance Image" ;
-    schema:publisher "Let’s Enhance, Inc." .
+    rdfs:comment "can help to get better results with visual analyses, manually or with a reverse image search." ;
+    schema:name "Enhance Image" .
 
 dw:Enhance_Image_\(Video\) a dw:Task ;
     dw:parentNode dw:KeyframeExtraction ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "enhance the resolution and quality" ) ;
-    rdfs:comment "Enhancing an image can help to get better results with visual analyses, manually or even with a reverse image search." ;
+    dw:remarks ( "enhance the resolution and quality" "sharpen the image and contrast-enhancement" "take out the background to focus on the object" ) ;
+    rdfs:comment "can help to get better results with visual analyses, manually or with a reverse image search." ;
     schema:name "Enhance Image" .
 
 dw:File_Name a dw:Task ;
@@ -918,17 +909,6 @@ dw:File_Name a dw:Task ;
     dw:remarks ( "remark 1" "remark 2" ) ;
     rdfs:comment "is a" ;
     schema:name "File Name" .
-
-dw:General_Search a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Audio,
-        dw:Image,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    dw:remarks ( "think about keywords you wanna use to narrow down your search" "write down the questions you want to answer" "use more several and trustworthy sources" ) ;
-    rdfs:comment "is for getting a first glimpse in what is happening here. You can use the information you got by a source or web page and dig deeper to gathered more information" ;
-    schema:name "General search" .
 
 dw:Historic_versions a dw:Task ;
     dw:parentNode dw:What,
@@ -945,18 +925,18 @@ dw:How a dw:Question ;
         dw:Text,
         dw:Video ;
     dw:remarks ( "check local reports " "search cross-medial on different social media platforms" "reach out to reporters on the ground" ) ;
-    rdfs:comment """How did it happend? 
+    rdfs:comment """did the event enfold? 
 
-This is a very tricky question to answer. You have to gather more information and talk to eyewitnesses. Try to collect visuals which show what has happened before and from a different perspective.""" ;
+This is a very tricky question to answer. You have to gather more information and talk to eyewitnesses. Try to collect more visuals and information from before, during and after the event and from different perspectives.""" ;
     schema:name "How" .
 
 dw:Landscape_identification a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
+    dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
-    schema:name "Landscape Identification" .
+    dw:remarks ( "Eyran Millis shared a great tutorial about using mountain ridges in geolocation tasks [Mountain Geolocating Tutorial]https://www.linkedin.com/posts/eyran-millis_mountain-geolocating-tutorial-activity-6941996317795565568-JYvf" ) ;
+    rdfs:comment "means finding geographic location landmarks in mountainous topographic terrain." ;
+    schema:name "Landscape identification" .
 
 dw:Language_detection a dw:Task ;
     dw:parentNode dw:What,
@@ -969,16 +949,17 @@ dw:Language_detection a dw:Task ;
 dw:Original a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "content is reposted frequentely out of messenger apps or other social platforms. To determine the origin of the footage is getting more complicated. Make sure you have at least the original version" "find the earliest shared version of the content" ) ;
-    rdfs:comment "means this footage has not been manipulated and it is from event it claims to show. To find out the origin of the footage will also give you information about the owner of the footage and where its coming from." ;
+    dw:remarks ( "content is reposted frequentely from messenger apps to a social platform. Nowadays it is tricky to determine the origin of the footage. " "find at least the earliest shared version of the content so you can ask the user where she/he got it from" ) ;
+    rdfs:comment """is the genuine unaltered visual element you are looking for. It might also be that the footage was taken out of context and is not from the event it claims to be. 
+To find out the origin of the footage will also give you information about the owner of the footage and where its coming from.""" ;
     schema:name "Original" .
 
 dw:Satellite_data a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
+    dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "" ;
+    dw:remarks ( "There are two types of satellite data in earth observation. " "Optical satellite imagery views the world as he human eye does but limits when its cloudy or at night." "Radar satellites can operate day and night and regardless weather conditions, but it is more difficult to interprete the data." "Ollie Ballinger wrote a great article about SAR [Radar Interference Tracker]https://www.bellingcat.com/resources/2022/02/11/radar-interference-tracker-a-new-open-source-tool-to-locate-active-military-radar-systems/ " ) ;
+    rdfs:comment "provides satellite imagery and earth observation data of the earth's surface and its atmosphere. It provideds information on the situation and scenery with a before and after and can be used as visual evidence." ;
     schema:name "Satellite data" .
 
 dw:Shadow_Analyses a dw:Task ;
@@ -1038,6 +1019,17 @@ dw:eMail a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "eMail" .
 
+dw:Context a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks ( "think about specific keywords to narrow down your search" "Google translate for searching in local language" "write down the questions you want to answer" "use several, local and trustworthy sources" ) ;
+    rdfs:comment "of an event describes the general situation that relates to the digital information you have. This can help to understood the digital information you are looking at. You may use the information shared by the source or web page and dig deeper to gather more information." ;
+    schema:name "Context" .
+
 dw:Digital_Footprint a dw:Task ;
     dw:parentNode dw:Sources,
         dw:Who_created_content,
@@ -1067,13 +1059,13 @@ dw:KeyframeExtraction a dw:Task ;
     schema:name "Keyframe Extraction" .
 
 dw:Metadata a dw:Task ;
-    dw:howTo "is usually attached to an image or video. It includes the photo/video size, recording date and device, location, editing programs and technical details (aperture, ISO, exposure time...)" ;
+    dw:howTo "is includes the photo/video size, recording date and device, location, editing programs and technical details (aperture, ISO, exposure time...). It is usually attached to an image or video." ;
     dw:parentNode dw:When,
         dw:Where,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "can easily be maniupualted so also cross-reference the information" "shared visuals on social networks usually do not have metadata. Exceptions are Telegram (check!!) People can send you the original via email as well. " ) ;
+    dw:remarks ( "can easily be maniupualted so also cross-reference the information" "shared visuals on social networks usually do not have metadata. People can send you the original via email or as a document. Find a tutorial from Amnesty here [Preserving Metadata]https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/" ) ;
     schema:name "Metadata" .
 
 dw:Person_identification a dw:Task ;
@@ -1101,11 +1093,11 @@ dw:Content_analyses a dw:Task ;
     schema:name "Content analyses" .
 
 dw:Object_identification a dw:Task ;
-    dw:parentNode dw:Visual_Intelligence ;
+    dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "write down at least 20 landmarks you detect in the visual " "you will be surprised how many databases exists for landmark identification" ) ;
+    rdfs:comment "means identifying and locate objects in a visual. It can be used to determine and track the precise location." ;
     schema:name "Object Identification" .
 
 dw:Social_Media_activities a dw:Task ;
@@ -1126,7 +1118,7 @@ dw:Who a dw:Question ;
         dw:Text,
         dw:Video ;
     dw:remarks ( "Always have the motivation in mind: Why was the account established, the website created, or the piece of content captured?" "Contacting the person might give you a chance to get an interview or even the original file " ) ;
-    rdfs:comment """Who has created the content? 
+    rdfs:comment """has created the content? 
 
 The person who made the claim or captured the visual and adds a claim has to be verified as well. 
 Do not get confused with the uploader cause it might not be the person who created the content.""" ;
@@ -1147,13 +1139,13 @@ dw:Author a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Author" .
 
-dw:Visual_Intelligence a dw:Task ;
+dw:Geolocation a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Sharpening your senses with the interactive quizzes https://digger-project.com/sharpen-your-senses/" "Writing down 20 hints you can detect in the visual like street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks. " ) ;
-    rdfs:comment "is a way to gather information and facts about what is there in the visual. You combine those in your search and narrow down step by step." ;
-    schema:name "Visual Intelligence" .
+    dw:remarks ( "Write down 20 hints you detect in the visual like street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks. " "Sharpening your senses with our interactive quizzes [Sharpen your senses]https://digger-project.com/sharpen-your-senses/" ) ;
+    rdfs:comment "of a visual is the exact position where it was taken. Anything you can detect on a visual can lead you to the spot. A starting pint is also the claim in the shared footage." ;
+    schema:name "Geolocation" .
 
 dw:Website a dw:Task ;
     dw:parentNode dw:Digital_Footprint,
@@ -1166,13 +1158,13 @@ dw:Website a dw:Task ;
 
 dw:Manual_geolocation a dw:Task ;
     dw:parentNode dw:Adress,
-        dw:Visual_Intelligence ;
+        dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks." ;
+    dw:remarks ( "each map service has its pros and cons" "there might be more clues in other shared footages" ) ;
+    rdfs:comment "is a way of combining all collected information from the visual like street names, restaurants, shops etc. and search directly on several map services." ;
     schema:name "Manual Geolocation" .
 
 dw:Reverse_Image_Search a dw:Task ;
@@ -1192,7 +1184,7 @@ dw:When a dw:Question ;
         dw:Text,
         dw:Video ;
     dw:remarks ( "check local reports " "search cross-medial on different social media platforms" "reach out to reporters on the ground" ) ;
-    rdfs:comment """When did it happen? 
+    rdfs:comment """did the event happen? 
 
 Time and date of the event is essential to determine cause it proofs the footage is really captured on that time. Content can be used before or taken completly out of context. It will also help you to find more information about the incident.""" ;
     schema:name "When" .
@@ -1210,11 +1202,10 @@ dw:Where a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Geographic location tied to a particular tweet or Facebook post, but this information can be easily manipulated." "Metadata can also be manipulated." "try to find a second source like satellite images or a street view to confirm the location" "writing down 20 hints that guide you to the location like streets signs, names and architecture" "ask a friend to double-check if you can not see the tree in the forest anymore" ) ;
-    rdfs:comment """Where did it happend? 
+    dw:remarks ( "Geographic location tied to social content  can be wrong" "Metadata can be manipulated manually" "confirm your location with a satellite image or a street view or another visual" "write down 20 hints that help to find the right spot like streets signs, names and architecture" ) ;
+    rdfs:comment """did the event happen? 
 
-Finding the exact location is crucial to know if this incident has happened at this exact place.
-With the location you can verify exact time when the content was captured.""" ;
+Find the exact location will also help you to verify when the event enfold and what has happened.""" ;
     schema:name "Where" .
 
 dw:What a dw:Question ;
@@ -1224,7 +1215,9 @@ dw:What a dw:Question ;
         dw:Text,
         dw:Video ;
     dw:remarks ( "check local reports " "search cross-medial on different social media platforms" "reach out to reporters on the ground" "if the footage is not clear you can enhance it" ) ;
-    rdfs:comment "What you see and what you hear might be new news to you. First, you want to find out what is actually happening here and are you looking or listening to the original file?" ;
+    rdfs:comment """has happened? 
+
+The digital information you have might be exclusive. First, you should find out what is happening here and if you are looking or listening to the original file.""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
