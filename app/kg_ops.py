@@ -3,6 +3,7 @@ from rdflib import URIRef, Literal
 from rdflib.namespace import RDF, RDFS, DCTERMS
 from rdflib.plugins.sparql import prepareQuery
 import networkx as nx
+from rdflib.collection import Collection
 
 SCHEMA = Namespace("https://schema.org/")
 DW = Namespace("http://dw.com/")
@@ -133,7 +134,9 @@ def get_feats(node_id, clicked_node):
         for rel, obj in g.predicate_objects(URIRef(node_id)):
             mapped_key = NS_MAPPING[str(rel)]
             if mapped_key in ["remarks", "howTo"]:
-                node_data[mapped_key].append(str(obj))
+                collection = Collection(g, obj)
+                for c_item in collection:
+                    node_data[mapped_key].append(str(c_item))
             else:
 
                 if mapped_key not in node_data:
