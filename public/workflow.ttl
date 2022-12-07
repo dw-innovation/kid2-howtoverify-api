@@ -3,12 +3,23 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 
+dw:Background_Removal a dw:SoftwareApplication ;
+    dw:howTo ( "Upload an image " "The background will be automatically removed" "Download the image to improve the results for a reverse image search" ) ;
+    dw:parentNode dw:Enhance_Image_\(Image\),
+        dw:Enhance_Image_\(Video\) ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks ( "Read about the other features on the website [tutorials](https://photoscissors.com/tutorials) " ) ;
+    rdfs:comment "PhotoScissors is a background removal tool." ;
+    schema:applicationUrl "https://photoscissors.com/" ;
+    schema:name "Background Removal" ;
+    schema:publisher "Photoscissors" .
+
 dw:Baidu_Images a dw:SoftwareApplication ;
-    dw:howTo ( "open the link, drag and drop the photo to the Baidu search bar in your tab or browser window " "upload the image from your desktop by first clicking the little camera icon in the search bar and then the blue button in the search window." ) ;
+    dw:howTo ( "Open the link and drag the photo to a tab or window in your browser " "Upload the image from your desktop or add the image URL" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "results are more efficient with content from China" "Using GoogleTranslate to make the site readable breaks the functionality" ) ;
-    rdfs:comment "Baidu Reverse Image Search is the chinese version of an image serach engine. It works like the other engines, such as Google or Yandex." ;
+    dw:remarks ( "Digital content from China works well" "Use Google translate plugin for translation if needed" ) ;
+    rdfs:comment "is the chinese version of an image serach engine. Baidu works outside of China but was created for users in China so all results will be in chinese." ;
     schema:applicationUrl "https://image.baidu.com" ;
     schema:name "Baidu Images" ;
     schema:publisher "Baidu, Inc." .
@@ -41,10 +52,11 @@ dw:ENF a dw:Task ;
 
 dw:Edit_photo a dw:SoftwareApplication ;
     dw:howTo ( "Load images by pasting an image URL, dropping an image, or pasting an image file" "Choose the tool you need from the menue bar at the left" "Select the detailed functionality from above or below the image" "Hit the export button at the top right of the image to download your enhanced image" ) ;
-    dw:parentNode dw:Background_Removal ;
+    dw:parentNode dw:Enhance_Image_\(Image\),
+        dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "Your photos are not uploaded, image editing happens in your browser (according to the website owner)" "You can integrate the image editor in your own website via API" ) ;
-    rdfs:comment "is an easy online photo editor. It offers you the basics to crop, rotate and flip an image. All of which can help improve the search results on reverse image search." ;
+    rdfs:comment "is an easy online photo editor. It offers you the basics to crop, rotate and flip an image." ;
     schema:applicationUrl "https://edit.photo/" ;
     schema:name "Edit photo" ;
     schema:publisher "Pqina / Rik Schennink @rikschennink" .
@@ -74,7 +86,7 @@ dw:Fotoforensic a dw:SoftwareApplication ;
     dw:parentNode dw:Manipulation_detection ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "While these tools can do a lot of analysis, the results are hard to read" "It's best to read through some of the examples on the website first and/or involve an expert, before jumping to conclusions" ) ;
-    rdfs:comment "FotoForensics is a collection of different photo analysis algorithms allowing you to perform digital photo forensics. Using these algorithms, you can determine if a picture has been modified, and if so, sometimes even how." ;
+    rdfs:comment "is a collection of different photo analysis algorithms allowing you to perform digital photo forensics. Using these algorithms, you can determine if a picture has been modified, and if so, sometimes even how." ;
     schema:applicationUrl "https://fotoforensics.com/" ;
     schema:name "Fotoforensics" ;
     schema:publisher "HackerFactor.com" .
@@ -91,15 +103,15 @@ dw:Geohints a dw:SoftwareApplication ;
     schema:publisher "MouseWithBeer - Discord: MouseWithBeer#0553" .
 
 dw:Google_Advanced_Search a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Fill out the fields that can might answer your question " "Use the filters like timeframe and colours on the result page" ) ;
+    dw:howTo ( "Open the URL" "Fill out the fields that can might answer your question " "Use Google filters in the results page like timeframe and colours " ) ;
     dw:parentNode dw:Author,
         dw:Context,
         dw:File_Name ;
     dw:relatedMediaType dw:Audio,
         dw:Image,
         dw:Source ;
-    dw:remarks ( "The advanced search is also available via Google Operators. If you know them you are much faster. They can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced serach , check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN" ) ;
-    rdfs:comment "allows you to specify your search in more details to get better results. It allows you to combine or exclude search words, searching on one specific web page and by specific file types." ;
+    dw:remarks ( "The advanced search is also available via Google Operators. If you know them you are much faster. They can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced serach, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN" ) ;
+    rdfs:comment "allows you to specify your search in more details to get better results. You can combine or exclude search words, search on a specific web page or for specific file types." ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
     schema:name "Google Advanced Search" ;
     schema:publisher "Google" .
@@ -137,11 +149,11 @@ dw:Google_Earth_Pro a dw:SoftwareApplication ;
     schema:publisher "Google" .
 
 dw:Google_Images a dw:SoftwareApplication ;
-    dw:howTo ( "open the link and drag the photo to a tab or window in your browser " "upload the image from your desktop" "select text and it can translate the words " "select \"find image source\" to add keywords and to use the Google tools like time, size and color. " ) ;
+    dw:howTo ( "Open the link and drag the photo to a tab or window in your browser" "Upload the image from your desktop or add the image URL" "Select text and it will translate it" "Select \"find image source\" so you can add keywords to the content and use Google filters like timeframe color" "Crop specific items in the content for other results " ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "play around with adding keywords and using the tools to help Google to show you what you are looking for" "You can use Google Lens on your mobile phone" ) ;
-    rdfs:comment "Google Images is very efficient for reverse image search. You can search for the original, take out text from the visual and translate it and crop specific elements." ;
+    dw:remarks ( "On your mobile device you can use Google Photos with the feature Google Lens to gather information around the image" ) ;
+    rdfs:comment "allows you to search Google with an image and discover information attached to it." ;
     schema:applicationUrl "https://images.google.com/" ;
     schema:name "Google Images" ;
     schema:publisher "Google" .
@@ -270,11 +282,11 @@ dw:Lets_enhance_io a dw:SoftwareApplication ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "you have 10 images for free" "Gigapixel AI is also very useful but you you need to download the software on your computer" ) ;
+    dw:remarks ( "You have 10 images for free" "Gigapixel AI is also very useful but you you need to download the software on your computer" ) ;
     rdfs:comment "is an AI image enhancer. You can enhance the resolution, do contrast-enhancement and much more." ;
     schema:applicationUrl "https://letsenhance.io/" ;
     schema:name "Lets enhance io" ;
-    schema:publisher "" .
+    schema:publisher "Let’s Enhance, Inc" .
 
 dw:LinkedIn a dw:SoftwareApplication ;
     dw:howTo ( "step 1" "step 2" ) ;
@@ -305,14 +317,14 @@ What can I tell about what I am hearing""" ;
     schema:name "Listen to the audio" .
 
 dw:Magnifier a dw:SoftwareApplication ;
-    dw:howTo ( "Install the browser plugin on Firefox or Chrome" "a) right click on the image on the web page and select Image Magnifier" "b) click on the plugin and open toolbox, on the left you select Image magnifier and upload your image" "select the zoom by browsing over the image" ) ;
+    dw:howTo ( "Install the browser plugin on Firefox or Chrome" "a) right click on the image on the web page and select Image Magnifier" "b) click on the plugin and open toolbox, on the left you select Image magnifier and upload your image" "Select the zoom by browsing over the image" ) ;
     dw:parentNode dw:Zoom_in_details ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "you can upload an image or analyse it directly from the web page" "it highlights elements without changing the resolution. " ) ;
+    dw:remarks ( "You can upload an image or analyse it directly from the web page" "It highlights elements without changing the resolution. " ) ;
     rdfs:comment "zooms into the image without changing the resolution." ;
-    schema:applicationUrl "[InVid]https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
+    schema:applicationUrl "[InVid](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/)" ;
     schema:name "Magnifier" ;
-    schema:publisher "AFP Medialab" .
+    schema:publisher "AFP Medialab, Deutsche Welle & Partners" .
 
 dw:MapSwitcher a dw:SoftwareApplication ;
     dw:howTo ( "step 1" "step 2" ) ;
@@ -420,16 +432,6 @@ dw:Peakfinder a dw:SoftwareApplication ;
     schema:name "Peakfinder" ;
     schema:publisher "Bladibla Productions" .
 
-dw:Photo_Scissors a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
-    dw:parentNode dw:Background_Removal ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a background removal tool." ;
-    schema:applicationUrl "https://photoscissors.com/" ;
-    schema:name "Photo Scissors" ;
-    schema:publisher "" .
-
 dw:RIS_\(Image\) a dw:Task ;
     dw:parentNode dw:Context,
         dw:Object_identification,
@@ -439,9 +441,8 @@ dw:RIS_\(Image\) a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "a confirmed match is more informative than the lack of a match. The search engines database might not get access to e.g. social networks to find earlier versions" "each search engine has its pros and cons, to get most out of it check all of them out" ) ;
-    rdfs:comment """is a way to check if you are looking at the orignal version of the footage and if the content has been published before. 
-You will also get more context to the event. You can also identify specific objects in the visual.""" ;
+    dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not have access to e.g. social networks to find earlier versions" "Search for the earliest version shared on a social platform" "Each search engine has its pros and cons, find out in the next step" ) ;
+    rdfs:comment "is a way to check if this content is the orignal version as well as if it was published before. A RIS can give you more context to the event and it helps to identify specific objects in visual content." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -547,14 +548,14 @@ dw:TimeandDate a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:TinEye a dw:SoftwareApplication ;
-    dw:howTo ( "open the link and drag the photo to a tab or window in your browser " "upload the image from your desktop" "use the filter on the left side to sort the images" ) ;
+    dw:howTo ( "Open the link and drag the photo to a tab or window in your browser " "Upload the image from your desktop or paste the image URL" "Use the filter on the left side to sort the images" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "better results, e.g. cropping, enhancing of resolution, contrast-enhancement" "good results when using stock images" ) ;
-    rdfs:comment "TinEye has a smaller database but is still very efficient fwhen it comes to altered versions and showing results in chronolopgical order." ;
+    dw:remarks ( "Has a smaller database than the others" "Good results when using stock images" "[Tutorial](https://tineye.com/how )by TinEye" ) ;
+    rdfs:comment "is very efficient when it comes to altered versions and showing results in chronological order." ;
     schema:applicationUrl "https://tineye.com/" ;
     schema:name "TinEye" ;
-    schema:publisher "" .
+    schema:publisher "TinEye" .
 
 dw:Tweetbeaver a dw:SoftwareApplication ;
     dw:howTo ( "Connect Tweetbeaver to your twitter account" "Choose the action you want to perform" "Follow the onscreen instructions" ) ;
@@ -569,12 +570,12 @@ dw:Tweetbeaver a dw:SoftwareApplication ;
     schema:publisher "tweetbeaver" .
 
 dw:USearch a dw:SoftwareApplication ;
-    dw:howTo ( "type your search query " "select the region where you are investigating" ) ;
+    dw:howTo ( "Type your search query " "Select the region in which you are looking for information" ) ;
     dw:parentNode dw:Context,
         dw:File_Name ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "an alternative tool is [ISearchFrom]http://isearchfrom.com/" ) ;
+    dw:remarks ( "An alternative tool is [ISearchFrom](http://isearchfrom.com/) " ) ;
     rdfs:comment "can simulate a Google search from different locations. Google's algorithm will show you results that might be happening in your local area. Here you can geotarget your search." ;
     schema:applicationUrl "https://usearchfrom.com/" ;
     schema:name "USearch" ;
@@ -592,10 +593,10 @@ dw:Unix_timestamp a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:VLC_audio_extraction a dw:SoftwareApplication ;
-    dw:howTo ( "tutorial https://www.kimbley.com/blog/6/1/2021/how-to-extract-audio-from-an-mp4-video-file-to-mp3-using-vlc-media-player " "step 2" ) ;
+    dw:howTo ( "Open a video with the VLC media player" "From the toolbar select File, then Convert/Stream" "Choose from the Profile dropdown box Audio-MP3 " "Save the MP3 file on your computer and add .mp3 at the end of the file name" ) ;
     dw:parentNode dw:Audio_from_video_extraction ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "VLC Audio extraction is" ;
+    dw:remarks ( "Visualise audio waves by audio visualisations on VLC player" ) ;
+    rdfs:comment "is one way to separate the audio from the video." ;
     schema:aboutUrl "" ;
     schema:applicationUrl "VLC player" ;
     schema:name "VLC media player" ;
@@ -700,11 +701,11 @@ dw:WolframAlpha a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:Yandex_Images a dw:SoftwareApplication ;
-    dw:howTo ( "open the link and drag the photo to a tab or window in your browser " "upload the image from your desktop " "it can automatically detect text and translate the words in Russian" "crop specific items you do another reverse search" ) ;
+    dw:howTo ( "Open the link and drag the photo to a tab or window in your browser " "Upload the image from your desktop or add the image URL" "Crop specific items you do another reverse search" "Detect automatically text and translate the words in Russian" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Yandex is an Ukrainian search image. Using footage from the region will be more efficient" "many results might be in Russian so its good to use Google translate plugin for translation" "you get better results if you enhance your image " ) ;
-    rdfs:comment "Yandex Reverse Image Search..." ;
+    dw:remarks ( "It is very strong in object and facial recognition" "Most results might be in Russian, use Google translate plugin for translation" ) ;
+    rdfs:comment "is a search engine based in Russia. It is very efficient when you searching with digital content from the region." ;
     schema:applicationUrl "https://yandex.com/images" ;
     schema:name "Yandex Images" ;
     schema:publisher "Yandex" .
@@ -751,8 +752,8 @@ dw:Audio_from_video_extraction a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "There are many third-party apps and built-in tools to perform this extraction process but the easiest with conversion features is the free VLC player" ) ;
+    rdfs:comment "will help to just focus and analyse the audio. You might also want to transcript what is being said." ;
     schema:name "Audio from video extraction" .
 
 dw:Contact a dw:Task ;
@@ -798,7 +799,7 @@ dw:Instagram a dw:Task ;
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:Original ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "use your own senses and look at shadow and reflections in the visual " "close your eyes and listen carefully to the sound if there might be jumps" "sharpen your senses here with our training page here [Sharpen your senses]https://digger-project.com/sharpen-your-senses/" ) ;
+    dw:remarks ( "With a visual, Use your own senses and look at shadow and reflections " "With an audio, close your eyes and listen carefully to the sound if there might be jumps" "Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
     rdfs:comment "means you look for traces of tampering in the footage." ;
     schema:name "Manipulation detection" .
 
@@ -853,22 +854,14 @@ dw:Weather_analyses a dw:Task ;
         dw:Video ;
     dw:remarks ( "Check local reports" "Collect more visuals of the event and compare the weather" ) ;
     rdfs:comment "points to the weather on the date the content was created. When you see snow or its very windy, you will see it on news reports as well, or find information on forecast websites. Weather can also narrown down the country you are looking at if there is no other information on it." ;
-    schema:name "Weather Analyses" .
+    schema:name "Weather analyses" .
 
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "write down 20 hints you detect for answering the question what is happening on the visual" "organize your hints in scenery, location, time, person" ) ;
-    rdfs:comment "will surprise you how much there is still to detect on a visual.  Take your time and  look closely at the visual." ;
+    dw:remarks ( "Write down 20 hints you detect, it will help your ongoing investigation" "Organize your hints in scenery, location, time, person" ) ;
+    rdfs:comment "will surprise you how much there is still to detectable on a visual. Take your time and  look closely." ;
     schema:name "Zoom in details" .
-
-dw:Background_Removal a dw:Task ;
-    dw:parentNode dw:Enhance_Image_\(Image\),
-        dw:Enhance_Image_\(Video\) ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks ( "remove different parts of the background to see different search results" "play around and sometimes it just helps to flip the image " ) ;
-    rdfs:comment "Removing the background from an image or a video can help to get better results with visual analyses like a reverse image search." ;
-    schema:name "Background Removal" .
 
 dw:Business_name a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
@@ -877,20 +870,6 @@ dw:Business_name a dw:Task ;
     dw:remarks ( "remark 1" "remark 2" ) ;
     rdfs:comment "is a" ;
     schema:name "Business Name" .
-
-dw:Enhance_Image_\(Image\) a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks ( "enhance the resolution and quality" "sharpen the image and contrast-enhancement" "take out the background to focus on the object" ) ;
-    rdfs:comment "can help to get better results with visual analyses, manually or with a reverse image search." ;
-    schema:name "Enhance Image" .
-
-dw:Enhance_Image_\(Video\) a dw:Task ;
-    dw:parentNode dw:KeyframeExtraction ;
-    dw:relatedMediaType dw:Video ;
-    dw:remarks ( "enhance the resolution and quality" "sharpen the image and contrast-enhancement" "take out the background to focus on the object" ) ;
-    rdfs:comment "can help to get better results with visual analyses, manually or with a reverse image search." ;
-    schema:name "Enhance Image" .
 
 dw:File_Name a dw:Task ;
     dw:parentNode dw:Who_created_content ;
@@ -939,7 +918,7 @@ dw:Language_detection a dw:Task ;
 dw:Original a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "content is reposted frequentely from messenger apps to a social platform. Nowadays it is tricky to determine the origin of the footage. " "find at least the earliest shared version of the content so you can ask the user where she/he got it from" ) ;
+    dw:remarks ( "Content is reposted frequentely from messenger apps to a social platform. Nowadays it is tricky to determine the origin of the footage. " "Find at least the earliest shared version of the content so you can ask the user where she/he got it from" ) ;
     rdfs:comment """is the genuine unaltered visual element you are looking for. It might also be that the footage was taken out of context and is not from the event it claims to be. 
 To find out the origin of the footage will also give you information about the owner of the footage and where its coming from.""" ;
     schema:name "Original" .
@@ -1010,8 +989,8 @@ dw:Context a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "think about specific keywords to narrow down your search" "Google translate for searching in local language" "write down the questions you want to answer" "use several, local and trustworthy sources" ) ;
-    rdfs:comment "of an event describes the general situation that relates to the digital information you have. This can help to understood the digital information you are looking at. You may use the information shared by the source or web page and dig deeper to gather more information." ;
+    dw:remarks ( "Think about specific search keywords to narrow down your search" "Use Google translate for searching in local language" "Write down  questions you want to answer" "Look for several, local and trustworthy sources" ) ;
+    rdfs:comment "of an event describes the general situation that relates to the digital content you have. You may use the information shared by the source or web page and dig deeper to gather more." ;
     schema:name "Context" .
 
 dw:Digital_Footprint a dw:Task ;
@@ -1035,10 +1014,24 @@ dw:Domain_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Domain name" .
 
+dw:Enhance_Image_\(Image\) a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks ( "Enhance the resolution and quality" "Sharpen the image and contrast-enhancement" "Take out the background to focus on the object" ) ;
+    rdfs:comment "will help to get better results when the image is blurred or the resolution is low. It will support a more efficient reverse image search." ;
+    schema:name "Enhance Image" .
+
+dw:Enhance_Image_\(Video\) a dw:Task ;
+    dw:parentNode dw:KeyframeExtraction ;
+    dw:relatedMediaType dw:Video ;
+    dw:remarks ( "enhance the resolution and quality" "sharpen the image and contrast-enhancement" "take out the background to focus on the object" ) ;
+    rdfs:comment "can help to get better results with visual analyses, manually or with a reverse image search." ;
+    schema:name "Enhance Image" .
+
 dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "extract frame with VLC player" "InVid" ) ;
+    dw:remarks ( "Extract indiviual frames with VLC player (Tutorial)" "The browser plugin [Invid](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/) can fragment the video into 21 keyframes" ) ;
     rdfs:comment "will give you the opporutunity to analyse the most informative keyframes." ;
     schema:name "Keyframe Extraction" .
 
@@ -1185,10 +1178,10 @@ dw:Where a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Geographic location tied to social content  can be wrong" "Metadata can be manipulated manually" "Confirm your location with a satellite image or a street view or another visual" "Write down 20 hints that help to find the right spot like streets signs, names and architecture" ) ;
+    dw:remarks ( "Geographic location tied to social content  can be wrong" "Metadata can be manipulated manually" "Confirm your location with a satellite image or a street view or another visual" "Write down 20 hints that help to find the right location like streets signs, restaurant names and architecture" ) ;
     rdfs:comment """did the event happen? 
 
-Find the exact location will also help you to verify when the event enfold and what has happened.""" ;
+Finding the exact location will also help you to verify when the event enfold and what has happened.""" ;
     schema:name "Where" .
 
 dw:What a dw:Question ;
@@ -1197,10 +1190,10 @@ dw:What a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Check local reports " "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" "If the footage is not clear you can enhance it" ) ;
+    dw:remarks ( "Check local reports " "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" "If the footage is not clear you can enhance it first" ) ;
     rdfs:comment """has happened? 
 
-The digital information you have might be exclusive. First, you should find out what is happening here and if you are looking or listening to the original file.""" ;
+The digital content you have might be exclusive. First, you should find out what is happening here and if you are looking or listening to the original file.""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
