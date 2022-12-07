@@ -621,14 +621,6 @@ dw:ViewDNS a dw:SoftwareApplication ;
     schema:name "ViewDNS" ;
     schema:publisher "Bladibla Productions" .
 
-dw:Weather_Analyses a dw:Task ;
-    dw:parentNode dw:When ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Weather can hint you to the date when the footage was created. It can also narrow down the continent to detmine the location." ;
-    schema:name "Weather Analyses" .
-
 dw:Web_Archive a dw:SoftwareApplication ;
     dw:howTo ( "step 1" "step 2" ) ;
     dw:parentNode dw:Historic_versions ;
