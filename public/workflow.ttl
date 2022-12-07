@@ -1211,20 +1211,18 @@ The digital information you have might be exclusive. First, you should find out 
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
-    dw:remarks ( "close your eyes and use headphones to listen carefully " "turn off the sound when you watch the video several times" ) ;
+    dw:remarks ( "Close your eyes and use headphones to listen carefully " "Listen carefully what and how something is being said. " ) ;
     rdfs:comment """The audio verification process builds on answering the following questions
 
 Who is the originator of the audio?
 
 What  is the content about?
 
-Where did it happen?
+Where did the event happen?
 
-When did it happen?
+When did the event happen?
 
-An audio can tell a story itself. In this case its crucial to answer the question: How did it happen?
-
-Audio verification is challenging cause manipulation is difficult but not impossible to detect. Listen carefully what and how something is being said.""" ;
+An audio can tell a story itself. In this case its crucial to answer the question: How did it happen?""" ;
     schema:name "Audio" .
 
 dw:Source a dw:MediaObject ;
@@ -1233,35 +1231,35 @@ dw:Source a dw:MediaObject ;
 
 Who is the source?
 
-What does the digital footrprint tells us?""" ;
+What does the digital footrprint tell us?""" ;
     schema:name "Source" .
 
 dw:Text a dw:MediaObject ;
-    dw:remarks ( "never trust a screenshot because it is very easy to manipulate" ) ;
+    dw:remarks ( "Never trust a screenshot because it is very easy to manipulate" ) ;
     rdfs:comment """The text verification process builds on answering the following questions
 
 What has happened?
 
 Who is the originator of the text?
 
-Where was it published?
+Where was the content published?
 
-When was it happen?""" ;
+When was the event happen?""" ;
     schema:name "Text" .
 
 dw:Video a dw:MediaObject ;
-    dw:remarks ( "watching a video frame-by-frame " "turn off the sound when you watch the video several times" ) ;
+    dw:remarks ( "Watch a video frame-by-frame " "Turn off the sound when you watch the video several times" ) ;
     rdfs:comment """The video verification process builds on answering the following questions
 
 What has happened?
 
-Who is the originator of the video?
+Who is the originator of the image?
 
-Where did it happen?
+Where did the event happen?
 
-When did it happen?
+When did the event happen?
 
-One video can tell a story itself. In this case its crucial to answer the question: How did it happen?
+A video can tell a story itself. In this case its crucial to answer the question: How did the event happen?
 
 And what can you find out about the sound?""" ;
     schema:name "Video" .
@@ -1274,10 +1272,10 @@ What has happened?
 
 Who is the originator of the image?
 
-Where did it happen?
+Where did the event happen?
 
-When did it happen?
+When did the event happen?
 
-An image can tell a story itself. In this case its crucial to answer the question: How did it happen?""" ;
+An image can tell a story itself. In this case its crucial to answer the question: How did the event happen?""" ;
     schema:name "Image" .
 
