@@ -868,7 +868,7 @@ dw:Background_Removal a dw:Task ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "remove different parts of the background to see different search results" "play around and sometimes it just helps to flip the image " ) ;
     rdfs:comment "Removing the background from an image or a video can help to get better results with visual analyses like a reverse image search." ;
-    schema:name "Background removal" .
+    schema:name "Background Removal" .
 
 dw:Business_name a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
