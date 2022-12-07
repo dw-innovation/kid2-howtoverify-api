@@ -1175,7 +1175,8 @@ dw:Who_created_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Who created the original piece of content is not necessarily the one who uploaded it on the platform where you found it. It is very easy to download or reshare content from any platform like Youtube or Twitter, then publish that same content to another social platform. You want to verify the primary source who eywitnessed the incident. It can tell you the motivation behind recording it and getting more context." ) ;
+    dw:remarks ( "The person might be emotional affected" "You can ask for the original file" "Ask question you already verified just to double-check" ),
+        "is the primary source who eywitnessed the event. It is not necessarily the one who uploaded it. It is very easy to download or reshare content from any platform like Youtube and publish it on another one." ;
     schema:name "Who created content" .
 
 dw:Where a dw:Question ;
