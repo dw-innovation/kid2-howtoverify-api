@@ -1159,8 +1159,8 @@ dw:Who_created_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "The person might be emotional affected" "You can ask the person for the original file" "Ask question you already verified just to double-check" ),
-        "is the primary source who eywitnessed the event. It is not necessarily the one who uploaded it. It is very easy to download or reshare content from any platform like Youtube and publish it on another one." ;
+    dw:remarks ( "The person might be emotional affected" "You can ask the person for the original file" "Ask question you already verified just to double-check" ) ;
+    rdfs:comment "is the primary source who eywitnessed the event. It is not necessarily the one who uploaded it. It is very easy to download or reshare content from any platform like Youtube and publish it on another one." ;
     schema:name "Who created content" .
 
 dw:Where a dw:Question ;
