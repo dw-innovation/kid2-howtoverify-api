@@ -1056,7 +1056,7 @@ dw:Person_name a dw:Task ;
 dw:Content_analysis a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 2" ) ;
+    dw:remarks ( "Mark all these elements in the document " "Think of typos and different name writing" ) ;
     rdfs:comment "means to examine the document, names and keywords mentioned and the various visuals it includes." ;
     schema:name "Content analysis" .
 
