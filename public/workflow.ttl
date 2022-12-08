@@ -106,10 +106,12 @@ dw:Google_Advanced_Search a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Fill out the fields that can might answer your question " "Use Google filters in the results page like timeframe and colours " ) ;
     dw:parentNode dw:Author,
         dw:Context,
-        dw:File_Name ;
+        dw:File_Name,
+        dw:Keywords ;
     dw:relatedMediaType dw:Audio,
         dw:Image,
-        dw:Source ;
+        dw:Source,
+        dw:Text ;
     dw:remarks ( "The advanced search is also available via Google Operators. If you know them you are much faster. They can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced serach, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN" ) ;
     rdfs:comment "allows you to specify your search in more details to get better results. You can combine or exclude search words, search on a specific web page or for specific file types." ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
@@ -120,11 +122,11 @@ dw:Google_Cache a dw:SoftwareApplication ;
     dw:howTo ( "Do your regular google search." "In the results list, click on the three little dots next to the result of interest" "In the pop-up window select the 'cached' option to open this version of the link/page" "At the top of the cached page you'll see the date and time of when it was cached" ) ;
     dw:parentNode dw:Historic_versions ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "search just for the cached version of a web page by the operator \" cache:URL \" " "it is a great way to figure out if a web page is hacked" "For older versions of a link or website, check out the wayback machine" ) ;
-    rdfs:comment "is a web archive for each web page. It is helpful to check links and websites that might no longer be available or that might have changed. It's a stored version of the page in question from a previous date." ;
+    dw:remarks ( "Search just for the cached version of a web page by the operator \" cache:URL \"" "It is a great way to figure out if a web page is hacked" "For older versions of a link or website, check out the [Internet Archive](https://archive.org/) " ) ;
+    rdfs:comment "is a stored version of the page in question from a previous date. It is helpful to check links and websites that might no longer be available or that might have changed." ;
     schema:applicationUrl "https://www.google.com/" ;
     schema:name "Google Cache" ;
-    schema:publisher "Google Inc." .
+    schema:publisher "Google" .
 
 dw:Google_Earth_3D a dw:SoftwareApplication ;
     dw:howTo ( "Type any adress or add geo-coordinates in the search bar " "Start moving your point of view by moving around with your mouse " "Hold down cmd/cntrl of shift on your keyboard to switch to the 3D perspective" "draw lines to compare the shape of your landscape with the one from the visual" ) ;
@@ -190,13 +192,6 @@ Taucht Mailadresse in Leak/Hack auf? (auch für Tel.nummern)""" ;
     schema:name "Have I been pwned" ;
     schema:publisher "Bladibla Productions" .
 
-dw:Headline a dw:Task ;
-    dw:parentNode dw:Content_analyses ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
-    schema:name "Headline" .
-
 dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
     dw:howTo ( "You can watch at this [link](https://citizenevidence.org/2013/10/20/how-to-creating-a-panoramic-picture-from-a-video/)" "step 2" ) ;
     dw:parentNode dw:Panorama_stitch ;
@@ -237,6 +232,18 @@ dw:Instagram_search a dw:SoftwareApplication ;
     schema:name "Instagram search" ;
     schema:publisher "Bladibla Productions" .
 
+dw:Internet_Archive a dw:SoftwareApplication ;
+    dw:howTo ( "Add an URL " "Pick any date and click on the time when a snapshot was saved" "Websites can be incomplete and lack of images or videos" "You can click on subpages as well" ) ;
+    dw:parentNode dw:Historic_versions ;
+    dw:relatedMediaType dw:Source,
+        dw:Text ;
+    dw:remarks ( "There is also a browser plugin of [Internet Archive](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)  " "You can also search of saved content in their database. Here is a [tutorial](https://youtu.be/dCBy9z3f9Mw) . " ) ;
+    rdfs:comment """is a digital archive of the World Wide Web. Its archive goes back to 1996. You   
+find archived web pages with a specific URL and can track changes over time.""" ;
+    schema:applicationUrl "https://archive.org/" ;
+    schema:name "Internet Archive" ;
+    schema:publisher "Internet Archive" .
+
 dw:Interviews a dw:Task ;
     dw:parentNode dw:How ;
     dw:relatedMediaType dw:Image,
@@ -246,13 +253,6 @@ dw:Interviews a dw:Task ;
     dw:remarks ( "Eyewitnesses might be emotional affected" "Sources might share additional information which also needs verification " ) ;
     rdfs:comment "with eyewitness or experts is essential to understand what has happened and what is the consequence. Set up a monitoring system with trustworthy and local accounts." ;
     schema:name "interviews" .
-
-dw:Keywords a dw:Task ;
-    dw:parentNode dw:Content_analyses ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
-    schema:name "Keywords" .
 
 dw:LatLong a dw:SoftwareApplication ;
     dw:howTo ( "Type in a name or adress" "Scroll down and you see a map with the coordinates" ) ;
@@ -557,8 +557,10 @@ dw:Tweetbeaver a dw:SoftwareApplication ;
 dw:USearch a dw:SoftwareApplication ;
     dw:howTo ( "Type your search query " "Select the region in which you are looking for information" ) ;
     dw:parentNode dw:Context,
-        dw:File_Name ;
+        dw:File_Name,
+        dw:Headline ;
     dw:relatedMediaType dw:Image,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "An alternative tool is [ISearchFrom](http://isearchfrom.com/) " ) ;
     rdfs:comment "can simulate a Google search from different locations. Google's algorithm will show you results that might be happening in your local area. Here you can geotarget your search." ;
@@ -597,17 +599,6 @@ dw:ViewDNS a dw:SoftwareApplication ;
     rdfs:comment "ViewDNS is as" ;
     schema:applicationUrl "https://viewdns.info/" ;
     schema:name "ViewDNS" ;
-    schema:publisher "Bladibla Productions" .
-
-dw:Web_Archive a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
-    dw:parentNode dw:Historic_versions ;
-    dw:relatedMediaType dw:Source,
-        dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Channel search and analyses" ;
-    schema:applicationUrl "" ;
-    schema:name "Web Archive" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Website_Analytics a dw:Task ;
@@ -765,6 +756,13 @@ dw:GPS_Data a dw:Task ;
     rdfs:comment "means global positioning system. The latitude and longitude coordinates generated by the GPS are considered the standard for location data." ;
     schema:name "GPS Data" .
 
+dw:Headline a dw:Task ;
+    dw:parentNode dw:Content_analysis ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks ( "Use the exact writing of the headline and search with the specific filetype " ) ;
+    rdfs:comment "is the head of the text and usually describes the content. Subheadlines are clustering the story in subtopics." ;
+    schema:name "Headline" .
+
 dw:IP_address a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Text ;
@@ -780,6 +778,13 @@ dw:Instagram a dw:Task ;
     dw:remarks ( "remark 1" "remark 2" ) ;
     rdfs:comment "is a" ;
     schema:name "Instagram" .
+
+dw:Keywords a dw:Task ;
+    dw:parentNode dw:Content_analysis ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks ( "Try out several combinations with the keywords" "If the text is already translate, search in the local language" ) ;
+    rdfs:comment "are certain words that describe the content of th document and are also being used in it. Highlight them mains one to dig deeper" ;
+    schema:name "Keywords" .
 
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:Original ;
@@ -811,10 +816,10 @@ dw:Phone_number a dw:Task ;
     schema:name "Phone number" .
 
 dw:Sources a dw:Task ;
-    dw:parentNode dw:Content_analyses ;
+    dw:parentNode dw:Content_analysis ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "mentioned sources like websites or Institutes" ;
+    dw:remarks ( "There might be typos in the name so play around with different writing " "Names might be writtten differnetly in another language" ) ;
+    rdfs:comment "refer to any name, company, institutes, expert, interview partner, websites being mentioned in the text." ;
     schema:name "Sources" .
 
 dw:Twitter a dw:Task ;
@@ -827,10 +832,10 @@ dw:Twitter a dw:Task ;
     schema:name "Twitter" .
 
 dw:Visuals a dw:Task ;
-    dw:parentNode dw:Content_analyses ;
+    dw:parentNode dw:Content_analysis ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "photos, graphics" ;
+    dw:remarks ( "Look at the copyright of the images and its caption" ) ;
+    rdfs:comment "means photos, graphics, videos that presented in the text." ;
     schema:name "Visual" .
 
 dw:Weather_analyses a dw:Task ;
@@ -868,8 +873,8 @@ dw:Historic_versions a dw:Task ;
     dw:parentNode dw:What,
         dw:When ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Save content you researched as well in a web archive" ) ;
+    rdfs:comment "are crawled versions of any published digital content from the world wide web. It does not mean that anything is saved before it has been deleted but ist worth searching for it." ;
     schema:name "Historic versions" .
 
 dw:How a dw:Question ;
@@ -1055,12 +1060,12 @@ dw:Person_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Person Name" .
 
-dw:Content_analyses a dw:Task ;
+dw:Content_analysis a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "" ;
-    schema:name "Content analyses" .
+    dw:remarks ( "remark 2" ) ;
+    rdfs:comment "means to examine the document, names and keywords mentioned and the various visuals it includes." ;
+    schema:name "Content analysis" .
 
 dw:Social_Media_activities a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
@@ -1089,7 +1094,8 @@ dw:Who_is_in_content a dw:SubQuestion ;
     dw:relatedMediaType dw:Image,
         dw:Text,
         dw:Video ;
-    rdfs:comment "bladibla" ;
+    dw:remarks ( "Use any information you can get from the clothings, facial and voice" ) ;
+    rdfs:comment "might be someone passively or actively involved of the event. Information about the person gives context to what happened. Was a specific group involved, a familiar face?" ;
     schema:name "Who is in content" .
 
 dw:Author a dw:Task ;
@@ -1153,7 +1159,7 @@ dw:Who_created_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "The person might be emotional affected" "You can ask for the original file" "Ask question you already verified just to double-check" ),
+    dw:remarks ( "The person might be emotional affected" "You can ask the person for the original file" "Ask question you already verified just to double-check" ),
         "is the primary source who eywitnessed the event. It is not necessarily the one who uploaded it. It is very easy to download or reshare content from any platform like Youtube and publish it on another one." ;
     schema:name "Who created content" .
 
