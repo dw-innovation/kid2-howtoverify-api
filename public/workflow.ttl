@@ -768,6 +768,7 @@ dw:Instagram a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
     dw:relatedMediaType dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "You can search for public posts with Google Advanced search" "Users can create Reels and Stories which you can download and analyse" ) ;
     rdfs:comment "is a photo and video sharing social network owned by Meta. It is a mobile app which allowes browser search as well." ;
@@ -805,6 +806,7 @@ dw:Twitter a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
     dw:relatedMediaType dw:Image,
         dw:Source,
+        dw:Telegram,
         dw:Video ;
     dw:remarks ( "Twitter lists is a great feature to monitor specific accounts on topics" "A lot of content on Twitter are reshares from chat apps" ) ;
     rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter, you can build a good monitoring system." ;
@@ -844,6 +846,7 @@ dw:Facebook a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
     dw:relatedMediaType dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "In some regions like Myanmar Facebook is the main social network" "Public posts can also searched via Google Advanced Search " ) ;
     rdfs:comment "is a social media network owned by Meta. WhatsApp and Instagram are also part of the company." ;
@@ -941,15 +944,6 @@ dw:Social_Media_profiles a dw:Task ;
     dw:remarks ( "Usually users have more than one profile, compare the information shared in the profile " "A user can claim anything they want to be but verified acvcount have a check mark" "You might also double-check on LinkedIn" ) ;
     rdfs:comment "are user descriptions of their account. It includes a profile picture, name and user name as well as a self-description." ;
     schema:name "Social Media profiles" .
-
-dw:Telegram a dw:Task ;
-    dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Image,
-        dw:Source,
-        dw:Video ;
-    dw:remarks ( "Here is a great repository of tools on [Github](https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines )  " ) ;
-    rdfs:comment "is a social messaging service. It is a mobile app which also provides a desktop service for searching and monitoring shared content." ;
-    schema:name "Telegram" .
 
 dw:Timecodes a dw:Task ;
     dw:parentNode dw:When ;
@@ -1074,6 +1068,16 @@ dw:Social_Media_activities a dw:Task ;
     dw:remarks ( "Depending on the region there are different popular social platforms " "Ask yourself where would the user be and play around with different name combinations" ) ;
     rdfs:comment "refer to any interaction the person has done on any social media platform. It includes publishing any type of content and commentaries, shares, likes and following." ;
     schema:name "Social Media activities" .
+
+dw:Telegram a dw:Task ;
+    dw:parentNode dw:Social_Media_activities ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Telegram,
+        dw:Video ;
+    dw:remarks ( "Here is a great repository of tools on [Github](https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines )  " ) ;
+    rdfs:comment "is a social messaging service. It is a mobile app which also provides a desktop service for searching and monitoring shared content." ;
+    schema:name "Telegram" .
 
 dw:Website a dw:Task ;
     dw:parentNode dw:Digital_Footprint,
