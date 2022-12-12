@@ -107,6 +107,7 @@ dw:Google_Advanced_Search a dw:SoftwareApplication ;
     dw:parentNode dw:Author,
         dw:Context,
         dw:File_Name,
+        dw:Headline,
         dw:Keywords ;
     dw:relatedMediaType dw:Audio,
         dw:Image,
@@ -123,7 +124,7 @@ dw:Google_Cache a dw:SoftwareApplication ;
     dw:parentNode dw:Historic_versions ;
     dw:relatedMediaType dw:Text ;
     dw:remarks ( "Search just for the cached version of a web page by the operator \" cache:URL \"" "It is a great way to figure out if a web page is hacked" "For older versions of a link or website, check out the [Internet Archive](https://archive.org/) " ) ;
-    rdfs:comment "is a stored version of the page in question from a previous date. It is helpful to check links and websites that might no longer be available or that might have changed." ;
+    rdfs:comment "is a stored version of the web page in question from a previous date. It is helpful to check links and websites that might no longer be available or that might have changed." ;
     schema:applicationUrl "https://www.google.com/" ;
     schema:name "Google Cache" ;
     schema:publisher "Google" .
@@ -140,7 +141,7 @@ dw:Google_Earth_3D a dw:SoftwareApplication ;
     schema:publisher "Google" .
 
 dw:Google_Earth_Pro a dw:SoftwareApplication ;
-    dw:howTo ( "Download the free available software" "Type any adress or add geo-coordinates in the search bar " "You can zoom and and change perspectives with the compass on the right or your mouse pad" "Save your locations in a folder" ) ;
+    dw:howTo ( "Download the free available software" "Type any address or add geo-coordinates in the search bar " "You can zoom and and change perspectives with the compass on the right or your mouse pad" "Save your locations in a folder" ) ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
@@ -206,8 +207,8 @@ dw:Impressum a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Usually you find the impressum at the end of the page" "You can also add the word impressum or imprint at the end of an URL like [here](www.dw.com/imprint) " ) ;
+    rdfs:comment "names the owner of the website who is responsible of the content on it. It includes usually an address and full name of the onwer." ;
     schema:name "Impressum" .
 
 dw:InVid a dw:SoftwareApplication ;
@@ -221,16 +222,16 @@ dw:InVid a dw:SoftwareApplication ;
     schema:publisher "Bladibla Productions" .
 
 dw:Instagram_search a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Opne the link" "Select the lens on the left " "Type a city or keyword in the search" "hashtags are marked with a hash and locations with a pin" "Scroll down to the the newest posts from the location in chronological order" ) ;
     dw:parentNode dw:Instagram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "Explore locations at this [link](https://www.instagram.com/explore/locations/)" "remark 2" ) ;
-    rdfs:comment "Instagram search .." ;
+    dw:remarks ( "Explore locations at this [link](https://www.instagram.com/explore/locations/) " "On the mobile app you can see stories posted on a map" "You will see more results when you are looged in to Instagram" ) ;
+    rdfs:comment "supports to look for posts organized by hashtags and geographical tagging." ;
     schema:applicationUrl "https://www.instagram.com/search/" ;
     schema:name "Instagram search" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Meta" .
 
 dw:Internet_Archive a dw:SoftwareApplication ;
     dw:howTo ( "Add an URL " "Pick any date and click on the time when a snapshot was saved" "Websites can be incomplete and lack of images or videos" "You can click on subpages as well" ) ;
@@ -238,7 +239,7 @@ dw:Internet_Archive a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
     dw:remarks ( "There is also a browser plugin of [Internet Archive](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)  " "You can also search of saved content in their database. Here is a [tutorial](https://youtu.be/dCBy9z3f9Mw) . " ) ;
-    rdfs:comment """is a digital archive of the World Wide Web. Its archive goes back to 1996. You   
+    rdfs:comment """is a digital archive of the world wide web. Its archive goes back to 1996. You   
 find archived web pages with a specific URL and can track changes over time.""" ;
     schema:applicationUrl "https://archive.org/" ;
     schema:name "Internet Archive" ;
@@ -452,6 +453,18 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     schema:name "Sentinel Hub EO Browser" ;
     schema:publisher "Sinergise" .
 
+dw:Sowsearch a dw:SoftwareApplication ;
+    dw:howTo ( "Open the link" "Open the dropdown menu and select what you search for" "Select the filter you need and click \"add filter\"" "To see results you have to press \"open URL\"" ) ;
+    dw:parentNode dw:Facebook ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
+    dw:remarks ( "You will see more results when you are looged in to Facebook" "Private posts are not visible" "Searching for posts by specific user is not working due to changes of the algorithm" ) ;
+    rdfs:comment "is an interface to use easily narrow down your search on Facebook." ;
+    schema:applicationUrl "https://www.sowsearch.info/" ;
+    schema:name "Sowsearch" ;
+    schema:publisher "Sowdust" .
+
 dw:Speech_to_text_Google a dw:SoftwareApplication ;
     dw:howTo ( "step 1" "https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop" ) ;
     dw:parentNode dw:Language_detection ;
@@ -486,30 +499,28 @@ dw:Suncalc a dw:SoftwareApplication ;
     schema:publisher "Vladimir Agafonkin" .
 
 dw:Telemetrio a dw:SoftwareApplication ;
-    dw:howTo ( """In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.
-Example: https://t.me/s/MOHreport/1""" "step 2" ) ;
+    dw:howTo ( "Open the link" "You can set a a combination of filters like country, language, amount of subscribers to find e.g. the most popular channel in a country" "Click on one of the channels in the result and you get more analytics on it" "With an account you can also set up a monitoring system of selected channels" ) ;
     dw:parentNode dw:Telegram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Channel search and analyses" ;
+    dw:remarks ( "To find the first post of a channel enter a 1 instead of the number in the URL" "Find out more about the features [here](https://telegra.ph/FAQ-Telemetrio-01-14)  " "When you are using the desktop version of Telegram it is easier to search on Telegram itself" ) ;
+    rdfs:comment "is a search tool for channel search and analyses of channels." ;
     schema:applicationUrl "https://telemetr.io/" ;
     schema:name "Telemetrio" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Telemetr io" .
 
 dw:Tgstat a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Open the link" "Choose a country" "Scroll down to find categorized channels like verified, News and most popular posts at the moment from public channels" "Open a channel and you get more analytics on it" "On the timeline of the channel you can set the filter to see posts from a specific month " ) ;
     dw:parentNode dw:Telegram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( """In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name.
-Example: https://t.me/s/MOHreport/1""" "remark 2" ) ;
-    rdfs:comment "Channel search and analyses" ;
+    dw:remarks ( "To find the first post of a channel enter a 1 instead of the number in the URL" "When you are using the desktop version of Telegram it is easier to search on Telegram itself" ) ;
+    rdfs:comment "is a search tool for channel search and analyses of channels. It also provides keyword search on Telegram" ;
     schema:applicationUrl "https://tgstat.com/" ;
     schema:name "Tgstat" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Tgstat" .
 
 dw:ThatsThem a dw:SoftwareApplication ;
     dw:howTo ( "step 1" "step 2" ) ;
@@ -543,22 +554,23 @@ dw:TinEye a dw:SoftwareApplication ;
     schema:publisher "TinEye" .
 
 dw:Tweetbeaver a dw:SoftwareApplication ;
-    dw:howTo ( "Connect Tweetbeaver to your twitter account" "Choose the action you want to perform" "Follow the onscreen instructions" ) ;
+    dw:howTo ( "Connect Tweetbeaver to your Twitter account" "Choose the action you want to perform" "Follow the onscreen instructions" ) ;
     dw:parentNode dw:Twitter ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
     dw:remarks ( "As with all external tools, this only works as long as Twitter allows it" "There are some limitations on the amoung of data you can get due to the API" ) ;
-    rdfs:comment "gathers the twitter data you need quickly, simply and easily. It digs out the information you need from your or any other public account. It can gather data on any non-private account and returns most searches as a csv for easier filtering and analysis." ;
+    rdfs:comment "gathers Ttwitter data you need quickly, simply and easily. It can gather data on any publicaccount and returns most searches as a csv for easier filtering and analysis." ;
     schema:applicationUrl "https://tweetbeaver.com/" ;
     schema:name "Tweetbeaver" ;
-    schema:publisher "tweetbeaver" .
+    schema:publisher "Tweetbeaver" .
 
 dw:USearch a dw:SoftwareApplication ;
     dw:howTo ( "Type your search query " "Select the region in which you are looking for information" ) ;
     dw:parentNode dw:Context,
         dw:File_Name,
-        dw:Headline ;
+        dw:Headline,
+        dw:Keywords ;
     dw:relatedMediaType dw:Image,
         dw:Text,
         dw:Video ;
@@ -589,22 +601,22 @@ dw:VLC_audio_extraction a dw:SoftwareApplication ;
     schema:publisher "VideoLAN project" .
 
 dw:ViewDNS a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Type in the domain or IP address" "Click on go to see the results" ) ;
     dw:parentNode dw:Domain_name,
         dw:IP_address ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "ViewDNS is as" ;
+    dw:remarks ( "It features useful tools in one overview" "Always double-check the information you collected" ) ;
+    rdfs:comment "finds web pages hosted on a given IP address, does reverse lookups and can find domain names via en email address. Useful for finding phishing sites or identifying other sites on the same shared hosting server" ;
     schema:applicationUrl "https://viewdns.info/" ;
     schema:name "ViewDNS" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "ViewDNS" .
 
 dw:Website_Analytics a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Text was found on a specific website" ;
+    dw:remarks ( "Maybe to delete." ) ;
+    rdfs:comment "track the activity of visitors to a specific site to see how the site is performing." ;
     schema:name "Website Analytics" .
 
 dw:WhatsMyName a dw:SoftwareApplication ;
@@ -631,26 +643,26 @@ dw:WhoIs a dw:SoftwareApplication ;
     schema:publisher "Whois Digital Pte Ltd, Singapore" .
 
 dw:WhoPostedWhat a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Open the URL" "Use a specific keyword and select the time you are searching for" ) ;
     dw:parentNode dw:Facebook ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "What is:" ;
+    dw:remarks ( "You will see more results when you are logged in to Facebook" "Searching for posts by specific user is not working due to changes of the algorithm" "You might want to try Google Advanced search" ) ;
+    rdfs:comment "is a keyword search on Facebook from a specific time range or on a specific date." ;
     schema:applicationUrl "https://whopostedwhat.com/" ;
     schema:name "WhoPostedWhat" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "[Daniel Endresz](https://twitter.com/danielendresz) and [Dan Nemec](https://twitter.com/djnemec)" .
 
 dw:Whois_Domain a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Enter the domain or an IP address into the search field" "Scroll down the results" ) ;
     dw:parentNode dw:Domain_name ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "In may cases you won't get a lot of data, due to privacy resctrictions." "remark 2" ) ;
+    rdfs:comment "is a tool to check on the registration data of a website and its ownership." ;
     schema:applicationUrl "https://whois.domaintools.com/" ;
     schema:name "Whois Domain" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "DomainTools" .
 
 dw:Wikimapia a dw:SoftwareApplication ;
     dw:howTo ( "Type in GPS coordinates" "Mouse over areas and objects to get additional text on the left" "Select categories like schools or parks and see them marked on the map" "You can read changes of the text in the protocol on the left" ) ;
@@ -737,15 +749,6 @@ dw:Contact a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Contact" .
 
-dw:Facebook a dw:Task ;
-    dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Image,
-        dw:Source,
-        dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
-    schema:name "Facebook" .
-
 dw:GPS_Data a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Image,
@@ -754,18 +757,11 @@ dw:GPS_Data a dw:Task ;
     rdfs:comment "means global positioning system. The latitude and longitude coordinates generated by the GPS are considered the standard for location data." ;
     schema:name "GPS Data" .
 
-dw:Headline a dw:Task ;
-    dw:parentNode dw:Content_analysis ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Use the exact writing of the headline and search with the specific filetype " ) ;
-    rdfs:comment "is the head of the text and usually describes the content. Subheadlines are clustering the story in subtopics." ;
-    schema:name "Headline" .
-
 dw:IP_address a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "With VPN users can change hide their IP address or move it to any location on the world" "If you do an investigation it is worth it to use VPN or Tor browser to hide your own identify" ) ;
+    rdfs:comment "is an unique address that identifies a device on the Internet or on a local network. It contains location information." ;
     schema:name "IP address" .
 
 dw:Instagram a dw:Task ;
@@ -773,16 +769,9 @@ dw:Instagram a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "You can search for public posts with Google Advanced search" "Users can create Reels and Stories which you can download and analyse" ) ;
+    rdfs:comment "is a photo and video sharing social network owned by Meta. It is a mobile app which allowes browser search as well." ;
     schema:name "Instagram" .
-
-dw:Keywords a dw:Task ;
-    dw:parentNode dw:Content_analysis ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Try out several combinations with the keywords" "If the text is already translate, search in the local language" ) ;
-    rdfs:comment "are certain words that describe the content of th document and are also being used in it. Highlight them mains one to dig deeper" ;
-    schema:name "Keywords" .
 
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:Original ;
@@ -790,14 +779,6 @@ dw:Manipulation_detection a dw:Task ;
     dw:remarks ( "With a visual, Use your own senses and look at shadow and reflections " "With an audio, close your eyes and listen carefully to the sound if there might be jumps" "Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
     rdfs:comment "means you look for traces of tampering in the footage." ;
     schema:name "Manipulation detection" .
-
-dw:Ownership a dw:Task ;
-    dw:parentNode dw:Website ;
-    dw:relatedMediaType dw:Ownership,
-        dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
-    schema:name "Ownership" .
 
 dw:Panorama_stitch a dw:Task ;
     dw:parentNode dw:Geolocation ;
@@ -816,7 +797,7 @@ dw:Phone_number a dw:Task ;
 dw:Sources a dw:Task ;
     dw:parentNode dw:Content_analysis ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "There might be typos in the name so play around with different writing " "Names might be writtten differnetly in another language" ) ;
+    dw:remarks ( "There might be typos in the name so play around with different writing " "Names might be writtten differently in another language" ) ;
     rdfs:comment "refer to any name, company, institutes, expert, interview partner, websites being mentioned in the text." ;
     schema:name "Sources" .
 
@@ -825,15 +806,15 @@ dw:Twitter a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Twitter lists is a great feature to monitor specific accounts on topics" "A lot of content on Twitter are reshares from chat apps" ) ;
+    rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter, you can build a good monitoring system." ;
     schema:name "Twitter" .
 
 dw:Visuals a dw:Task ;
     dw:parentNode dw:Content_analysis ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Look at the copyright of the images and its caption" ) ;
-    rdfs:comment "means photos, graphics, videos that presented in the text." ;
+    dw:remarks ( "Look at the copyright of the images " "There might be metadata and captions " ) ;
+    rdfs:comment "are photos, graphics, videos in the text." ;
     schema:name "Visual" .
 
 dw:Weather_analyses a dw:Task ;
@@ -859,6 +840,15 @@ dw:Business_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Business Name" .
 
+dw:Facebook a dw:Task ;
+    dw:parentNode dw:Social_Media_activities ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
+    dw:remarks ( "In some regions like Myanmar Facebook is the main social network" "Public posts can also searched via Google Advanced Search " ) ;
+    rdfs:comment "is a social media network owned by Meta. WhatsApp and Instagram are also part of the company." ;
+    schema:name "Facebook" .
+
 dw:File_Name a dw:Task ;
     dw:parentNode dw:Who_created_content ;
     dw:relatedMediaType dw:Image,
@@ -867,12 +857,19 @@ dw:File_Name a dw:Task ;
     rdfs:comment "is a name used to identify a computer file in a directory structure. It can included valuable information to search further." ;
     schema:name "File Name" .
 
+dw:Headline a dw:Task ;
+    dw:parentNode dw:Content_analysis ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks ( "Use the exact writing of the headline in your search" "Add the specific filetype you got to it" ) ;
+    rdfs:comment "is the head of the text and usually describes the content. Subheadlines are clustering the story in subtopics. Both have useful keywords for more research in it" ;
+    schema:name "Headline" .
+
 dw:Historic_versions a dw:Task ;
     dw:parentNode dw:What,
         dw:When ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Save content you researched as well in a web archive" ) ;
-    rdfs:comment "are crawled versions of any published digital content from the world wide web. It does not mean that anything is saved before it has been deleted but ist worth searching for it." ;
+    dw:remarks ( "People also share screenshots of deleted content, be aware screenshots are easy to manipulate" "Save content you researched as well in a web archive " ) ;
+    rdfs:comment "are crawled versions of any published digital content from the world wide web. It does not mean that anything is saved before it has been deleted but it is worth searching for it." ;
     schema:name "Historic versions" .
 
 dw:How a dw:Question ;
@@ -886,6 +883,13 @@ dw:How a dw:Question ;
 
 Here you need to gather more information and talk to eyewitnesses. Try to collect more visuals and information from before, during and after the event and from different perspectives.""" ;
     schema:name "How" .
+
+dw:Keywords a dw:Task ;
+    dw:parentNode dw:Content_analysis ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks ( "Try out several search combinations with the keywords" "If the text is already translated, search in the local language" ) ;
+    rdfs:comment "are certain words that describe the content of the document. There are usually mentioned several times in the text. Highlight the main ones and dig deeper." ;
+    schema:name "Keywords" .
 
 dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Geolocation ;
@@ -934,8 +938,8 @@ dw:Social_Media_profiles a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Usually users have more than one profile, compare the information shared in the profile " "A user can claim anything they want to be but verified acvcount have a check mark" "You might also double-check on LinkedIn" ) ;
+    rdfs:comment "are user descriptions of their account. It includes a profile picture, name and user name as well as a self-description." ;
     schema:name "Social Media profiles" .
 
 dw:Telegram a dw:Task ;
@@ -943,8 +947,8 @@ dw:Telegram a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks "Github https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines" ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Here is a great repository of tools on [Github](https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines )  " ) ;
+    rdfs:comment "is a social messaging service. It is a mobile app which also provides a desktop service for searching and monitoring shared content." ;
     schema:name "Telegram" .
 
 dw:Timecodes a dw:Task ;
@@ -993,8 +997,8 @@ dw:Domain_name a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Domain_name,
         dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Each domain has a owner and has to be registrared on a specific date" "There might be also subdomains " ) ;
+    rdfs:comment "is the name associated with a physical IP address. It appears after the @ sign in email addresses, and after www. in web addresses." ;
     schema:name "Domain name" .
 
 dw:Enhance_Image_\(Image\) a dw:Task ;
@@ -1067,9 +1071,18 @@ dw:Social_Media_activities a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Depending on the region there are different popular social platforms " "Ask yourself where would the user be and play around with different name combinations" ) ;
+    rdfs:comment "refer to any interaction the person has done on any social media platform. It includes publishing any type of content and commentaries, shares, likes and following." ;
     schema:name "Social Media activities" .
+
+dw:Website a dw:Task ;
+    dw:parentNode dw:Digital_Footprint,
+        dw:Where ;
+    dw:relatedMediaType dw:Source,
+        dw:Text ;
+    dw:remarks ( "You can use Google Advanced search find out where the website has been mentioned" "Internet Archive will help to find older versions of it" ) ;
+    rdfs:comment "contains a lot of information when you know where to look at. It should have an about section, an IP address and a history of publications." ;
+    schema:name "Website" .
 
 dw:Who a dw:Question ;
     dw:parentNode dw:Audio,
@@ -1105,15 +1118,6 @@ dw:Geolocation a dw:Task ;
     dw:remarks ( "Write down 20 hints you detect in the visual like street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks. " "Sharpening your senses with our interactive quizzes [Sharpen your senses](https://digger-project.com/sharpen-your-senses/) " ) ;
     rdfs:comment "of a visual is the exact position where it was taken. Anything you can detect on a visual can lead you to it. A starting point is also the claim in the shared footage." ;
     schema:name "Geolocation" .
-
-dw:Website a dw:Task ;
-    dw:parentNode dw:Digital_Footprint,
-        dw:Where ;
-    dw:relatedMediaType dw:Source,
-        dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
-    schema:name "Website" .
 
 dw:Manual_geolocation a dw:Task ;
     dw:parentNode dw:Adress,
@@ -1205,7 +1209,7 @@ What does the digital footrprint tell us?""" ;
     schema:name "Source" .
 
 dw:Text a dw:MediaObject ;
-    dw:remarks ( "Never trust a screenshot because it is very easy to manipulate" ) ;
+    dw:remarks ( "Never trust a screenshot because it is very easy to manipulate" "As yourself if the tex is plausible" ) ;
     rdfs:comment """The text verification process builds on answering the following questions
 
 What has happened?
