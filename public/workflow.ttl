@@ -85,7 +85,7 @@ dw:Fotoforensic a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Enter the URL of an image or click the search button to browse for an image on your computer" "Click the Upload button and let the machine do the analysis" "Once the analysis is done use the menue on the upper left hand corner to navigate through the different analysis results. " "Don't forget to hover your mouse over the image from time to time for a direct comparison of image and analysis output" ) ;
     dw:parentNode dw:Manipulation_detection ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "While these tools can do a lot of analysis, the results are hard to read" "It's best to read through some of the examples on the website first and/or involve an expert, before jumping to conclusions" ) ;
+    dw:remarks ( "While these tools can do a lot of analysis, the results are hard to read" "It's best to read through [some of the examples](https://www.hackerfactor.com/blog/index.php?/archives/322-Body-By-Victoria.html) on the website first and/or involve an expert, before jumping to conclusions" ) ;
     rdfs:comment "is a collection of different photo analysis algorithms allowing you to perform digital photo forensics. Using these algorithms, you can determine if a picture has been modified, and if so, sometimes even how." ;
     schema:applicationUrl "https://fotoforensics.com/" ;
     schema:name "Fotoforensics" ;
@@ -194,21 +194,21 @@ Taucht Mailadresse in Leak/Hack auf? (auch für Tel.nummern)""" ;
     schema:publisher "Bladibla Productions" .
 
 dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
-    dw:howTo ( "You can watch at this [link](https://citizenevidence.org/2013/10/20/how-to-creating-a-panoramic-picture-from-a-video/)" "step 2" ) ;
+    dw:howTo ( "Download and install the application from its website." "Select the images (e.g. frames from a video) you want to stich together " "Put the images into one folder" "Load the images in _Hugin_ and use the \"Align\" feature" "Optimize the settings (if necessary)" "Let the software finalise the the panorama" ) ;
     dw:parentNode dw:Panorama_stitch ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "What is" ;
+    dw:remarks ( "Amnesty's citizen evidence lab offers [a detailed how to ](https://citizenevidence.org/2013/10/20/how-to-creating-a-panoramic-picture-from-a-video/)" ) ;
+    rdfs:comment "is an easy to use image tool that allows you to assemble a mosaic of photographs into a complete immersive panorama." ;
     schema:applicationUrl "https://hugin.sourceforge.io/" ;
     schema:name "Hugin - Panorama photo stitcher" ;
-    schema:publisher "..." .
+    schema:publisher "Pablo d'Angelo and [so many more](https://sourceforge.net/p/hugin/hugin/ci/default/tree/authors.txt#l1)" .
 
 dw:Impressum a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Usually you find the impressum at the end of the page" "You can also add the word impressum or imprint at the end of an URL like [here](www.dw.com/imprint) " ) ;
-    rdfs:comment "names the owner of the website who is responsible of the content on it. It includes usually an address and full name of the onwer." ;
+    dw:remarks ( "Usually you find the impressum at the end of the page" "You can also add the word impressum or imprint at the end of an URL like [in this example](www.dw.com/imprint) " ) ;
+    rdfs:comment "names the owner of the website responsible for the content on it. It usually includes an address and full name of the onwer. Some info can be reducted due GDPR regulations." ;
     schema:name "Impressum" .
 
 dw:InVid a dw:SoftwareApplication ;
@@ -1084,8 +1084,8 @@ dw:Website a dw:Task ;
         dw:Where ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "You can use Google Advanced search find out where the website has been mentioned" "Internet Archive will help to find older versions of it" ) ;
-    rdfs:comment "contains a lot of information when you know where to look at. It should have an about section, an IP address and a history of publications." ;
+    dw:remarks ( "You can use Google Advanced search to find out where the website has been mentioned" "The [Internet Archive](https://archive.org/) will help to find older versions of the site" ) ;
+    rdfs:comment "contains a lot of information when you know where to look. It should have an about section, an IP address and a history of publications." ;
     schema:name "Website" .
 
 dw:Who a dw:Question ;
@@ -1185,75 +1185,58 @@ dw:What a dw:Question ;
     dw:remarks ( "Check local reports " "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" "If the footage is not clear you can enhance it first" ) ;
     rdfs:comment """has happened? 
 
-The digital content you have might be exclusive. First, you should find out what is happening here and if you are looking or listening to the original file.""" ;
+The information in the content you are investigating shows an event, can you corroborate that something is happening via other sources? Or is this content exclusive? Are you looking or listening to the original file? And how can you extract more information?""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
-    dw:remarks ( "Close your eyes and use headphones to listen carefully " "Listen carefully what and how something is being said. " ) ;
-    rdfs:comment """The audio verification process builds on answering the following questions
+    dw:remarks ( "Close your eyes and use good headphones to listen carefully" "Listen carefully what and how something is being said" ) ;
+    rdfs:comment """The audio verification process builds on answering the following questions:
+\\- Who is the originator of the audio?
+\\- What  is the content about?
+\\- Where did the event happen?
+\\- When did the event happen?
 
-Who is the originator of the audio?
-
-What  is the content about?
-
-Where did the event happen?
-
-When did the event happen?
-
-An audio can tell a story itself. In this case its crucial to answer the question: How did it happen?""" ;
+An audio file can tell a story in itself. In this case its crucial to answer the question: How did it happen?""" ;
     schema:name "Audio" .
 
 dw:Source a dw:MediaObject ;
     dw:remarks ( "Think about the motivation of the source. Why was this information published?" ) ;
-    rdfs:comment """The source verification process builds on answering the following questions
-
-Who is the source?
-
-What does the digital footrprint tell us?""" ;
+    rdfs:comment """The source verification process builds on answering the following questions:
+\\- Who is the source?
+\\- What does the digital footprint of the source tell us?""" ;
     schema:name "Source" .
 
 dw:Text a dw:MediaObject ;
-    dw:remarks ( "Never trust a screenshot because it is very easy to manipulate" "As yourself if the tex is plausible" ) ;
-    rdfs:comment """The text verification process builds on answering the following questions
-
-What has happened?
-
-Who is the originator of the text?
-
-Where was the content published?
-
-When was the event happen?""" ;
+    dw:remarks ( "Never trust a screenshot of text because it is very easy to manipulate" "Ask yourself if the text is plausible" ) ;
+    rdfs:comment """The text verification process builds on answering the following questions:
+\\- What has happened?
+\\- Who is the originator of the text?
+\\- Where was the content published?
+\\- When did the event happen?""" ;
     schema:name "Text" .
 
 dw:Video a dw:MediaObject ;
-    dw:remarks ( "Watch a video frame-by-frame " "Turn off the sound when you watch the video several times" ) ;
-    rdfs:comment """The video verification process builds on answering the following questions
+    dw:remarks ( "Watch a video frame-by-frame to see much more details" "Turn off the sound when you watch the video several times helps to focus" ) ;
+    rdfs:comment """The video verification process builds on answering the following questions:
 
 \\- What has happened?
-
 \\- Who is the originator of the image?
-
 \\- Where did the event happen?
-
 \\- When did the event happen?
 
-A video can tell a story itself. In this case its crucial to answer the question: How did the event happen?
+A video can tell a story in itself. In this case its crucial to answer the question: How did the event happen?
 
-And what can you find out about the sound?""" ;
+And with video specifically you might find a lot of information in the sound!""" ;
     schema:name "Video" .
 
 dw:Image a dw:MediaObject ;
     dw:remarks ( "Look closely at the image before you start digging" "If it looks too good to be true, there might be something fishy about it" ) ;
-    rdfs:comment """The image verification process builds on answering the following questions
+    rdfs:comment """The image verification process builds on answering the following questions:
+\\- What has happened?
+\\- Who is the originator of the image?
+\\- Where did the event happen?
+\\- When did the event happen?
 
-What has happened?
-
-Who is the originator of the image?
-
-Where did the event happen?
-
-When did the event happen?
-
-An image can tell a story itself. In this case its crucial to answer the question: How did the event happen?""" ;
+An image can tell a story in itself. In this case its crucial to answer the question: How did the event happen?""" ;
     schema:name "Image" .
 
