@@ -207,8 +207,8 @@ dw:Impressum a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Usually you find the impressum at the end of the page" "You can also add the word impressum or imprint at the end of an URL like [in this example](www.dw.com/imprint) " ) ;
-    rdfs:comment "names the owner of the website responsible for the content on it. It usually includes an address and full name of the onwer. Some info can be reducted due GDPR regulations." ;
+    dw:remarks ( "Usually you find the impressum at the end of the page" "You can also add the word impressum or imprint at the end of an URL like [in this example](https://www.dw.com/imprint) " ) ;
+    rdfs:comment "names the owner of the website responsible for the content on it. It usually includes an address and full name of the onwer. Some info can be reducted due to GDPR regulations." ;
     schema:name "Impressum" .
 
 dw:InVid a dw:SoftwareApplication ;
