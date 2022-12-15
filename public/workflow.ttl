@@ -1229,13 +1229,13 @@ dw:Video a dw:MediaObject ;
     dw:remarks ( "Watch a video frame-by-frame " "Turn off the sound when you watch the video several times" ) ;
     rdfs:comment """The video verification process builds on answering the following questions
 
-What has happened?
+\\- What has happened?
 
-Who is the originator of the image?
+\\- Who is the originator of the image?
 
-Where did the event happen?
+\\- Where did the event happen?
 
-When did the event happen?
+\\- When did the event happen?
 
 A video can tell a story itself. In this case its crucial to answer the question: How did the event happen?
 
