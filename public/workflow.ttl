@@ -611,14 +611,6 @@ dw:ViewDNS a dw:SoftwareApplication ;
     schema:name "ViewDNS" ;
     schema:publisher "ViewDNS" .
 
-dw:Website_Analytics a dw:Task ;
-    dw:parentNode dw:Website ;
-    dw:relatedMediaType dw:Source,
-        dw:Text ;
-    dw:remarks ( "Running a Website analysis helps you to determine whether the site you're investigating is real." "It may also give you some leads on who's visiting the site and how popular it is." ) ;
-    rdfs:comment "track the activity of visitors to a specific site. This allows you to see how the site is performing. You a tool like [similarweb.com](https://www.similarweb.com/de/) to check on any website you want to investigate." ;
-    schema:name "Website Analytics" .
-
 dw:WhatsMyName a dw:SoftwareApplication ;
     dw:howTo ( "Enter the username " "select any filters" "click the search icon  " ) ;
     dw:parentNode dw:Person_name,
@@ -1051,6 +1043,15 @@ dw:Person_name a dw:Task ;
     rdfs:comment "is a" ;
     schema:name "Person Name" .
 
+dw:Website a dw:Task ;
+    dw:parentNode dw:Digital_Footprint,
+        dw:Where ;
+    dw:relatedMediaType dw:Source,
+        dw:Text ;
+    dw:remarks ( "You can use Google Advanced search to find out where the website has been mentioned" "The [Internet Archive](https://archive.org/) will help to find older versions of the site" ) ;
+    rdfs:comment "contains a lot of information when you know where to look. It should have an about section, an IP address and a history of publications." ;
+    schema:name "Website" .
+
 dw:Content_analysis a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
@@ -1078,15 +1079,6 @@ dw:Telegram a dw:Task ;
     dw:remarks ( "Here is a great repository of tools on [Github](https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines )  " ) ;
     rdfs:comment "is a social messaging service. It is a mobile app which also provides a desktop service for searching and monitoring shared content." ;
     schema:name "Telegram" .
-
-dw:Website a dw:Task ;
-    dw:parentNode dw:Digital_Footprint,
-        dw:Where ;
-    dw:relatedMediaType dw:Source,
-        dw:Text ;
-    dw:remarks ( "You can use Google Advanced search to find out where the website has been mentioned" "The [Internet Archive](https://archive.org/) will help to find older versions of the site" ) ;
-    rdfs:comment "contains a lot of information when you know where to look. It should have an about section, an IP address and a history of publications." ;
-    schema:name "Website" .
 
 dw:Who a dw:Question ;
     dw:parentNode dw:Audio,
