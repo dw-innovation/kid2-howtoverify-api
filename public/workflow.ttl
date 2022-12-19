@@ -658,7 +658,7 @@ dw:Whois_Domain a dw:SoftwareApplication ;
     dw:howTo ( "Enter the domain or an IP address into the search field" "Scroll down the results" ) ;
     dw:parentNode dw:Domain_name ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "In may cases you won't get a lot of data, due to privacy resctrictions." "remark 2" ) ;
+    dw:remarks ( "In may cases you won't get a lot of data, due to privacy resctrictions." "multiple domains can be hosted by one IP address" ) ;
     rdfs:comment "is a tool to check on the registration data of a website and its ownership." ;
     schema:applicationUrl "https://whois.domaintools.com/" ;
     schema:name "Whois Domain" ;
@@ -722,9 +722,9 @@ dw:Address a dw:Task ;
         dw:Contact ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Keep in mind that addresses might not always be very accurately mapped on all services." "Addresses can be false, double check what you've been given/what you've found." ) ;
-    rdfs:comment "of a contact or a place is your easiest way to verify the location. You can directly search for it on any maping service and check available imagery against the material you have. You may also use it to corroborate a contacts information." ;
-    schema:name "The Address" .
+    dw:remarks ( "Keep in mind that addresses might not always be very accurately mapped on all services. Use street view if available." "Addresses can be false, always cross-reference the information. " ) ;
+    rdfs:comment "of a contact or a place is your easiest way to verify the location. You can directly search for it on any map service and check available imagery against the material and information you might have." ;
+    schema:name "The address" .
 
 dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
@@ -745,8 +745,8 @@ dw:Audio_from_video_extraction a dw:Task ;
 dw:Contact a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Source ;
-    dw:remarks ( "Always be wary of the information you get from a contact. Double check to make sure it's legitimate." "Sometimes information might not check out. It's best to be transparent about that." ) ;
-    rdfs:comment "to a source is the best way to corroborate information and determine the legitimacy of both the source and that information, e.g. a concrete address of a where something happend." ;
+    dw:remarks ( "Ask yourself when you want to contact the source. You might want to collect more information to build up trust" "Always be wary of the information you get from a contact. Double check to make sure it's legitimate." ) ;
+    rdfs:comment "data is the best way find out if the source is trustworthy. When you get access to a phone number you might want to contact the person to corroborate information and determine the legitimacy of both the source and that information. Does the person address match with collected information?" ;
     schema:name "Contact" .
 
 dw:GPS_Data a dw:Task ;
@@ -760,8 +760,8 @@ dw:GPS_Data a dw:Task ;
 dw:IP_address a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "With VPN users can change hide their IP address or move it to any location on the world" "If you do an investigation it is worth it to use VPN or Tor browser to hide your own identify" ) ;
-    rdfs:comment "is an unique address that identifies a device on the Internet or on a local network. It contains location information." ;
+    dw:remarks ( "With VPN users canhide their IP address or move it to any location on the world" "If you do an investigation it is worth it to use VPN or Tor browser to hide your own identify" ) ;
+    rdfs:comment "means Internet Protocol (IP) address and is a numerical address that hosts the website. It is an unique address that identifies a device on the Internet or on a local network. Multiple domains can be hosted on one IP address and can reveal registration information and location." ;
     schema:name "IP address" .
 
 dw:Instagram a dw:Task ;
@@ -1104,8 +1104,8 @@ dw:Who_is_in_content a dw:SubQuestion ;
     dw:relatedMediaType dw:Image,
         dw:Text,
         dw:Video ;
-    dw:remarks "\\- Use any information you can get from the content, like clothing, facial characteristics and voices to draw conclusions." ;
-    rdfs:comment "is the question for someone passively or actively involved in the event. Information about this person gives context to what happened. Maybe a specific group was involved or a familiar person can be seen or heard." ;
+    dw:remarks ( "Use any information you can get from the content, like clothing, facial characteristics and voices to draw conclusions" "Ask yourself why this person or group is seen to dig deeper" ) ;
+    rdfs:comment "is the question for someone passively or actively involved in the event. Information about this person gives context to what has happened. Maybe a specific group was involved or a familiar person can be seen or heard." ;
     schema:name "Who is in content" .
 
 dw:Author a dw:Task ;
