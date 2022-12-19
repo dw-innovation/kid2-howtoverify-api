@@ -212,14 +212,14 @@ dw:Impressum a dw:Task ;
     schema:name "Impressum" .
 
 dw:InVid a dw:SoftwareApplication ;
-    dw:howTo ( "Install the browser plugin on Firefox or Chrome" "step 2" ) ;
+    dw:howTo ( "Install the browser plugin on Firefox or Chrome" "click on the plugin and open toolbox" "select metadata" "add the URL of the video or upload a local .mp4 " ) ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "InVid" ;
-    schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
+    dw:remarks ( "Metadata can easily be manipulated, always cross-reference the information" ) ;
+    rdfs:comment "is a web-based integrated toolset for video verification. It also includes features to analyse photos like a magnifier." ;
+    schema:applicationUrl "[InVid](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/)" ;
     schema:name "InVid" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "AFP Medialab, Deutsche Welle & partners" .
 
 dw:Instagram_search a dw:SoftwareApplication ;
     dw:howTo ( "Opne the link" "Select the lens on the left " "Type a city or keyword in the search" "hashtags are marked with a hash and locations with a pin" "Scroll down to the the newest posts from the location in chronological order" ) ;
