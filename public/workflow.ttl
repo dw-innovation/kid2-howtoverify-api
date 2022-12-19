@@ -152,22 +152,22 @@ dw:Google_Earth_Pro a dw:SoftwareApplication ;
     schema:publisher "Google" .
 
 dw:Google_Images a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link and drag the photo to a tab or window in your browser" "Upload the image from your desktop or add the image URL" "Select text and it will translate it" "Select \"find image source\" so you can add keywords to the content and use Google filters like timeframe color" "Crop specific items in the content for other results " ) ;
+    dw:howTo ( "Open the link and drag the photo to a tab or window in your browser" "Upload the image from your desktop or add the image URL" "Select text and it will translate it" "Select \"find image source\" to add keywords to the content and use Google filters like timeframe or color" "Crop specific items in the content for specific searches " ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "On your mobile device you can use Google Photos with the feature Google Lens to gather information around the image" ) ;
-    rdfs:comment "allows you to search Google with an image and discover information attached to it." ;
-    schema:applicationUrl "https://images.google.com/" ;
+    dw:remarks ( "On your mobile device you can use Google Photos with the feature Google Lens to gather information about the image" ) ;
+    rdfs:comment "allows you to search Google with an image and discover all possible information about it." ;
+    schema:applicationUrl "[images.google.com](https://images.google.com/)" ;
     schema:name "Google Images" ;
-    schema:publisher "Google" .
+    schema:publisher "[Google](https://about.google/)" .
 
 dw:Google_Maps a dw:SoftwareApplication ;
-    dw:howTo ( "Type in a location or add GPS coordinates" "Switch between map and satellite view" "Click on the icon on the right for street view and select one of the blue dots" "Next to the icon is a gallery of pictures to get a first overview of the scenery" "Click on the map to switch to another location " ) ;
+    dw:howTo ( "Type in a location or add GPS coordinates" "Switch between map and satellite view" "Click on the little person at the bottom right to see streetview availability " "Select one of the blue lines or dots to jump into streetview" "Next to the icon is a gallery of pictures to get a first overview of the scenery" "Click on the map to switch to another location " ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Hold down cmd/cntrl of shift on your keyboard to switch to the 3D perspective" "3D view is hidden behind layers in the bottom left, just select Globe view and you can switch beweteen 2D and 3D" "There is also a mobile version" ) ;
-    rdfs:comment "is offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions." ;
+    dw:remarks ( "Hold down cmd/cntrl of shift on your keyboard to switch to the 3D perspective (where available)" "3D view is hidden behind layers in the bottom left, just select Globe view and you can switch beweteen 2D and 3D on the right above the zoom icon" "There is also a mobile version" ) ;
+    rdfs:comment "offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets and real-time traffic conditions." ;
     schema:applicationUrl "https://www.google.com/maps" ;
     schema:name "Google Maps" ;
     schema:publisher "Google" .
@@ -207,8 +207,8 @@ dw:Impressum a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Usually you find the impressum at the end of the page" "You can also add the word impressum or imprint at the end of an URL like [in this example](https://www.dw.com/imprint) " ) ;
-    rdfs:comment "names the owner of the website responsible for the content on it. It usually includes an address and full name of the onwer. Some info can be reducted due to GDPR regulations." ;
+    dw:remarks ( "Usually you find the impressum at the end or in the footer of the homepage" "You can also add the word impressum or imprint at the end of an URL to access this information.  For example: www.example.com/impressum or www.example.com/imprint" ) ;
+    rdfs:comment "refers to the section of a website that lists the owner of the website and their contact information. It may include the owner's full name and address. Some info may be reduced due to GDPR regulations." ;
     schema:name "Impressum" .
 
 dw:InVid a dw:SoftwareApplication ;
@@ -251,8 +251,8 @@ dw:Interviews a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Eyewitnesses might be emotional affected" "Sources might share additional information which also needs verification " ) ;
-    rdfs:comment "with eyewitness or experts is essential to understand what has happened and what is the consequence. Set up a monitoring system with trustworthy and local accounts." ;
+    dw:remarks ( "Eyewitnesses might be emotionally affected" "Sources might share additional information which also needs verification " ) ;
+    rdfs:comment "with eyewitnesses or experts are essential to understand what has happened and what the consequences are. Set up a monitoring system with trustworthy and local accounts." ;
     schema:name "interviews" .
 
 dw:LatLong a dw:SoftwareApplication ;
@@ -326,11 +326,11 @@ dw:MapSwitcher a dw:SoftwareApplication ;
     schema:publisher "david.r.edgar" .
 
 dw:Mapillary a dw:SoftwareApplication ;
-    dw:howTo ( "Type in a location or add GPS coordinates" "The green circles show geo-tagged street view photos" "Select one green dot and navigate through the streets" "Date and user name are always on the bottom right " "Map data in the top menu shows detected objects like street signs " ) ;
+    dw:howTo ( "Type a location or GPS coordinates in to the search field at the top left" "The green circles show geo-tagged street view photos" "Select one green dot and navigate through the streets" "Switch between map and street view via the arrow icon at the top right of the small window" "Date and user name are always at the bottom right " "Map data in the top menu shows detected objects like street signs " ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Time travel is a feature that compares the same position but different images" "Users can upload photos only with the mobile app and GPS turned on to reduce fake uploades" "It is great to get street view images from remote areas" ) ;
+    dw:remarks ( "It is great to get street view images from remote areas" "Time travel is a feature that compares the same position but different images" "Users can upload photos only with the mobile app and GPS turned on to reduce fake uploades" "Once selected a series of images by the same person turns blue making it easier to follow along" "Larger translucent circles around the green dots indicate 360° images" ) ;
     rdfs:comment "is a map service with crowdsourced geo-tagged street view photos." ;
     schema:applicationUrl "https://www.mapillary.com/app/" ;
     schema:name "Mapillary" ;
@@ -437,8 +437,8 @@ dw:RIS_\(Video\) a dw:Task ;
         dw:Object_identification,
         dw:Person_identification ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "a confirmed match is more informative than the lack of a match. The search engines database might not get access to e.g. social networks to find earlier versions" "each search engine has its pros and cons, to get most out of it check all of them out" ) ;
-    rdfs:comment "is a way to find out if you are looking at the orignal version of the footage and if the content has been published before. The search results will also show you similar versions and add more context to the event." ;
+    dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not get access to e.g. social networks to find earlier versions." "Each reverse image search engine has its pros and cons. To get the most out of it, try all of them!" ) ;
+    rdfs:comment "is a way to find out if the content has been published before. It can tell you if you are looking at the earliest published version of the footage. For video you will have to extract a relevant keyframe first. The search results will also show you similar content to corroborate that an event took place and can provide more context." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -592,13 +592,13 @@ dw:Unix_timestamp a dw:SoftwareApplication ;
     schema:publisher "[@danstools00](https://twitter.com/danstools00)" .
 
 dw:VLC_audio_extraction a dw:SoftwareApplication ;
-    dw:howTo ( "Open a video with the VLC media player" "From the toolbar select File, then Convert/Stream" "Choose from the Profile dropdown box Audio-MP3 " "Save the MP3 file on your computer and add .mp3 at the end of the file name" ) ;
+    dw:howTo ( "Open a video with the VLC media player" "From the toolbar select File, then Convert/Stream" "Choose Audio-MP3 from the Profile dropdown box " "Save the MP3 file on your computer and add .mp3 at the end of the file name" ) ;
     dw:parentNode dw:Audio_from_video_extraction ;
-    dw:remarks ( "Visualise audio waves by audio visualisations on VLC player" ) ;
-    rdfs:comment "is one way to separate the audio from the video." ;
-    schema:applicationUrl "VLC player" ;
+    dw:remarks ( "You can also visualise audio waves by audio visualisations on VLC player" ) ;
+    rdfs:comment "is a great tool to watch all kinds of video formats. It also allows you to separate the audio from the video." ;
+    schema:applicationUrl "[VLC player](https://www.videolan.org/vlc/)" ;
     schema:name "VLC media player" ;
-    schema:publisher "VideoLAN project" .
+    schema:publisher "[VideoLAN organisation](https://www.videolan.org/videolan/)" .
 
 dw:ViewDNS a dw:SoftwareApplication ;
     dw:howTo ( "Type in the domain or IP address" "Click on go to see the results" ) ;
@@ -615,8 +615,8 @@ dw:Website_Analytics a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Maybe to delete." ) ;
-    rdfs:comment "track the activity of visitors to a specific site to see how the site is performing." ;
+    dw:remarks ( "Running a Website analysis helps you to determine whether the site you're investigating is real." "It may also give you some leads on who's visiting the site and how popular it is." ) ;
+    rdfs:comment "track the activity of visitors to a specific site. This allows you to see how the site is performing. You a tool like [similarweb.com](https://www.similarweb.com/de/) to check on any website you want to investigate." ;
     schema:name "Website Analytics" .
 
 dw:WhatsMyName a dw:SoftwareApplication ;
@@ -714,17 +714,17 @@ dw:newsgathering a dw:Task ;
         dw:Text,
         dw:Video ;
     dw:remarks ( "Collaboration is key" "Organize your content in a shared document like an excel sheet and add descriptions to it. It will safe time in organizing it later" ) ;
-    rdfs:comment "describes the process of to collecting and analysing content on the event." ;
+    rdfs:comment "describes the process of collecting and analysing content about the event." ;
     schema:name "newsgathering" .
 
-dw:Adress a dw:Task ;
+dw:Address a dw:Task ;
     dw:parentNode dw:Author,
         dw:Contact ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
-    schema:name "Adress" .
+    dw:remarks ( "Keep in mind that addresses might not always be very accurately mapped on all services." "Addresses can be false, double check what you've been given/what you've found." ) ;
+    rdfs:comment "of a contact or a place is your easiest way to verify the location. You can directly search for it on any maping service and check available imagery against the material you have. You may also use it to corroborate a contacts information." ;
+    schema:name "The Address" .
 
 dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
@@ -738,15 +738,15 @@ dw:Audio_from_video_extraction a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "There are many third-party apps and built-in tools to perform this extraction process but the easiest with conversion features is the free VLC player" ) ;
-    rdfs:comment "will help to just focus and analyse the audio. You might also want to transcript what is being said." ;
+    dw:remarks ( "There are many third-party apps and tools to perform audio extraction. The easiest, including conversion features, is the free VLC player" ) ;
+    rdfs:comment "will help to focus on the audio. You might also be able to analyse the audio. Using AI supported tools you can transcribe what is being said. That makes it easier to translate the audio content, allowing you to understand lots of languages..." ;
     schema:name "Audio from video extraction" .
 
 dw:Contact a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Source ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Always be wary of the information you get from a contact. Double check to make sure it's legitimate." "Sometimes information might not check out. It's best to be transparent about that." ) ;
+    rdfs:comment "to a source is the best way to corroborate information and determine the legitimacy of both the source and that information, e.g. a concrete address of a where something happend." ;
     schema:name "Contact" .
 
 dw:GPS_Data a dw:Task ;
@@ -881,10 +881,10 @@ dw:How a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Check local reports " "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" ) ;
-    rdfs:comment """did the event enfold? 
+    dw:remarks ( "Check local media" "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" ) ;
+    rdfs:comment """did the event unfold? 
 
-Here you need to gather more information and talk to eyewitnesses. Try to collect more visuals and information from before, during and after the event and from different perspectives.""" ;
+You will need to gather more information and talk to eyewitnesses to answer this question. Try to collect more information from before, during and after the event and from different perspectives. That will help you to get clear insights in the story.""" ;
     schema:name "How" .
 
 dw:Keywords a dw:Task ;
@@ -1013,7 +1013,7 @@ dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Video ;
     dw:remarks ( "Extract indiviual frames with VLC player (Tutorial)" "The browser plugin [Invid](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/) can fragment the video into 21 keyframes" ) ;
-    rdfs:comment "will give you the opporutunity to analyse the most informative keyframes." ;
+    rdfs:comment "will give you the opportunity to analyse the most informative keyframes.  This allows you to use some tools that you know for image verification (e.g. reverse image search, image enhancement, etc.) on videos as well." ;
     schema:name "Keyframe Extraction" .
 
 dw:Metadata a dw:Task ;
@@ -1065,7 +1065,7 @@ dw:Social_Media_activities a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Depending on the region there are different popular social platforms " "Ask yourself where would the user be and play around with different name combinations" ) ;
+    dw:remarks ( "There are different popular social platforms depending on the region a person is in." "Ask yourself where the user might be and play around with different name combinations across networks" ) ;
     rdfs:comment "refer to any interaction the person has done on any social media platform. It includes publishing any type of content and commentaries, shares, likes and following." ;
     schema:name "Social Media activities" .
 
@@ -1094,9 +1094,9 @@ dw:Who a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Always have the motivation in mind: Why was the account established, the website created, or the piece of content captured?" "Contacting the person might give you a chance to get an interview or even the original file " ) ;
+    dw:remarks ( "Always consider the motivation of the creator. Why was this content created and shared?" "An online footprint may provide contextual information on the source" "Contacting the creator might give you a chance to get an interview or obtain the original file " ) ;
     rdfs:comment """created the content? 
-The person who uploaded the digital content, did not necessarily produced it.""" ;
+The person who uploaded or shared the digital content, is not necessarily the one who created it. If you can find the creator you have most probably also found an eyewitness. And maybe that person can provide you with more content, who takes only one picture these days?""" ;
     schema:name "Who" .
 
 dw:Who_is_in_content a dw:SubQuestion ;
@@ -1104,8 +1104,8 @@ dw:Who_is_in_content a dw:SubQuestion ;
     dw:relatedMediaType dw:Image,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Use any information you can get from the clothings, facial and voice" ) ;
-    rdfs:comment "might be someone passively or actively involved of the event. Information about the person gives context to what happened. Was a specific group involved, a familiar face?" ;
+    dw:remarks "\\- Use any information you can get from the content, like clothing, facial characteristics and voices to draw conclusions." ;
+    rdfs:comment "is the question for someone passively or actively involved in the event. Information about this person gives context to what happened. Maybe a specific group was involved or a familiar person can be seen or heard." ;
     schema:name "Who is in content" .
 
 dw:Author a dw:Task ;
@@ -1124,7 +1124,7 @@ dw:Geolocation a dw:Task ;
     schema:name "Geolocation" .
 
 dw:Manual_geolocation a dw:Task ;
-    dw:parentNode dw:Adress,
+    dw:parentNode dw:Address,
         dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Source,
@@ -1150,18 +1150,18 @@ dw:When a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Check local reports " "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" ) ;
-    rdfs:comment """did the event happen? 
+    dw:remarks ( "There are many ways to determin time and date of content creation, be creative!" "Check local media" "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" ) ;
+    rdfs:comment """did the event occur? 
 
-Time and date tells you when the digital content was created. Especially when you monitor on going conflicts or you want to create a timeline of events. Time and date will also help you to find more information about the event.""" ;
+Time and date tells you when the digital content was created. Based on that you can build a timeline of the event. This provides good insight in what happened and is especially useful when monitoring ongoing conflicts. Time and date will also help you to find more information about the event.""" ;
     schema:name "When" .
 
 dw:Who_created_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "The person might be emotional affected" "You can ask the person for the original file" "Ask question you already verified just to double-check" ) ;
-    rdfs:comment "is the primary source who eywitnessed the event. It is not necessarily the one who uploaded it. It is very easy to download or reshare content from any platform like Youtube and publish it on another one." ;
+    dw:remarks ( "Be careful when adressing eyewitnesses, they might be emotionaly affected" "You can ask the person for the original file or other created content so that you have more info to work with" "Ask a question you already verified to double-check the statement of a witness" ) ;
+    rdfs:comment "This person is the primary source that eywitnessed the event. It is not necessarily the one who uploaded the content. Remember, it is very easy to download or reshare content from any social platform and re-publish it on another." ;
     schema:name "Who created content" .
 
 dw:Where a dw:Question ;
@@ -1170,10 +1170,10 @@ dw:Where a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Geographic location tied to social content  can be wrong" "Metadata can be manipulated manually" "Confirm your location with a satellite image or a street view or another visual" "Write down 20 hints that help to find the right location like streets signs, restaurant names and architecture" ) ;
-    rdfs:comment """did the event happen? 
+    dw:remarks ( "The geographic location mentioned with social content may not be accurate" "Metadata can also be manipulated!" "Satellite images, street view, or other visual aids can be helpful in determining the location" "Making a list of 20 specific details (such as street signs, restaurant names, and architecture) can help you focus on finding the correct location" ) ;
+    rdfs:comment """did the event take place? 
 
-Finding the exact location will also help you to verify when the event enfold and what has happened.""" ;
+Finding the exact location will also help you to verify when the event ocurred and what has happened. Location verification is a popular element of verification. There are many tools that can support you. As always: be creative!""" ;
     schema:name "Where" .
 
 dw:What a dw:Question ;
@@ -1182,61 +1182,83 @@ dw:What a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Check local reports " "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" "If the footage is not clear you can enhance it first" ) ;
+    dw:remarks ( "Check local media " "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" "If the content is of low quality, enhancing it might help your investigation" ) ;
     rdfs:comment """has happened? 
 
-The information in the content you are investigating shows an event, can you corroborate that something is happening via other sources? Or is this content exclusive? Are you looking or listening to the original file? And how can you extract more information?""" ;
+The information in the content you are investigating shows an event, can you corroborate that something is happening via other sources? Or is this content exclusive? Are you looking or listening to the original file or is it a (manipulated) copy? And how can you extract more information?""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
     dw:remarks ( "Close your eyes and use good headphones to listen carefully" "Listen carefully what and how something is being said" ) ;
-    rdfs:comment """The audio verification process builds on answering the following questions:
-\\- Who is the originator of the audio?
-\\- What  is the content about?
-\\- Where did the event happen?
-\\- When did the event happen?
+    rdfs:comment """The audio verification process involves answering the following questions:
 
-An audio file can tell a story in itself. In this case its crucial to answer the question: How did it happen?""" ;
+\\- What  happened in the audio?
+
+\\- Who created this audio?
+
+\\- Where did the event htake place?
+
+\\- When did the event occur?
+
+An audio file can tell a story in itself. In this case its crucial to answer the question: How did the event unfold?""" ;
     schema:name "Audio" .
 
 dw:Source a dw:MediaObject ;
     dw:remarks ( "Think about the motivation of the source. Why was this information published?" ) ;
-    rdfs:comment """The source verification process builds on answering the following questions:
+    rdfs:comment """The source verification process involves answering the following questions:
+
 \\- Who is the source?
-\\- What does the digital footprint of the source tell us?""" ;
+
+\\- What does the digital footprint of the source tell us?
+
+\\- Where can you find the source, both online and offline?
+
+\\- How did the event unfold?""" ;
     schema:name "Source" .
 
 dw:Text a dw:MediaObject ;
-    dw:remarks ( "Never trust a screenshot of text because it is very easy to manipulate" "Ask yourself if the text is plausible" ) ;
-    rdfs:comment """The text verification process builds on answering the following questions:
-\\- What has happened?
-\\- Who is the originator of the text?
+    dw:remarks ( "Never trust a screenshot of text because it is very easy to manipulate" "Ask yourself if the text is plausible, does it make any sense?" ) ;
+    rdfs:comment """The text verification process involves answering the following questions:
+
+\\- What happened in the text?
+
+\\- Who created the text?
+
 \\- Where was the content published?
-\\- When did the event happen?""" ;
+
+\\- When did the event occur?""" ;
     schema:name "Text" .
 
 dw:Video a dw:MediaObject ;
-    dw:remarks ( "Watch a video frame-by-frame to see much more details" "Turn off the sound when you watch the video several times helps to focus" ) ;
-    rdfs:comment """The video verification process builds on answering the following questions:
+    dw:remarks ( "Watch a video frame-by-frame to see more details" "Turn off the sound when you watch the video several times helps to focus" ) ;
+    rdfs:comment """The video verification process involves answering the following questions:
 
-\\- What has happened?
-\\- Who is the originator of the image?
-\\- Where did the event happen?
-\\- When did the event happen?
+\\- What happened in the video?
 
-A video can tell a story in itself. In this case its crucial to answer the question: How did the event happen?
+\\- Who created the video?
 
-And with video specifically you might find a lot of information in the sound!""" ;
+\\- Where did the event take place?
+
+\\- When did the event occur?
+
+A video can tell a story in itself. In this case its crucial to answer the question: How did the event unfold?
+
+The special thing about video is that you have loads of images (frames), time and sound. The audio in a video can be an important source of information.!""" ;
     schema:name "Video" .
 
 dw:Image a dw:MediaObject ;
-    dw:remarks ( "Look closely at the image before you start digging" "If it looks too good to be true, there might be something fishy about it" ) ;
-    rdfs:comment """The image verification process builds on answering the following questions:
-\\- What has happened?
-\\- Who is the originator of the image?
-\\- Where did the event happen?
-\\- When did the event happen?
+    dw:remarks """\\- Look at all details in the image before you start digging
+\\- If it looks too good to be true, there might be something fishy about it""" ;
+    rdfs:comment """The image verification process involves answering the following questions:
 
-An image can tell a story in itself. In this case its crucial to answer the question: How did the event happen?""" ;
+\\- What happened in the image?
+
+\\- Who created the image?
+
+\\- Where did the event take place?
+
+\\- When did the event occur?
+
+An image can tell a story in itself. In this case its crucial to answer the question: How did the event unfold?""" ;
     schema:name "Image" .
 
