@@ -4,12 +4,12 @@
 @prefix schema: <https://schema.org/> .
 
 dw:Background_Removal a dw:SoftwareApplication ;
-    dw:howTo ( "Upload an image " "The background will be automatically removed" "Download the image to improve the results for a reverse image search" ) ;
+    dw:howTo ( "Upload an image " "Wait for the software to identify the background" "Adjust the selection manually if necessary using the tools at the top" "Download the image and use it in your reverse image search for better results" ) ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Read about the other features on the website [tutorials](https://photoscissors.com/tutorials) " ) ;
-    rdfs:comment "PhotoScissors is a background removal tool." ;
+    dw:remarks ( "There are [several tutorials](https://photoscissors.com/tutorials) available on the website." ) ;
+    rdfs:comment "is a method to enhance images for better reverse image search. It's done using tools like PhotoScissors." ;
     schema:applicationUrl "https://photoscissors.com/" ;
     schema:name "Background Removal" ;
     schema:publisher "Photoscissors" .
@@ -19,7 +19,7 @@ dw:Baidu_Images a dw:SoftwareApplication ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "Digital content from China works well" "Use Google translate plugin for translation if needed" ) ;
-    rdfs:comment "is the chinese version of an image serach engine. Baidu works outside of China but was created for users in China so all results will be in chinese." ;
+    rdfs:comment "is an image search engine based in China. Baidu works outside of China but was created for users in China so all results will be in chinese." ;
     schema:applicationUrl "https://image.baidu.com" ;
     schema:name "Baidu Images" ;
     schema:publisher "Baidu, Inc." .
@@ -103,7 +103,7 @@ dw:Geohints a dw:SoftwareApplication ;
     schema:publisher "MouseWithBeer - [Discord](https://discord.com/invite/bCZ8Bg2vUd)" .
 
 dw:Google_Advanced_Search a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Fill out the fields that can might answer your question " "Use Google filters in the results page like timeframe and colours " ) ;
+    dw:howTo ( "Open the advanced search URL" "Fill out the fields that best correspond with your search questions" "On the results page use filter (like timeframe or colours) available via the tools option" ) ;
     dw:parentNode dw:Author,
         dw:Context,
         dw:File_Name,
@@ -113,8 +113,8 @@ dw:Google_Advanced_Search a dw:SoftwareApplication ;
         dw:Image,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "The advanced search is also available via Google Operators. If you know them you are much faster. They can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced serach, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN" ) ;
-    rdfs:comment "allows you to specify your search in more details to get better results. You can combine or exclude search words, search on a specific web page or for specific file types." ;
+    dw:remarks ( "The advanced search also works using Google Operators, which is a lot faster. Details and help can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced search, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN" "Keep in mind that Google personalises results. You might have (a few) different hits on a different browser or device or from a different location." ) ;
+    rdfs:comment "allows you to specify your search in more details to get better results. You can combine or exclude search words, search on a specific web page only or for specific file types like pdfs." ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
     schema:name "Google Advanced Search" ;
     schema:publisher "Google" .
@@ -152,12 +152,12 @@ dw:Google_Earth_Pro a dw:SoftwareApplication ;
     schema:publisher "Google" .
 
 dw:Google_Images a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link and drag the photo to a tab or window in your browser" "Upload the image from your desktop or add the image URL" "Select text and it will translate it" "Select \"find image source\" to add keywords to the content and use Google filters like timeframe or color" "Crop specific items in the content for specific searches " ) ;
+    dw:howTo ( "Open the URL " "Start the search by either dragging the photo on the search bar, pasting the URL or uploading an image from your desktop" "Select text and it will translate it" "Select \"find image source\" to add keywords to the content and use Google filters like timeframe or color" "Crop specific items in the content for specific searches " ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "On your mobile device you can use Google Photos with the feature Google Lens to gather information about the image" ) ;
+    dw:remarks ( "Try different crops to get a hit on an image. Its the little things that sometimes make the difference." "On your mobile device you can use Google Lens from within the Google app to perform this search" ) ;
     rdfs:comment "allows you to search Google with an image and discover all possible information about it." ;
-    schema:applicationUrl "[images.google.com](https://images.google.com/)" ;
+    schema:applicationUrl "https://images.google.com/" ;
     schema:name "Google Images" ;
     schema:publisher "[Google](https://about.google/)" .
 
@@ -265,15 +265,15 @@ dw:LatLong a dw:SoftwareApplication ;
     schema:name "LatLong" ;
     schema:publisher "Unknown" .
 
-dw:Lets_enhance_io a dw:SoftwareApplication ;
-    dw:howTo ( "You have to make an account" "Upload the image " ) ;
+dw:Lets_Enhance_io a dw:SoftwareApplication ;
+    dw:howTo ( "Upload the image you want to enhance." "Choose from the automated options what you want" "Start the process and wait" ) ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "You have 10 images for free" "Gigapixel AI is also very useful but you you need to download the software on your computer" ) ;
-    rdfs:comment "is an AI image enhancer. You can enhance the resolution, do contrast-enhancement and much more." ;
+    dw:remarks ( "You have to sign up for an account" "You have 10 images for free" "[Gigapixel AI](https://www.topazlabs.com/downloads) is a useful alternative, but install only." ) ;
+    rdfs:comment "is an image editor using artifical intelligence. You can enhance the resolution, the contrast and much more." ;
     schema:applicationUrl "https://letsenhance.io/" ;
-    schema:name "Lets enhance io" ;
+    schema:name "Lets Enhance io" ;
     schema:publisher "Let’s Enhance, Inc" .
 
 dw:LinkedIn a dw:SoftwareApplication ;
@@ -544,10 +544,10 @@ dw:TimeandDate a dw:SoftwareApplication ;
     schema:publisher "Time and Date AS" .
 
 dw:TinEye a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link and drag the photo to a tab or window in your browser " "Upload the image from your desktop or paste the image URL" "Use the filter on the left side to sort the images" ) ;
+    dw:howTo ( "Open the URL" "Start the search by either dragging the photo on the search bar, pasting the URL or uploading an image from your desktop" "Use the filters on the left side to sort the images according to what you need to find" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Has a smaller database than the others" "Good results when using stock images" "[Tutorial](https://tineye.com/how )by TinEye" ) ;
+    dw:remarks ( "Has a smaller database than the others, hence doesn't always yield results." "Does not work well on very new images, but delivers good results when using stock images" "Check out the [TinEye Tutorial](https://tineye.com/how ) for how it works" ) ;
     rdfs:comment "is very efficient when it comes to altered versions and showing results in chronological order." ;
     schema:applicationUrl "https://tineye.com/" ;
     schema:name "TinEye" ;
@@ -566,7 +566,7 @@ dw:Tweetbeaver a dw:SoftwareApplication ;
     schema:publisher "Tweetbeaver" .
 
 dw:USearch a dw:SoftwareApplication ;
-    dw:howTo ( "Type your search query " "Select the region in which you are looking for information" ) ;
+    dw:howTo ( "Type in your search query " "Select the region in which you are looking for information" ) ;
     dw:parentNode dw:Context,
         dw:File_Name,
         dw:Headline,
@@ -596,7 +596,7 @@ dw:VLC_audio_extraction a dw:SoftwareApplication ;
     dw:parentNode dw:Audio_from_video_extraction ;
     dw:remarks ( "You can also visualise audio waves by audio visualisations on VLC player" ) ;
     rdfs:comment "is a great tool to watch all kinds of video formats. It also allows you to separate the audio from the video." ;
-    schema:applicationUrl "[VLC player](https://www.videolan.org/vlc/)" ;
+    schema:applicationUrl "https://www.videolan.org/vlc/" ;
     schema:name "VLC media player" ;
     schema:publisher "[VideoLAN organisation](https://www.videolan.org/videolan/)" .
 
@@ -679,11 +679,11 @@ dw:WolframAlpha a dw:SoftwareApplication ;
     schema:publisher "Wolfram Research" .
 
 dw:Yandex_Images a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link and drag the photo to a tab or window in your browser " "Upload the image from your desktop or add the image URL" "Crop specific items you do another reverse search" "Detect automatically text and translate the words in Russian" ) ;
+    dw:howTo ( "Open the URL" "Start the search by dragging the photo on the search bar" "As an alternative, click the camera icon in the search bar and paste the URL or upload an image from your desktop here" "Crop specific items to do another reverse search on those" "Yandex automatically detects text and translates the words into Russian" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "It is very strong in object and facial recognition" "Most results might be in Russian, use Google translate plugin for translation" ) ;
-    rdfs:comment "is a search engine based in Russia. It is very efficient when you searching with digital content from the region." ;
+    dw:remarks ( "Yandex is very strong in object and facial recognition." "Most results will be in Russian (as are most parts of the interface), use Google translate plugin for translation" ) ;
+    rdfs:comment "is an image search engine based in Russia. It is very efficient when you are searching digital content from the region." ;
     schema:applicationUrl "https://yandex.com/images" ;
     schema:name "Yandex Images" ;
     schema:publisher "Yandex" .
@@ -1004,8 +1004,8 @@ dw:Enhance_Image_\(Video\) a dw:Task ;
 dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "Extract indiviual frames with VLC player (Tutorial)" "The browser plugin [Invid](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/) can fragment the video into 21 keyframes" ) ;
-    rdfs:comment "will give you the opportunity to analyse the most informative keyframes.  This allows you to use some tools that you know for image verification (e.g. reverse image search, image enhancement, etc.) on videos as well." ;
+    dw:remarks ( "Extract indiviual frames with VLC player ([learn how to from this tutorial](https://www.youtube.com/watch?v=6dLFVXiM4QA))" "The browser plugin [Invid](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/) can fragment the video into 21 keyframes" ) ;
+    rdfs:comment "will allow you to analyse the most informative keyframes of a video. This allows you to make use of (some) image verification tools (e.g. reverse image search, image enhancement, etc.) on videos as well." ;
     schema:name "Keyframe Extraction" .
 
 dw:Metadata a dw:Task ;
