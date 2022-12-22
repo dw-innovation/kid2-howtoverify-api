@@ -25,15 +25,13 @@ dw:Baidu_Images a dw:SoftwareApplication ;
     schema:publisher "Baidu, Inc." .
 
 dw:Boom_3D a dw:SoftwareApplication ;
-    dw:howTo ( "download the free trial on your desktop " "TEST it!!" ) ;
+    dw:howTo ( "Download the free trial (30 days) on your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you are focusing on" "[Here](https://youtu.be/iIg7OHcUKis) is a more detailed intro into the software" ) ;
     dw:parentNode dw:Audio_enhancement ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
+    dw:remarks ( "Here is a [list](https://fixthephoto.com/best-free-audio-enhancers.html) with audio enhancer services. We have not tested them but worth checking them out " "Use noise-canceling headphones" ) ;
     rdfs:comment "is a tool for cropping and removing unwanted noises, this tool can enhance the sounds in your audio file and filter out ambient noises." ;
-    schema:applicationUrl """https://www.globaldelight.com/boom/ 
-
-LIST of enhancers https://fixthephoto.com/best-free-audio-enhancers.html""" ;
+    schema:applicationUrl "https://www.globaldelight.com/boom/" ;
     schema:name "Boom 3D" ;
-    schema:publisher "XY Productions" .
+    schema:publisher "Global Delight" .
 
 dw:Edit_photo a dw:SoftwareApplication ;
     dw:howTo ( "Load images by pasting an image URL, dropping an image, or pasting an image file" "Choose the tool you need from the menue bar at the left" "Select the detailed functionality from above or below the image" "Hit the export button at the top right of the image to download your enhanced image" ) ;
@@ -140,7 +138,7 @@ dw:Google_Images a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL " "Start the search by either dragging the photo on the search bar, pasting the URL or uploading an image from your desktop" "Select text and it will translate it" "Select \"find image source\" to add keywords to the content and use Google filters like timeframe or color" "Crop specific items in the content for specific searches " ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Try different crops to get a hit on an image. Its the little things that sometimes make the difference." "On your mobile device you can use Google Lens from within the Google app to perform this search" ) ;
+    dw:remarks ( "Try different crops to get a hit on an image. Its the little things that sometimes make the difference" "On your mobile device you can use Google Lens from within the Google app to perform this search" ) ;
     rdfs:comment "allows you to search Google with an image and discover all possible information about it." ;
     schema:applicationUrl "https://images.google.com/" ;
     schema:name "Google Images" ;
@@ -375,8 +373,8 @@ dw:Namechk a dw:SoftwareApplication ;
 dw:Near_duplicate a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "compare audio files to find the original and compare to changes and recording versus publication date" ;
+    dw:remarks ( "It's important to note that the recording date and the publication date may not always be the same, as an audio file may be recorded at one point in time and then published at a later date" "Identify the source who published the recording. " ) ;
+    rdfs:comment "means comparing audio files to determine the authenticity of the recording and to detect differences especially when they were published at different timings. You might want to lay down the sound waves of the audios next to each other." ;
     schema:name "Near duplicate" .
 
 dw:North_Data a dw:SoftwareApplication ;
@@ -451,7 +449,7 @@ dw:Speech_to_text_Google a dw:SoftwareApplication ;
     dw:howTo ( "Open the Google Translate app or the link " "Click on the microphone icon " "Play the audio recording from your device close to Google translate" "Google translate will transcribe the audio and detect a language" ) ;
     dw:parentNode dw:Language_detection ;
     dw:remarks ( "It also works on mobile device with the Google Translate app " "You can also do live transcribing via the app ([tutorial](https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop) )" ) ;
-    rdfs:comment "is" ;
+    rdfs:comment "is a transcription of your audio conversation to text for analysing, detecting languages and collecting keywords." ;
     schema:applicationUrl "https://translate.google.com/" ;
     schema:name "Speech to text" ;
     schema:publisher "Google" .
