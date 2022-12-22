@@ -156,11 +156,11 @@ dw:Google_Maps a dw:SoftwareApplication ;
     schema:publisher "Google" .
 
 dw:Handelsregister a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Open the URL and change the language settings to English" "Fill out the search fields" "Pick the company you are looking for " "In the right column you see what documents are available" "Pick one and download the file to see the content" ) ;
     dw:parentNode dw:Business_name ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Google Cache" ;
+    dw:remarks ( "Search for databases in the country you are investigating" "an alternative is [OCCRP Aleph database](https://aleph.occrp.org/)  " ) ;
+    rdfs:comment "is company register is a register of organizations in the jurisdiction they operate under. Handelsregister is the one in Germany. They might be publiciy available databases for other countries." ;
     schema:applicationUrl "https://www.handelsregister.de/" ;
     schema:name "Handelsregister" ;
     schema:publisher "" .
@@ -260,14 +260,16 @@ dw:Lets_Enhance_io a dw:SoftwareApplication ;
     schema:publisher "Let’s Enhance, Inc" .
 
 dw:LinkedIn a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Set up an account for free" "Type in the name of the source " "Use the advanced search to narrow down your search" "You can also use the Google search operators for results on LinkedIn" ) ;
     dw:parentNode dw:Person_name ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "LinkedIn is a" ;
+    dw:relatedMediaType dw:Audio,
+        dw:Source,
+        dw:Text ;
+    dw:remarks ( "If you have a normal user profile, other users will be able to see that you have visited their profile" "Journalist can ask for a free business account to visit profiles undercover" ) ;
+    rdfs:comment "is a social network that focuses on professional networking. People's profile reflect their career paths. Be aware, the information is not verified. It is still very helpful to find colleagues and employees of a company." ;
     schema:applicationUrl "https://www.linkedin.com/" ;
     schema:name "LinkedIn" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "LinkedIn" .
 
 dw:Listen_to_the_audio a dw:Task ;
     dw:parentNode dw:What,
@@ -378,14 +380,14 @@ dw:Near_duplicate a dw:Task ;
     schema:name "Near duplicate" .
 
 dw:North_Data a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Open the URL" "Type in the company name" "Scroll down for the results" "You can click in teh history graph to dive deeper" ) ;
     dw:parentNode dw:Business_name ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "North Data is a European companies search engine which visualizes registries of names" ;
+    dw:remarks ( "There is also an advanced search " "an alternative is [Open Corporates](https://opencorporates.com/) " ) ;
+    rdfs:comment "provides company information that is publicly available, obtained from sources such as trade registers, yearly reports, funding registers, trademark registers, patent registers and others. It also visualizes registries of names." ;
     schema:applicationUrl "https://whatsmyname.app/" ;
     schema:name "North Data" ;
-    schema:publisher "" .
+    schema:publisher "North Data GmbH" .
 
 dw:Peakfinder a dw:SoftwareApplication ;
     dw:howTo ( "Type in a name of a mountain or add geo-coordinates" "Move the cursor on the left above sea level so you have a good view on the mountain shapes" ) ;
@@ -407,8 +409,10 @@ dw:RIS_\(Image\) a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not have access to e.g. social networks to find earlier versions" "Search for the earliest version shared on a social platform" "Each search engine has its pros and cons, find out in the next step" ) ;
-    rdfs:comment "is a way to check if this content is the orignal version as well as if it was published before. A RIS can give you more context to the event and it helps to identify specific objects in visual content." ;
+    dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not have full access to e.g. social networks to find all published versions." "You can also search for specific objects or buildings." "Each search engine has its pros and cons. To get the most out of it, try all of them!" ) ;
+    rdfs:comment """is a way to check if this content is the orignal version as well as if it was published before. A RIS can give you more context to the event and it helps to identify specific objects in visual content. 
+
+is a way to find out if this content has been published before. It can tell you if you are looking at the earliest published version. The search results will also show you similar content to corroborate that an event took place and can provide more context on the event. RIS can also help to identify objects in the image.""" ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -417,8 +421,8 @@ dw:RIS_\(Video\) a dw:Task ;
         dw:Object_identification,
         dw:Person_identification ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not get access to e.g. social networks to find earlier versions." "Each reverse image search engine has its pros and cons. To get the most out of it, try all of them!" ) ;
-    rdfs:comment "is a way to find out if the content has been published before. It can tell you if you are looking at the earliest published version of the footage. For video you will have to extract a relevant keyframe first. The search results will also show you similar content to corroborate that an event took place and can provide more context." ;
+    dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not have full access to e.g. social networks to find all published versions." "Each search engine has its pros and cons. To get the most out of it, try all of them!" ) ;
+    rdfs:comment "is a way to find out if this content has been published before. It can tell you if you are looking at the earliest published version of the footage. For video you will have to extract a relevant keyframe first. The search results will also show you similar content to corroborate that an event took place and can provide more context on the event." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -571,7 +575,7 @@ dw:VLC_audio_extraction a dw:SoftwareApplication ;
     dw:howTo ( "Open a video with the VLC media player" "From the toolbar select File, then Convert/Stream" "Choose Audio-MP3 from the Profile dropdown box " "Save the MP3 file on your computer and add .mp3 at the end of the file name" ) ;
     dw:parentNode dw:Audio_from_video_extraction ;
     dw:remarks ( "You can also visualise audio waves by audio visualisations on VLC player" ) ;
-    rdfs:comment "is a great tool to watch all kinds of video formats. It also allows you to separate the audio from the video." ;
+    rdfs:comment "is a great tool to play all kinds of video formats. It also allows you to separate the audio from the video." ;
     schema:applicationUrl "https://www.videolan.org/vlc/" ;
     schema:name "VLC media player" ;
     schema:publisher "[VideoLAN organisation](https://www.videolan.org/videolan/)" .
@@ -698,7 +702,7 @@ dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "Elimninating the background noises will focus on the content" "Adjusting the specific sound or conversation you focus on" ) ;
+    dw:remarks ( "Eliminating background noises will allow you to focus on the content" "Adjusting the specific sound or conversation you focus on" ) ;
     rdfs:comment "means to enhance the quality of the audio recording." ;
     schema:name "Audio enhancement" .
 
@@ -807,8 +811,8 @@ dw:Business_name a dw:Task ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "It is worth checking out who is on the board of the company " "Export and import data can be requested with official institutions" ) ;
+    rdfs:comment "is a any company name mentioned in the text, visible on teh visuals or attached to the source. It might be the company someone is working with or a company which seems fishy." ;
     schema:name "Business Name" .
 
 dw:Facebook a dw:Task ;
@@ -974,15 +978,15 @@ dw:Enhance_Image_\(Image\) a dw:Task ;
 dw:Enhance_Image_\(Video\) a dw:Task ;
     dw:parentNode dw:KeyframeExtraction ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "enhance the resolution and quality" "sharpen the image and contrast-enhancement" "take out the background to focus on the object" ) ;
-    rdfs:comment "can help to get better results with visual analyses, manually or with a reverse image search." ;
+    dw:remarks ( "Enhance the resolution and quality" "Sharpen the image and contrast-enhancement" "Take out the background to focus on the object" ) ;
+    rdfs:comment "will help to get better results when the extracted keyframe is blurred or the resolution is low. It will support a more efficient reverse image search." ;
     schema:name "Enhance Image" .
 
 dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Video ;
     dw:remarks ( "Extract indiviual frames with VLC player ([learn how to from this tutorial](https://www.youtube.com/watch?v=6dLFVXiM4QA))" "The browser plugin [Invid](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/) can fragment the video into 21 keyframes" ) ;
-    rdfs:comment "will allow you to analyse the most informative keyframes of a video. This allows you to make use of (some) image verification tools (e.g. reverse image search, image enhancement, etc.) on videos as well." ;
+    rdfs:comment "will allow you to analyse the most informative keyframes of a video. This makes it possible to use (some) image verification tools (e.g. reverse image search, image enhancement, etc.) on videos as well." ;
     schema:name "Keyframe Extraction" .
 
 dw:Metadata a dw:Task ;
@@ -1017,8 +1021,8 @@ dw:Person_name a dw:Task ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "People can invent any digital person name, you can verify it with seeing an official ID" "Try out different spellings and surname first or second" ) ;
+    rdfs:comment "is the clear name of a user. Next to the username, you might find more info using this one as well maybe in more official documents." ;
     schema:name "Person Name" .
 
 dw:Website a dw:Task ;
@@ -1129,10 +1133,11 @@ Time and date tells you when the digital content was created. Based on that you 
 dw:Who_created_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
     dw:relatedMediaType dw:Image,
+        dw:Text,
         dw:Video ;
-    dw:remarks ( "Be careful when adressing eyewitnesses, they might be emotionaly affected" "You can ask the person for the original file or other created content so that you have more info to work with" "Ask a question you already verified to double-check the statement of a witness" ) ;
-    rdfs:comment "This person is the primary source that eywitnessed the event. It is not necessarily the one who uploaded the content. Remember, it is very easy to download or reshare content from any social platform and re-publish it on another." ;
-    schema:name "Who created content" .
+    dw:remarks ( "Use any information you can get from the content, like clothing, facial characteristics and voices to draw conclusions" "Ask yourself why this person or group is seen to dig deeper" ) ;
+    rdfs:comment "is the question for someone passively or actively involved in the event. Information about this person gives context to what has happened. Maybe a specific group was involved or a familiar person can be seen or heard." ;
+    schema:name "Who is in content" .
 
 dw:Where a dw:Question ;
     dw:parentNode dw:Audio,
