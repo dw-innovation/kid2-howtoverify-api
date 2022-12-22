@@ -321,17 +321,15 @@ dw:Mapillary a dw:SoftwareApplication ;
     schema:publisher "Mapillary AB and Meta" .
 
 dw:Metadata2Go a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Open the URL" "Upload an image or submit an image URL Click " "Select summary on the left " "Scroll through the results" ) ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "Matadata2Go helps you find all available metadata" ;
-    schema:aboutUrl "" ;
+    dw:remarks ( "Images coming from social media usually don't contain any metadata, as they get erased during the upload process" "Metadata can easily be manipulated" ) ;
+    rdfs:comment "helps you find all available metadata that comes with an image, pdf and more." ;
     schema:applicationUrl "https://www.metadata2go.com/" ;
     schema:name "Metadata2Go" ;
-    schema:publisher "Bladibla Productions" ;
-    schema:usageInfo "paid / free" .
+    schema:publisher "QaamGo Web GmbH" .
 
 dw:Microphone_Analyses a dw:Task ;
     dw:parentNode dw:Who_created_content ;
