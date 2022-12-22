@@ -25,10 +25,10 @@ dw:Baidu_Images a dw:SoftwareApplication ;
     schema:publisher "Baidu, Inc." .
 
 dw:Boom_3D a dw:SoftwareApplication ;
-    dw:howTo ( "Download the free trial (30 days) on your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you are focusing on" "[Here](https://youtu.be/iIg7OHcUKis) is a more detailed intro into the software" ) ;
+    dw:howTo ( "Download the free trial (30 days) to your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you are focusing on." ) ;
     dw:parentNode dw:Audio_enhancement ;
-    dw:remarks ( "Here is a [list](https://fixthephoto.com/best-free-audio-enhancers.html) with audio enhancer services. We have not tested them but worth checking them out " "Use noise-canceling headphones" ) ;
-    rdfs:comment "is a tool for cropping and removing unwanted noises, this tool can enhance the sounds in your audio file and filter out ambient noises." ;
+    dw:remarks ( "Watch this [intro to the software](https://youtu.be/iIg7OHcUKis) for more details." "Use noise-canceling headphones for a better experience." "Check out this [list of other audio enhancing services](https://fixthephoto.com/best-free-audio-enhancers.html). (We have not tested them, but it's worth checking them out.) " ) ;
+    rdfs:comment "is a tool for cropping and removing unwanted noise. Boom 3D can enhance the sounds in your audio file and filter out ambient noise." ;
     schema:applicationUrl "https://www.globaldelight.com/boom/" ;
     schema:name "Boom 3D" ;
     schema:publisher "Global Delight" .
@@ -49,7 +49,7 @@ dw:Epieos a dw:SoftwareApplication ;
     dw:parentNode dw:eMail ;
     dw:relatedMediaType dw:Text ;
     dw:remarks ( "The software has three tiers (Visitor, Member and OSINTer) which offer different levels of detail." "In the free visitor and the free member (logged in) version, the search is limited to e-mail-addresses (no phone numbers) and the results are limited to specific networks only." "Epieos is hosted in Europe, and does not log any of your research (according to the owners)" ) ;
-    rdfs:comment "Epieos is a tool that lets you anonymously find information linked to an e-mail-address, like for which social networks it has been used for. It also works with phone numbers, but only in the paid version." ;
+    rdfs:comment "is a tool that lets you anonymously find information linked to an e-mail-address, like for which social networks it has been used for. It also works with phone numbers, but only in the paid version." ;
     schema:applicationUrl "https://epieos.com/" ;
     schema:name "Epieos" ;
     schema:publisher "Epieos" .
@@ -166,15 +166,14 @@ dw:Handelsregister a dw:SoftwareApplication ;
     schema:publisher "" .
 
 dw:Have_I_been_pwned a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Open the URL" "Type in the email or phone number" "Scroll down for results" "Click on the links offered for more information about the leak" ) ;
     dw:parentNode dw:eMail ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment """is a
-Taucht Mailadresse in Leak/Hack auf? (auch für Tel.nummern)""" ;
+    dw:remarks ( "Search for the data leak in a public database to find more information " "Search for news articles about the leak and contact the journalist for information" ) ;
+    rdfs:comment "is a service to find out if your email or phone number was published in a data leak." ;
     schema:applicationUrl "https://haveibeenpwned.com/" ;
     schema:name "Have I been pwned" ;
-    schema:publisher "Bladibla Productions" .
+    schema:publisher "Troy Hunt" .
 
 dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
     dw:howTo ( "Download and install the application from its website." "Select the images (e.g. frames from a video) you want to stich together " "Put the images into one folder" "Load the images in _Hugin_ and use the \"Align\" feature" "Optimize the settings (if necessary)" "Let the software finalise the the panorama" ) ;
@@ -265,8 +264,8 @@ dw:LinkedIn a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "If you have a normal user profile, other users will be able to see that you have visited their profile" "Journalist can ask for a free business account to visit profiles undercover" ) ;
-    rdfs:comment "is a social network that focuses on professional networking. People's profile reflect their career paths. Be aware, the information is not verified. It is still very helpful to find colleagues and employees of a company." ;
+    dw:remarks ( "Be aware: the information on LinkedIn is not verified! Everyone can write anything." "If you have a normal user profile, other users will be made aware of your visit to their profile." "Journalist can ask for a free business account to visit profiles undercover." ) ;
+    rdfs:comment "is a social network with a focus on professional networking. Peoples' profiles reflect their career paths. It is very helpful to find colleagues and employees of a company." ;
     schema:applicationUrl "https://www.linkedin.com/" ;
     schema:name "LinkedIn" ;
     schema:publisher "LinkedIn" .
@@ -277,13 +276,20 @@ dw:Listen_to_the_audio a dw:Task ;
         dw:Where,
         dw:Who ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "Having a transcript of the conversation will be useful when you want to make notes." "Put on headphones to hear better" ) ;
-    rdfs:comment """more than once. Write down 
-\\- How many people are talking?
-\\- What languages can you detect?
-\\- What are the individuals discussing?
-\\- Can you hear any sound? What could it be?
-\\- Is it outside or inside?""" ;
+    dw:remarks ( "Having a transcript of the conversation will be useful for making notes on specific parts." "Put on headphones for a better listening experience." ) ;
+    rdfs:comment """more than once. 
+
+Try to answer the following questions:  
+
+-/ How many people are talking?
+
+-/ What languages can you detect?
+
+-/ What are the individuals discussing?
+
+-/ Can you hear any sounds in the background? What could it be?
+
+-/ Is it inside or outside?""" ;
     schema:name "Listen to the audio" .
 
 dw:Magnifier a dw:SoftwareApplication ;
@@ -459,9 +465,9 @@ dw:Speech_to_text_Google a dw:SoftwareApplication ;
     schema:publisher "Google" .
 
 dw:Spoken_language_identifier a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link" "You can play your audio and press record" "You can upload an audio file " "The results will show you the percentage of the language(s) detected" ) ;
+    dw:howTo ( "Open the URL" "Press record and play your audio" "You can also upload an audio file " "The results will show you the percentage of the language(s) detected" ) ;
     dw:parentNode dw:Language_detection ;
-    dw:remarks ( "supports 8 languages: English, Spanish, Italian, French, German, Portuguese, Dutch, and Russian" "The longer the audio, the better the results" ) ;
+    dw:remarks ( "The system supports 8 languages: English, Spanish, Italian, French, German, Portuguese, Dutch, and Russian" "The longer the audio, the better the results" ) ;
     rdfs:comment "is a service that tries to determine the language spoken in an audio recording." ;
     schema:applicationUrl "https://translatedlabs.com/spoken-language-identifier" ;
     schema:name "Spoken language identifier" ;
@@ -503,11 +509,11 @@ dw:Tgstat a dw:SoftwareApplication ;
     schema:publisher "Tgstat" .
 
 dw:ThatsThem a dw:SoftwareApplication ;
-    dw:howTo ( "step 1" "step 2" ) ;
+    dw:howTo ( "Open the URL" "Type in the phone number" ) ;
     dw:parentNode dw:Phone_number ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "ThatsThem is" ;
+    dw:remarks ( "No match does not mean its not findable" ) ;
+    rdfs:comment "is a Reverse Phone Lookup." ;
     schema:applicationUrl "https://thatsthem.com/reverse-phone-lookup" ;
     schema:name "ThatsThem" ;
     schema:publisher "Bladibla Productions" .
@@ -662,8 +668,8 @@ dw:Yandex_Images a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Start the search by dragging the photo on the search bar" "As an alternative, click the camera icon in the search bar and paste the URL or upload an image from your desktop here" "Crop specific items to do another reverse search on those" "Yandex automatically detects text and translates the words into Russian" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Yandex is very strong in object and facial recognition." "Most results will be in Russian (as are most parts of the interface), use Google translate plugin for translation" ) ;
-    rdfs:comment "is an image search engine based in Russia. It is very efficient when you are searching digital content from the region." ;
+    dw:remarks ( "Yandex is very strong in object and facial recognition" "Most results will be in Russian (as are most parts of the interface), use Google translate plugin for translation" ) ;
+    rdfs:comment "is an image search engine based in Russia. It is very efficient when you are searching digital content from that region." ;
     schema:applicationUrl "https://yandex.com/images" ;
     schema:name "Yandex Images" ;
     schema:publisher "Yandex" .
@@ -702,8 +708,8 @@ dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "Eliminating background noises will allow you to focus on the content" "Adjusting the specific sound or conversation you focus on" ) ;
-    rdfs:comment "means to enhance the quality of the audio recording." ;
+    dw:remarks ( "Eliminating background noises will allow you to focus on the content" "Adjust the specific sound or conversation you focus on" ) ;
+    rdfs:comment "is the improvement of the audio quality of the recording." ;
     schema:name "Audio enhancement" .
 
 dw:Audio_from_video_extraction a dw:Task ;
@@ -763,8 +769,8 @@ dw:Panorama_stitch a dw:Task ;
 dw:Phone_number a dw:Task ;
     dw:parentNode dw:Author ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Google-Suche (evtl. mit Emoji)" "Klassiker: Rückwärtssuche im Telefonbuch" "Whatsapp(bild)" "In Telegram speichern & Nummer löschen --> zeigt Nutzername an" "für Profis: Github-Skript [_\"phoneinfoga_](https://github.com/sundowndev/phoneinfoga)\"" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Just search with the phone number in a search engine or in a phone book" "Save the number in your working phone and check the visibilty on chat apps" "Any photo related to a profile in a chat app can help to identify the user" "Here is a Github script  [phoneinfoga](https://github.com/sundowndev/phoneinfoga) " ) ;
+    rdfs:comment "are associated with specific locations, while others are portable and can be used from anywhere." ;
     schema:name "Phone number" .
 
 dw:Sources a dw:Task ;
@@ -879,7 +885,7 @@ dw:Language_detection a dw:Task ;
     dw:parentNode dw:What,
         dw:Where ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "A dialect and accent can provide important information about the location and the people involved" "Identify specific words and wording that might be used only in one region  " ) ;
+    dw:remarks ( "A dialect or an accent can provide important information about the people involved and possibly their location" "Try to identify specific words and the wording that might be used only in a specific region of the world" ) ;
     rdfs:comment "tries to identify the language that is spoken in an audio recording." ;
     schema:name "Language detection" .
 
@@ -932,8 +938,8 @@ TikTok, you do a right click next to the video, then select "View page source", 
 dw:eMail a dw:Task ;
     dw:parentNode dw:Author ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "Searching this address within quotation marks" "Search with the Username of the email address" ) ;
+    rdfs:comment "is a unique email address to a user. There may be thoursand John Does but one john.doe @ yahoo com." ;
     schema:name "eMail" .
 
 dw:Context a dw:Task ;
@@ -943,7 +949,7 @@ dw:Context a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Think about specific search keywords to narrow down your search" "Use Google translate for searching in local language" "Write down  questions you want to answer" "Look for several, local and trustworthy sources" ) ;
+    dw:remarks ( "Think about specific search keywords to narrow down your search" "Use Google translate for searching in local languages" "Write down the questions you want to get answered" "Look for several local and trustworthy sources" ) ;
     rdfs:comment "of an event describes the general situation that relates to the digital content you have. You may use the information shared by the source or web page and dig deeper to gather more." ;
     schema:name "Context" .
 
@@ -1011,8 +1017,8 @@ dw:Person_identification a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "" ;
+    dw:remarks ( "Ask yourself why this person or group is seen to dig deeper" "Information about this person gives context to what has happened" ) ;
+    rdfs:comment "is any person you can see facial regocnition, clothings and voices to identify the persons identity" ;
     schema:name "Person Identification" .
 
 dw:Person_name a dw:Task ;
@@ -1078,15 +1084,15 @@ dw:Who_is_in_content a dw:SubQuestion ;
     dw:relatedMediaType dw:Image,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Use any information you can get from the content, like clothing, facial characteristics and voices to draw conclusions" "Ask yourself why this person or group is seen to dig deeper" ) ;
+    dw:remarks ( "Use any information you can get from the content, like clothing, facial characteristics and voices to draw conclusions" "Ask yourself why this person or group is seen or heard to dig deeper" ) ;
     rdfs:comment "is the question for someone passively or actively involved in the event. Information about this person gives context to what has happened. Maybe a specific group was involved or a familiar person can be seen or heard." ;
     schema:name "Who is in content" .
 
 dw:Author a dw:Task ;
     dw:parentNode dw:Who_created_content ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
+    dw:remarks ( "It can be the real or a pseudonym" "You can also search with Google Search operators for digital texts published just by this person" ) ;
+    rdfs:comment "is a the person who wrote the text." ;
     schema:name "Author" .
 
 dw:Geolocation a dw:Task ;
