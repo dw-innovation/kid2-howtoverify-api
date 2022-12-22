@@ -170,7 +170,7 @@ dw:Have_I_been_pwned a dw:SoftwareApplication ;
     dw:parentNode dw:eMail ;
     dw:relatedMediaType dw:Text ;
     dw:remarks ( "Search for the data leak in a public database to find more information " "Search for news articles about the leak and contact the journalist for information" ) ;
-    rdfs:comment "is a service to find out if your email or phone number was published in a data leak." ;
+    rdfs:comment "is a service to find out if an email or phone number was published in a data leak allowing you to check on network profiles associated with this information." ;
     schema:applicationUrl "https://haveibeenpwned.com/" ;
     schema:name "Have I been pwned" ;
     schema:publisher "Troy Hunt" .
@@ -259,13 +259,13 @@ dw:Lets_Enhance_io a dw:SoftwareApplication ;
     schema:publisher "Let’s Enhance, Inc" .
 
 dw:LinkedIn a dw:SoftwareApplication ;
-    dw:howTo ( "Set up an account for free" "Type in the name of the source " "Use the advanced search to narrow down your search" "You can also use the Google search operators for results on LinkedIn" ) ;
+    dw:howTo ( "Set up an account for free" "Type in the name of the source " "Use the advanced search to narrow down your search" ) ;
     dw:parentNode dw:Person_name ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "Be aware: the information on LinkedIn is not verified! Everyone can write anything." "If you have a normal user profile, other users will be made aware of your visit to their profile." "Journalist can ask for a free business account to visit profiles undercover." ) ;
-    rdfs:comment "is a social network with a focus on professional networking. Peoples' profiles reflect their career paths. It is very helpful to find colleagues and employees of a company." ;
+    dw:remarks ( "Be aware: the information on LinkedIn is not verified! Everyone can write anything." "You can also use the Google search operators for results on LinkedIn" "If you have a normal user profile, other users will be made aware of your visit to their profile." "Journalist can ask for a free business account to visit profiles undercover." ) ;
+    rdfs:comment "is a social network with a focus on professional networking. Peoples' profiles reflect their career paths. It is very helpful to find employees of or colleagues of the person in question within a company." ;
     schema:applicationUrl "https://www.linkedin.com/" ;
     schema:name "LinkedIn" ;
     schema:publisher "LinkedIn" .
@@ -697,22 +697,22 @@ dw:Address a dw:Task ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
     dw:remarks ( "Keep in mind that addresses might not always be very accurately mapped on all services. Use street view if available." "Addresses can be false, always cross-reference the information. " ) ;
-    rdfs:comment "of a contact or a place is your easiest way to verify the location. You can directly search for it on any map service and check available imagery against the material and information you might have." ;
+    rdfs:comment "of a contact or a place is your easiest way to verify the location. You can directly search for it on any map service and check available imagery against the material and information you already have." ;
     schema:name "The address" .
 
 dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "Eliminating background noises will allow you to focus on the content" "Adjust the specific sound or conversation you focus on" ) ;
-    rdfs:comment "is the improvement of the audio quality of the recording." ;
+    dw:remarks ( "Eliminating background noises will allow you to focus on the content." "Adjust the specific sound or conversation you focus on to hear more details." ) ;
+    rdfs:comment "is the improvement of the audio quality of the recording. It can help you to understad the audio better." ;
     schema:name "Audio enhancement" .
 
 dw:Audio_from_video_extraction a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "There are many third-party apps and tools to perform audio extraction. The easiest, including conversion features, is the free VLC player" ) ;
+    dw:remarks ( "There are many third-party apps and tools to perform audio extraction. The easiest, including conversion features, is the free VLC player." ) ;
     rdfs:comment "will help to focus on the audio. You might also be able to analyse the audio. Using AI supported tools you can transcribe what is being said. That makes it easier to translate the audio content, allowing you to understand lots of languages..." ;
     schema:name "Audio from video extraction" .
 
@@ -813,8 +813,8 @@ dw:Business_name a dw:Task ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "It is worth checking out who is on the board of the company " "Export and import data can be requested with official institutions" ) ;
-    rdfs:comment "is any company name mentioned in the text or audio, visible as a logo or attached to the source. It might be the company someone is working for or a company which seems fishy." ;
+    dw:remarks ( "It is worth checking out who is on the board of a company to get better insight in the context of a company." "Export and import data of companies can be requested with official institutions." ) ;
+    rdfs:comment "is any company name mentioned in the text or audio, visible as a logo or attached to the source. It might be the company someone is working for or a company which needs investigating because it seems fishy." ;
     schema:name "Business Name" .
 
 dw:Facebook a dw:Task ;
@@ -1087,8 +1087,8 @@ dw:Who_is_in_content a dw:SubQuestion ;
 dw:Author a dw:Task ;
     dw:parentNode dw:Who_created_content ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "It can be the real or a pseudonym" "You can also search with Google Search operators for digital texts published just by this person" ) ;
-    rdfs:comment "is a the person who wrote the text." ;
+    dw:remarks ( "The author's name may be the real name or a pseudonym. " "Using Google Search operators you can search for digital texts published just by this person." ) ;
+    rdfs:comment "is the person who wrote the text." ;
     schema:name "Author" .
 
 dw:Geolocation a dw:Task ;
