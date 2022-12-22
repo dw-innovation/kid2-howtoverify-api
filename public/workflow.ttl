@@ -411,9 +411,7 @@ dw:RIS_\(Image\) a dw:Task ;
         dw:Source,
         dw:Text ;
     dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not have full access to e.g. social networks to find all published versions." "You can also search for specific objects or buildings." "Each search engine has its pros and cons. To get the most out of it, try all of them!" ) ;
-    rdfs:comment """is a way to check if this content is the orignal version as well as if it was published before. A RIS can give you more context to the event and it helps to identify specific objects in visual content. 
-
-is a way to find out if this content has been published before. It can tell you if you are looking at the earliest published version. The search results will also show you similar content to corroborate that an event took place and can provide more context on the event. RIS can also help to identify objects in the image.""" ;
+    rdfs:comment "is a way to check if this content is the orignal version as well as if it was published before. A RIS can give you more context to the event and it helps to identify specific objects in visual content." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -750,8 +748,8 @@ dw:Instagram a dw:Task ;
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:Original ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "With a visual, Use your own senses and look at shadow and reflections " "With an audio, close your eyes and listen carefully to the sound if there might be jumps" "Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
-    rdfs:comment "means you look for traces of tampering in the footage." ;
+    dw:remarks ( "With visual information, use your own senses and look at shadows and reflections." "With audio, close your eyes and listen carefully to the sound if there might be jumps." "You can train yourself! Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
+    rdfs:comment "means to look for traces of tampering in the digital content you are investigating." ;
     schema:name "Manipulation detection" .
 
 dw:Panorama_stitch a dw:Task ;
@@ -864,7 +862,7 @@ You will need to gather more information and talk to eyewitnesses to answer this
 dw:Keywords a dw:Task ;
     dw:parentNode dw:Content_analysis ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Try out several search combinations with the keywords" "If the text is already translated, search in the local language" ) ;
+    dw:remarks ( "Try out several search combinations with the keywords." "If the text is already translated, also search in the local language." ) ;
     rdfs:comment "are certain words that describe the content of the document. There are usually mentioned several times in the text. Highlight the main ones and dig deeper." ;
     schema:name "Keywords" .
 
@@ -872,16 +870,16 @@ dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "here is great tutorial about using mountain ridges in geolocation tasks [Mountain Geolocating Tutorial](https://www.linkedin.com/posts/eyran-millis_mountain-geolocating-tutorial-activity-6941996317795565568-JYvf) by Eyran Millis " ) ;
-    rdfs:comment "means finding geographic location landmarks in mountainous topographic terrain." ;
+    dw:remarks ( "here is a great tutorial about using mountain ridges in geolocation tasks [Mountain Geolocating Tutorial](https://www.linkedin.com/posts/eyran-millis_mountain-geolocating-tutorial-activity-6941996317795565568-JYvf) by Eyran Millis " ) ;
+    rdfs:comment "means using geographic landmarks like mountains, to find a specific location." ;
     schema:name "Landscape identification" .
 
 dw:Language_detection a dw:Task ;
     dw:parentNode dw:What,
         dw:Where ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "A dialect or an accent can provide important information about the people involved and possibly their location" "Try to identify specific words and the wording that might be used only in a specific region of the world" ) ;
-    rdfs:comment "tries to identify the language that is spoken in an audio recording." ;
+    dw:remarks ( "A dialect or an accent can provide important information about the people involved and possibly their location." "Try to identify specific words and the wording that might be used only in a specific region of the world." ) ;
+    rdfs:comment "aims to identify the language that is spoken in an audio recording." ;
     schema:name "Language detection" .
 
 dw:Original a dw:Task ;
@@ -1125,7 +1123,7 @@ dw:When a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "There are many ways to determin time and date of content creation, be creative!" "Check local media" "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" ) ;
+    dw:remarks ( "Check local media" "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" ) ;
     rdfs:comment """did the event occur? 
 
 Time and date tells you when the digital content was created. Based on that you can build a timeline of the event. This provides good insight in what happened and is especially useful when monitoring ongoing conflicts. Time and date will also help you to find more information about the event.""" ;
@@ -1223,8 +1221,7 @@ The special thing about video is that you have loads of images (frames), time an
     schema:name "Video" .
 
 dw:Image a dw:MediaObject ;
-    dw:remarks """\\- Look at all details in the image before you start digging
-\\- If it looks too good to be true, there might be something fishy about it""" ;
+    dw:remarks ( "Look at all details in the image before you start digging." "If it looks too good to be true, there might be something fishy about it." ) ;
     rdfs:comment """The image verification process involves answering the following questions:
 
 \\- What happened in the image?
