@@ -229,7 +229,8 @@ find archived web pages with a specific URL and can track changes over time.""" 
 
 dw:Interviews a dw:Task ;
     dw:parentNode dw:How ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
@@ -678,7 +679,8 @@ dw:Yandex_Maps a dw:SoftwareApplication ;
 
 dw:newsgathering a dw:Task ;
     dw:parentNode dw:How ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
@@ -1133,7 +1135,7 @@ dw:Where a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "The geographic location mentioned with social content may not be accurate" "Metadata can also be manipulated!" "Satellite images, street view, or other visual aids can be helpful in determining the location" "Making a list of 20 specific details (such as street signs, restaurant names, and architecture) can help you focus on finding the correct location" ) ;
+    dw:remarks ( "The geographic location mentioned with social content may not be accurate" "Metadata can also be manipulated" "Satellite images, street view, or other visual aids can be helpful in determining the location" "Making a list of 20 specific details (such as street signs, restaurant names, and architecture) can help you focus on finding the correct location" ) ;
     rdfs:comment """did the event take place? 
 
 Finding the exact location will also help you to verify when the event ocurred and what has happened. Location verification is a popular element of verification. There are many tools that can support you. As always: be creative!""" ;
