@@ -25,9 +25,9 @@ dw:Baidu_Images a dw:SoftwareApplication ;
     schema:publisher "Baidu, Inc." .
 
 dw:Boom_3D a dw:SoftwareApplication ;
-    dw:howTo ( "Download the free trial (30 days) to your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you are focusing on." ) ;
+    dw:howTo ( "Download the free trial (30 days) to your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you are focusing on" ) ;
     dw:parentNode dw:Audio_enhancement ;
-    dw:remarks ( "Watch this [intro to the software](https://youtu.be/iIg7OHcUKis) for more details." "Use noise-canceling headphones for a better experience." "Check out this [list of other audio enhancing services](https://fixthephoto.com/best-free-audio-enhancers.html). (We have not tested them, but it's worth checking them out.) " ) ;
+    dw:remarks ( "Watch this [intro to the software](https://youtu.be/iIg7OHcUKis) for more details." "Use noise-canceling headphones for a better experience" "Check out this [list of other audio enhancing services](https://fixthephoto.com/best-free-audio-enhancers.html). (We have not tested them, but it's worth checking them out" ) ;
     rdfs:comment "is a tool for cropping and removing unwanted noise. Boom 3D can enhance the sounds in your audio file and filter out ambient noise." ;
     schema:applicationUrl "https://www.globaldelight.com/boom/" ;
     schema:name "Boom 3D" ;
@@ -48,24 +48,24 @@ dw:Epieos a dw:SoftwareApplication ;
     dw:howTo ( "Enter the e-mail-address in question into the search field" "Hit enter or click the search button and answer the security captcha" ) ;
     dw:parentNode dw:eMail ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "The software has three tiers (Visitor, Member and OSINTer) which offer different levels of detail." "In the free visitor and the free member (logged in) version, the search is limited to e-mail-addresses (no phone numbers) and the results are limited to specific networks only." "Epieos is hosted in Europe, and does not log any of your research (according to the owners)" ) ;
+    dw:remarks ( "The software has three tiers (Visitor, Member and OSINTer) which offer different levels of detail" "In the free visitor and the free member (logged in) version, the search is limited to e-mail-addresses (no phone numbers) and the results are limited to specific networks only" "Epieos is hosted in Europe, and does not log any of your research (according to the owners)" ) ;
     rdfs:comment "is a tool that lets you anonymously find information linked to an e-mail-address, like for which social networks it has been used for. It also works with phone numbers, but only in the paid version." ;
     schema:applicationUrl "https://epieos.com/" ;
     schema:name "Epieos" ;
     schema:publisher "Epieos" .
 
 dw:Exif_Data a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Klick \"Durchsuchen\" to browse for an image on your computer or enter an imge URL in the respective field. " "Klick Upload or Submit" "Scroll through the results" ) ;
+    dw:howTo ( "Open the URL" "Upload an image or submit an image URL  " "Select summary on the left " "Scroll through the results" ) ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "The level of detail depends on what metadata is actually stored with the image" "Images coming from social media usually don't contain any metadata, as they get erased during the upload process" ) ;
-    rdfs:comment "Exif Data helps you find all available metadata that come with an image, such as shutter speed, exposure compensation or the date and time the image was taken. Some images may even store GPS information." ;
+    rdfs:comment "helps you find all available metadata that come with an image, such as shutter speed, exposure compensation or the date and time the image was taken. Some images may even store GPS information." ;
     schema:applicationUrl "https://exifdata.com/" ;
     schema:name "Exif Data" ;
-    schema:publisher "Bladibla Productions (Isländische Zentralbank???)" .
+    schema:publisher "Unknown" .
 
 dw:Fotoforensic a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Enter the URL of an image or click the search button to browse for an image on your computer" "Click the Upload button and let the machine do the analysis" "Once the analysis is done use the menue on the upper left hand corner to navigate through the different analysis results. " "Don't forget to hover your mouse over the image from time to time for a direct comparison of image and analysis output" ) ;
+    dw:howTo ( "Open the URL" "Enter the URL of an image or click the search button to browse for an image on your computer" "Click the Upload button and let the machine do the analysis" "Once the analysis is done use the menue on the upper left hand corner to navigate through the different analysis results " "Don't forget to hover your mouse over the image from time to time for a direct comparison of image and analysis output" ) ;
     dw:parentNode dw:Manipulation_detection ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "While these tools can do a lot of analysis, the results are hard to read" "It's best to read through [some of the examples](https://www.hackerfactor.com/blog/index.php?/archives/322-Body-By-Victoria.html) on the website first and/or involve an expert, before jumping to conclusions" ) ;
@@ -220,7 +220,7 @@ dw:Internet_Archive a dw:SoftwareApplication ;
     dw:parentNode dw:Historic_versions ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Archived websites can be incomplete and lacking images or videos" "There is also a browser plugin for the [Internet Archive](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)  " "Learn how to search for saved content in their database via [this tutorial](https://youtu.be/dCBy9z3f9Mw) . " ) ;
+    dw:remarks ( "Archived websites can be incomplete and lacking images or videos" "There is also a browser plugin for the [Internet Archive](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)  " "Learn how to search for saved content in their database via [this tutorial](https://youtu.be/dCBy9z3f9Mw)  " ) ;
     rdfs:comment """is a digital archive of the world wide web. The earliest entries date back to 1996. You   
 find archived web pages with a specific URL and can track changes over time.""" ;
     schema:applicationUrl "https://archive.org/" ;
@@ -253,7 +253,7 @@ dw:Lets_Enhance_io a dw:SoftwareApplication ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "You have to sign up for an account" "You have 10 images for free" "[Gigapixel AI](https://www.topazlabs.com/downloads) is a useful alternative, but install only." ) ;
+    dw:remarks ( "You have to sign up for an account" "You have 10 images for free" "[Gigapixel AI](https://www.topazlabs.com/downloads) is a useful alternative, but install only" ) ;
     rdfs:comment "is an image editor using artifical intelligence. You can enhance the resolution, the contrast and much more." ;
     schema:applicationUrl "https://letsenhance.io/" ;
     schema:name "Lets Enhance io" ;
@@ -265,7 +265,7 @@ dw:LinkedIn a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "Be aware: the information on LinkedIn is not verified! Everyone can write anything." "You can also use the Google search operators for results on LinkedIn" "If you have a normal user profile, other users will be made aware of your visit to their profile." "Journalist can ask for a free business account to visit profiles undercover." ) ;
+    dw:remarks ( "Be aware: the information on LinkedIn is not verified! Everyone can write anything" "You can also use the Google search operators for results on LinkedIn" "If you have a normal user profile, other users will be made aware of your visit to their profile" "Journalist can ask for a free business account to visit profiles undercover" ) ;
     rdfs:comment "is a social network with a focus on professional networking. Peoples' profiles reflect their career paths. It is very helpful to find employees of or colleagues of the person in question within a company." ;
     schema:applicationUrl "https://www.linkedin.com/" ;
     schema:name "LinkedIn" ;
@@ -293,7 +293,7 @@ dw:Magnifier a dw:SoftwareApplication ;
     dw:howTo ( "Install the browser plugin on Firefox or Chrome" "a) right click on the image on the web page and select Image Magnifier" "b) click on the plugin and open toolbox, on the left you select Image magnifier and upload your image" "Select the zoom by browsing over the image" ) ;
     dw:parentNode dw:Zoom_in_details ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "You can upload an image or analyse it directly from the web page" "It highlights elements without changing the resolution. " ) ;
+    dw:remarks ( "You can upload an image or analyse it directly from the web page" "It highlights elements without changing the resolution " ) ;
     rdfs:comment "zooms into the image without changing the resolution." ;
     schema:applicationUrl "[InVid](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/)" ;
     schema:name "Magnifier" ;
@@ -366,7 +366,7 @@ dw:Namechk a dw:SoftwareApplication ;
         dw:Social_Media_profiles ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Red means there is an account with that user name on the platform" "Green means the username is not in use on that platform" "Always double check, the system might not be perfect." ) ;
+    dw:remarks ( "Red means there is an account with that user name on the platform" "Green means the username is not in use on that platform" "Always double check, the system might not be perfect" ) ;
     rdfs:comment "is a free username and domain search tool. You can use it to check whether a username exists on different platforms." ;
     schema:applicationUrl "https://namechk.com/" ;
     schema:name "Namechk" ;
@@ -448,10 +448,10 @@ dw:Sowsearch a dw:SoftwareApplication ;
     schema:publisher "Sowdust" .
 
 dw:Speech_to_text_Google a dw:SoftwareApplication ;
-    dw:howTo ( "Open the Google Translate app or the link " "Click on the microphone icon " "Play the audio recording from your device close to Google translate" "Google translate will transcribe the audio and detect a language" ) ;
+    dw:howTo ( "Open the URL or use the Google Translate app" "Click on the microphone icon " "Play the audio recording from your device close to your microphone" "Google translate will transcribe the audio and automatically detect the spoken language" ) ;
     dw:parentNode dw:Language_detection ;
-    dw:remarks ( "It also works on mobile device with the Google Translate app " "You can also do live transcribing via the app ([tutorial](https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop) )" ) ;
-    rdfs:comment "is a transcription of your audio conversation to text for analysing, detecting languages and collecting keywords." ;
+    dw:remarks ( "It also works on mobile device with the Google Translate app " "You can also do live transcribing via the app ([tutorial](https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop) )" "Language detection might not always be 100% correct" ) ;
+    rdfs:comment "is a transcription of your audio conversation into text-format for analysing, detecting languages and collecting keywords." ;
     schema:applicationUrl "https://translate.google.com/" ;
     schema:name "Speech to text" ;
     schema:publisher "Google" .
@@ -477,13 +477,13 @@ dw:Suncalc a dw:SoftwareApplication ;
     schema:publisher "Vladimir Agafonkin" .
 
 dw:Telemetrio a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link" "You can set a a combination of filters like country, language, amount of subscribers to find e.g. the most popular channel in a country" "Click on one of the channels in the result and you get more analytics on it" "With an account you can also set up a monitoring system of selected channels" ) ;
+    dw:howTo ( "Open the URL" "Sort the list on the front page by the attribute most useful to you" "Focus the results by using the fiters at the top of the list" ) ;
     dw:parentNode dw:Telegram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "To find the first post of a channel enter a 1 instead of the number in the URL" "Find out more about the features [here](https://telegra.ph/FAQ-Telemetrio-01-14)  " "When you are using the desktop version of Telegram it is easier to search on Telegram itself" ) ;
-    rdfs:comment "is a search tool for channel search and analyses of channels." ;
+    dw:remarks ( "The layout of the site is a bit more straight forward than tgstat with a sortable table on the start page" "Experiment with the different parameters to get the hang of it." "The difference to tgstat lies in the details, so it's worth checking both." "You have to be logged into Telegram for some search operations" "In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name like in this [example](https://t.me/s/MOHreport/1) " ) ;
+    rdfs:comment "is a telegram channels and groups catalog and metrics aggregator, similar to tgstat." ;
     schema:applicationUrl "https://telemetr.io/" ;
     schema:name "Telemetrio" ;
     schema:publisher "Telemetr io" .
@@ -1004,8 +1004,8 @@ dw:Metadata a dw:Task ;
         dw:Who_created_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "You can also install a software on your computer like Phil Harvey's [ExifTool](https://exiftool.org/) " "Metadata can easily be maniupualted; make sure to cross-reference the information" "Third party tools might save the metadata, so be aware before uploading content" "Shared visuals on social networks usually do not have metadata. People can send you the original via email or as a document. Check out [this tutorial](https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/) from Amnesty" ) ;
-    rdfs:comment "is information attached to digital content like a photo, video or pdf. It includes ecording date and device, location, editing programs and technical details (aperture, ISO, exposure time...)." ;
+    dw:remarks ( "You can also install software on your computer like Phil Harvey's [ExifTool](https://exiftool.org/) " "Metadata can easily be manipulated; make sure to cross-reference the information" "Third party tools might save the metadata, so be aware before uploading content" "Shared visuals on social networks usually do not have metadata. People can send you the original via email or as a document. Check out [this tutorial](https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/) from Amnesty" ) ;
+    rdfs:comment "is information attached to digital content like a photo, video or pdf. It includes recording date and device, location, editing programs and technical details (aperture, ISO, exposure time...)." ;
     schema:name "Metadata" .
 
 dw:Object_identification a dw:Task ;
