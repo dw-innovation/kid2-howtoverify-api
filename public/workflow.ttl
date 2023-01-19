@@ -79,8 +79,8 @@ dw:Geohints a dw:SoftwareApplication ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Check out this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf) by [Seintpl](https://twitter.com/SEINT_pl) to get a better understanding of what to look" ) ;
-    rdfs:comment "lists objects and landmarks that can help you identify a location more quickly. It contains sorted lists of logos, roadsigns, house numbers or street markins categorized in countries. But also camera generations and Google Vehicles from the street view data collection." ;
+    dw:remarks ( "Check out this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf) by [Seintpl](https://twitter.com/SEINT_pl) to get a better understanding of what to look for" ) ;
+    rdfs:comment "lists objects and landmarks that can help you identify a location more quickly. It contains sorted lists of logos, roadsigns or house numbers categorized in countries. But also camera types and Google Vehicles from the street view data collection." ;
     schema:applicationUrl "https://geohints.com/" ;
     schema:name "GeoHints" ;
     schema:publisher "MouseWithBeer - [Discord](https://discord.com/invite/bCZ8Bg2vUd)" .
@@ -1010,7 +1010,7 @@ dw:Object_identification a dw:Task ;
     dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Write down at least 20 landmarks you detect in the visual " "Search for a databases on landmarks, you willbe surprised" ) ;
+    dw:remarks ( "Write down at least 20 landmarks you detect in the visual " "Search for a databases on landmarks" ) ;
     rdfs:comment "can be used to determine the precise location by analysing all objects detected in the content." ;
     schema:name "Object Identification" .
 
@@ -1090,8 +1090,8 @@ dw:Geolocation a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Write down 20 hints you detect in the visual like street names, restaurants, shops, cars, license plates, ads, logos, public transport, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, landmarks. This can help you to see information that you otherwise might have missed out on." "You can sharpen your senses with our interactive quizzes [Sharpen your senses](https://digger-project.com/sharpen-your-senses/) " ) ;
-    rdfs:comment "of visual information is the exact position where it was taken. Anything you can detect on visual information can lead you to it. A good starting point is also the claim in the shared footage, e.g. 'earthquake in Indonesia'." ;
+    dw:remarks ( "List 20 hints found in the visual such as street names, restaurants, shops, cars, license plates, advertisements, logos, public transportation, architecture, antennas, clothing, trees, landscape, lakes, vegetation, animals, and landmarks. This can aid in identifying information that may have been overlooked" "You can sharpen your senses with our interactive quizzes [Sharpen your senses](https://digger-project.com/sharpen-your-senses/) " ) ;
+    rdfs:comment "of visual information refers to the location where the image or video was captured. By analyzing the visual information, you can determine its location. Anything you can detect on visual information can lead you to it. A good starting point is also the claim in the shared footage." ;
     schema:name "Geolocation" .
 
 dw:Manual_geolocation a dw:Task ;
@@ -1133,10 +1133,10 @@ dw:Where a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "The geographic location mentioned with social content may not be accurate" "Metadata can also be manipulated" "Satellite images, street view, or other visual aids can be helpful in determining the location" "Making a list of 20 specific details (such as street signs, restaurant names, and architecture) can help you focus on finding the correct location" ) ;
+    dw:remarks ( "The geographic location mentioned in the social content may not be accurate" "Check the comments section for clues on the location" "Satellite images, street view, or other visual aids can be helpful in determining the location" "Making a list of 20 specific details (such as street signs, restaurant names, and architecture) can help you focus on finding the correct location" ) ;
     rdfs:comment """did the event take place? 
 
-Finding the exact location will also help you to verify when the event ocurred and what has happened. Location verification is a popular element of verification. There are many tools that can support you. As always: be creative!""" ;
+Finding the exact location will help you to verify when the event ocurred and what has happened.""" ;
     schema:name "Where" .
 
 dw:Who_created_content a dw:SubQuestion ;
