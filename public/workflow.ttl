@@ -113,11 +113,11 @@ dw:Google_Cache a dw:SoftwareApplication ;
     schema:publisher "Google" .
 
 dw:Google_Earth_3D a dw:SoftwareApplication ;
-    dw:howTo ( "Type any adress or add geo-coordinates in the search bar " "Start moving your point of view by moving around with your mouse " "Hold down cmd/cntrl of shift on your keyboard to switch to the 3D perspective" "draw lines to compare the shape of your landscape with the one from the visual" ) ;
+    dw:howTo ( "Type any adress or add geo-coordinates in the search bar " "Start moving your point of view by moving around with your mouse " "Hold down cmd/cntrl or ctrl of shift on your keyboard to switch to the 3D perspective" "draw lines to compare the shape of your landscape with the one from the visual" ) ;
     dw:parentNode dw:Landscape_identification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Save coordinates in a project whcih you can share in a GDrive folder" "Measure distances and save the data" ) ;
+    dw:remarks ( "Save coordinates in a project which you can share in a GDrive folder" "Measure distances and save the data" ) ;
     rdfs:comment "is a 3D representation of the earth based primarily on satellite imagery. It is the web version of Google Earth pro. It lets you navigate the world from a 3D perspective, recreating specific points of view on a position." ;
     schema:applicationUrl "https://earth.google.com/" ;
     schema:name "Google Earth 3D" ;
@@ -295,7 +295,7 @@ dw:Magnifier a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "You can upload an image or analyse it directly from the web page" "It highlights elements without changing the resolution " ) ;
     rdfs:comment "zooms into the image without changing the resolution." ;
-    schema:applicationUrl "[InVid](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/)" ;
+    schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "Magnifier" ;
     schema:publisher "AFP Medialab, Deutsche Welle & Partners" .
 
@@ -425,7 +425,7 @@ dw:RIS_\(Video\) a dw:Task ;
     schema:name "Reverse Image Search" .
 
 dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
-    dw:howTo ( "Open the Explorer" "Type in Geo-Coordinates " "On the left choose the satellite and timeframe you want to get data from" ) ;
+    dw:howTo ( "Open the Explorer" "Enter a place or the exact Geo-Coordinates  " "On the left choose the satellite and timeframe you want to get data from" ) ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
@@ -801,8 +801,8 @@ dw:Weather_analyses a dw:Task ;
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Write down 20 hints you detect, it will help your ongoing investigation" "Organize your hints in scenery, location, time, person" ) ;
-    rdfs:comment "will surprise you how much there is still to detectable on a visual. Take your time and  look closely." ;
+    dw:remarks ( "Write down at least 20 hints you detect, it will help your ongoing investigation" "Organize your hints in information about the scenery, location, time and people" ) ;
+    rdfs:comment "and you detect even more on the visual item." ;
     schema:name "Zoom in details" .
 
 dw:Business_name a dw:Task ;
@@ -893,7 +893,7 @@ dw:Satellite_data a dw:Task ;
     dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "There are two types of satellite data in earth observation. " "Optical satellite imagery views the world as he human eye does but limits when its cloudy or at night." "Radar satellites can operate day and night and regardless weather conditions, but it is more difficult to interprete the data." "Ollie Ballinger wrote a great article about SAR [Radar Interference Tracker](https://www.bellingcat.com/resources/2022/02/11/radar-interference-tracker-a-new-open-source-tool-to-locate-active-military-radar-systems/)  " ) ;
+    dw:remarks ( "Optical satellite imagery views the world as the human eye does but has its limits when its cloudy or at night." "Radar satellites can operate day and night and regardless weather conditions, but it is more difficult to interprete the data." "Ollie Ballinger wrote a great article about SAR [Radar Interference Tracker](https://www.bellingcat.com/resources/2022/02/11/radar-interference-tracker-a-new-open-source-tool-to-locate-active-military-radar-systems/)  " ) ;
     rdfs:comment "provides satellite imagery and earth observation data of the earth's surface and its atmosphere. It provides information on the situation and scenery with a before and after and can be used as visual evidence." ;
     schema:name "Satellite data" .
 
