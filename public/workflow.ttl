@@ -106,8 +106,8 @@ dw:Google_Cache a dw:SoftwareApplication ;
     dw:howTo ( "Do your regular google search." "In the results list, click on the three little dots next to the result of interest" "In the pop-up window select the 'cached' option to open this version of the link/page" "At the top of the cached page you'll see the date and time of when it was cached" ) ;
     dw:parentNode dw:Historic_versions ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Search just for the cached version of a web page by the operator \" cache:URL \"" "It is a great way to figure out if a web page is hacked" "For older versions of a link or website, check out the [Internet Archive](https://archive.org/) " ) ;
-    rdfs:comment "is a stored version of the web page in question from a previous date. It is helpful to check links and websites that might no longer be available or that might have changed." ;
+    dw:remarks ( "Search just for the cached version of a web page by adding the operator \"cache:URL\" to your search" "It is a great way to see how (much) a page has (been) changed, e.g. after a hack" "For older versions of a link or a website, check out the [Internet Archive](https://archive.org/) " ) ;
+    rdfs:comment "is the place were you can find a stored version of the web page in question from a previous date in Google. Use it to check links and websites that might no longer be available or that might have changed." ;
     schema:applicationUrl "https://www.google.com/" ;
     schema:name "Google Cache" ;
     schema:publisher "Google" .
@@ -124,12 +124,12 @@ dw:Google_Earth_3D a dw:SoftwareApplication ;
     schema:publisher "Google" .
 
 dw:Google_Earth_Pro a dw:SoftwareApplication ;
-    dw:howTo ( "Download the free available software" "Type any address or add geo-coordinates in the search bar " "You can zoom and and change perspectives with the compass on the right or your mouse pad" "Save your locations in a folder" ) ;
+    dw:howTo ( "Download the free available software" "Enter any address or geo-coordinates into search bar " "Zoom and and change perspectives with the compass on the right or your mouse pad" "Save specific locations in a folder" ) ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "You can export and share your data in kml/kmz files" "Search for shared kml/kmz files within Google \"Brandenburg AND forest filetype:kml OR filetype:kmz\" and import them in GE Pro" "Find the date and copyright of the satellite images at the bottom" ) ;
-    rdfs:comment "lets you fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings etc. Next to all the different layers, GE Pro offers a timeline to view past satellite images of the same location to monitor changes." ;
+    dw:remarks ( "Export and share your data in kml/kmz type files" "Search for shared kml/kmz files within Google e.g. \"Brandenburg AND forest filetype:kml OR filetype:kmz\" and import them in GE Pro" "Find the date and copyright of the satellite images at the bottom" ) ;
+    rdfs:comment "allows you to fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings of any place. GE Pro also includes a timeline feature to view past satellite images of the same location to track changes." ;
     schema:applicationUrl "https://www.google.de/earth/about/versions/" ;
     schema:name "Google Earth Pro" ;
     schema:publisher "Google" .
@@ -204,7 +204,7 @@ dw:InVid a dw:SoftwareApplication ;
     schema:publisher "AFP Medialab, Deutsche Welle & partners" .
 
 dw:Instagram_search a dw:SoftwareApplication ;
-    dw:howTo ( "Opne the link" "Select the lens on the left " "Type a city or keyword in the search" "hashtags are marked with a hash and locations with a pin" "Scroll down to the the newest posts from the location in chronological order" ) ;
+    dw:howTo ( "Open the link" "Select the lens on the left " "Type a city or keyword in the search" "Hashtags are marked with a hash and locations with a pin" "Scroll down to the the newest posts from the location in chronological order" ) ;
     dw:parentNode dw:Instagram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
@@ -216,13 +216,13 @@ dw:Instagram_search a dw:SoftwareApplication ;
     schema:publisher "Meta" .
 
 dw:Internet_Archive a dw:SoftwareApplication ;
-    dw:howTo ( "Add an URL " "Pick any date and click on the time when a snapshot was saved" "You can click on subpages as well" ) ;
+    dw:howTo ( "Add a URL " "Pick a specific date and click on of the available times" "IF available, you can also click on subpages" ) ;
     dw:parentNode dw:Historic_versions ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Archived websites can be incomplete and lacking images or videos" "There is also a browser plugin for the [Internet Archive](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)  " "Learn how to search for saved content in their database via [this tutorial](https://youtu.be/dCBy9z3f9Mw)  " ) ;
+    dw:remarks ( "Archived websites can be incomplete, meaning they might be lacking images or videos" "There is also a browser plugin for the [Internet Archive](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)  " "Learn how to search for saved content in the database via [this tutorial](https://youtu.be/dCBy9z3f9Mw)  " ) ;
     rdfs:comment """is a digital archive of the world wide web. The earliest entries date back to 1996. You   
-find archived web pages with a specific URL and can track changes over time.""" ;
+can find archived web pages using a specific URL and can track changes over time.""" ;
     schema:applicationUrl "https://archive.org/" ;
     schema:name "Internet Archive" ;
     schema:publisher "Internet Archive" .
@@ -234,8 +234,8 @@ dw:Interviews a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Eyewitnesses might be emotionally affected." "Sources might share additional information which also needs verification." ) ;
-    rdfs:comment "with eyewitnesses or experts are essential to understand what has happened and what the consequences are. Set up a monitoring system with trustworthy and local accounts." ;
+    dw:remarks ( "Eyewitnesses might be emotionally affected" "Sources might share additional information which also needs verification" "You can set up a monitoring system with e.g. Tweetdeck, Google Alerts and newsletter subscriptions" ) ;
+    rdfs:comment "with eyewitnesses or experts are essential to understand what has happened, how the event unfolded and what the consequences are. Set up a content monitoring system with trustworthy and local accounts." ;
     schema:name "Interviews" .
 
 dw:LatLong a dw:SoftwareApplication ;
@@ -436,7 +436,7 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     schema:publisher "Sinergise" .
 
 dw:Sowsearch a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link" "Open the dropdown menu and select what you search for" "Select the filter you need and click \"add filter\"" "To see results you have to press \"open URL\"" ) ;
+    dw:howTo ( "Open the link" "Open the dropdown menu and select what you are looking for" "Select the filter you need and click \"add filter\"" "To see results you have to press \"open URL\"" ) ;
     dw:parentNode dw:Facebook ;
     dw:relatedMediaType dw:Image,
         dw:Source,
@@ -724,7 +724,7 @@ dw:GPS_Data a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Any map service works with GPS data." "On Google Maps just do a right click and you can copy the location data of the selected position." ) ;
+    dw:remarks ( "Any map service works with GPS data" "On Google Maps just do a right click and you can copy the location data of the selected position" ) ;
     rdfs:comment "means Global Positioning System. The latitude and longitude coordinates generated by the GPS are considered the standard for location data." ;
     schema:name "GPS Data" .
 
@@ -741,8 +741,8 @@ dw:Instagram a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "You can search for public posts with Google Advanced search." "Users can create Reels and Stories which you can download and analyse." ) ;
-    rdfs:comment "is a photo and video sharing social network owned by Meta. It is a mobile app which allowes browser search as well." ;
+    dw:remarks ( "You can search for public posts with Google Advanced search" "Users can create Reels and Stories which you can download and analyse as well" ) ;
+    rdfs:comment "is a photo and video sharing social network owned by Meta. It is a mobile application that also enables browser search." ;
     schema:name "Instagram" .
 
 dw:Manipulation_detection a dw:Task ;
@@ -820,7 +820,7 @@ dw:Facebook a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "In some regions like Myanmar, Facebook is the main social network." "Public posts can also searched via Google Advanced Search." ) ;
+    dw:remarks ( "In some regions like Myanmar, Facebook is still one of the main social networks" "Public posts can also searched via Google Advanced Search" ) ;
     rdfs:comment "is a social media network owned by Meta. WhatsApp and Instagram are also part of the company." ;
     schema:name "Facebook" .
 
@@ -843,8 +843,8 @@ dw:Historic_versions a dw:Task ;
     dw:parentNode dw:What,
         dw:When ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "People also share screenshots of deleted content on socials. Be aware that screenshots are easy to manipulate." "Save content you researched, locally or in a web archive." ) ;
-    rdfs:comment "are crawled and saved versions of any published digital content from the world wide web. Not everything is saved before it is being deleted from the web but it is worth a search." ;
+    dw:remarks ( "People also share screenshots of deleted content on social networks. Be aware that screenshots can easily be manipulated." "Save content you researched locally or in a web archive to make sure you have proof." ) ;
+    rdfs:comment "are previously crawled and stored copies of digital content published on the world wide web. This allows to detect changes or review deleted content. Not everything is saved before it is being changed/deleted from the web but it is worth a search." ;
     schema:name "Historic versions" .
 
 dw:How a dw:Question ;
@@ -853,10 +853,10 @@ dw:How a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Check local media" "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" ) ;
+    dw:remarks ( "Check local media" "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
     rdfs:comment """did the event unfold? 
 
-You will need to gather more information and talk to eyewitnesses to answer this question. Try to collect more information from before, during and after the event and from different perspectives. That will help you to get clear insights in the story.""" ;
+You will need to gather more information and talk to eyewitnesses to answer this question. Try to collect a lot of information from before, during and after the event and from different perspectives. That will help you to get clear insights in the story.""" ;
     schema:name "How" .
 
 dw:Keywords a dw:Task ;
@@ -950,8 +950,8 @@ dw:Context a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Think about specific search keywords to narrow down your search." "Use Google translate to search in local languages." "Write down the questions you want to get answered." "Look for several local and trustworthy sources." ) ;
-    rdfs:comment "of an event describes the general situation that relates to the digital content you have. You can use the information shared by the source or web page and dig deeper to gather more." ;
+    dw:remarks ( "Write down the questions you want to get answered" "Use Google translate to search in local languages" "Look for several local and trustworthy sources" "Think about specific search keywords to narrow down your search" ) ;
+    rdfs:comment "of an event describes the general situation in which the digital content you have exists. To establish context, start by using the information shared by the source or the web page you know/have and dig deeper to gather more." ;
     schema:name "Context" .
 
 dw:Digital_Footprint a dw:Task ;
@@ -1019,7 +1019,7 @@ dw:Person_identification a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "Ask yourself why this person or group is seen to dig deeper" "Information about this person gives context to what has happened" ) ;
-    rdfs:comment "is any person you can see facial regocnition, clothings and voices to identify the persons identity" ;
+    rdfs:comment "refers to the process of identifying individuals by using facial recognition, clothing, and voices." ;
     schema:name "Person Identification" .
 
 dw:Person_name a dw:Task ;
@@ -1047,9 +1047,10 @@ dw:Who a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Always consider the motivation of the creator. Why was this content created and shared?" "An online footprint may provide contextual information on the source" "Contacting the creator might give you a chance to get an interview or obtain the original file " ) ;
+    dw:remarks ( "Always consider the motivation of the creator. Why was this content created and shared?" "An online footprint can also provide contextual information on the source" "Contacting the creator might give you a chance to get an interview or obtain the original file (for more metadata)" ) ;
     rdfs:comment """created the content? 
-The person who uploaded or shared the digital content, is not necessarily the one who created it. If you can find the creator you have most probably also found an eyewitness. And maybe that person can provide you with more content, who takes only one picture these days?""" ;
+
+The person who uploaded or shared the digital content, is not necessarily the one who created it. If you can find the creator you have most probably also found an eyewitness. Maybe that person can provide you with more context and content.""" ;
     schema:name "Who" .
 
 dw:Content_analysis a dw:Task ;
@@ -1076,7 +1077,7 @@ dw:Who_is_in_content a dw:SubQuestion ;
         dw:Text,
         dw:Video ;
     dw:remarks ( "Use any information you can get from the content, like clothing, facial characteristics and voices to draw conclusions" "Ask yourself why this person or group is seen or heard to dig deeper" ) ;
-    rdfs:comment "is the question for someone passively or actively involved in the event. Information about this person gives context to what has happened. Maybe a specific group was involved or a familiar person can be seen or heard." ;
+    rdfs:comment "refers to the person passively or actively involved in the event. Information about this person provides context to what has happened. Maybe a specific group was involved or a familiar person can be seen or heard." ;
     schema:name "Who is in content" .
 
 dw:Author a dw:Task ;
@@ -1121,10 +1122,10 @@ dw:When a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Check local media" "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" ) ;
+    dw:remarks ( "Check local media" "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
     rdfs:comment """did the event occur? 
 
-Time and date tells you when the digital content was created. Based on that you can build a timeline of the event. This provides good insight in what happened and is especially useful when monitoring ongoing conflicts. Time and date will also help you to find more information about the event.""" ;
+The time and date of an item tells you when the digital content was created or published. Based on that you can build a timeline of the event. This provides good insight in what happened and is especially useful when monitoring ongoing conflicts.""" ;
     schema:name "When" .
 
 dw:Where a dw:Question ;
@@ -1133,7 +1134,7 @@ dw:Where a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "The geographic location mentioned in the social content may not be accurate" "Check the comments section for clues on the location" "Satellite images, street view, or other visual aids can be helpful in determining the location" "Making a list of 20 specific details (such as street signs, restaurant names, and architecture) can help you focus on finding the correct location" ) ;
+    dw:remarks ( "The geographic location mentioned in the social content may not be accurate" "Check the comments section for clues on the location" "Satellite images, street view, or other visual aids can be helpful in determining the location" "Making a list of 20 specific details (such as street signs, restaurant names, and architecture) can help you focus on finding the correct location" "If the content is of low quality, enhancing it might help your investigation" ) ;
     rdfs:comment """did the event take place? 
 
 Finding the exact location will help you to verify when the event ocurred and what has happened.""" ;
@@ -1154,10 +1155,10 @@ dw:What a dw:Question ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Check local media " "Search cross-medial on different social media platforms" "Reach out to reporters on the ground" "If the content is of low quality, enhancing it might help your investigation" ) ;
+    dw:remarks ( "Check local media " "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
     rdfs:comment """has happened? 
 
-The information in the content you are investigating shows an event. Can you corroborate that something is happening via other sources or is this content exclusive? Are you looking at or listening to the original file or is it a (manipulated) copy? And how can you extract more information?""" ;
+The information in the content you are investigating indicates that an event took place. Can you corroborate that the event occured via other sources? Is there more information avaialable on the event? And are you looking at or listening to the original file or is it a (manipulated) copy?""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
