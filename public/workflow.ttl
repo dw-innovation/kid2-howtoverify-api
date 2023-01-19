@@ -277,7 +277,7 @@ dw:Listen_to_the_audio a dw:Task ;
         dw:Where,
         dw:Who ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "Having a transcript of the conversation will be useful for making notes on specific parts." "Put on headphones for a better listening experience." ) ;
+    dw:remarks ( "Having a transcript of the conversation will be useful for making notes on specific parts" "Put on headphones for a better listening experience" ) ;
     rdfs:comment """more than once. 
 
 Try to answer the following questions:  
@@ -410,7 +410,7 @@ dw:RIS_\(Image\) a dw:Task ;
         dw:Source,
         dw:Text ;
     dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not have full access to e.g. social networks to find all published versions" "You can also search for specific objects or buildings" "Each search engine has its pros and cons. To get the most out of it, try all of them" ) ;
-    rdfs:comment "is a way to check if this content is the orignal version as well as if it was published before. A RIS can give you more context to the event and it helps to identify specific objects in visual content." ;
+    rdfs:comment "is a way to check if the content at hand is the earliest published (possibly the original) version of a file. It can also tell you if and where the content was published before. The search results also provide similar content allowing for more context to an event. A RIS can also help to identify specific objects in visual content by searching just for those." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -419,8 +419,8 @@ dw:RIS_\(Video\) a dw:Task ;
         dw:Object_identification,
         dw:Person_identification ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not have full access to e.g. social networks to find all published versions." "Each search engine has its pros and cons. To get the most out of it, try all of them!" ) ;
-    rdfs:comment "is a way to find out if this content has been published before. It can tell you if you are looking at the earliest published version of the footage. For video you will have to extract a relevant keyframe first. The search results will also show you similar content to corroborate that an event took place and can provide more context on the event." ;
+    dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not have full access to e.g. social networks to find all published versions" "You can also search for specific objects or buildings" "Each search engine has its pros and cons. To get the most out of it, try all of them" ) ;
+    rdfs:comment "is a way to check if the content at hand is the earliest published (possibly the original) version of a file. It can also tell you if and where the content was published before. For video you have to extract a relevant keyframe first. The search results also provide similar content allowing for more context to an event. A RIS can also help to identify specific objects in visual content by searching just for those." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
@@ -525,7 +525,7 @@ dw:TinEye a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Start the search by either dragging the photo on the search bar, pasting the URL or uploading an image from your desktop" "Use the filters on the left side to sort the images according to what you need to find" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Has a smaller database than the others, hence doesn't always yield results." "Does not work well on very new images, but delivers good results when using stock images" "Check out the [TinEye Tutorial](https://tineye.com/how ) for how it works" ) ;
+    dw:remarks ( "Has a smaller database than the others, hence doesn't always yield results" "Does not work well on very new images, but delivers good results when using stock images" "Check out the [TinEye Tutorial](https://tineye.com/how ) for how to best use it" ) ;
     rdfs:comment "is very efficient when it comes to altered versions and showing results in chronological order." ;
     schema:applicationUrl "https://tineye.com/" ;
     schema:name "TinEye" ;
@@ -537,8 +537,8 @@ dw:Tweetbeaver a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "As with all external tools, this only works as long as Twitter allows it" "There are some limitations on the amoung of data you can get due to the API" ) ;
-    rdfs:comment "gathers Ttwitter data you need quickly, simply and easily. It can gather data on any publicaccount and returns most searches as a csv for easier filtering and analysis." ;
+    dw:remarks ( "As with all external tools, this only works as long as Twitter allows it" "There are some limitations on the amount of data you can get due to the API" ) ;
+    rdfs:comment "gathers Ttwitter data you need quickly, simply and easily. It can gather data on any public account and returns most searches as a csv for filtering and analysis." ;
     schema:applicationUrl "https://tweetbeaver.com/" ;
     schema:name "Tweetbeaver" ;
     schema:publisher "Tweetbeaver" .
@@ -684,9 +684,9 @@ dw:newsgathering a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Collaboration is key" "Organize your content in a shared document like an excel sheet and add descriptions to it. It will safe time in organizing it later" ) ;
-    rdfs:comment "describes the process of collecting and analysing content about the event." ;
-    schema:name "newsgathering" .
+    dw:remarks ( "Collaboration is key" "Organize the relevant content you found. An easy way is to create a shared excel sheet and add descriptions to it. This will safe time" "You can set up a monitoring system with e.g. Tweetdeck, Google Alerts and newsletter subscriptions" ) ;
+    rdfs:comment "describes the process of collecting and analysing content. Set up a content monitoring system with trustworthy and local accounts to find relevant content." ;
+    schema:name "Newsgathering" .
 
 dw:Address a dw:Task ;
     dw:parentNode dw:Author,
@@ -701,8 +701,8 @@ dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "Eliminating background noises will allow you to focus on the content." "Adjust the specific sound or conversation you focus on to hear more details." ) ;
-    rdfs:comment "is the improvement of the audio quality of the recording. It can help you to understad the audio better." ;
+    dw:remarks ( "Eliminating background noises will allow you to focus on the content" "Adjust the specific sound or conversation you focus on to hear more details" ) ;
+    rdfs:comment "is the improvement of the audio quality of the recording. It can help you get a better understanding of what is being said in the the audio." ;
     schema:name "Audio enhancement" .
 
 dw:Audio_from_video_extraction a dw:Task ;
@@ -779,8 +779,8 @@ dw:Twitter a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Twitter lists is a great feature to monitor specific accounts on topics" "A lot of content on Twitter are reshares from chat apps" ) ;
-    rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter, you can build a good monitoring system." ;
+    dw:remarks ( "Twitter lists is a great feature to monitor specific accounts " "Youn can find a lot of reshares from chat apps here" ) ;
+    rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter. Here you can build a good monitoring system." ;
     schema:name "Twitter" .
 
 dw:Visuals a dw:Task ;
@@ -1002,8 +1002,8 @@ dw:Metadata a dw:Task ;
         dw:Who_created_content ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "You can also install software on your computer like Phil Harvey's [ExifTool](https://exiftool.org/) " "Metadata can easily be manipulated; make sure to cross-reference the information" "Third party tools might save the metadata, so be aware before uploading content" "Shared visuals on social networks usually do not have metadata. People can send you the original via email or as a document. Check out [this tutorial](https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/) from Amnesty" ) ;
-    rdfs:comment "is information attached to digital content like a photo, video or pdf. It includes recording date and device, location, editing programs and technical details (aperture, ISO, exposure time...)." ;
+    dw:remarks ( "You can also install software to read out metadata, e.g. Phil Harvey's [ExifTool](https://exiftool.org/) " "Metadata can be easily manipulated, make sure to cross-reference the information" "Most social media networks delete metadata of any content that is being shared. Therefore obtaining the original file is important. Check out [this tutorial](https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/) from Amnesty" ) ;
+    rdfs:comment "is information attached to digital content (audio, photo, video, pdf). It includes recording date and time, device, location, editing programs and technical details (aperture, ISO, exposure time, etc.)." ;
     schema:name "Metadata" .
 
 dw:Object_identification a dw:Task ;
