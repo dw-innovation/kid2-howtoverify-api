@@ -306,7 +306,7 @@ dw:MapSwitcher a dw:SoftwareApplication ;
         dw:Video ;
     dw:remarks ( "Make sure you have selected a location on one map service" ) ;
     rdfs:comment "is a super useful and time saving plugin which convert coordinates so you can switch between different map services." ;
-    schema:applicationUrl "[MapSwitcher ](https://chrome.google.com/webstore/detail/map-switcher/fanpjcbgdinjeknjikpfnldfpnnpkelb?hl=en )" ;
+    schema:applicationUrl "https://chrome.google.com/webstore/detail/map-switcher/fanpjcbgdinjeknjikpfnldfpnnpkelb?hl=en" ;
     schema:name "MapSwitcher" ;
     schema:publisher "david.r.edgar" .
 
@@ -635,12 +635,12 @@ dw:Whois_Domain a dw:SoftwareApplication ;
     schema:publisher "DomainTools" .
 
 dw:Wikimapia a dw:SoftwareApplication ;
-    dw:howTo ( "Type in GPS coordinates" "Mouse over areas and objects to get additional text on the left" "Select categories like schools or parks and see them marked on the map" "You can read changes of the text in the protocol on the left" ) ;
+    dw:howTo ( "Enter GPS coordinates" "Mouse over areas and objects to get additional text on the left" "Select categories like schools or parks and see them marked on the map" "You can read changes of the text in the protocol on the left" ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "It is a wiki which is editable by everyone. Always double check the information" "It is a great wiki map for getting information on areas you are not too familiar with" ) ;
-    rdfs:comment "is an crowdsourced editable map service. It utilizes different map services with a wiki system to mark and describe geographical objects all around the world." ;
+    rdfs:comment "is an crowedsourced editable map service. It utilizes different map services with a wiki system to mark and describe geographical objects all around the world." ;
     schema:applicationUrl "http://wikimapia.org/" ;
     schema:name "Wikimapia" ;
     schema:publisher "Alexandre Koriakine and Evgeniy Saveliev" .
@@ -748,7 +748,7 @@ dw:Instagram a dw:Task ;
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:Original ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "With visual information, use your own senses and look at shadows and reflections." "With audio, close your eyes and listen carefully to the sound if there might be jumps." "You can train yourself! Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
+    dw:remarks ( "With visuals, use your own senses and look for shadows and reflections" "With audio, close your eyes and listen carefully to the sound if there might be jumps" "You can train yourself. Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
     rdfs:comment "means to look for traces of tampering in the digital content you are investigating." ;
     schema:name "Manipulation detection" .
 
@@ -978,7 +978,7 @@ dw:Domain_name a dw:Task ;
 dw:Enhance_Image_\(Image\) a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Enhance the quality and resolution." "Sharpen the image and contrast-enhancement." "Take out the background to focus on the object." ) ;
+    dw:remarks ( "Enhance the quality and resolution" "Sharpen the image and contrast-enhancement" "Take out the background to focus on the object" ) ;
     rdfs:comment "will help to get better results when the image is blurred or the resolution is low. It will support a more efficient reverse image search." ;
     schema:name "Enhance Image" .
 
