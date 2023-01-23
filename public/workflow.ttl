@@ -55,11 +55,11 @@ dw:Epieos a dw:SoftwareApplication ;
     schema:publisher "Epieos" .
 
 dw:Exif_Data a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Upload an image or submit an image URL  " "Select summary on the left " "Scroll through the results" ) ;
+    dw:howTo ( "Open the URL" "Upload an image or submit an image URL  " "Select summary on the left " "Analyse the results" ) ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "The level of detail depends on what metadata is actually stored with the image" "Images coming from social media usually don't contain any metadata, as they get erased during the upload process" ) ;
-    rdfs:comment "helps you find all available metadata that come with an image, such as shutter speed, exposure compensation or the date and time the image was taken. Some images may even store GPS information." ;
+    rdfs:comment "helps you to extract all available metadata from an image, such as shutter speed, exposure compensation or the date and time the image was taken. Some images may even store GPS information." ;
     schema:applicationUrl "https://exifdata.com/" ;
     schema:name "Exif Data" ;
     schema:publisher "Unknown" .
@@ -75,12 +75,12 @@ dw:Fotoforensic a dw:SoftwareApplication ;
     schema:publisher "HackerFactor.com" .
 
 dw:Geohints a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Choose the category you're interested in " "Scroll through the results and see if you can find useful tips" ) ;
+    dw:howTo ( "Open the URL" "Choose the category you are interested in " "Analyse the information and see if you can find useful tips" ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "Check out this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf) by [Seintpl](https://twitter.com/SEINT_pl) to get a better understanding of what to look for" ) ;
-    rdfs:comment "lists objects and landmarks that can help you identify a location more quickly. It contains sorted lists of logos, roadsigns or house numbers categorized in countries. But also camera types and Google Vehicles from the street view data collection." ;
+    rdfs:comment "provides structured lists of objects and landmarks that help to identify a location. It contains sorted lists of post boxes, logos, roadsigns, license plates, etc. per country." ;
     schema:applicationUrl "https://geohints.com/" ;
     schema:name "GeoHints" ;
     schema:publisher "MouseWithBeer - [Discord](https://discord.com/invite/bCZ8Bg2vUd)" .
@@ -189,28 +189,28 @@ dw:Impressum a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Usually you find the impressum at the end or in the footer of the homepage." "You can also add the word impressum or imprint at the end of an URL to access this information.  For example: www.example.com/impressum or www.example.com/imprint." ) ;
-    rdfs:comment "refers to the section of a website that lists the owner of the website and their contact information. It may include the owner's full name and address. Some info may be reduced due to GDPR regulations." ;
+    dw:remarks ( "Usually you find the impressum at the bottom/in the footer of the homepage" "You can also add the words 'impressum' or 'imprint' at the end of a URL to access this information. For example: www.example.com/impressum or www.example.com/imprint" ) ;
+    rdfs:comment "refers to the section of a website that lists the owner of the website and their contact information. It may include the owner's full name and address. Some info may not be available due to GDPR regulations." ;
     schema:name "Impressum" .
 
 dw:InVid a dw:SoftwareApplication ;
-    dw:howTo ( "Install the browser plugin on Firefox or Chrome" "click on the plugin and open the toolbox" "select metadata" "add the URL of the video or upload a local .mp4 " ) ;
+    dw:howTo ( "Install the browser plugin in Firefox or Chrome" "Click on the plugin and open the toolbox" "Select Metadata" "Add the URL of the image/video or upload a local file " ) ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "Metadata can easily be manipulated, always cross-reference the information" ) ;
-    rdfs:comment "is a web-based integrated toolset for video verification. It also includes features to analyse photos, like a magnifier." ;
+    dw:remarks ( "Metadata can be easily manipulated, always cross-reference the information" ) ;
+    rdfs:comment "is a web-based integrated toolset for image and video verification. It allows you to extract metadata from images and videos. There are also other features to analyse photos and videos, like a magnifier, keyframe generator, photo forensic tool and a copyright check." ;
     schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "InVid" ;
     schema:publisher "AFP Medialab, Deutsche Welle & partners" .
 
 dw:Instagram_search a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link" "Select the lens on the left " "Type a city or keyword in the search" "Hashtags are marked with a hash and locations with a pin" "Scroll down to the the newest posts from the location in chronological order" ) ;
+    dw:howTo ( "Open the link" "Type a city or keyword in the search bar at the top" "Hashtags are marked with a hash and locations with a pin" "Scroll down to the the newest posts from the location in chronological order" ) ;
     dw:parentNode dw:Instagram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "Explore locations at this [link](https://www.instagram.com/explore/locations/) " "On the mobile app you can see stories posted on a map" "You will see more results when you are looged in to Instagram" ) ;
-    rdfs:comment "supports to look for posts organized by hashtags and geographical tagging." ;
+    dw:remarks ( "You will see more results when you are logged in to Instagram" "Explore locations at this [link](https://www.instagram.com/explore/locations/) " "On the mobile app you can see stories posted on a map" ) ;
+    rdfs:comment "supports looking for posts organized by hashtags and geographical tagging in a browser." ;
     schema:applicationUrl "https://www.instagram.com/search/" ;
     schema:name "Instagram search" ;
     schema:publisher "Meta" .
@@ -326,8 +326,8 @@ dw:Metadata2Go a dw:SoftwareApplication ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Images originated in social media usually don't contain any metadata, as the metadata get erased during the upload process" "Metadata can easily be manipulated" ) ;
-    rdfs:comment "helps you find all available metadata that comes with an image, pdf and more." ;
+    dw:remarks ( "Images originated in social media usually don't contain any metadata, as the metadata get erased during the upload process" "Metadata can be easily manipulated" ) ;
+    rdfs:comment "helps you to extract all available metadata from an image, pdf and more." ;
     schema:applicationUrl "https://www.metadata2go.com/" ;
     schema:name "Metadata2Go" ;
     schema:publisher "QaamGo Web GmbH" .
@@ -436,13 +436,13 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     schema:publisher "Sinergise" .
 
 dw:Sowsearch a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link" "Open the dropdown menu and select what you are looking for" "Select the filter you need and click \"add filter\"" "To see results you have to press \"open URL\"" ) ;
+    dw:howTo ( "Open the link" "Open the dropdown menu and select what you are looking for" "Select the filters you need and click \"add filter\"" "Press \"open URL\" to see results" ) ;
     dw:parentNode dw:Facebook ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "You will see more results when you are looged in to Facebook" "Private posts are not visible" "Searching for posts by specific user is not working due to changes of the algorithm" ) ;
-    rdfs:comment "is an interface to use easily narrow down your search on Facebook." ;
+    dw:remarks ( "You will see more results when you are looged in to Facebook" "Private posts are not visible" "Searching for posts by a specific user does not work anymore due to changes of the algorithm" ) ;
+    rdfs:comment "is an application to help you narrow down your search on Facebook." ;
     schema:applicationUrl "https://www.sowsearch.info/" ;
     schema:name "Sowsearch" ;
     schema:publisher "Sowdust" .
@@ -579,18 +579,18 @@ dw:VLC_audio_extraction a dw:SoftwareApplication ;
     schema:publisher "[VideoLAN organisation](https://www.videolan.org/videolan/)" .
 
 dw:ViewDNS a dw:SoftwareApplication ;
-    dw:howTo ( "Type in the domain or IP address" "Click on go to see the results" ) ;
+    dw:howTo ( "Enter the domain (e.g. dw.com) or an IP-address into the search field" "Click on go to see the results" ) ;
     dw:parentNode dw:Domain_name,
         dw:IP_address ;
     dw:relatedMediaType dw:Text ;
     dw:remarks ( "It features useful tools in one overview" "Always double-check the information you collected" ) ;
-    rdfs:comment "finds web pages hosted on a given IP address, does reverse lookups and can find domain names via en email address. Useful for finding phishing sites or identifying other sites on the same shared hosting server" ;
+    rdfs:comment "finds web pages hosted on a given IP-address, can be used for reverse lookups and can find domain names via an email-address. Useful for finding phishing sites or identifying other sites on the same shared hosting server." ;
     schema:applicationUrl "https://viewdns.info/" ;
     schema:name "ViewDNS" ;
     schema:publisher "ViewDNS" .
 
 dw:WhatsMyName a dw:SoftwareApplication ;
-    dw:howTo ( "Enter the username " "select any filters" "click the search icon  " ) ;
+    dw:howTo ( "Enter the username " "select relevant filters" "click the search icon  " ) ;
     dw:parentNode dw:Person_name,
         dw:Social_Media_profiles ;
     dw:relatedMediaType dw:Source,
@@ -618,17 +618,17 @@ dw:WhoPostedWhat a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "You will see more results when you are logged in to Facebook" "Searching for posts by specific user is not working due to changes of the algorithm" "You might want to try Google Advanced search" ) ;
+    dw:remarks ( "You will see more results when you are logged in to Facebook" "Searching for posts by a specific user is not working due to changes of the algorithm" "You might want to try Google Advanced search" ) ;
     rdfs:comment "is a keyword search on Facebook from a specific time range or on a specific date." ;
     schema:applicationUrl "https://whopostedwhat.com/" ;
     schema:name "WhoPostedWhat" ;
     schema:publisher "[Daniel Endresz](https://twitter.com/danielendresz) and [Dan Nemec](https://twitter.com/djnemec)" .
 
 dw:Whois_Domain a dw:SoftwareApplication ;
-    dw:howTo ( "Enter the domain or an IP address into the search field" "Scroll down the results" ) ;
+    dw:howTo ( "Enter the domain (e.g. dw.com) or an IP-address into the search field" "Scroll down the results" ) ;
     dw:parentNode dw:Domain_name ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "In may cases you won't get a lot of data, due to privacy resctrictions." "multiple domains can be hosted by one IP address" ) ;
+    dw:remarks ( "In many cases you won't get a lot of data, due to privacy resctrictions" "multiple domains can be hosted by one IP-address" ) ;
     rdfs:comment "is a tool to check on the registration data of a website and its ownership." ;
     schema:applicationUrl "https://whois.domaintools.com/" ;
     schema:name "Whois Domain" ;
@@ -667,15 +667,15 @@ dw:Yandex_Images a dw:SoftwareApplication ;
     schema:publisher "Yandex" .
 
 dw:Yandex_Maps a dw:SoftwareApplication ;
-    dw:howTo ( "Type in a location or add GPS coordinates" "Switch between map, satellite and hybrid view" "Click on street panoramas to get street view when you select one of the blue dots" "Measure distance and get directions by dragging between spots on a map" ) ;
+    dw:howTo ( "Type in a location or add GPS coordinates" "Switch between map, satellite and hybrid view" "Click on street panoramas to get street view" "Measure distance and get directions by dragging between spots on a map" ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "With an account you can mark places" "There is also a mobile version available" ) ;
-    rdfs:comment "is a Russian map service. Initially it had maps only of Russia and Ukraine, but now includes world maps. So it is very strong in this region when it comes to data" ;
+    rdfs:comment "is a Russian map service. Initially it only provided maps of Russia and Ukraine, but now it also includes world maps. It is very strong in the Russian region when it comes to high resolution visual information and data." ;
     schema:applicationUrl "https://yandex.com/maps" ;
     schema:name "Yandex Maps" ;
-    schema:publisher "Yandex" .
+    schema:publisher "[Yandex](https://yandex.com/company/)" .
 
 dw:newsgathering a dw:Task ;
     dw:parentNode dw:How ;
@@ -742,7 +742,7 @@ dw:Instagram a dw:Task ;
         dw:Text,
         dw:Video ;
     dw:remarks ( "You can search for public posts with Google Advanced search" "Users can create Reels and Stories which you can download and analyse as well" ) ;
-    rdfs:comment "is a photo and video sharing social network owned by Meta. It is a mobile application that also enables browser search." ;
+    rdfs:comment "is a photo and video sharing social network owned by Meta. It is a mobile application that also allows for (limited) browser search." ;
     schema:name "Instagram" .
 
 dw:Manipulation_detection a dw:Task ;
@@ -779,8 +779,8 @@ dw:Twitter a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Twitter lists is a great feature to monitor specific accounts " "Youn can find a lot of reshares from chat apps here" ) ;
-    rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter. Here you can build a good monitoring system." ;
+    dw:remarks ( "Twitter lists are a great feature to set up a monitoring system of specific accounts" "You can find a lot of reshares from chat apps here" ) ;
+    rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter." ;
     schema:name "Twitter" .
 
 dw:Visuals a dw:Task ;
@@ -820,8 +820,8 @@ dw:Facebook a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "In some regions like Myanmar, Facebook is still one of the main social networks" "Public posts can also searched via Google Advanced Search" ) ;
-    rdfs:comment "is a social media network owned by Meta. WhatsApp and Instagram are also part of the company." ;
+    dw:remarks ( "While in decline in the US and across Europe, Facebook is still one of the main social networks in some regions like Myanmar" "Public posts can still be searched via Google Advanced Search" ) ;
+    rdfs:comment "is Meta's main social network, still one of the largest and in use across the globe. WhatsApp and Instagram are also part of the company's portfolio." ;
     schema:name "Facebook" .
 
 dw:File_Name a dw:Task ;
@@ -912,8 +912,8 @@ dw:Social_Media_profiles a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Usually users have more than one profile, compare the information shared in the profile " "A user can claim anything they want to be but verified acvcount have a check mark" "You might also double-check on LinkedIn" ) ;
-    rdfs:comment "are user descriptions of their account. It includes a profile picture, name and user name as well as a self-description." ;
+    dw:remarks ( "Usually, users have more than one online profile. Compare the information shared in the different networks " "A user can claim and write anything they want to be" "Most social networks have checkmarks for verified accounts. Who qualifies for a checkmark differs - always double check" "You might also double-check information on LinkedIn where people share (mostly) professional info" ) ;
+    rdfs:comment "are the combination of the basic information users share about themselves on social media. They include a profile picture, a name and/or a user name as well as a self-description." ;
     schema:name "Social Media profiles" .
 
 dw:Telegram a dw:Task ;
@@ -922,8 +922,8 @@ dw:Telegram a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Here is a great repository of tools on [Github](https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines )  " ) ;
-    rdfs:comment "is a social messaging service. It is a mobile app which also provides a desktop service for searching and monitoring shared content." ;
+    dw:remarks ( "Because of its open design, there are many great tools available for in-depth analysis like [in this Github repository](https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines )  " ) ;
+    rdfs:comment "is an end-to-end encrypted social messaging service. It is very popular with user groups that highly value user-privacy (both in a positive and a negative way). It is available as a mobile app as well as a desktop service for searching and monitoring shared content." ;
     schema:name "Telegram" .
 
 dw:Timecodes a dw:Task ;
@@ -963,16 +963,16 @@ dw:Digital_Footprint a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Double check on several platforms if profile information matches." "Sources from different regions use different social platforms." ) ;
-    rdfs:comment "is the traceable information about the source that exists on the internet as a result of their online activity." ;
+    dw:remarks ( "Double check on several platforms if profile information matches" "Sources from different regions often use different social platforms" ) ;
+    rdfs:comment "is the traceable information about a source (a person or an institution) that exists on the internet as a result of their online activity." ;
     schema:name "Digital footprint" .
 
 dw:Domain_name a dw:Task ;
     dw:parentNode dw:Website ;
     dw:relatedMediaType dw:Domain_name,
         dw:Text ;
-    dw:remarks ( "Each domain has an owner and has to be registered on a specific date." "There might also be subdomains." ) ;
-    rdfs:comment "is the name associated with a physical IP address. It appears after the @ sign in email addresses, and after www. in web addresses." ;
+    dw:remarks ( "Each domain has an owner and has to be registered on a specific date" "There might also be subdomains in the form of [subdomain].domain.ending" ) ;
+    rdfs:comment "is the name associated with a physical IP address. It appears after the @-sign in email addresses, and after the \"www.\" in web addresses." ;
     schema:name "Domain name" .
 
 dw:Enhance_Image_\(Image\) a dw:Task ;
@@ -1010,8 +1010,8 @@ dw:Object_identification a dw:Task ;
     dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Write down at least 20 landmarks you detect in the visual " "Search for a databases on landmarks" ) ;
-    rdfs:comment "can be used to determine the precise location by analysing all objects detected in the content." ;
+    dw:remarks ( "Write down at least 20 objects (landmarks, signs, public transport, vegetation, etc.) you detect in the visual " "Online databases, e.g. for landmarks, are often freely available as reference material" ) ;
+    rdfs:comment "can help to determine the precise location by analysing all objects detected in the content." ;
     schema:name "Object Identification" .
 
 dw:Person_identification a dw:Task ;
@@ -1037,9 +1037,9 @@ dw:Website a dw:Task ;
         dw:Where ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "You can use Google Advanced search to find out where the website has been mentioned" "The [Internet Archive](https://archive.org/) will help to find older versions of the site" ) ;
-    rdfs:comment "contains a lot of information when you know where to look. It should have an about section, an IP address and a history of publications." ;
-    schema:name "Website" .
+    dw:remarks ( "You can use Google Advanced search to find out where a website has been mentioned" "The [Internet Archive](https://archive.org/) will help you to find older versions of the site" ) ;
+    rdfs:comment "contain a lot of information when you know where to look. They should have an about section, an IP address and a history of publications." ;
+    schema:name "Websites" .
 
 dw:Who a dw:Question ;
     dw:parentNode dw:Audio,
@@ -1067,8 +1067,8 @@ dw:Social_Media_activities a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "There are different popular social platforms depending on the region a person is in." "Ask yourself where the user might be and play around with different name combinations across networks" ) ;
-    rdfs:comment "refer to any interaction the person has done on any social media platform. It includes publishing any type of content and commentaries, shares, likes and following." ;
+    dw:remarks ( "There are different popular social platforms depending on the region a person is in" "Ask yourself where the user might most likely be and play around with different name combinations across networks" ) ;
+    rdfs:comment "are the sum of interactions a person has done on any social media platform. They include publishing content and commenting as well as shareing, liking and following." ;
     schema:name "Social Media activities" .
 
 dw:Who_is_in_content a dw:SubQuestion ;
@@ -1102,8 +1102,8 @@ dw:Manual_geolocation a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Each map service has its pros and cons" "There might be more clues in other shared footages" ) ;
-    rdfs:comment "is a way of combining all collected information from the visual like street names, restaurants, shops etc. and search directly on several map services." ;
+    dw:remarks ( "Each map service has its pros and cons" "There might be more clues in other, related content around an event" ) ;
+    rdfs:comment "is the process of manually combining all information found in audiovisual content like street names, restaurants, public transport, etc. into a precise location. Knowing how to search on map services is very helpful." ;
     schema:name "Manual Geolocation" .
 
 dw:Reverse_Image_Search a dw:Task ;
