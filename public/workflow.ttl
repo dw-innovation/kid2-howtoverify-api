@@ -1158,7 +1158,7 @@ dw:What a dw:Question ;
     dw:remarks ( "Check local media " "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
     rdfs:comment """has happened? 
 
-The information in the content you are investigating indicates that an event took place. Can you corroborate that the event occured via other sources? Is there more information avaialable on the event? And are you looking at or listening to the original file or is it a (manipulated) copy?""" ;
+The information in the content you are investigating indicates that an event took place. Can you corroborate that the event occured via other sources? Is there more information available on the event? And are you looking at or listening to the original file or is it a (manipulated) copy?""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
