@@ -49,7 +49,7 @@ dw:Epieos a dw:SoftwareApplication ;
     dw:parentNode dw:eMail ;
     dw:relatedMediaType dw:Text ;
     dw:remarks ( "The software has three tiers (Visitor, Member and OSINTer) which offer different levels of detail" "In the free visitor and the free member (logged in) version, the search is limited to e-mail-addresses (no phone numbers) and the results are limited to specific networks only" "Epieos is hosted in Europe, and does not log any of your research (according to the owners)" ) ;
-    rdfs:comment "is a tool that lets you anonymously find information linked to an e-mail-address, like for which social networks it has been used for. It also works with phone numbers, but only in the paid version." ;
+    rdfs:comment "is a tool that lets you find information linked to an e-mail-address anonymously, like for which social networks it has been used. It also works with phone numbers, but only in the paid version." ;
     schema:applicationUrl "https://epieos.com/" ;
     schema:name "Epieos" ;
     schema:publisher "Epieos" .
@@ -260,13 +260,13 @@ dw:Lets_Enhance_io a dw:SoftwareApplication ;
     schema:publisher "Let’s Enhance, Inc" .
 
 dw:LinkedIn a dw:SoftwareApplication ;
-    dw:howTo ( "Set up an account for free" "Type in the name of the source " "Use the advanced search to narrow down your search" ) ;
+    dw:howTo ( "Set up an account for free (think about using a sock puppet account for investigations)" "Type in the name of the source " "Use the advanced search to narrow down your search" ) ;
     dw:parentNode dw:Person_name ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
     dw:remarks ( "Be aware: the information on LinkedIn is not verified! Everyone can write anything" "You can also use the Google search operators for results on LinkedIn" "If you have a normal user profile, other users will be made aware of your visit to their profile" "Journalist can ask for a free business account to visit profiles undercover" ) ;
-    rdfs:comment "is a social network with a focus on professional networking. Peoples' profiles reflect their career paths. It is very helpful to find employees of or colleagues of the person in question within a company." ;
+    rdfs:comment "is a social network with a focus on professional networking. Peoples' profiles reflect their career paths. It is very helpful to find colleagues of the person in question or other people connected to them within a company." ;
     schema:applicationUrl "https://www.linkedin.com/" ;
     schema:name "LinkedIn" ;
     schema:publisher "LinkedIn" .
@@ -584,7 +584,7 @@ dw:ViewDNS a dw:SoftwareApplication ;
         dw:IP_address ;
     dw:relatedMediaType dw:Text ;
     dw:remarks ( "It features useful tools in one overview" "Always double-check the information you collected" ) ;
-    rdfs:comment "finds web pages hosted on a given IP-address, can be used for reverse lookups and can find domain names via an email-address. Useful for finding phishing sites or identifying other sites on the same shared hosting server." ;
+    rdfs:comment "finds web pages hosted on a given IP-address, can be used for reverse lookups and helps find domain names via an email-address. Useful for finding phishing sites or identifying other sites on the same shared hosting server." ;
     schema:applicationUrl "https://viewdns.info/" ;
     schema:name "ViewDNS" ;
     schema:publisher "ViewDNS" .
@@ -693,7 +693,7 @@ dw:Address a dw:Task ;
         dw:Contact ;
     dw:relatedMediaType dw:Source,
         dw:Text ;
-    dw:remarks ( "Keep in mind that addresses might not always be very accurately mapped on all services. Use street view if available." "Addresses can be false, always cross-reference the information. " ) ;
+    dw:remarks ( "Keep in mind that addresses might not always be very accurately mapped on all services. Use street view where available to double check" "Addresses can be false. Always cross-reference the information " ) ;
     rdfs:comment "of a contact or a place is your easiest way to verify the location. You can directly search for it on any map service and check available imagery against the material and information you already have." ;
     schema:name "The address" .
 
@@ -731,7 +731,7 @@ dw:GPS_Data a dw:Task ;
 dw:IP_address a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "With a VPN users can hide their IP address or move it to any location in the world." "If you do an investigation it is worth to use a VPN or the Tor-browser to hide your own identity." ) ;
+    dw:remarks ( "With a VPN users can hide their IP address or virtually move it to any location in the world" "If you do an investigation it is worth to use a VPN or the Tor-browser to hide your own identity" ) ;
     rdfs:comment "is the Internet Protocol (IP) address, a numerical address for a network or device on the internet, for example a server that hosts a website. It is a unique identifier for a device on the Internet or on a local network. Multiple domains can be hosted on one IP address which can reveal registration information and location." ;
     schema:name "IP address" .
 
@@ -763,7 +763,7 @@ dw:Phone_number a dw:Task ;
     dw:parentNode dw:Author ;
     dw:relatedMediaType dw:Text ;
     dw:remarks ( "Start searching the phone number in a search engine or in a phone book" "Save the number in your working phone and check the visibilty on chat apps" "Any photo related to a profile in a chat app can help identify the user" "[Phoneinfoga](https://github.com/sundowndev/phoneinfoga) is a useful GitHub script to scan international phone numbers" ) ;
-    rdfs:comment "is usually associated with a specific location, some numbers can be used from anywhere." ;
+    rdfs:comment "is the number associated with a landline or mobile contract. Usually phone numbers are associated with a specific region or country, allowing for a general geolocation. Some numbers however are international and can be used from anywhere." ;
     schema:name "Phone number" .
 
 dw:Sources a dw:Task ;
@@ -810,7 +810,7 @@ dw:Business_name a dw:Task ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "It is worth checking out who is on the board of a company to get better insight in the context of a company." "Export and import data of companies can be requested with official institutions." ) ;
+    dw:remarks ( "It is worth checking out who is on the board of a company to get better insight in the context of a company" "Export and import data of companies can be requested with official institutions" ) ;
     rdfs:comment "is any company name mentioned in the text or audio, visible as a logo or attached to the source. It might be the company someone is working for or a company which needs investigating because it seems fishy." ;
     schema:name "Business Name" .
 
@@ -835,8 +835,8 @@ dw:File_Name a dw:Task ;
 dw:Headline a dw:Task ;
     dw:parentNode dw:Content_analysis ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Use the exact writing of the headline in your search." "Add the specific filetype (by using Operators) you search for in your search query." ) ;
-    rdfs:comment "is the header of the text and usually describes the content. Subheadlines are clustering the story in subtopics. Both contain useful keywords for more detailed research." ;
+    dw:remarks ( "Use the exact writing of the headline in your search (both for an exact and an open search)" "Combine the text with a specific filetype (by using advanced search or Google Operators) in your search query for possible hits" ) ;
+    rdfs:comment "is the header of the text and usually already describes the content in brief. Subheadlines are clustering the story into subtopics. Both contain useful keywords for more detailed research." ;
     schema:name "Headline" .
 
 dw:Historic_versions a dw:Task ;
@@ -862,8 +862,8 @@ You will need to gather more information and talk to eyewitnesses to answer this
 dw:Keywords a dw:Task ;
     dw:parentNode dw:Content_analysis ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Try out several search combinations with the keywords." "If the text is already translated, also search in the local language." ) ;
-    rdfs:comment "are certain words that describe the content of the document. There are usually mentioned several times in the text. Highlight the main ones and dig deeper." ;
+    dw:remarks ( "Try out several search combinations (e.g. in Google) with multiple or all keywords" "Also try searching in the local language, if you were working on a translated version before" ) ;
+    rdfs:comment "are those words that form the core of what a document is about. They often (but not always) appear several times in the text. Highlight the ones that seem most importang and dig deeper." ;
     schema:name "Keywords" .
 
 dw:Landscape_identification a dw:Task ;
@@ -939,8 +939,8 @@ On TikTok, you do a right click next to the video, then select "View page source
 dw:eMail a dw:Task ;
     dw:parentNode dw:Author ;
     dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Try searching for this address in quotation marks." "Search with the Username of the email address." ) ;
-    rdfs:comment "is a unique digital address of a user. There may be a thousand John Does but only one john.doe @ yahoo com." ;
+    dw:remarks ( "Try searching for this address in quotation marks" "Search with the username of the email address" "Beware of the dots: In Gmail 'johndoe' is owned by the same person as 'john.doe' or 'jo.hn.doe'" ) ;
+    rdfs:comment "is the unique digital address of a user. There may be a thousand John Does but only one john.doe @ yahoo com." ;
     schema:name "eMail" .
 
 dw:Context a dw:Task ;
@@ -1028,8 +1028,8 @@ dw:Person_name a dw:Task ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "People can invent any digital person name, you can verify it with seeing an official ID" "Try out different spellings and surname first or second" ) ;
-    rdfs:comment "is the clear name of a user. Next to the username, you might find more info using this one as well maybe in more official documents." ;
+    dw:remarks ( "A person's online name can also be invented. Verify it by asking for an official ID, when reaching out" "Try out different spellings of a name and use the surnam both in first and second place when searching" ) ;
+    rdfs:comment "is the 'clear' (not necessarily real) name of a user. You might find more info using this one (besides the username) in searches, for example in more official documents." ;
     schema:name "Person Name" .
 
 dw:Website a dw:Task ;
@@ -1076,8 +1076,8 @@ dw:Who_is_in_content a dw:SubQuestion ;
     dw:relatedMediaType dw:Image,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Use any information you can get from the content, like clothing, facial characteristics and voices to draw conclusions" "Ask yourself why this person or group is seen or heard to dig deeper" ) ;
-    rdfs:comment "refers to the person passively or actively involved in the event. Information about this person provides context to what has happened. Maybe a specific group was involved or a familiar person can be seen or heard." ;
+    dw:remarks ( "Use any information you can get from the content, like clothing, facial characteristics and voices to draw conclusions" "Ask yourself why this person or group is in the content to come up with leads to dig deeper" ) ;
+    rdfs:comment "refers to the people passively or actively involved in an event. Information about these people provides context to what has happened. Maybe a specific group (like a known gang or a club) was involved or you can see or hear a familiar person." ;
     schema:name "Who is in content" .
 
 dw:Author a dw:Task ;
@@ -1102,7 +1102,7 @@ dw:Manual_geolocation a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Each map service has its pros and cons" "There might be more clues in other, related content around an event" ) ;
+    dw:remarks ( "Each map service has its pros and cons in terms of which objects it can detect well and in which regions it works best" "There might be more clues in other, related content around an event" ) ;
     rdfs:comment "is the process of manually combining all information found in audiovisual content like street names, restaurants, public transport, etc. into a precise location. Knowing how to search on map services is very helpful." ;
     schema:name "Manual Geolocation" .
 
@@ -1145,8 +1145,8 @@ dw:Who_created_content a dw:SubQuestion ;
     dw:relatedMediaType dw:Image,
         dw:Video,
         dw:Who_created_content ;
-    dw:remarks ( "Be careful when adressing eyewitnesses, they might be emotionaly affected" "You can ask the person for the original file or other created content so that you have more info to work with" "Ask a question you already verified to double-check the statement of a witness" ) ;
-    rdfs:comment "This person is the primary source that eywitnessed the event. It is not necessarily the one who uploaded the content. Remember, it is very easy to download or reshare content from any social platform and re-publish it on another." ;
+    dw:remarks ( "Be careful when adressing eyewitnesses, they might be emotionaly affected" "You can ask the person for the original file or other related content so that you have more info to work with" "Ask a question you already verified to double-check the statement of a witness" ) ;
+    rdfs:comment "refers to the primary source (a person or a group) that eywitnessed the event. It is not necessarily the same person who uploaded the content. Remember, it is very easy to download or reshare content from any social platform and re-publish it on another." ;
     schema:name "Who created content" .
 
 dw:What a dw:Question ;
