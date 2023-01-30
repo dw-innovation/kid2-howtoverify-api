@@ -856,7 +856,7 @@ dw:How a dw:Question ;
     dw:remarks ( "Check local media" "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
     rdfs:comment """did the event unfold? 
 
-You will need to gather more information and talk to eyewitnesses to answer this question. Try to collect a lot of information from before, during and after the event and from different perspectives. That will help you to get clear insights in the story.""" ;
+You will need to gather more information and talk to eyewitnesses to answer this question. Try to collect a lot of information from before, during and after the event and from different perspectives. That will help you to get clear insights in the story. Be aware, the source who shared the iinformation might be personally connected to what has happened.""" ;
     schema:name "How" .
 
 dw:Keywords a dw:Task ;
@@ -1125,7 +1125,7 @@ dw:When a dw:Question ;
     dw:remarks ( "Check local media" "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
     rdfs:comment """did the event occur? 
 
-The time and date of an item tells you when the digital content was created or published. Based on that you can build a timeline of the event. This provides good insight in what happened and is especially useful when monitoring ongoing conflicts.""" ;
+The time and date of an item can tell you when the digital content was created or published, which is not the same. Based on the verified information you can build a timeline of the event. This provides good insight in what happened and is especially useful when monitoring ongoing conflicts.""" ;
     schema:name "When" .
 
 dw:Where a dw:Question ;
@@ -1137,7 +1137,7 @@ dw:Where a dw:Question ;
     dw:remarks ( "The geographic location mentioned in the social content may not be accurate" "Check the comments section for clues on the location" "Satellite images, street view, or other visual aids can be helpful in determining the location" "Making a list of 20 specific details (such as street signs, restaurant names, and architecture) can help you focus on finding the correct location" "If the content is of low quality, enhancing it might help your investigation" ) ;
     rdfs:comment """did the event take place? 
 
-Finding the exact location will help you to verify when the event ocurred and what has happened.""" ;
+Finding the exact location will help you to verify when the event ocurred and what has happened. And, where can you find contact info of the source?""" ;
     schema:name "Where" .
 
 dw:Who_created_content a dw:SubQuestion ;
@@ -1158,7 +1158,7 @@ dw:What a dw:Question ;
     dw:remarks ( "Check local media " "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
     rdfs:comment """has happened? 
 
-The information in the content you are investigating indicates that an event took place. Can you corroborate that the event occured via other sources? Is there more information available on the event? And are you looking at or listening to the original file or is it a (manipulated) copy?""" ;
+The information in the content you are investigating indicates that an event took place. Can you corroborate that the event and the claim by shared by the source occured via other sources? Is there more information available on the event? And are you looking at or listening to the original file or is it a (manipulated) copy?""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
@@ -1177,16 +1177,16 @@ dw:Audio a dw:MediaObject ;
     schema:name "Audio" .
 
 dw:Source a dw:MediaObject ;
-    dw:remarks ( "Think about the motivation of the source. Why was this information published?" "A reverse image search of a profile picture can help to find the source on other social media platforms" ) ;
+    dw:remarks ( "Think about the motivation of the source. Why was this information published?" "Contact the person to get a statement, more information of the event or even the original files" ) ;
     rdfs:comment """The source verification process involves answering the following questions:
 
 \\- Who is the source?
 
-\\- What does the digital footprint of the source tell you?
+\\- What does the source share and claim has happened?
 
-\\- Where else can you find the source, both online and offline?
+\\- Where can you contact the source?
 
-\\- When did the source first mention the event?
+\\- When did the event occur that the source shared?
 
 \\- How is the source connected to the event?""" ;
     schema:name "Source" .
