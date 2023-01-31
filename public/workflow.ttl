@@ -197,7 +197,7 @@ dw:InVid a dw:SoftwareApplication ;
     dw:howTo ( "Install the browser plugin in Firefox or Chrome" "Click on the plugin and open the toolbox" "Select Metadata" "Add the URL of the image/video or upload a local file " ) ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "Metadata can be easily manipulated, always cross-reference the information" ) ;
+    dw:remarks ( "Metadata can easily be manipulated, always cross-reference the information" ) ;
     rdfs:comment "is a web-based integrated toolset for image and video verification. It allows you to extract metadata from images and videos. There are also other features to analyse photos and videos, like a magnifier, keyframe generator, photo forensic tool and a copyright check." ;
     schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "InVid" ;
@@ -280,13 +280,19 @@ dw:Listen_to_the_audio a dw:Task ;
     dw:remarks ( "Having a transcript of the conversation will be useful for making notes on specific parts" "Put on headphones for a better listening experience" ) ;
     rdfs:comment """more than once. 
 
-Try to answer the following questions:  
+Try to answer the following questions, to get an understanding of what you are listening to:  
 
-\\- How many people are talking?
-\\- What languages can you detect?
+\\- What can you hear in the recording, people, specific (urban or rural) sounds?
+
+\\- If it's people, wow many people are there and what languages can you detect?
+
 \\- What are the individuals discussing?
+
 \\- Can you hear any sounds in the background? What could it be?
-\\- Is it inside or outside?""" ;
+
+\\- Is it inside or outside? 
+
+All of this will help you put the recording into perspective.""" ;
     schema:name "Listen to the audio" .
 
 dw:Magnifier a dw:SoftwareApplication ;
@@ -326,7 +332,7 @@ dw:Metadata2Go a dw:SoftwareApplication ;
     dw:parentNode dw:Metadata ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Images originated in social media usually don't contain any metadata, as the metadata get erased during the upload process" "Metadata can be easily manipulated" ) ;
+    dw:remarks ( "Images originated in social media usually don't contain any metadata, as the metadata gets erased during the upload process" "Metadata can easily be manipulated" ) ;
     rdfs:comment "helps you to extract all available metadata from an image, pdf and more." ;
     schema:applicationUrl "https://www.metadata2go.com/" ;
     schema:name "Metadata2Go" ;
@@ -335,8 +341,8 @@ dw:Metadata2Go a dw:SoftwareApplication ;
 dw:Microphone_Analyses a dw:Task ;
     dw:parentNode dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "If you know of any Microphone analyses tools please let us know via the feedback form!" ) ;
-    rdfs:comment "will provide you with info about the hardware and software being used to record an audio file. Currently these tools are not available to the public yet. You can also use [metadata analyses](https://preview.howtoverify.info/Video/Who/Who_created_content/Metadata) to see if you can find information on the hard- and software used to create the recording." ;
+    dw:remarks ( "If you know of any (free) microphone analyses tools please let us know via the feedback form!" ) ;
+    rdfs:comment "will provide you with info about the hardware and software that has been used to record an audio file. These tools are unfortunately not available to the public yet. But you can also use [metadata analyses](https://preview.howtoverify.info/Video/Who/Who_created_content/Metadata) to see if you can find information on the hard- and software used to create the recording." ;
     schema:name "Microphone Analyses" .
 
 dw:Microsoft_Video_Indexer a dw:SoftwareApplication ;
@@ -375,8 +381,8 @@ dw:Namechk a dw:SoftwareApplication ;
 dw:Near_duplicate a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "It's important to note that the recording date and the publication date may not always be the same, as an audio file may be recorded at one point in time and then published at a later date" "Try to identify the source that published the recordings. " ) ;
-    rdfs:comment "means comparing audio files to determine the authenticity of the recordings and to detect differences especially when they were published at different times. You might want to put the sound waves of the audio files next to each other for better comparison." ;
+    dw:remarks ( "It's important to note that the recording date and the publication date may not always be the same, as an audio file may be recorded at one point in time and then published at a later date" "Try to identify the source that published the recordings" ) ;
+    rdfs:comment "means comparing two or more audio files to determine the authenticity of the recordings and to detect differences especially when they were published at different times. You might want to put the sound waves of the audio files next to each other for a better (visual) comparison." ;
     schema:name "Near duplicate" .
 
 dw:North_Data a dw:SoftwareApplication ;
@@ -450,7 +456,7 @@ dw:Sowsearch a dw:SoftwareApplication ;
 dw:Speech_to_text_Google a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL or use the Google Translate app" "Click on the microphone icon " "Play the audio recording from your device close to your microphone" "Google translate will transcribe the audio and automatically detect the spoken language" ) ;
     dw:parentNode dw:Language_detection ;
-    dw:remarks ( "It also works on mobile device with the Google Translate app " "You can also do live transcribing via the app ([tutorial](https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop) )" "Language detection might not always be 100% correct" ) ;
+    dw:remarks ( "It also works on mobile devices with the Google Translate app " "You can also do live transcribing via the app ([tutorial](https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop) )" "Language detection might not always be 100% correct" ) ;
     rdfs:comment "is a transcription of your audio conversation into text-format for analysing, detecting languages and collecting keywords." ;
     schema:applicationUrl "https://translate.google.com/" ;
     schema:name "Speech to text" ;
@@ -515,8 +521,8 @@ dw:TimeandDate a dw:SoftwareApplication ;
     dw:parentNode dw:Timecodes ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "You can also see weather forecast from one week ago" ) ;
-    rdfs:comment "UTC means Universal Time Coordinated, i.e. the world time. UTC allows a simple conversion into different time zones with TimeandDate." ;
+    dw:remarks ( "You can also get weather data from the last seven days, which can help to determine/verify a date" ) ;
+    rdfs:comment "is a tool that allows you to quickly convert time codes from UTC (Universal Time Coordinated, i.e. the world time) into different time zones." ;
     schema:applicationUrl "https://www.timeanddate.com/" ;
     schema:name "TimeandDate" ;
     schema:publisher "Time and Date AS" .
@@ -564,7 +570,7 @@ dw:Unix_timestamp a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "The calculation is also possible in reverse" ) ;
-    rdfs:comment "is a 10-digit number that represents a specific point in time. It starts at 0 on January 1, 1970 and increases by 1 every second. For example, on January 1, 2022 at 12:00 AM, the timestamp was 1640991600. It can be used to convert between different date and time formats." ;
+    rdfs:comment "is a 10-digit number that represents a specific point in time. The counter started at 0 on January 1, 1970 and is increased by 1 every second. For example, on January 1, 2022 at 12:00 AM, the timestamp was 1640991600. It is often used as an internal standard time operator for computer systems. It can easily be converted to a human readable time stamp for different date and time formats." ;
     schema:applicationUrl "https://www.unixtimestamp.com/" ;
     schema:name "Unix Timestamp" ;
     schema:publisher "[@danstools00](https://twitter.com/danstools00)" .
@@ -701,7 +707,7 @@ dw:Audio_enhancement a dw:Task ;
     dw:parentNode dw:What,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "Eliminating background noises will allow you to focus on the content" "Adjust the specific sound or conversation you focus on to hear more details" ) ;
+    dw:remarks ( "Eliminating background noises will allow you to focus on the content" "Don't be too quick about deleting things, some sounds might be helpful in identifying a location or a timeframe" "Adjust the specific sound or conversation you focus on to hear more details" ) ;
     rdfs:comment "is the improvement of the audio quality of the recording. It can help you get a better understanding of what is being said in the the audio." ;
     schema:name "Audio enhancement" .
 
@@ -737,7 +743,8 @@ dw:IP_address a dw:Task ;
 
 dw:Instagram a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
@@ -775,7 +782,8 @@ dw:Sources a dw:Task ;
 
 dw:Twitter a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
@@ -816,7 +824,8 @@ dw:Business_name a dw:Task ;
 
 dw:Facebook a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
@@ -931,10 +940,8 @@ dw:Timecodes a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "During breaking news it is worth it to change your settings to the timezone the event enfolds" ) ;
-    rdfs:comment """Social media platforms refer to different time zones when the post was published. Most refer to the time zone you use on your device.
-On Instagram for example you can check the excat time in the source code of the post the exact. Youou do a a right-click on the date of the post, then "Inspect", copy timestamp and convert it. 
-On TikTok, you do a right click next to the video, then select "View page source", search for "createtime" with Ctrl+F.  The time is shown in Unix format.""" ;
+    dw:remarks ( "On Instagram for example, do a a right-click on the date of the post, then \"Inspect\", copy timestamp and convert it" "On TikTok, do a right click next to the video, then select \"View page source\", search for \"createtime\" with Ctrl+F" "During breaking news it is worth it to change your settings to the timezone the event enfolds" ) ;
+    rdfs:comment "are the internal time stamps social media post get, when they are being uploaded to a network. How that time stamp is shown to you depends on the platform. In some cases it refers to the time zone you set on your device (e.g. Facebook) or the timezone set in the network (e.g. Twitter). In some cases, the timecode is shown in the time zone of the network's headquarter (e.g. Youtube or Instagram). Checking the source code of a post often reveals the exact time in UTC (coordinated universal time)." ;
     schema:name "Timecodes" .
 
 dw:eMail a dw:Task ;
@@ -1004,7 +1011,7 @@ dw:Metadata a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "You can also install software to read out metadata, e.g. Phil Harvey's [ExifTool](https://exiftool.org/) " "Metadata can be easily manipulated, make sure to cross-reference the information" "Most social media networks delete metadata of any content that is being shared. Therefore obtaining the original file is important. Check out [this tutorial](https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/) from Amnesty" ) ;
+    dw:remarks ( "You can also install software to read out metadata, e.g. Phil Harvey's [ExifTool](https://exiftool.org/) " "Metadata can easily be manipulated, make sure to cross-reference the information" "Most social media networks delete metadata of any content that is being shared. Therefore obtaining the original file is important. Check out [this tutorial](https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/) from Amnesty" ) ;
     rdfs:comment "is information attached to digital content (audio, photo, video, pdf). It includes recording date and time, device, location, editing programs and technical details (aperture, ISO, exposure time, etc.)." ;
     schema:name "Metadata" .
 
