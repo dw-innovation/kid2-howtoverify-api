@@ -929,6 +929,7 @@ dw:Telegram a dw:Task ;
 dw:Timecodes a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Image,
+        dw:Source,
         dw:Video ;
     dw:remarks ( "During breaking news it is worth it to change your settings to the timezone the event enfolds" ) ;
     rdfs:comment """Social media platforms refer to different time zones when the post was published. Most refer to the time zone you use on your device.
@@ -1001,6 +1002,7 @@ dw:Metadata a dw:Task ;
         dw:Where,
         dw:Who_created_content ;
     dw:relatedMediaType dw:Image,
+        dw:Source,
         dw:Video ;
     dw:remarks ( "You can also install software to read out metadata, e.g. Phil Harvey's [ExifTool](https://exiftool.org/) " "Metadata can be easily manipulated, make sure to cross-reference the information" "Most social media networks delete metadata of any content that is being shared. Therefore obtaining the original file is important. Check out [this tutorial](https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/) from Amnesty" ) ;
     rdfs:comment "is information attached to digital content (audio, photo, video, pdf). It includes recording date and time, device, location, editing programs and technical details (aperture, ISO, exposure time, etc.)." ;
@@ -1158,7 +1160,7 @@ dw:What a dw:Question ;
     dw:remarks ( "Check local media " "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
     rdfs:comment """has happened? 
 
-The information in the content you are investigating indicates that an event took place. Can you corroborate that the event and the claim by shared by the source occured via other sources? Is there more information available on the event? And are you looking at or listening to the original file or is it a (manipulated) copy?""" ;
+The information in the content you are investigating indicates that an event took place. Can you corroborate that the event and the claim shared by the source occured via other sources? Is there more information available on the event? And are you looking at or listening to the original file or is it a (manipulated) copy?""" ;
     schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
