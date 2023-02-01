@@ -581,7 +581,7 @@ dw:Unix_timestamp a dw:SoftwareApplication ;
 dw:VLC_audio_extraction a dw:SoftwareApplication ;
     dw:howTo ( "Open a video with the VLC media player" "From the toolbar select File, then Convert/Stream" "Choose Audio-MP3 from the Profile dropdown box " "Save the MP3 file on your computer and add .mp3 at the end of the file name" ) ;
     dw:parentNode dw:Audio_from_video_extraction ;
-    dw:relatedMediaType dw:Audio ;
+    dw:relatedMediaType dw:Video ;
     dw:remarks ( "You can also visualise audio waves by audio visualisations on VLC player" ) ;
     rdfs:comment "is a great tool to play all kinds of video formats. It also allows you to separate the audio from the video." ;
     schema:applicationUrl "https://www.videolan.org/vlc/" ;

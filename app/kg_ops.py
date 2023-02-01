@@ -39,6 +39,8 @@ media_objects = []
 for s in g.subjects(RDF.type, DW.MediaObject):
     media_objects.append(s)
 
+OBJ_TYPES_WITH_MEDIA_TYPE = ["http://dw.com/Task", "http://dw.com/SoftwareApplication"]
+
 
 def query_paths():
     query = '''
@@ -71,6 +73,22 @@ def validate_click_history(click_history):
 def construct(click_history):
     clicked_node = click_history[-1]
     root_node = click_history[0]
+
+    node_type = str(g.value(URIRef(clicked_node), RDF.type))
+
+
+    if node_type in OBJ_TYPES_WITH_MEDIA_TYPE:
+        consistent_path = False
+
+        if check_path(begin_node_id=clicked_node, root_node=root_node):
+            consistent_path = True
+
+        if not consistent_path:
+            return {
+                'nodes': [],
+                'links': []
+            }
+
     sub_graph = nx.DiGraph()
     # construct parent nodes from the click history
     sub_graph.add_nodes_from(click_history)
@@ -84,14 +102,14 @@ def construct(click_history):
         parent_class_node = g.value(URIRef(node), RDFS.subClassOf)
         if parent_class_node:
             for subject in g.subjects(DW.parentNode, parent_class_node):
-                if str(g.value(URIRef(subject), RDF.type)) == "http://dw.com/Task":
+                if str(g.value(URIRef(subject), RDF.type)) in OBJ_TYPES_WITH_MEDIA_TYPE:
                     if not exists_media_type(subject, root_node):
                         continue
                 sub_graph.add_edge(str(node), str(subject))
                 sub_graph.nodes(str(subject))
         else:
             for subject in g.subjects(DW.parentNode, URIRef(node)):
-                if str(g.value(URIRef(subject), RDF.type)) == "http://dw.com/Task":
+                if str(g.value(URIRef(subject), RDF.type)) in OBJ_TYPES_WITH_MEDIA_TYPE:
                     if not exists_media_type(subject, root_node):
                         continue
                 sub_graph.add_edge(str(node), str(subject))
@@ -164,8 +182,7 @@ def search_with_category(begin_node: str, root_node: str):
 
     if not begin_node_id:
         return []
-    type = g.value(URIRef(begin_node_id), RDF.type)
-    if not check_path(begin_node_id, root_node, str(type)):
+    if not check_path(begin_node_id, root_node):
         return []
     paths = search_by_id(begin_node_id, root_node)
     return paths
@@ -264,23 +281,15 @@ def search_by_id(begin_node_id, root_node):
     return paths
 
 
-def check_path(begin_node_id, root_node, type):
-    if type == "http://dw.com/SoftwareApplication":
-        for parent_node in g.objects(URIRef(begin_node_id), DW.parentNode):
+def check_path(begin_node_id, root_node):
+    if (None, RDFS.subClassOf, URIRef(begin_node_id)) in g:
+        return False
 
-            media_types = g.objects(parent_node, DW.relatedMediaType)
+    media_types = g.objects(URIRef(begin_node_id), DW.relatedMediaType)
 
-            for media_type in media_types:
-                if str(media_type) == str(root_node):
-                    return True
-    elif type == "http://dw.com/Task":
-        if (None, RDFS.subClassOf, URIRef(begin_node_id)) in g:
-            return False
-        media_types = g.objects(URIRef(begin_node_id), DW.relatedMediaType)
-
-        for media_type in media_types:
-            if str(media_type) == str(root_node):
-                return True
+    for media_type in media_types:
+        if str(media_type) == str(root_node):
+            return True
 
     return False
 
