@@ -9,7 +9,7 @@ dw:Background_Removal a dw:SoftwareApplication ;
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "There are [several tutorials](https://photoscissors.com/tutorials) available on the website." ) ;
-    rdfs:comment "is a method to enhance images for better reverse image search. It's done using tools like PhotoScissors." ;
+    rdfs:comment "is a method to enhance images for better reverse image search by keying out the background. It's done using tools like PhotoScissors." ;
     schema:applicationUrl "https://photoscissors.com/" ;
     schema:name "Background Removal" ;
     schema:publisher "Photoscissors" .
@@ -27,6 +27,7 @@ dw:Baidu_Images a dw:SoftwareApplication ;
 dw:Boom_3D a dw:SoftwareApplication ;
     dw:howTo ( "Download the free trial (30 days) to your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you are focusing on" ) ;
     dw:parentNode dw:Audio_enhancement ;
+    dw:relatedMediaType dw:Audio ;
     dw:remarks ( "Watch this [intro to the software](https://youtu.be/iIg7OHcUKis) for more details." "Use noise-canceling headphones for a better experience" "Check out this [list of other audio enhancing services](https://fixthephoto.com/best-free-audio-enhancers.html). (We have not tested them, but it's worth checking them out" ) ;
     rdfs:comment "is a tool for cropping and removing unwanted noise. Boom 3D can enhance the sounds in your audio file and filter out ambient noise." ;
     schema:applicationUrl "https://www.globaldelight.com/boom/" ;
@@ -65,10 +66,10 @@ dw:Exif_Data a dw:SoftwareApplication ;
     schema:publisher "Unknown" .
 
 dw:Fotoforensic a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Enter the URL of an image or click the search button to browse for an image on your computer" "Click the Upload button and let the machine do the analysis" "Once the analysis is done use the menue on the upper left hand corner to navigate through the different analysis results " "Don't forget to hover your mouse over the image from time to time for a direct comparison of image and analysis output" ) ;
+    dw:howTo ( "Open the tool URL" "Enter the URL of an image or click the search button to browse for an image on your computer" "Click the upload button and let the machine do the analysis" "Once it is done use the menue on the upper left hand corner to navigate through the different analysis results " "Don't forget to hover your mouse over the image from time to time for a direct comparison of image and analysis output" ) ;
     dw:parentNode dw:Manipulation_detection ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "While these tools can do a lot of analysis, the results are hard to read" "It's best to read through [some of the examples](https://www.hackerfactor.com/blog/index.php?/archives/322-Body-By-Victoria.html) on the website first and/or involve an expert, before jumping to conclusions" ) ;
+    dw:remarks ( "While these tools can do a lot of analysis, the results are often difficult to interpret" "It's best to read through [some of the examples](https://www.hackerfactor.com/blog/index.php?/archives/322-Body-By-Victoria.html) on the website first and/or involve an expert, before jumping to conclusions" ) ;
     rdfs:comment "is a collection of different photo analysis algorithms allowing you to perform digital photo forensics. Using these algorithms, you can determine if a picture has been modified, and if so, sometimes even how." ;
     schema:applicationUrl "https://fotoforensics.com/" ;
     schema:name "Fotoforensics" ;
@@ -113,22 +114,22 @@ dw:Google_Cache a dw:SoftwareApplication ;
     schema:publisher "Google" .
 
 dw:Google_Earth_3D a dw:SoftwareApplication ;
-    dw:howTo ( "Type any adress or add geo-coordinates in the search bar " "Start moving your point of view by moving around with your mouse " "Hold down cmd/cntrl or ctrl of shift on your keyboard to switch to the 3D perspective" "draw lines to compare the shape of your landscape with the one from the visual" ) ;
+    dw:howTo ( "Type any adress or add geo-coordinates in the search bar " "Drag the map with your mouse " "Press cmd/ctrl or shift/ctrl to navigate in 3D" "draw lines to compare the shape of your landscape with the one from the visual" ) ;
     dw:parentNode dw:Landscape_identification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "Save coordinates in a project which you can share in a GDrive folder" "Measure distances and save the data" ) ;
-    rdfs:comment "is a 3D representation of the earth based primarily on satellite imagery. It is the web version of Google Earth pro. It lets you navigate the world from a 3D perspective, recreating specific points of view on a position." ;
+    rdfs:comment "is a 3D representation of the earth based primarily on satellite imagery. It is the web version of Google Earth pro and lets you navigate the world in 3D." ;
     schema:applicationUrl "https://earth.google.com/" ;
     schema:name "Google Earth 3D" ;
-    schema:publisher "Google" .
+    schema:publisher "[Google](https://about.google/)" .
 
 dw:Google_Earth_Pro a dw:SoftwareApplication ;
-    dw:howTo ( "Download the free available software" "Enter any address or geo-coordinates into search bar " "Zoom and and change perspectives with the compass on the right or your mouse pad" "Save specific locations in a folder" ) ;
+    dw:howTo ( "Download the free available software" "Enter any address or geo-coordinates into the search bar " "Zoom and change perspectives with the compass on the right or your mouse pad" "Save specific locations in a folder" ) ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Export and share your data in kml/kmz type files" "Search for shared kml/kmz files within Google e.g. \"Brandenburg AND forest filetype:kml OR filetype:kmz\" and import them in GE Pro" "Find the date and copyright of the satellite images at the bottom" ) ;
+    dw:remarks ( "Export and share your data in kml/kmz type files" "Search for shared kml/kmz files within Google e.g. \"Brandenburg AND forest (filetype:kml OR filetype:kmz)\" and import them in GE Pro" "Find the date and copyright of the satellite images at the bottom" ) ;
     rdfs:comment "allows you to fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings of any place. GE Pro also includes a timeline feature to view past satellite images of the same location to track changes." ;
     schema:applicationUrl "https://www.google.de/earth/about/versions/" ;
     schema:name "Google Earth Pro" ;
@@ -145,15 +146,15 @@ dw:Google_Images a dw:SoftwareApplication ;
     schema:publisher "[Google](https://about.google/)" .
 
 dw:Google_Maps a dw:SoftwareApplication ;
-    dw:howTo ( "Type in a location or add GPS coordinates" "Switch between map and satellite view" "Click on the little person at the bottom right to see streetview availability " "Select one of the blue lines or dots to jump into streetview" "Next to the icon is a gallery of pictures to get a first overview of the scenery" "Click on the map to switch to another location " ) ;
+    dw:howTo ( "Type in a location or add GPS coordinates" "Check the gallery of pictures to get a first overview of the scenery" "Switch between map and satellite view" "Click on the little yellow person at the bottom right to see streetview availability " "Drop the little yellow person on one of the blue lines or dots to jump into streetview" "In streetview mode you can click on the small map to switch to another location " ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Hold down cmd/cntrl of shift on your keyboard to switch to the 3D perspective (where available)" "3D view is hidden behind layers in the bottom left, just select Globe view and you can switch beweteen 2D and 3D on the right above the zoom icon" "There is also a mobile version" ) ;
-    rdfs:comment "offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets and real-time traffic conditions." ;
+    dw:remarks ( "3D view is hidden behind layers in the bottom left, just select Globe view and you can switch beweteen 2D and 3D on the right above the zoom icon" "There is also a mobile version" ) ;
+    rdfs:comment "offers street maps, satellite imagery, aerial photography, 360° interactive panoramic views of streets and real-time traffic conditions." ;
     schema:applicationUrl "https://www.google.com/maps" ;
     schema:name "Google Maps" ;
-    schema:publisher "Google" .
+    schema:publisher "[Google](https://about.google/)" .
 
 dw:Handelsregister a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL and change the language settings to English" "Fill out the search fields" "Pick the company you are looking for " "In the right column you see available documents" "Pick one and download the file to see the content" ) ;
@@ -249,11 +250,11 @@ dw:LatLong a dw:SoftwareApplication ;
     schema:publisher "[latlong.net](https://www.latlong.net/contact.php)" .
 
 dw:Lets_Enhance_io a dw:SoftwareApplication ;
-    dw:howTo ( "Upload the image you want to enhance." "Choose from the automated options what you want" "Start the process and wait" ) ;
+    dw:howTo ( "Upload the image you want to enhance" "Choose what you want/need from the automated options" "Start the process and wait" ) ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "You have to sign up for an account" "You have 10 images for free" "[Gigapixel AI](https://www.topazlabs.com/downloads) is a useful alternative, but install only" ) ;
+    dw:remarks ( "You have to sign up for an account" "You can enhance 10 images for free" "[Gigapixel AI](https://www.topazlabs.com/downloads) is a useful alternative, but install only" ) ;
     rdfs:comment "is an image editor using artifical intelligence. You can enhance the resolution, the contrast and much more." ;
     schema:applicationUrl "https://letsenhance.io/" ;
     schema:name "Lets Enhance io" ;
@@ -296,11 +297,11 @@ All of this will help you put the recording into perspective.""" ;
     schema:name "Listen to the audio" .
 
 dw:Magnifier a dw:SoftwareApplication ;
-    dw:howTo ( "Install the browser plugin on Firefox or Chrome" "a) right click on the image on the web page and select Image Magnifier" "b) click on the plugin and open toolbox, on the left you select Image magnifier and upload your image" "Select the zoom by browsing over the image" ) ;
+    dw:howTo ( "Install the Invid browser plugin on Firefox or Chrome" "On a web page just right click on the image and select 'Image Magnifier' from the plugin menue" "Or click on the plugin, open the toolbox, select 'Image magnifier' on the left and upload your image" "Select the zoom by browsing over the image" ) ;
     dw:parentNode dw:Zoom_in_details ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "You can upload an image or analyse it directly from the web page" "It highlights elements without changing the resolution " ) ;
-    rdfs:comment "zooms into the image without changing the resolution." ;
+    dw:remarks ( "You can choose to enlarge the image as a whole or using a lens focus" ) ;
+    rdfs:comment "lets you enhance any part of an image in your browser without changing the resolution." ;
     schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "Magnifier" ;
     schema:publisher "AFP Medialab, Deutsche Welle & Partners" .
@@ -310,22 +311,22 @@ dw:MapSwitcher a dw:SoftwareApplication ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Make sure you have selected a location on one map service" ) ;
-    rdfs:comment "is a super useful and time saving plugin which convert coordinates so you can switch between different map services." ;
-    schema:applicationUrl "https://chrome.google.com/webstore/detail/map-switcher/fanpjcbgdinjeknjikpfnldfpnnpkelb?hl=en" ;
+    dw:remarks ( "Make sure you have selected a location on a map" ) ;
+    rdfs:comment "is a super useful and time saving plugin which converts coordinates so you can switch between different map services." ;
+    schema:applicationUrl "[MapSwitcher Chrome Extention] (https://chrome.google.com/webstore/detail/map-switcher/fanpjcbgdinjeknjikpfnldfpnnpkelb?hl=en)" ;
     schema:name "MapSwitcher" ;
-    schema:publisher "david.r.edgar" .
+    schema:publisher "[David Edgar] (https://github.com/david-r-edgar/MapSwitcher#mapping-services-supported)" .
 
 dw:Mapillary a dw:SoftwareApplication ;
-    dw:howTo ( "Type a location or GPS coordinates in to the search field at the top left" "The green circles show geo-tagged street view photos" "Select one green dot and navigate through the streets" "Switch between map and street view via the arrow icon at the top right of the small window" "Date and user name are always at the bottom right " "Map data in the top menu shows detected objects like street signs " ) ;
+    dw:howTo ( "Type a location or GPS coordinates in to the search field at the top left" "The green circles show geo-tagged street view photos" "Select one green dot and navigate through the streets" "Switch between map and street view via the arrow icon at the top right of the small window" "Date and source of image are always available " "Map data in the top menu shows detected objects like street signs " ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "It is great to get street view images from remote areas" "Time travel is a feature that compares the same position but different images" "Users can upload photos only with the mobile app and GPS turned on to reduce fake uploades" "Once selected a series of images by the same person turns blue making it easier to follow along" "Larger translucent circles around the green dots indicate 360° images" ) ;
+    dw:remarks ( "Good tool to find street view images from remote areas" "Time travel is a feature that compares multiple images of the same location " "Users can upload photos only with the mobile app and GPS turned on to reduce fake uploades" "Once selected, a series of images by the same source turns blue, making it easier to follow" "Larger translucent circles around the green dots indicate 360° images" ) ;
     rdfs:comment "is a map service with crowdsourced geo-tagged street view photos." ;
     schema:applicationUrl "https://www.mapillary.com/app/" ;
     schema:name "Mapillary" ;
-    schema:publisher "Mapillary AB and Meta" .
+    schema:publisher "Mapillary AB and Meta [about](https://www.mapillary.com/about)" .
 
 dw:Metadata2Go a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Upload an image or submit an image URL  " "Select summary on the left " "Scroll through the results" ) ;
@@ -356,12 +357,12 @@ dw:Microsoft_Video_Indexer a dw:SoftwareApplication ;
     schema:publisher "Microsoft" .
 
 dw:Mooncalc a dw:SoftwareApplication ;
-    dw:howTo ( "Type an address or add the coordinates in the left menu" "Select a specific date" "Switch to satellite view " "Zoom inside the map and click on any spot to move the position" "Move the position of the moon with using the timeline on the top " ) ;
+    dw:howTo ( "Type in an address or add the coordinates in the left menu" "Select a specific date" "Switch to satellite view " "Zoom into the map and click on any spot to move the position" "Change the position of the moon by using the timeslider at the top " ) ;
     dw:parentNode dw:Shadow_analyses ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "There are many more features you can add, such as the shadow lenghts " "Time is shown with respect to your own timezone" ) ;
-    rdfs:comment "shows moon movement and moonlight phases during a given day at a given location." ;
+    dw:remarks ( "There are many more features you can use, such as adding a shadow length " "Time is shown with respect to your own timezone" ) ;
+    rdfs:comment "shows moon movement and moonlight phases on a specific date at a given location." ;
     schema:applicationUrl "https://www.mooncalc.org/" ;
     schema:name "Mooncalc" ;
     schema:publisher "Torsten Hoffmann" .
@@ -396,7 +397,7 @@ dw:North_Data a dw:SoftwareApplication ;
     schema:publisher "North Data GmbH" .
 
 dw:Peakfinder a dw:SoftwareApplication ;
-    dw:howTo ( "Type in a name of a mountain or add geo-coordinates" "Move the cursor on the left above sea level so you have a good view on the mountain shapes" ) ;
+    dw:howTo ( "Type in the name of a mountain or add geo-coordinates" "Move the cursor on the left above sea level so you have a realistic view on the mountain shapes" ) ;
     dw:parentNode dw:Landscape_identification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
@@ -404,7 +405,7 @@ dw:Peakfinder a dw:SoftwareApplication ;
     rdfs:comment "is a tool for finding and identifying geographic location landmarks in mountainous topographic terrain." ;
     schema:applicationUrl "https://www.peakfinder.org" ;
     schema:name "Peakfinder" ;
-    schema:publisher "Fabio Soldati" .
+    schema:publisher "Fabio Soldati [About](https://www.peakfinder.org/about/peakfinder/)" .
 
 dw:RIS_\(Image\) a dw:Task ;
     dw:parentNode dw:Context,
@@ -431,12 +432,12 @@ dw:RIS_\(Video\) a dw:Task ;
     schema:name "Reverse Image Search" .
 
 dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
-    dw:howTo ( "Open the Explorer" "Enter a place or the exact Geo-Coordinates  " "On the left choose the satellite and timeframe you want to get data from" ) ;
+    dw:howTo ( "Open the Explorer" "Enter a place or the exact Geo-Coordinates  " "On the left choose the satellite and timeframe you want to get data from and for" ) ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "You can also create or add a custom script for visualisation" "Date is free and API can be used as well" "Here is a user tutorial by [SentinelHub](https://www.sentinel-hub.com/explore/eobrowser/user-guide/) " "An alternative with less features but easy to use [Sentinel Playground](https://apps.sentinel-hub.com/sentinel-playground)" ) ;
-    rdfs:comment "allows you to browse through and visualize satellite data from numerous satellites. It includes radar satellites and optical satellite provided by Copernicus." ;
+    dw:remarks ( "You can also create or add a custom script for visualisation" "Data is free and the API can be used as well" "Check out SentinelHub's [user tutorial](https://www.sentinel-hub.com/explore/eobrowser/user-guide/) to get started" "An alternative with less features but easy to use is [Sentinel Playground](https://apps.sentinel-hub.com/sentinel-playground)" ) ;
+    rdfs:comment "allows you to browse through and visualize satellite data from numerous satellites. It includes both radar and optical satellites provided by Copernicus." ;
     schema:applicationUrl "https://apps.sentinel-hub.com/eo-browser" ;
     schema:name "Sentinel Hub EO Browser" ;
     schema:publisher "Sinergise" .
@@ -456,6 +457,7 @@ dw:Sowsearch a dw:SoftwareApplication ;
 dw:Speech_to_text_Google a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL or use the Google Translate app" "Click on the microphone icon " "Play the audio recording from your device close to your microphone" "Google translate will transcribe the audio and automatically detect the spoken language" ) ;
     dw:parentNode dw:Language_detection ;
+    dw:relatedMediaType dw:Audio ;
     dw:remarks ( "It also works on mobile devices with the Google Translate app " "You can also do live transcribing via the app ([tutorial](https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop) )" "Language detection might not always be 100% correct" ) ;
     rdfs:comment "is a transcription of your audio conversation into text-format for analysing, detecting languages and collecting keywords." ;
     schema:applicationUrl "https://translate.google.com/" ;
@@ -465,6 +467,7 @@ dw:Speech_to_text_Google a dw:SoftwareApplication ;
 dw:Spoken_language_identifier a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Press record and play your audio" "You can also upload an audio file " "The results will show you the percentage of the language(s) detected" ) ;
     dw:parentNode dw:Language_detection ;
+    dw:relatedMediaType dw:Audio ;
     dw:remarks ( "The system supports 8 languages: English, Spanish, Italian, French, German, Portuguese, Dutch, and Russian" "The longer the audio, the better the results" ) ;
     rdfs:comment "is a service that tries to determine the language spoken in an audio recording." ;
     schema:applicationUrl "https://translatedlabs.com/spoken-language-identifier" ;
@@ -472,7 +475,7 @@ dw:Spoken_language_identifier a dw:SoftwareApplication ;
     schema:publisher "translated." .
 
 dw:Suncalc a dw:SoftwareApplication ;
-    dw:howTo ( "Type an address or add the coordinates in the left menu" "Select a specific date" "Switch to satellite view " "Zoom inside the map and click on any spot to move the position" "Move the position of the sun with using the timeline on the top " ) ;
+    dw:howTo ( "Type in an address or add the coordinates in the left menu" "Select a specific date" "Switch to satellite view " "Zoom into the map and click on any spot to move the position" "Change the position of the sun by using the timeslider at the top " ) ;
     dw:parentNode dw:Shadow_analyses ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
@@ -578,6 +581,7 @@ dw:Unix_timestamp a dw:SoftwareApplication ;
 dw:VLC_audio_extraction a dw:SoftwareApplication ;
     dw:howTo ( "Open a video with the VLC media player" "From the toolbar select File, then Convert/Stream" "Choose Audio-MP3 from the Profile dropdown box " "Save the MP3 file on your computer and add .mp3 at the end of the file name" ) ;
     dw:parentNode dw:Audio_from_video_extraction ;
+    dw:relatedMediaType dw:Audio ;
     dw:remarks ( "You can also visualise audio waves by audio visualisations on VLC player" ) ;
     rdfs:comment "is a great tool to play all kinds of video formats. It also allows you to separate the audio from the video." ;
     schema:applicationUrl "https://www.videolan.org/vlc/" ;
@@ -641,23 +645,23 @@ dw:Whois_Domain a dw:SoftwareApplication ;
     schema:publisher "DomainTools" .
 
 dw:Wikimapia a dw:SoftwareApplication ;
-    dw:howTo ( "Enter GPS coordinates" "Mouse over areas and objects to get additional text on the left" "Select categories like schools or parks and see them marked on the map" "You can read changes of the text in the protocol on the left" ) ;
+    dw:howTo ( "Enter GPS coordinates" "Click on areas and objects to get additional information" "Select categories like schools or parks and see them marked on the map" ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "It is a wiki which is editable by everyone. Always double check the information" "It is a great wiki map for getting information on areas you are not too familiar with" ) ;
-    rdfs:comment "is an crowedsourced editable map service. It utilizes different map services with a wiki system to mark and describe geographical objects all around the world." ;
+    rdfs:comment "is a multilingual open-content collaborative map, where anyone can create place tags and share their knowledge. It utilizes different map services with a wiki system to mark and describe geographical objects all around the world." ;
     schema:applicationUrl "http://wikimapia.org/" ;
     schema:name "Wikimapia" ;
-    schema:publisher "Alexandre Koriakine and Evgeniy Saveliev" .
+    schema:publisher "Alexandre Koriakine and Evgeniy Saveliev [About](http://wikimapia.org/about/)" .
 
 dw:WolframAlpha a dw:SoftwareApplication ;
-    dw:howTo ( "Include the position of the weather station which can sometimes be far away from the location you are looking at" "Scroll down to see results like weather conditions throughout the day, cloud cover and wind speed" ) ;
+    dw:howTo ( "Type in a question like \"weather in Berlin, December 24th, 1992\"" "Scroll down to see results like weather conditions throughout the day, cloud cover and wind speed" ) ;
     dw:parentNode dw:Weather_analyses ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Type in a question e.g. weather in Berlin on 24th of December 1992 " "Always double check with other visuals on this day" ) ;
-    rdfs:comment "answers factual queries by computing answers from externally sourced data." ;
+    dw:remarks ( "Include the position of a specific weather station which can sometimes be far away from the location you are looking at" "Always double check with other visuals on this day" ) ;
+    rdfs:comment "replies to factual queries by computing answers based on externally sourced data." ;
     schema:applicationUrl "https://www.wolframalpha.com/" ;
     schema:name "WolframAlpha" ;
     schema:publisher "Wolfram Research" .
@@ -755,7 +759,7 @@ dw:Instagram a dw:Task ;
 dw:Manipulation_detection a dw:Task ;
     dw:parentNode dw:Original ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "With visuals, use your own senses and look for shadows and reflections" "With audio, close your eyes and listen carefully to the sound if there might be jumps" "You can train yourself. Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
+    dw:remarks ( "With visuals, use your own senses and check for anomalies, e.g. in shadows, reflections or contours" "With audio, close your eyes and listen carefully to the sound for jumps or unnatural gaps" "You can train yourself. Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
     rdfs:comment "means to look for traces of tampering in the digital content you are investigating." ;
     schema:name "Manipulation detection" .
 
@@ -803,14 +807,14 @@ dw:Weather_analyses a dw:Task ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "Check local reports" "Collect more visuals of the event and compare the weather" ) ;
-    rdfs:comment "points to the weather on the date the content was created. When you see snow or its very windy, you will see it on news reports as well, or find information on forecast websites. Weather can also narrow down the country you are looking at if there is no other information on it." ;
+    rdfs:comment "points to the weather on the date the content was created. When you see snow or its very windy, you will see it on news reports as well, or find information on forecast websites. Weather can help to also narrow down the country an envent took place in, even if there is no other information available." ;
     schema:name "Weather analysis" .
 
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Write down at least 20 hints you detect, it will help your ongoing investigation" "Organize your hints in information about the scenery, location, time and people" ) ;
-    rdfs:comment "and you detect even more on the visual item." ;
+    dw:remarks ( "Write down at least 20 hints you find. It will help your ongoing investigation" "Cluster your hints by information about the scenery, location, time and people" ) ;
+    rdfs:comment "to detect even more clues on the visual item, e.g. a phone number on a billboard" ;
     schema:name "Zoom in details" .
 
 dw:Business_name a dw:Task ;
@@ -879,8 +883,8 @@ dw:Landscape_identification a dw:Task ;
     dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "here is a great tutorial about using mountain ridges in geolocation tasks [Mountain Geolocating Tutorial](https://www.linkedin.com/posts/eyran-millis_mountain-geolocating-tutorial-activity-6941996317795565568-JYvf) by Eyran Millis " ) ;
-    rdfs:comment "means using geographic landmarks like mountains, to find a specific location." ;
+    dw:remarks ( "It's not easy but practice makes perfect! This is a great tutorial about using mountain ridges in geolocation tasks [Mountain Geolocating Tutorial](https://www.linkedin.com/posts/eyran-millis_mountain-geolocating-tutorial-activity-6941996317795565568-JYvf) by Eyran Millis" ) ;
+    rdfs:comment "means to make use of geographic landmarks like mountains, to find a specific location." ;
     schema:name "Landscape identification" .
 
 dw:Language_detection a dw:Task ;
@@ -894,24 +898,24 @@ dw:Language_detection a dw:Task ;
 dw:Original a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Content is frequently reposted from messenger apps to a social platform, and it can be difficult to determine the origin of the footage. " "To find the earliest shared version of the content, so you can ask the user where they got it from." ) ;
-    rdfs:comment "is an unaltered visual element. However, it may not always be from the event it claims to be. Finding the origin of the footage will tell you who owns it and where it came from." ;
+    dw:remarks ( "Content is frequently reposted from messenger apps to social platforms, and it can be difficult to determine the origin of the footage " "Try to find the earliest shared version of the content, so you can ask the user where they got it from" ) ;
+    rdfs:comment "is the first and unaltered version of a visual (e.g. image or video). However, it may not always be from the event it claims to be. Finding the origin of the footage will tell you who owns it and where it came from." ;
     schema:name "Original" .
 
 dw:Satellite_data a dw:Task ;
     dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Optical satellite imagery views the world as the human eye does but has its limits when its cloudy or at night." "Radar satellites can operate day and night and regardless weather conditions, but it is more difficult to interprete the data." "Ollie Ballinger wrote a great article about SAR [Radar Interference Tracker](https://www.bellingcat.com/resources/2022/02/11/radar-interference-tracker-a-new-open-source-tool-to-locate-active-military-radar-systems/)  " ) ;
-    rdfs:comment "provides satellite imagery and earth observation data of the earth's surface and its atmosphere. It provides information on the situation and scenery with a before and after and can be used as visual evidence." ;
+    dw:remarks ( "Optical satellite imagery views the world as the human eye does but has its limits when its cloudy or at night" "Radar satellites can operate day and night and regardless weather conditions, but it is more difficult to interpret the data" "Ollie Ballinger wrote a great article about SAR [Radar Interference Tracker](https://www.bellingcat.com/resources/2022/02/11/radar-interference-tracker-a-new-open-source-tool-to-locate-active-military-radar-systems/) helping you to search for active military radar systems anywhere on earth" ) ;
+    rdfs:comment "includes satellite imagery and earth observation data of the earth's surface and its atmosphere. It provides information on the situation and scenery, is mostly available from multiple moments in time and can be used as visual evidence." ;
     schema:name "Satellite data" .
 
 dw:Shadow_analyses a dw:Task ;
     dw:parentNode dw:When ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "If you don't see shadows although there is light, the visual might have been tampered with" ) ;
-    rdfs:comment "refers to the defined cast shadow of an object that was produced by a light source e.g. the sun. The shadow's location provides information about the position of the sun which helps to determine the exact time." ;
+    dw:remarks ( "It's sometimes difficult to get exact times and dates, but it's a good first step to use" "If you don't see any shadows although there is light, the visual might have been tampered with" ) ;
+    rdfs:comment "refers to the defined shadow cast by an object via a light source e.g. the sun. The shadow's direction and its length provide information about the position of the sun which helps to determine the exact time." ;
     schema:name "Shadow analysis" .
 
 dw:Social_Media_profiles a dw:Task ;
@@ -941,7 +945,7 @@ dw:Timecodes a dw:Task ;
         dw:Source,
         dw:Video ;
     dw:remarks ( "On Instagram for example, do a a right-click on the date of the post, then \"Inspect\", copy timestamp and convert it" "On TikTok, do a right click next to the video, then select \"View page source\", search for \"createtime\" with Ctrl+F" "During breaking news it is worth it to change your settings to the timezone the event enfolds" ) ;
-    rdfs:comment "are the internal time stamps social media post get, when they are being uploaded to a network. How that time stamp is shown to you depends on the platform. In some cases it refers to the time zone you set on your device (e.g. Facebook) or the timezone set in the network (e.g. Twitter). In some cases, the timecode is shown in the time zone of the network's headquarter (e.g. Youtube or Instagram). Checking the source code of a post often reveals the exact time in UTC (coordinated universal time)." ;
+    rdfs:comment "are the internal time stamps social media posts get, when they are being uploaded to a network. How that time stamp is shown to you depends on the platform. In some cases it refers to the time zone you set on your device (e.g. Facebook) or the timezone set in the network (e.g. Twitter). In some cases, the timecode is shown in the time zone of the network's headquarter (e.g. Youtube or Instagram). Checking the source code of a post often reveals the exact time in UTC (coordinated universal time)." ;
     schema:name "Timecodes" .
 
 dw:eMail a dw:Task ;
@@ -986,8 +990,8 @@ dw:Domain_name a dw:Task ;
 dw:Enhance_Image_\(Image\) a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
-    dw:remarks ( "Enhance the quality and resolution" "Sharpen the image and contrast-enhancement" "Take out the background to focus on the object" ) ;
-    rdfs:comment "will help to get better results when the image is blurred or the resolution is low. It will support a more efficient reverse image search." ;
+    dw:remarks ( "Enhance the quality and resolution" "Sharpen the image and enhance the contrast" "Take out the background to focus on the object" ) ;
+    rdfs:comment "will help to get better results when the resolution of the image is low or it is blurred. And enhanced version will usually lead to better results when doing reverse image search." ;
     schema:name "Enhance Image" .
 
 dw:Enhance_Image_\(Video\) a dw:Task ;
