@@ -25,10 +25,10 @@ dw:Baidu_Images a dw:SoftwareApplication ;
     schema:publisher "Baidu, Inc." .
 
 dw:Boom_3D a dw:SoftwareApplication ;
-    dw:howTo ( "Download the free trial (30 days) to your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you are focusing on" ) ;
+    dw:howTo ( "Download the free trial (30 days) to your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you want to focus on" ) ;
     dw:parentNode dw:Audio_enhancement ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "Watch this [intro to the software](https://youtu.be/iIg7OHcUKis) for more details." "Use noise-canceling headphones for a better experience" "Check out this [list of other audio enhancing services](https://fixthephoto.com/best-free-audio-enhancers.html). (We have not tested them, but it's worth checking them out" ) ;
+    dw:remarks ( "Watch this [intro to the software](https://youtu.be/iIg7OHcUKis) for more details." "Use noise-canceling headphones for a better experience" "Check out this [list of other audio enhancing services](https://fixthephoto.com/best-free-audio-enhancers.html). (We have not tested them, but it's worth checking them out)" ) ;
     rdfs:comment "is a tool for cropping and removing unwanted noise. Boom 3D can enhance the sounds in your audio file and filter out ambient noise." ;
     schema:applicationUrl "https://www.globaldelight.com/boom/" ;
     schema:name "Boom 3D" ;
@@ -208,8 +208,10 @@ dw:InVid a dw:SoftwareApplication ;
 dw:Instagram_search a dw:SoftwareApplication ;
     dw:howTo ( "Open the link" "Type a city or keyword in the search bar at the top" "Hashtags are marked with a hash and locations with a pin" "Scroll down to the the newest posts from the location in chronological order" ) ;
     dw:parentNode dw:Instagram ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "You will see more results when you are logged in to Instagram" "Explore locations via [locations](https://www.instagram.com/explore/locations/) " "On the mobile app you can see posted stories on a map" ) ;
     rdfs:comment "supports looking for posts organized by hashtags and geographical tagging. This will work best in a browser." ;
@@ -279,16 +281,16 @@ dw:Listen_to_the_audio a dw:Task ;
         dw:Where,
         dw:Who ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "Having a transcript of the conversation will be useful for making notes on specific parts" "Put on headphones for a better listening experience" ) ;
-    rdfs:comment """more than once. 
+    dw:remarks ( "Having a transcript of the conversation will be useful for making notes on specific parts" "Use good headphones for a more focused listening experience" ) ;
+    rdfs:comment """and listen more than once. 
 
 Try to answer the following questions, to get an understanding of what you are listening to:  
 
 \\- What can you hear in the recording, people, specific (urban or rural) sounds?
 
-\\- If it's people, wow many people are there and what languages can you detect?
+\\- How many people can you hear and what languages can you detect?
 
-\\- What are the individuals discussing?
+\\- What are those people discussing?
 
 \\- Can you hear any sounds in the background? What could it be?
 
@@ -343,8 +345,8 @@ dw:Metadata2Go a dw:SoftwareApplication ;
 dw:Microphone_Analyses a dw:Task ;
     dw:parentNode dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
-    dw:remarks ( "If you know of any (free) microphone analyses tools please let us know via the feedback form!" ) ;
-    rdfs:comment "will provide you with info about the hardware and software that has been used to record an audio file. These tools are unfortunately not available to the public yet. But you can also use [metadata analyses](https://preview.howtoverify.info/Video/Who/Who_created_content/Metadata) to see if you can find information on the hard- and software used to create the recording." ;
+    dw:remarks ( "Currently we are only aware of scientific approaches to microphone analyses, afawk there are no free available tools" "If you know of any (free) microphone analyses tools please let us know via the feedback form!" ) ;
+    rdfs:comment "will provide you with info about the hardware and software that has been used to record an audio file. These tools are unfortunately not available to the public yet. You can also use [metadata analyses](https://preview.howtoverify.info/Video/Who/Who_created_content/Metadata) to see if you can find information on the hard- and software used to create the recording." ;
     schema:name "Microphone Analyses" .
 
 dw:Microsoft_Video_Indexer a dw:SoftwareApplication ;
@@ -449,8 +451,10 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
 dw:Sowsearch a dw:SoftwareApplication ;
     dw:howTo ( "Open the link" "Open the dropdown menu and select what you are looking for" "Select the filters you need and click \"add filter\"" "Press \"open URL\" to see the results" ) ;
     dw:parentNode dw:Facebook ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "You will see more results when you are logged in to Facebook" "Private posts are not visible" "Searching for posts by a specific user seems to not work anymore due to recent changes" ) ;
     rdfs:comment "is an application to help you narrow down your search on Facebook." ;
@@ -492,10 +496,12 @@ dw:Suncalc a dw:SoftwareApplication ;
 dw:Telemetrio a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Sort the list on the front page by the attribute most useful to you" "Narrow down the results by using the fiters at the top of the list" ) ;
     dw:parentNode dw:Telegram ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
-    dw:remarks ( "The layout of the site is more straight forward than TGStat providing a sortable table on the start page" "Experiment with the different parameters to get the hang of it" "The difference to TGStat lies in the details, so it's worth checking both" "You have to be logged into Telegram for some search operations" "To find the first post of a specific channel you can add (if none exist) an s/ in front of the account name and enter a 1 as the post number in the URL of a post, like in this example (https://t.me/s/MOHreport/1)" ) ;
+    dw:remarks ( "The layout of the site is more straight forward than TGStat providing a sortable table on the start page" "Experiment with the different parameters to get the hang of it" "The difference to TGStat lies in the details, so it's worth checking both" "You have to be logged into Telegram for some search operations" "To find the first post of a specific channel you can add (if none exist) an s/ in front of the account name and enter a 1 as the post number in the URL of a post, like in this example: https://t.me/s/MOHreport/1" ) ;
     rdfs:comment "is a telegram channels and groups catalog and metrics aggregator, similar to TGStat." ;
     schema:applicationUrl "https://telemetr.io/" ;
     schema:name "Telemetrio" ;
@@ -504,8 +510,10 @@ dw:Telemetrio a dw:SoftwareApplication ;
 dw:Tgstat a dw:SoftwareApplication ;
     dw:howTo ( "Open the link" "Choose a country" "Scroll down in a channel to find categories like verified News and most popular posts from public channels" "Open a channel to get more information about it" "On the timeline of the channel you can filter to see posts from a specific month " ) ;
     dw:parentNode dw:Telegram ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "To find the first post of a specific channel you can add (if none exist) an s/ in front of the account name and enter a 1 as the post number in the URL of a post, like in this example: https://t.me/s/MOHreport/1" "When you are using the desktop version of Telegram it is easier to search on Telegram itself" ) ;
     rdfs:comment "is a search tool for channel search and analyses of channels. It also provides keyword search on Telegram" ;
@@ -547,8 +555,10 @@ dw:TinEye a dw:SoftwareApplication ;
 dw:Tweetbeaver a dw:SoftwareApplication ;
     dw:howTo ( "Connect Tweetbeaver to your Twitter account" "Choose the action you want to perform" "Follow the onscreen instructions" ) ;
     dw:parentNode dw:Twitter ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "As with all external tools, this only works as long as Twitter allows it" "There are some limitations on the amount of data you can get due to the API" ) ;
     rdfs:comment "gathers Ttwitter data you need quickly, simply and easily. It can gather data on any public account and returns most searches as a csv for filtering and analysis." ;
@@ -618,7 +628,7 @@ dw:ViewDNS a dw:SoftwareApplication ;
     schema:publisher "ViewDNS" .
 
 dw:WhatsMyName a dw:SoftwareApplication ;
-    dw:howTo ( "Enter the username " "select relevant filters" "click the search icon  " ) ;
+    dw:howTo ( "Enter the username " "Select relevant filters" "Click the search icon  " ) ;
     dw:parentNode dw:Person_name,
         dw:Social_Media_profiles ;
     dw:relatedMediaType dw:Audio,
@@ -646,8 +656,10 @@ dw:WhoIs a dw:SoftwareApplication ;
 dw:WhoPostedWhat a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Use a specific keyword and select the time range you want to search in" ) ;
     dw:parentNode dw:Facebook ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "You will see more results when you are logged in to Facebook" "Searching for posts by a specific user is not working currently due to changes in the Facebook API" "You might also want to try Google Advanced search" ) ;
     rdfs:comment "is a keyword search on Facebook for a specific time range or on a specific date." ;
@@ -733,7 +745,7 @@ dw:Audio_enhancement a dw:Task ;
         dw:Who_created_content ;
     dw:relatedMediaType dw:Audio ;
     dw:remarks ( "Eliminating background noises will allow you to focus on the content" "Don't be too quick about deleting things, some sounds might be helpful in identifying a location or a timeframe" "Adjust the specific sound or conversation you focus on to hear more details" ) ;
-    rdfs:comment "is the improvement of the audio quality of the recording. It can help you get a better understanding of what is being said in the the audio." ;
+    rdfs:comment "is the improvement of the audio quality of the recording. It can help you to get a better understanding of what you can hear / what is being said in the the recording." ;
     schema:name "Audio enhancement" .
 
 dw:Audio_from_video_extraction a dw:Task ;
@@ -832,7 +844,7 @@ dw:Business_name a dw:Task ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "It is worth checking out who is on the board of a company to get better insight in the context of a company" "Export and import data of companies can be requested with official institutions" ) ;
+    dw:remarks ( "It is worth checking out who is on the board of a company to get better insight in the context of a company" "Export and import data of companies can be requested with official institutions" "Here is an overview of [international business registration organisations](https://www.icaew.com/library/research-guides/knowledge-guide-international-company-registration)" ) ;
     rdfs:comment "is any company name mentioned in the text or audio, visible as a logo or attached to the source. It might be the company someone is working for or a company which needs investigating because it seems fishy." ;
     schema:name "Business Name" .
 
@@ -941,7 +953,8 @@ dw:Social_Media_profiles a dw:Task ;
 
 dw:Telegram a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
