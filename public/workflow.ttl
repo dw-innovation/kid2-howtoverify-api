@@ -98,7 +98,7 @@ dw:Google_Advanced_Search a dw:SoftwareApplication ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "The advanced search also works using Google Operators, which is a lot faster. Details and help can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced search, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN" "Keep in mind that Google personalises results. You might have (a few) different hits on a different browser or device or from a different location." ) ;
+    dw:remarks ( "The advanced search also works using Google Operators, which is a lot faster. Details and help can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced search, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN and this great tutorial by Ben Strick [here](https://youtu.be/HcMZ5er_PqY)  " "Keep in mind that Google personalises results. You might have (a few) different hits on a different browser or device or from a different location." ) ;
     rdfs:comment "allows you to specify your search in more details to get better results. You can combine or exclude search words, search on a specific web page only or for specific file types like pdfs." ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
     schema:name "Google Advanced Search" ;
@@ -556,6 +556,20 @@ dw:Tweetbeaver a dw:SoftwareApplication ;
     schema:name "Tweetbeaver" ;
     schema:publisher "Tweetbeaver" .
 
+dw:Twitter_Advanced_Search a dw:SoftwareApplication ;
+    dw:howTo ( "Open the advanced search URL" "Fill out the fields that best correspond with your search questions" "You can edit the search query in the search bar directly" ) ;
+    dw:parentNode dw:Twitter ;
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks ( "The advanced search also works using the operators in the search bar of Twitter, which is a lot faster. Details and help can be found [on this website](https://developer.twitter.com/en/docs/twitter-api/v1/rules-and-filtering/search-operators) " "To monitor your search query and use filters in between we recommend the monitoring tool [Tweetdeck](https://tweetdeck.twitter.com/) by Twitter itself " ) ;
+    rdfs:comment "allows you to specify your search in more details to get better results. You can combine or exclude search words, search for tweets by a specific account, from a specific location in a specific time range." ;
+    schema:applicationUrl "https://twitter.com/search-advanced?lang=en" ;
+    schema:name "Twitter Advanced Search" ;
+    schema:publisher "Twitter" .
+
 dw:USearch a dw:SoftwareApplication ;
     dw:howTo ( "Type in your search query " "Select the region in which you are looking for information" ) ;
     dw:parentNode dw:Context,
@@ -791,17 +805,6 @@ dw:Sources a dw:Task ;
     rdfs:comment "refer to any name, company, institution, expert, interview partner or website being mentioned in the text." ;
     schema:name "Sources" .
 
-dw:Twitter a dw:Task ;
-    dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Audio,
-        dw:Image,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    dw:remarks ( "Twitter lists are a great feature to set up a monitoring system of specific accounts" "You can find a lot of reshares from chat apps here" ) ;
-    rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter." ;
-    schema:name "Twitter" .
-
 dw:Visuals a dw:Task ;
     dw:parentNode dw:Content_analysis ;
     dw:relatedMediaType dw:Text ;
@@ -954,6 +957,17 @@ dw:Timecodes a dw:Task ;
     dw:remarks ( "On Instagram for example, do a a right-click on the date of the post, then \"Inspect\", copy timestamp and convert it" "On TikTok, do a right click next to the video, then select \"View page source\", search for \"createtime\" with Ctrl+F" "During breaking news it is worth it to change your settings to the timezone the event enfolds" ) ;
     rdfs:comment "are the internal time stamps social media posts get, when they are being uploaded to a network. How that time stamp is shown to you depends on the platform. In some cases it refers to the time zone you set on your device (e.g. Facebook) or the timezone set in the network (e.g. Twitter). In some cases, the timecode is shown in the time zone of the network's headquarter (e.g. Youtube or Instagram). Checking the source code of a post often reveals the exact time in UTC (coordinated universal time)." ;
     schema:name "Timecodes" .
+
+dw:Twitter a dw:Task ;
+    dw:parentNode dw:Social_Media_activities ;
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks ( "Twitter lists are a great feature to set up a monitoring system of specific accounts" "You can find a lot of reshares from chat apps here" ) ;
+    rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter." ;
+    schema:name "Twitter" .
 
 dw:eMail a dw:Task ;
     dw:parentNode dw:Author ;
