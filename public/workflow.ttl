@@ -96,7 +96,8 @@ dw:Google_Advanced_Search a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Audio,
         dw:Image,
         dw:Source,
-        dw:Text ;
+        dw:Text,
+        dw:Video ;
     dw:remarks ( "The advanced search also works using Google Operators, which is a lot faster. Details and help can be found [on this website](https://ahrefs.com/blog/google-advanced-search-operators/) " "For a better understanding of how to best use the advanced search, check out [this video class](https://www.youtube.com/watch?v=uyqXS5lL-mc) by GIJN" "Keep in mind that Google personalises results. You might have (a few) different hits on a different browser or device or from a different location." ) ;
     rdfs:comment "allows you to specify your search in more details to get better results. You can combine or exclude search words, search on a specific web page only or for specific file types like pdfs." ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
@@ -210,11 +211,11 @@ dw:Instagram_search a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "You will see more results when you are logged in to Instagram" "Explore locations at this [link](https://www.instagram.com/explore/locations/) " "On the mobile app you can see stories posted on a map" ) ;
-    rdfs:comment "supports looking for posts organized by hashtags and geographical tagging in a browser." ;
+    dw:remarks ( "You will see more results when you are logged in to Instagram" "Explore locations via [locations](https://www.instagram.com/explore/locations/) " "On the mobile app you can see posted stories on a map" ) ;
+    rdfs:comment "supports looking for posts organized by hashtags and geographical tagging. This will work best in a browser." ;
     schema:applicationUrl "https://www.instagram.com/search/" ;
     schema:name "Instagram search" ;
-    schema:publisher "Meta" .
+    schema:publisher "[Meta] (https://about.meta.com/)" .
 
 dw:Internet_Archive a dw:SoftwareApplication ;
     dw:howTo ( "Add a URL " "Pick a specific date and click on of the available times" "IF available, you can also click on subpages" ) ;
@@ -371,8 +372,11 @@ dw:Namechk a dw:SoftwareApplication ;
     dw:howTo ( "Enter the username you want to check" "Cross off the Captcha" "Open up the results lists" ) ;
     dw:parentNode dw:Person_name,
         dw:Social_Media_profiles ;
-    dw:relatedMediaType dw:Source,
-        dw:Text ;
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
     dw:remarks ( "Red means there is an account with that user name on the platform" "Green means the username is not in use on that platform" "Always double check, the system might not be perfect" ) ;
     rdfs:comment "is a free username and domain search tool. You can use it to check whether a username exists on different platforms." ;
     schema:applicationUrl "https://namechk.com/" ;
@@ -443,12 +447,12 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     schema:publisher "Sinergise" .
 
 dw:Sowsearch a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link" "Open the dropdown menu and select what you are looking for" "Select the filters you need and click \"add filter\"" "Press \"open URL\" to see results" ) ;
+    dw:howTo ( "Open the link" "Open the dropdown menu and select what you are looking for" "Select the filters you need and click \"add filter\"" "Press \"open URL\" to see the results" ) ;
     dw:parentNode dw:Facebook ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "You will see more results when you are looged in to Facebook" "Private posts are not visible" "Searching for posts by a specific user does not work anymore due to changes of the algorithm" ) ;
+    dw:remarks ( "You will see more results when you are logged in to Facebook" "Private posts are not visible" "Searching for posts by a specific user seems to not work anymore due to recent changes" ) ;
     rdfs:comment "is an application to help you narrow down your search on Facebook." ;
     schema:applicationUrl "https://www.sowsearch.info/" ;
     schema:name "Sowsearch" ;
@@ -486,28 +490,28 @@ dw:Suncalc a dw:SoftwareApplication ;
     schema:publisher "Vladimir Agafonkin" .
 
 dw:Telemetrio a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Sort the list on the front page by the attribute most useful to you" "Focus the results by using the fiters at the top of the list" ) ;
+    dw:howTo ( "Open the URL" "Sort the list on the front page by the attribute most useful to you" "Narrow down the results by using the fiters at the top of the list" ) ;
     dw:parentNode dw:Telegram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "The layout of the site is a bit more straight forward than tgstat with a sortable table on the start page" "Experiment with the different parameters to get the hang of it." "The difference to tgstat lies in the details, so it's worth checking both." "You have to be logged into Telegram for some search operations" "In the URL of a post, enter a 1 instead of the number, and (if none exist) an s/ in front of the account name like in this [example](https://t.me/s/MOHreport/1) " ) ;
-    rdfs:comment "is a telegram channels and groups catalog and metrics aggregator, similar to tgstat." ;
+    dw:remarks ( "The layout of the site is more straight forward than TGStat providing a sortable table on the start page" "Experiment with the different parameters to get the hang of it" "The difference to TGStat lies in the details, so it's worth checking both" "You have to be logged into Telegram for some search operations" "To find the first post of a specific channel you can add (if none exist) an s/ in front of the account name and enter a 1 as the post number in the URL of a post, like in this example (https://t.me/s/MOHreport/1)" ) ;
+    rdfs:comment "is a telegram channels and groups catalog and metrics aggregator, similar to TGStat." ;
     schema:applicationUrl "https://telemetr.io/" ;
     schema:name "Telemetrio" ;
     schema:publisher "Telemetr io" .
 
 dw:Tgstat a dw:SoftwareApplication ;
-    dw:howTo ( "Open the link" "Choose a country" "Scroll down to find categorized channels like verified, News and most popular posts at the moment from public channels" "Open a channel and you get more analytics on it" "On the timeline of the channel you can set the filter to see posts from a specific month " ) ;
+    dw:howTo ( "Open the link" "Choose a country" "Scroll down in a channel to find categories like verified News and most popular posts from public channels" "Open a channel to get more information about it" "On the timeline of the channel you can filter to see posts from a specific month " ) ;
     dw:parentNode dw:Telegram ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "To find the first post of a channel enter a 1 instead of the number in the URL" "When you are using the desktop version of Telegram it is easier to search on Telegram itself" ) ;
+    dw:remarks ( "To find the first post of a specific channel you can add (if none exist) an s/ in front of the account name and enter a 1 as the post number in the URL of a post, like in this example: https://t.me/s/MOHreport/1" "When you are using the desktop version of Telegram it is easier to search on Telegram itself" ) ;
     rdfs:comment "is a search tool for channel search and analyses of channels. It also provides keyword search on Telegram" ;
     schema:applicationUrl "https://tgstat.com/" ;
-    schema:name "Tgstat" ;
-    schema:publisher "Tgstat" .
+    schema:name "TGStat" ;
+    schema:publisher "TGStat" .
 
 dw:ThatsThem a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Type in the phone number" ) ;
@@ -603,8 +607,11 @@ dw:WhatsMyName a dw:SoftwareApplication ;
     dw:howTo ( "Enter the username " "select relevant filters" "click the search icon  " ) ;
     dw:parentNode dw:Person_name,
         dw:Social_Media_profiles ;
-    dw:relatedMediaType dw:Source,
-        dw:Text ;
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
     dw:remarks ( "You can check results as icons (left) and in a searchable table (right)" "Green means an account has been found" "Yellow means this might be a false positive" "Red means no account was found" "You can check the sources used in this github repository: [WebBreacher/WhatsMyName](https://github.com/webbreacher/whatsmyname) " ) ;
     rdfs:comment "is a tool to check if and where a username has already been used across social networks and website-domains." ;
     schema:applicationUrl "https://whatsmyname.app/" ;
@@ -623,13 +630,13 @@ dw:WhoIs a dw:SoftwareApplication ;
     schema:publisher "Whois Digital Pte Ltd, Singapore" .
 
 dw:WhoPostedWhat a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL" "Use a specific keyword and select the time you are searching for" ) ;
+    dw:howTo ( "Open the URL" "Use a specific keyword and select the time range you want to search in" ) ;
     dw:parentNode dw:Facebook ;
     dw:relatedMediaType dw:Image,
         dw:Source,
         dw:Video ;
-    dw:remarks ( "You will see more results when you are logged in to Facebook" "Searching for posts by a specific user is not working due to changes of the algorithm" "You might want to try Google Advanced search" ) ;
-    rdfs:comment "is a keyword search on Facebook from a specific time range or on a specific date." ;
+    dw:remarks ( "You will see more results when you are logged in to Facebook" "Searching for posts by a specific user is not working currently due to changes in the Facebook API" "You might also want to try Google Advanced search" ) ;
+    rdfs:comment "is a keyword search on Facebook for a specific time range or on a specific date." ;
     schema:applicationUrl "https://whopostedwhat.com/" ;
     schema:name "WhoPostedWhat" ;
     schema:publisher "[Daniel Endresz](https://twitter.com/danielendresz) and [Dan Nemec](https://twitter.com/djnemec)" .
@@ -833,8 +840,8 @@ dw:Facebook a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "While in decline in the US and across Europe, Facebook is still one of the main social networks in some regions like Myanmar" "Public posts can still be searched via Google Advanced Search" ) ;
-    rdfs:comment "is Meta's main social network, still one of the largest and in use across the globe. WhatsApp and Instagram are also part of the company's portfolio." ;
+    dw:remarks ( "While in decline in the US and across Europe, Facebook is still one of the main social networks in other regions like Myanmar" "Public posts can still be searched via Google Advanced Search" ) ;
+    rdfs:comment "is Meta's main social network, still one of the largest in use across the globe. WhatsApp and Instagram are also part of the company's portfolio." ;
     schema:name "Facebook" .
 
 dw:File_Name a dw:Task ;
@@ -935,7 +942,7 @@ dw:Telegram a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "Because of its open design, there are many great tools available for in-depth analysis like [in this Github repository](https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines )  " ) ;
+    dw:remarks ( "Because of its open design, there are many great tools available for in-depth analyses like those [in this Github repository](https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT#-search-engines )  " ) ;
     rdfs:comment "is an end-to-end encrypted social messaging service. It is very popular with user groups that highly value user-privacy (both in a positive and a negative way). It is available as a mobile app as well as a desktop service for searching and monitoring shared content." ;
     schema:name "Telegram" .
 
@@ -1080,8 +1087,8 @@ dw:Social_Media_activities a dw:Task ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "There are different popular social platforms depending on the region a person is in" "Ask yourself where the user might most likely be and play around with different name combinations across networks" ) ;
-    rdfs:comment "are the sum of interactions a person has done on any social media platform. They include publishing content and commenting as well as shareing, liking and following." ;
+    dw:remarks ( "There are different popular social platforms depending on the region a person is in" "Ask yourself where the user might most likely be and play around with different name combinations across networks to find more information" ) ;
+    rdfs:comment "are the sum of interactions a person has done on any social media platform. They include publishing content and commenting as well as sharing, liking and following." ;
     schema:name "Social Media activities" .
 
 dw:Who_is_in_content a dw:SubQuestion ;
