@@ -17,12 +17,13 @@ dw:Background_Removal a dw:SoftwareApplication ;
 dw:Baidu_Images a dw:SoftwareApplication ;
     dw:howTo ( "Open the link and drag the photo to a tab or window in your browser " "Upload the image from your desktop or add the image URL" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks ( "Works best with digital content from China" "Use Google translate plugin for translation if needed" ) ;
     rdfs:comment "is the Chinese counterpart to Google images and functions in a similar way. It works outside of China, but is best used for research on Chinese content. It is only available in Chinese." ;
     schema:applicationUrl "https://image.baidu.com" ;
     schema:name "Baidu Images" ;
-    schema:publisher "Baidu, Inc." .
+    schema:publisher "[Baidu, Inc.](https://ir.baidu.com/)" .
 
 dw:Boom_3D a dw:SoftwareApplication ;
     dw:howTo ( "Download the free trial (30 days) to your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you want to focus on" ) ;
@@ -34,11 +35,23 @@ dw:Boom_3D a dw:SoftwareApplication ;
     schema:name "Boom 3D" ;
     schema:publisher "Global Delight" .
 
+dw:Chronocalc a dw:SoftwareApplication ;
+    dw:howTo ( "Open the Github link" "Install the requirements " "Follow the instructions of the python script " ) ;
+    dw:parentNode dw:Shadow_analyses ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks ( "As an alternative you can use a tool like [[Suncalc]](https://www.suncalc.org/)  " "read this amazing guide by Sector035 on [[Chronolocation]](https://sector035.nl/articles/chronolocation-of-media) " ) ;
+    rdfs:comment "calculates the dates and times when the sun or moon is in a given position in the sky." ;
+    schema:applicationUrl "https://github.com/Sector035/chronocalc" ;
+    schema:name "Chronocalc" ;
+    schema:publisher dw:Sector035 .
+
 dw:Edit_photo a dw:SoftwareApplication ;
     dw:howTo ( "Load images by pasting an image URL, dropping an image, or pasting an image file" "Choose the tool you need from the menue bar at the left" "Select the detailed functionality from above or below the image" "Hit the export button at the top right of the image to download your enhanced image" ) ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks ( "Your photos are not uploaded, image editing happens in your browser (according to the website owner)" "You can integrate the image editor in your own website via API" ) ;
     rdfs:comment "is an easy online photo editor. It offers you the basics to crop, rotate and flip an image." ;
     schema:applicationUrl "https://edit.photo/" ;
@@ -102,7 +115,7 @@ dw:Google_Advanced_Search a dw:SoftwareApplication ;
     rdfs:comment "allows you to specify your search in more details to get better results. You can combine or exclude search words, search on a specific web page only or for specific file types like pdfs." ;
     schema:applicationUrl "https://www.google.com/advanced_search" ;
     schema:name "Google Advanced Search" ;
-    schema:publisher "Google" .
+    schema:publisher "[Google](https://about.google/)" .
 
 dw:Google_Cache a dw:SoftwareApplication ;
     dw:howTo ( "Do your regular google search." "In the results list, click on the three little dots next to the result of interest" "In the pop-up window select the 'cached' option to open this version of the link/page" "At the top of the cached page you'll see the date and time of when it was cached" ) ;
@@ -112,7 +125,7 @@ dw:Google_Cache a dw:SoftwareApplication ;
     rdfs:comment "is the place were you can find a stored version of the web page in question from a previous date in Google. Use it to check links and websites that might no longer be available or that might have changed." ;
     schema:applicationUrl "https://www.google.com/" ;
     schema:name "Google Cache" ;
-    schema:publisher "Google" .
+    schema:publisher "[Google](https://about.google/)" .
 
 dw:Google_Earth_3D a dw:SoftwareApplication ;
     dw:howTo ( "Type any adress or add geo-coordinates in the search bar " "Drag the map with your mouse " "Press cmd/ctrl or shift/ctrl to navigate in 3D" "draw lines to compare the shape of your landscape with the one from the visual" ) ;
@@ -134,12 +147,13 @@ dw:Google_Earth_Pro a dw:SoftwareApplication ;
     rdfs:comment "allows you to fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings of any place. GE Pro also includes a timeline feature to view past satellite images of the same location to track changes." ;
     schema:applicationUrl "https://www.google.de/earth/about/versions/" ;
     schema:name "Google Earth Pro" ;
-    schema:publisher "Google" .
+    schema:publisher "[Google](https://about.google/)" .
 
 dw:Google_Images a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL " "Start the search by either dragging the photo on the search bar, pasting the URL or uploading an image from your desktop" "Select text and it will translate it" "Select \"find image source\" to add keywords to the content and use Google filters like timeframe or color" "Crop specific items in the content for specific searches " ) ;
     dw:parentNode dw:Reverse_Image_Search ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks ( "Try different crops to get a hit on an image. Its the little things that sometimes make the difference" "On your mobile device you can use Google Lens from within the Google app to perform this search" ) ;
     rdfs:comment "allows you to search Google with an image and discover all possible information about it." ;
     schema:applicationUrl "https://images.google.com/" ;
@@ -217,7 +231,7 @@ dw:Instagram_search a dw:SoftwareApplication ;
     rdfs:comment "supports looking for posts organized by hashtags and geographical tagging. This will work best in a browser." ;
     schema:applicationUrl "https://www.instagram.com/search/" ;
     schema:name "Instagram search" ;
-    schema:publisher "[Meta] (https://about.meta.com/)" .
+    schema:publisher "[Meta](https://about.meta.com/)" .
 
 dw:Internet_Archive a dw:SoftwareApplication ;
     dw:howTo ( "Add a URL " "Pick a specific date and click on of the available times" "IF available, you can also click on subpages" ) ;
@@ -256,7 +270,8 @@ dw:Lets_Enhance_io a dw:SoftwareApplication ;
     dw:howTo ( "Upload the image you want to enhance" "Choose what you want/need from the automated options" "Start the process and wait" ) ;
     dw:parentNode dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks ( "You have to sign up for an account" "You can enhance 10 images for free" "[Gigapixel AI](https://www.topazlabs.com/downloads) is a useful alternative, but install only" ) ;
     rdfs:comment "is an image editor using artifical intelligence. You can enhance the resolution, the contrast and much more." ;
     schema:applicationUrl "https://letsenhance.io/" ;
@@ -264,16 +279,16 @@ dw:Lets_Enhance_io a dw:SoftwareApplication ;
     schema:publisher "Let’s Enhance, Inc" .
 
 dw:LinkedIn a dw:SoftwareApplication ;
-    dw:howTo ( "Set up an account for free (think about using a sock puppet account for investigations)" "Type in the name of the source " "Use the advanced search to narrow down your search" ) ;
+    dw:howTo ( "Set up an account for free (consider using a sock puppet account for investigations)" "Search for a name" "Use the advanced search to narrow down your search results" ) ;
     dw:parentNode dw:Person_name ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "Be aware: the information on LinkedIn is not verified! Everyone can write anything" "You can also use the Google search operators for results on LinkedIn" "If you have a normal user profile, other users will be made aware of your visit to their profile" "Journalist can ask for a free business account to visit profiles undercover" ) ;
-    rdfs:comment "is a social network with a focus on professional networking. Peoples' profiles reflect their career paths. It is very helpful to find colleagues of the person in question or other people connected to them within a company." ;
+    dw:remarks ( "Be aware: the information on LinkedIn is not verified! Everyone can publish anything" "You can also use [Google Advanced Search] (https://preview.howtoverify.info/Source/What/Context/Google_Advanced_Search) operators for results on LinkedIn" "If you use your private user profile, other users will be made aware of your visit to their profile" "Journalist can ask for a free business account to visit profiles undercover" ) ;
+    rdfs:comment "is a social network with a focus on professional networking. Peoples' profiles reflect their career paths. It is very helpful to find colleagues of the person in question or other people connected to them within a company or organisation." ;
     schema:applicationUrl "https://www.linkedin.com/" ;
     schema:name "LinkedIn" ;
-    schema:publisher "LinkedIn" .
+    schema:publisher "[LinkedIn](https://about.linkedin.com/)" .
 
 dw:Listen_to_the_audio a dw:Task ;
     dw:parentNode dw:What,
@@ -470,7 +485,7 @@ dw:Speech_to_text_Google a dw:SoftwareApplication ;
     rdfs:comment "is a transcription of your audio conversation into text-format for analysing, detecting languages and collecting keywords." ;
     schema:applicationUrl "https://translate.google.com/" ;
     schema:name "Speech to text" ;
-    schema:publisher "Google" .
+    schema:publisher "[Google](https://about.google/)" .
 
 dw:Spoken_language_identifier a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Press record and play your audio" "You can also upload an audio file " "The results will show you the percentage of the language(s) detected" ) ;
@@ -533,7 +548,8 @@ dw:ThatsThem a dw:SoftwareApplication ;
 
 dw:TimeandDate a dw:SoftwareApplication ;
     dw:howTo ( "Open the link" "Select time zone converter from the menue" "Add several locations" "Move the cursor on the timeline and compare the changes in the timezones" ) ;
-    dw:parentNode dw:Timecodes ;
+    dw:parentNode dw:Timecodes,
+        dw:Weather_analyses ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "You can also get weather data from the last seven days, which can help to determine/verify a date" ) ;
@@ -545,12 +561,13 @@ dw:TimeandDate a dw:SoftwareApplication ;
 dw:TinEye a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Start the search by either dragging the photo on the search bar, pasting the URL or uploading an image from your desktop" "Use the filters on the left side to sort the images according to what you need to find" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks ( "Has a smaller database than the others, hence doesn't always yield results" "Does not work well on very new images, but delivers good results when using stock images" "Check out the [TinEye Tutorial](https://tineye.com/how ) for how to best use it" ) ;
     rdfs:comment "is very efficient when it comes to altered versions and showing results in chronological order." ;
     schema:applicationUrl "https://tineye.com/" ;
     schema:name "TinEye" ;
-    schema:publisher "TinEye" .
+    schema:publisher "[TinEye](https://tineye.com/about)" .
 
 dw:Tweetbeaver a dw:SoftwareApplication ;
     dw:howTo ( "Connect Tweetbeaver to your Twitter account" "Choose the action you want to perform" "Follow the onscreen instructions" ) ;
@@ -567,18 +584,18 @@ dw:Tweetbeaver a dw:SoftwareApplication ;
     schema:publisher "Tweetbeaver" .
 
 dw:Twitter_Advanced_Search a dw:SoftwareApplication ;
-    dw:howTo ( "Open the advanced search URL" "Fill out the fields that best correspond with your search questions" "You can edit the search query in the search bar directly" ) ;
+    dw:howTo ( "Open the advanced search URL" "Fill out the fields that correspond with your search questions" "Edit the search query in the search bar directly" ) ;
     dw:parentNode dw:Twitter ;
     dw:relatedMediaType dw:Audio,
         dw:Image,
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "The advanced search also works using the operators in the search bar of Twitter, which is a lot faster. Details and help can be found [on this website](https://developer.twitter.com/en/docs/twitter-api/v1/rules-and-filtering/search-operators) " "To monitor your search query and use filters in between we recommend the monitoring tool [Tweetdeck](https://tweetdeck.twitter.com/) by Twitter itself " ) ;
+    dw:remarks ( "The advanced search also works using the operators in the search bar of Twitter, which is a lot faster. Details and help can be found [on this website](https://developer.twitter.com/en/docs/twitter-api/v1/rules-and-filtering/search-operators) " "To monitor your search query and use filters to find more relevant content we recommend the monitoring tool [Tweetdeck](https://tweetdeck.twitter.com/) , created by Twitter " ) ;
     rdfs:comment "allows you to specify your search in more details to get better results. You can combine or exclude search words, search for tweets by a specific account, from a specific location in a specific time range." ;
     schema:applicationUrl "https://twitter.com/search-advanced?lang=en" ;
     schema:name "Twitter Advanced Search" ;
-    schema:publisher "Twitter" .
+    schema:publisher "[Twitter](https://about.twitter.com/en)" .
 
 dw:USearch a dw:SoftwareApplication ;
     dw:howTo ( "Type in your search query " "Select the region in which you are looking for information" ) ;
@@ -636,7 +653,7 @@ dw:WhatsMyName a dw:SoftwareApplication ;
         dw:Source,
         dw:Text,
         dw:Video ;
-    dw:remarks ( "You can check results as icons (left) and in a searchable table (right)" "Green means an account has been found" "Yellow means this might be a false positive" "Red means no account was found" "You can check the sources used in this github repository: [WebBreacher/WhatsMyName](https://github.com/webbreacher/whatsmyname) " ) ;
+    dw:remarks ( "You can check results as icons (left) and in a searchable table (right)" "Green means an account has been found" "Yellow means this might be a false positive" "Red means no account was found" "Check the extensive resources in this github repository: [WebBreacher/WhatsMyName](https://github.com/webbreacher/whatsmyname) " ) ;
     rdfs:comment "is a tool to check if and where a username has already been used across social networks and website-domains." ;
     schema:applicationUrl "https://whatsmyname.app/" ;
     schema:name "WhatsMyName" ;
@@ -697,17 +714,29 @@ dw:WolframAlpha a dw:SoftwareApplication ;
     rdfs:comment "replies to factual queries by computing answers based on externally sourced data." ;
     schema:applicationUrl "https://www.wolframalpha.com/" ;
     schema:name "WolframAlpha" ;
-    schema:publisher "Wolfram Research" .
+    schema:publisher "[Wolfram Research](https://www.wolframalpha.com/about)" .
+
+dw:Wunderground a dw:SoftwareApplication ;
+    dw:howTo ( "Open the link" "Type in the location " "Scroll down to see results like weather conditions throughout the day and more" "Select history in the menue to see historical weather data" ) ;
+    dw:parentNode dw:Weather_analyses ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks ( "Select and include the position of a specific weather station which can far away from the location you are looking at" "Always double check with other visuals on this day" ) ;
+    rdfs:comment "shows and analyzes weather data from the present and past." ;
+    schema:applicationUrl "https://www.wunderground.com/" ;
+    schema:name "Wunderground" ;
+    schema:publisher "The Weather Company" .
 
 dw:Yandex_Images a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Start the search by dragging the photo on the search bar" "As an alternative, click the camera icon in the search bar and paste the URL or upload an image from your desktop here" "Crop specific items to do another reverse search on those" "Yandex automatically detects text and translates the words into Russian" ) ;
     dw:parentNode dw:Reverse_Image_Search ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
     dw:remarks ( "Yandex is very strong in object and facial recognition" "Most results will be in Russian (as are most parts of the interface), use Google translate plugin for translation" ) ;
     rdfs:comment "is the russian equivalent to Google Image Search. It is very efficient when searching for digital content in a European or former-Soviet context." ;
     schema:applicationUrl "https://yandex.com/images" ;
     schema:name "Yandex Images" ;
-    schema:publisher "Yandex" .
+    schema:publisher "[Yandex](https://yandex.com/company/)" .
 
 dw:Yandex_Maps a dw:SoftwareApplication ;
     dw:howTo ( "Type in a location or add GPS coordinates" "Switch between map, satellite and hybrid view" "Click on street panoramas to get street view" "Measure distance and get directions by dragging between spots on a map" ) ;
@@ -824,14 +853,6 @@ dw:Visuals a dw:Task ;
     rdfs:comment "are photos, graphics or videos included in the text." ;
     schema:name "Visuals" .
 
-dw:Weather_analyses a dw:Task ;
-    dw:parentNode dw:When ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks ( "Check local reports" "Collect more visuals of the event and compare the weather" ) ;
-    rdfs:comment "points to the weather on the date the content was created. When you see snow or its very windy, you will see it on news reports as well, or find information on forecast websites. Weather can help to also narrow down the country an envent took place in, even if there is no other information available." ;
-    schema:name "Weather analysis" .
-
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
@@ -931,14 +952,6 @@ dw:Satellite_data a dw:Task ;
     dw:remarks ( "Optical satellite imagery views the world as the human eye does but has its limits when its cloudy or at night" "Radar satellites can operate day and night and regardless weather conditions, but it is more difficult to interpret the data" "Ollie Ballinger wrote a great article about SAR [Radar Interference Tracker](https://www.bellingcat.com/resources/2022/02/11/radar-interference-tracker-a-new-open-source-tool-to-locate-active-military-radar-systems/) helping you to search for active military radar systems anywhere on earth" ) ;
     rdfs:comment "includes satellite imagery and earth observation data of the earth's surface and its atmosphere. It provides information on the situation and scenery, is mostly available from multiple moments in time and can be used as visual evidence." ;
     schema:name "Satellite data" .
-
-dw:Shadow_analyses a dw:Task ;
-    dw:parentNode dw:When ;
-    dw:relatedMediaType dw:Image,
-        dw:Video ;
-    dw:remarks ( "It's sometimes difficult to get exact times and dates, but it's a good first step to use" "If you don't see any shadows although there is light, the visual might have been tampered with" ) ;
-    rdfs:comment "refers to the defined shadow cast by an object via a light source e.g. the sun. The shadow's direction and its length provide information about the position of the sun which helps to determine the exact time." ;
-    schema:name "Shadow analysis" .
 
 dw:Social_Media_profiles a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
@@ -1075,9 +1088,25 @@ dw:Person_name a dw:Task ;
     dw:relatedMediaType dw:Audio,
         dw:Source,
         dw:Text ;
-    dw:remarks ( "A person's online name can also be invented. Verify it by asking for an official ID, when reaching out" "Try out different spellings of a name and use the surnam both in first and second place when searching" ) ;
-    rdfs:comment "is the 'clear' (not necessarily real) name of a user. You might find more info using this one (besides the username) in searches, for example in more official documents." ;
+    dw:remarks ( "A person's online name can also be invented. Verify it by asking for an official ID when reaching out" "Try out different spellings of a name and use the surname both in first and second place when searching" ) ;
+    rdfs:comment "is the available but not necessarily real name of a user. You might find more info using this one (besides the username) in searches, for example in more official documents." ;
     schema:name "Person Name" .
+
+dw:Shadow_analyses a dw:Task ;
+    dw:parentNode dw:When ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks ( "It's sometimes difficult to get exact times and dates, but it's a good first step to use" "If you don't see any shadows although there is light, the visual might have been tampered with" "read this amazing guide by Sector035 on [[Chronolocation]](https://sector035.nl/articles/chronolocation-of-media) " ) ;
+    rdfs:comment "refers to the defined shadow cast by an object via a light source e.g. the sun. The shadow's direction and its length provide information about the position of the sun which helps to determine the exact time." ;
+    schema:name "Shadow analysis" .
+
+dw:Weather_analyses a dw:Task ;
+    dw:parentNode dw:When ;
+    dw:relatedMediaType dw:Image,
+        dw:Video ;
+    dw:remarks ( "Check local reports" "Collect more visuals of the event and compare the weather" ) ;
+    rdfs:comment "points to the weather on the date the content was created. When you see snow or its very windy, you will see it on news reports as well, or find information on forecast websites. Weather can help to also narrow down the country an envent took place in, even if there is no other information available." ;
+    schema:name "Weather analysis" .
 
 dw:Website a dw:Task ;
     dw:parentNode dw:Digital_Footprint,
