@@ -210,11 +210,12 @@ dw:Impressum a dw:Task ;
     schema:name "Impressum" .
 
 dw:InVid a dw:SoftwareApplication ;
-    dw:howTo ( "Install the browser plugin in Firefox or Chrome" "Click on the plugin and open the toolbox" "Select Metadata" "Add the URL of the image/video or upload a local file " ) ;
-    dw:parentNode dw:Metadata ;
+    dw:howTo ( "Install the browser plugin in Firefox or Chrome" "Click on the plugin and open the toolbox" "Select Keyframes or Metadata" "Add the URL of the image/video or upload a local file " ) ;
+    dw:parentNode dw:Context,
+        dw:Metadata ;
     dw:relatedMediaType dw:Video ;
-    dw:remarks ( "Metadata can easily be manipulated, always cross-reference the information" ) ;
-    rdfs:comment "is a web-based integrated toolset for image and video verification. It allows you to extract metadata from images and videos. There are also other features to analyse photos and videos, like a magnifier, keyframe generator, photo forensic tool and a copyright check." ;
+    dw:remarks ( "Metadata can easily be manipulated, always cross-reference the information" "Pick keyframes that have the best resolution and show most of the scenery for a reverse image search" ) ;
+    rdfs:comment "is a web-based integrated toolset for image and video verification. It allows you to generate several keyframes for a reverse image search. As well as extracting metadata from images and videos. There are also other features to analyse photos and videos, like a magnifier, photo forensic tool and a copyright check." ;
     schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "InVid" ;
     schema:publisher "AFP Medialab, Deutsche Welle & partners" .
@@ -1002,17 +1003,6 @@ dw:eMail a dw:Task ;
     rdfs:comment "is the unique digital address of a user. There may be a thousand John Does but only one john.doe @ yahoo com." ;
     schema:name "eMail" .
 
-dw:Context a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Audio,
-        dw:Image,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    dw:remarks ( "Write down the questions you want to get answered" "Use Google translate to search in local languages" "Look for several local and trustworthy sources" "Think about specific search keywords to narrow down your search" ) ;
-    rdfs:comment "of an event describes the general situation in which the digital content you have exists. To establish context, start by using the information shared by the source or the web page you know/have and dig deeper to gather more." ;
-    schema:name "Context" .
-
 dw:Digital_Footprint a dw:Task ;
     dw:parentNode dw:Sources,
         dw:Who_created_content,
@@ -1135,6 +1125,17 @@ dw:Content_analysis a dw:Task ;
     dw:remarks ( "Mark all these elements in the document" "When doing a search for details, think of possible typos and different name writings" ) ;
     rdfs:comment "means to examine the document as a whole, take a closer look at names and keywords mentioned and analyse the various visuals it includes." ;
     schema:name "Content analysis" .
+
+dw:Context a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks ( "Write down the questions you want to get answered" "Use Google translate to search in local languages" "Look for several local and trustworthy sources" "Think about specific search keywords to narrow down your search" ) ;
+    rdfs:comment "of an event describes the general situation in which the digital content you have exists. To establish context, start by using the information shared by the source or the web page you know/have and dig deeper to gather more." ;
+    schema:name "Context" .
 
 dw:Social_Media_activities a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
