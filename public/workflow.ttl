@@ -433,11 +433,8 @@ dw:RIS_\(Image\) a dw:Task ;
     dw:parentNode dw:Context,
         dw:Object_identification,
         dw:Original,
-        dw:Person_identification,
-        dw:Visuals ;
-    dw:relatedMediaType dw:Image,
-        dw:Source,
-        dw:Text ;
+        dw:Person_identification ;
+    dw:relatedMediaType dw:Image ;
     dw:remarks ( "A confirmed match is more informative than the lack of a match. The search engines database might not have full access to e.g. social networks to find all published versions" "You can also search for specific objects or buildings" "Each search engine has its pros and cons. To get the most out of it, try all of them" ) ;
     rdfs:comment "is a way to check if the content at hand is the earliest published (possibly the original) version of a file. It can also tell you if and where the content was published before. The search results also provide similar content allowing for more context to an event. A RIS can also help to identify specific objects in visual content by searching just for those." ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
@@ -847,13 +844,6 @@ dw:Sources a dw:Task ;
     rdfs:comment "refer to any name, company, institution, expert, interview partner or website being mentioned in the text." ;
     schema:name "Sources" .
 
-dw:Visuals a dw:Task ;
-    dw:parentNode dw:Content_analysis ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Look at the copyright of the images for possible clues" "There might be metadata and captions holding more information" ) ;
-    rdfs:comment "are photos, graphics or videos included in the text." ;
-    schema:name "Visuals" .
-
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
@@ -1003,6 +993,13 @@ dw:eMail a dw:Task ;
     rdfs:comment "is the unique digital address of a user. There may be a thousand John Does but only one john.doe @ yahoo com." ;
     schema:name "eMail" .
 
+dw:Content_analysis a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:Text ;
+    dw:remarks ( "Mark all these elements in the document" "When doing a search for details, think of possible typos and different name writings" ) ;
+    rdfs:comment "means to examine the document as a whole, take a closer look at names and keywords mentioned and analyse the various visuals it includes." ;
+    schema:name "Content analysis" .
+
 dw:Digital_Footprint a dw:Task ;
     dw:parentNode dw:Sources,
         dw:Who_created_content,
@@ -1118,13 +1115,6 @@ dw:Who a dw:Question ;
 
 The person who uploaded or shared the digital content, is not necessarily the one who created it. If you can find the creator you have most probably also found an eyewitness. Maybe that person can provide you with more context and content.""" ;
     schema:name "Who" .
-
-dw:Content_analysis a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:Text ;
-    dw:remarks ( "Mark all these elements in the document" "When doing a search for details, think of possible typos and different name writings" ) ;
-    rdfs:comment "means to examine the document as a whole, take a closer look at names and keywords mentioned and analyse the various visuals it includes." ;
-    schema:name "Content analysis" .
 
 dw:Context a dw:Task ;
     dw:parentNode dw:What ;
