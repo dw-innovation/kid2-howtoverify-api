@@ -78,6 +78,17 @@ dw:Exif_Data a dw:SoftwareApplication ;
     schema:name "Exif Data" ;
     schema:publisher "Unknown" .
 
+dw:Forensically a dw:SoftwareApplication ;
+    dw:howTo ( "Open the tool URL" "Select open file on top of the site and select for the image on your computer you want to examine" "Once it is uploaded use the menue on the right side to navigate through the different analysis results " "Don't forget to hover your mouse over the image to see the results" ) ;
+    dw:parentNode dw:Manipulation_detection,
+        dw:Metadata ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks ( "[Here](https://www.youtube.com/watch?v=XRCq8CJrI_s) is a tutorial by the creator Jonas Wagner itself to understand the different tools and interprete the results" "Under the button [help](https://29a.ch/photo-forensics/#help) you get an explaination of the different options in Forensically " "Be aware, third party tools can also save the metadata attached to the image. Jonas Wagner mentions the image will be processed only in your browser. " ) ;
+    rdfs:comment "is a collection of tools which allows you to detect hidden details or manipulation in an image as well as showing metadata." ;
+    schema:applicationUrl "https://29a.ch/photo-forensics/" ;
+    schema:name "Forensically" ;
+    schema:publisher "Jonas Wagner" .
+
 dw:Fotoforensic a dw:SoftwareApplication ;
     dw:howTo ( "Open the tool URL" "Enter the URL of an image or click the search button to browse for an image on your computer" "Click the upload button and let the machine do the analysis" "Once it is done use the menue on the upper left hand corner to navigate through the different analysis results " "Don't forget to hover your mouse over the image from time to time for a direct comparison of image and analysis output" ) ;
     dw:parentNode dw:Manipulation_detection ;
@@ -601,7 +612,8 @@ dw:USearch a dw:SoftwareApplication ;
         dw:File_Name,
         dw:Headline,
         dw:Keywords ;
-    dw:relatedMediaType dw:Image,
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
         dw:Text,
         dw:Video ;
     dw:remarks ( "An alternative tool is [ISearchFrom](http://isearchfrom.com/) " ) ;
@@ -816,13 +828,6 @@ dw:Instagram a dw:Task ;
     rdfs:comment "is a photo and video sharing social network owned by Meta. It is a mobile application that also allows for (limited) browser search." ;
     schema:name "Instagram" .
 
-dw:Manipulation_detection a dw:Task ;
-    dw:parentNode dw:Original ;
-    dw:relatedMediaType dw:Image ;
-    dw:remarks ( "With visuals, use your own senses and check for anomalies, e.g. in shadows, reflections or contours" "With audio, close your eyes and listen carefully to the sound for jumps or unnatural gaps" "You can train yourself. Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
-    rdfs:comment "means to look for traces of tampering in the digital content you are investigating." ;
-    schema:name "Manipulation detection" .
-
 dw:Panorama_stitch a dw:Task ;
     dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Video ;
@@ -928,6 +933,13 @@ dw:Language_detection a dw:Task ;
     dw:remarks ( "A dialect or an accent can provide important information about the people involved and possibly their location." "Try to identify specific words and the wording that might be used only in a specific region of the world." ) ;
     rdfs:comment "aims to identify the language that is spoken in an audio recording." ;
     schema:name "Language detection" .
+
+dw:Manipulation_detection a dw:Task ;
+    dw:parentNode dw:Original ;
+    dw:relatedMediaType dw:Image ;
+    dw:remarks ( "With visuals, use your own senses and check for anomalies, e.g. in shadows, reflections or contours" "With audio, close your eyes and listen carefully to the sound for jumps or unnatural gaps" "You can train yourself. Sharpen your senses [here](https://digger-project.com/sharpen-your-senses/)" ) ;
+    rdfs:comment "means to look for traces of tampering in the digital content you are investigating." ;
+    schema:name "Manipulation detection" .
 
 dw:Original a dw:Task ;
     dw:parentNode dw:What ;
@@ -1042,17 +1054,6 @@ dw:KeyframeExtraction a dw:Task ;
     rdfs:comment "will allow you to analyse the most informative keyframes of a video. This makes it possible to use (some) image verification tools (e.g. reverse image search, image enhancement, etc.) on videos as well." ;
     schema:name "Keyframe Extraction" .
 
-dw:Metadata a dw:Task ;
-    dw:parentNode dw:When,
-        dw:Where,
-        dw:Who_created_content ;
-    dw:relatedMediaType dw:Image,
-        dw:Source,
-        dw:Video ;
-    dw:remarks ( "You can also install software to read out metadata, e.g. Phil Harvey's [ExifTool](https://exiftool.org/) " "Metadata can easily be manipulated, make sure to cross-reference the information" "Most social media networks delete metadata of any content that is being shared. Therefore obtaining the original file is important. Check out [this tutorial](https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/) from Amnesty" ) ;
-    rdfs:comment "is information attached to digital content (audio, photo, video, pdf). It includes recording date and time, device, location, editing programs and technical details (aperture, ISO, exposure time, etc.)." ;
-    schema:name "Metadata" .
-
 dw:Object_identification a dw:Task ;
     dw:parentNode dw:Geolocation ;
     dw:relatedMediaType dw:Image,
@@ -1126,6 +1127,17 @@ dw:Context a dw:Task ;
     dw:remarks ( "Write down the questions you want to get answered" "Use Google translate to search in local languages" "Look for several local and trustworthy sources" "Think about specific search keywords to narrow down your search" ) ;
     rdfs:comment "of an event describes the general situation in which the digital content you have exists. To establish context, start by using the information shared by the source or the web page you know/have and dig deeper to gather more." ;
     schema:name "Context" .
+
+dw:Metadata a dw:Task ;
+    dw:parentNode dw:When,
+        dw:Where,
+        dw:Who_created_content ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Video ;
+    dw:remarks ( "You can also install software to read out metadata, e.g. Phil Harvey's [ExifTool](https://exiftool.org/) " "Metadata can easily be manipulated, make sure to cross-reference the information" "Most social media networks delete metadata of any content that is being shared. Therefore obtaining the original file is important. Check out [this tutorial](https://citizenevidence.org/2020/04/20/sending-encrypted-photos-while-preserving-metadata/) from Amnesty" ) ;
+    rdfs:comment "is information attached to digital content (audio, photo, video, pdf). It includes recording date and time, device, location, editing programs and technical details (aperture, ISO, exposure time, etc.)." ;
+    schema:name "Metadata" .
 
 dw:Social_Media_activities a dw:Task ;
     dw:parentNode dw:Digital_Footprint ;
