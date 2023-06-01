@@ -472,6 +472,13 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     schema:name "Sentinel Hub EO Browser" ;
     schema:publisher "Sinergise" .
 
+dw:Sound a dw:Task ;
+    dw:parentNode dw:Synthetic_audio ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks "" ;
+    rdfs:comment "" ;
+    schema:name "Sound" .
+
 dw:Sowsearch a dw:SoftwareApplication ;
     dw:howTo ( "Open the link" "Open the dropdown menu and select what you are looking for" "Select the filters you need and click \"add filter\"" "Press \"open URL\" to see the results" ) ;
     dw:parentNode dw:Facebook ;
@@ -849,6 +856,13 @@ dw:Sources a dw:Task ;
     rdfs:comment "refer to any name, company, institution, expert, interview partner or website being mentioned in the text." ;
     schema:name "Sources" .
 
+dw:Synthetic_audio a dw:Task ;
+    dw:parentNode dw:SyntheticMedia ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "remark" ) ;
+    rdfs:comment "" ;
+    schema:name "Synthetic audio" .
+
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
@@ -1087,6 +1101,32 @@ dw:Shadow_analyses a dw:Task ;
     dw:remarks ( "It's sometimes difficult to get exact times and dates, but it's a good first step to use" "If you don't see any shadows although there is light, the visual might have been tampered with" "read this amazing guide by Sector035 on [[Chronolocation]](https://sector035.nl/articles/chronolocation-of-media) " ) ;
     rdfs:comment "refers to the defined shadow cast by an object via a light source e.g. the sun. The shadow's direction and its length provide information about the position of the sun which helps to determine the exact time." ;
     schema:name "Shadow analysis" .
+
+dw:SyntheticMedia a dw:MediaObject ;
+    dw:remarks ( "Follow experts and tech journalists on the latest developement on AI techniques " "Explore generative media tools to understand their possibilities and limitations in manipulation" ) ;
+    rdfs:comment """Detecting and verifying synthetic media can be a complex task, and new advancements in technology may make it more challenging. 
+Seek expert analysis from specialists
+
+\\- Train yourself in analyzing generative technology 
+
+\\- Find inconsistencies or artifacts in the media 
+
+\\- Seek expert analysis from specialists  
+
+\\- Use technology-assisted tools designed for detecting
+
+And of course, in general the same verification workflow of answering the W-questions applies here
+
+\\- What happens in the video?
+
+\\- Where did the event take place?
+
+\\- When did the event occur?
+
+\\- Who created the video?
+
+\\- How did this happen?""" ;
+    schema:name "Synthetic Media" .
 
 dw:Weather_analyses a dw:Task ;
     dw:parentNode dw:When ;
