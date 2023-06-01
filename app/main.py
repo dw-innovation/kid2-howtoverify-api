@@ -8,7 +8,7 @@ from diskcache import Cache
 app = FastAPI()
 CACHE = Cache('tmp')
 
-origins = ["https://preview.howtoverify.info", "https://www.howtoverify.info", "https://howtoverify.info", "http://localhost:3000", "http://localhost:3001", "https://api.howtoverify.info"]
+origins = ["https://preview.howtoverify.info", "https://www.howtoverify.info", "https://howtoverify.info", "https://kid-howtoverify-frontend-dev.vercel.app", "http://localhost:3000", "http://localhost:3001", "https://api.howtoverify.info"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
