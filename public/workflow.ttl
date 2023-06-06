@@ -46,6 +46,23 @@ dw:Chronocalc a dw:SoftwareApplication ;
     schema:name "Chronocalc" ;
     schema:publisher dw:Sector035 .
 
+dw:ContentWs a dw:Task ;
+    dw:parentNode dw:SyntheticAudio ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "follow the workflow on [[Audio]](https://www.howtoverify.info/Audio) here at HowToVerify " ) ;
+    rdfs:comment """are included in the general audio verification workflows:
+
+\\- What happens in the audio?
+
+\\- Where did the event take place?
+
+\\- When did the event occur?
+
+\\- Who created the audio?
+
+\\- How did this happen?""" ;
+    schema:name "Content" .
+
 dw:Edit_photo a dw:SoftwareApplication ;
     dw:howTo ( "Load images by pasting an image URL, dropping an image, or pasting an image file" "Choose the tool you need from the menue bar at the left" "Select the detailed functionality from above or below the image" "Hit the export button at the top right of the image to download your enhanced image" ) ;
     dw:parentNode dw:Enhance_Image_\(Image\),
@@ -473,7 +490,7 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     schema:publisher "Sinergise" .
 
 dw:Sound a dw:Task ;
-    dw:parentNode dw:Synthetic_audio ;
+    dw:parentNode dw:SyntheticAudio ;
     dw:relatedMediaType dw:SyntheticMedia ;
     dw:remarks "" ;
     rdfs:comment "" ;
@@ -523,6 +540,27 @@ dw:Suncalc a dw:SoftwareApplication ;
     schema:applicationUrl "https://www.suncalc.org/" ;
     schema:name "Suncalc" ;
     schema:publisher "Vladimir Agafonkin" .
+
+dw:SyntheticImage a dw:Task ;
+    dw:parentNode dw:SyntheticMedia ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "na" ) ;
+    rdfs:comment ( "na" ) ;
+    schema:name "Synthetic Image" .
+
+dw:SyntheticText a dw:Task ;
+    dw:parentNode dw:SyntheticMedia ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "na" ) ;
+    rdfs:comment ( "na" ) ;
+    schema:name "Synthetic Text" .
+
+dw:SyntheticVideo a dw:Task ;
+    dw:parentNode dw:SyntheticMedia ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "na" ) ;
+    rdfs:comment ( "na" ) ;
+    schema:name "Synthetic Video" .
 
 dw:Telemetrio a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Sort the list on the front page by the attribute most useful to you" "Narrow down the results by using the fiters at the top of the list" ) ;
@@ -660,6 +698,19 @@ dw:ViewDNS a dw:SoftwareApplication ;
     schema:applicationUrl "https://viewdns.info/" ;
     schema:name "ViewDNS" ;
     schema:publisher "ViewDNS" .
+
+dw:Voice a dw:Task ;
+    dw:parentNode dw:SyntheticAudio ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Note that these methods may generally be less reliable than technology-based approaches and often rely on subjective assessments." ) ;
+    rdfs:comment """Verifying synthetic or artificial voices can be performed at various levels and by using different methods. 
+While many methods rely on technology, there are some approaches that are less tech-oriented:
+
+\\- Voice Comparison: By directly comparing the voice in question with the actual voice of the person, it can often be determined if it's an imitation. 
+\\- Content Analysis: Synthetic voices can be identified through analysis of the content of the statements. If the statements are inconsistent or uncharacteristic for the person, it might be a hint that the voice has been synthesized.
+\\- Situational Analysis: You might have concerns about the authenticity of a voice based on the context or situation in which the voice is presented. If it's unlikely for the person to be speaking in that context, it could be a hint that the voice has been synthesized.
+\\- Behavioral Analysis: People typically have unique speech patterns and behaviors that are difficult to imitate. Analyzing such behavior patterns can help identify synthetic voices""" ;
+    schema:name "Voice" .
 
 dw:WhatsMyName a dw:SoftwareApplication ;
     dw:howTo ( "Enter the username " "Select relevant filters" "Click the search icon  " ) ;
@@ -855,13 +906,6 @@ dw:Sources a dw:Task ;
     dw:remarks ( "There might be typos in the name, so play around with different writings " "Keep in mind that names might be spelled differently in another language" ) ;
     rdfs:comment "refer to any name, company, institution, expert, interview partner or website being mentioned in the text." ;
     schema:name "Sources" .
-
-dw:Synthetic_audio a dw:Task ;
-    dw:parentNode dw:SyntheticMedia ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "remark" ) ;
-    rdfs:comment "" ;
-    schema:name "Synthetic audio" .
 
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
@@ -1102,31 +1146,12 @@ dw:Shadow_analyses a dw:Task ;
     rdfs:comment "refers to the defined shadow cast by an object via a light source e.g. the sun. The shadow's direction and its length provide information about the position of the sun which helps to determine the exact time." ;
     schema:name "Shadow analysis" .
 
-dw:SyntheticMedia a dw:MediaObject ;
-    dw:remarks ( "Follow experts and tech journalists on the latest developement on AI techniques " "Explore generative media tools to understand their possibilities and limitations in manipulation" ) ;
-    rdfs:comment """Detecting and verifying synthetic media can be a complex task, and new advancements in technology may make it more challenging. 
-Seek expert analysis from specialists
-
-\\- Train yourself in analyzing generative technology 
-
-\\- Find inconsistencies or artifacts in the media 
-
-\\- Seek expert analysis from specialists  
-
-\\- Use technology-assisted tools designed for detecting
-
-And of course, in general the same verification workflow of answering the W-questions applies here
-
-\\- What happens in the video?
-
-\\- Where did the event take place?
-
-\\- When did the event occur?
-
-\\- Who created the video?
-
-\\- How did this happen?""" ;
-    schema:name "Synthetic Media" .
+dw:SyntheticAudio a dw:Task ;
+    dw:parentNode dw:SyntheticMedia ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "na" ) ;
+    rdfs:comment ( "na" ) ;
+    schema:name "Synthetic Audio" .
 
 dw:Weather_analyses a dw:Task ;
     dw:parentNode dw:When ;
@@ -1267,6 +1292,32 @@ dw:Who_created_content a dw:SubQuestion ;
     dw:remarks ( "Be careful when adressing eyewitnesses, they might be emotionaly affected" "You can ask the person for the original file or other related content so that you have more info to work with" "Ask a question you already verified to double-check the statement of a witness" ) ;
     rdfs:comment "refers to the primary source (a person or a group) that eywitnessed the event. It is not necessarily the same person who uploaded the content. Remember, it is very easy to download or reshare content from any social platform and re-publish it on another." ;
     schema:name "Who created content" .
+
+dw:SyntheticMedia a dw:MediaObject ;
+    dw:remarks ( "Follow experts and tech journalists on the latest developement on AI techniques " "Explore generative media tools to understand their possibilities and limitations in manipulation" ) ;
+    rdfs:comment """Detecting and verifying synthetic media can be a complex task, and new advancements in technology may make it more challenging. 
+Seek expert analysis from specialists
+
+\\- Train yourself in analyzing generative technology 
+
+\\- Find inconsistencies or artifacts in the media 
+
+\\- Seek expert analysis from specialists  
+
+\\- Use technology-assisted tools designed for detecting
+
+And of course, in general the same verification workflow of answering the W-questions applies here
+
+\\- What happens in the video?
+
+\\- Where did the event take place?
+
+\\- When did the event occur?
+
+\\- Who created the video?
+
+\\- How did this happen?""" ;
+    schema:name "Synthetic Media" .
 
 dw:What a dw:Question ;
     dw:parentNode dw:Audio,
