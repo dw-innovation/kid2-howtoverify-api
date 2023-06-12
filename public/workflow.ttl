@@ -541,13 +541,6 @@ dw:Suncalc a dw:SoftwareApplication ;
     schema:name "Suncalc" ;
     schema:publisher "Vladimir Agafonkin" .
 
-dw:SyntheticImage a dw:Task ;
-    dw:parentNode dw:SyntheticMedia ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "na" ) ;
-    rdfs:comment ( "na" ) ;
-    schema:name "Synthetic Image" .
-
 dw:SyntheticText a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
@@ -828,6 +821,16 @@ dw:newsgathering a dw:Task ;
     rdfs:comment "describes the process of collecting and analysing content. Set up a content monitoring system with trustworthy and local accounts to find relevant content." ;
     schema:name "Newsgathering" .
 
+dw:search4faces a dw:SoftwareApplication ;
+    dw:howTo ( "nana" ) ;
+    dw:parentNode dw:Profile_picture ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "nana" ) ;
+    rdfs:comment "allows you to search for faces on platforms like TikTok and VKontakte." ;
+    schema:applicationUrl "https://search4faces.com/en/" ;
+    schema:name "Search4Faces" ;
+    schema:publisher "unknown" .
+
 dw:Address a dw:Task ;
     dw:parentNode dw:Author,
         dw:Contact ;
@@ -900,12 +903,27 @@ dw:Phone_number a dw:Task ;
     rdfs:comment "is the number associated with a landline or mobile contract. Usually phone numbers are associated with a specific region or country, allowing for a general geolocation. Some numbers however are international and can be used from anywhere." ;
     schema:name "Phone number" .
 
+dw:Profile_picture a dw:Task ;
+    dw:parentNode dw:SyntheticImage ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "There are also websites that offer fake usernames, names, as well as fabricated text messages." ) ;
+    rdfs:comment """There are several websites available that offer deepfake images for fake social media profiles, which you can also use as what is commonly referred to as a "sock puppet." 
+Be aware there a ways and tools to get around the verification process of social media network for new profiles.""" ;
+    schema:name "Profile picture" .
+
 dw:Sources a dw:Task ;
     dw:parentNode dw:Content_analysis ;
     dw:relatedMediaType dw:Text ;
     dw:remarks ( "There might be typos in the name, so play around with different writings " "Keep in mind that names might be spelled differently in another language" ) ;
     rdfs:comment "refer to any name, company, institution, expert, interview partner or website being mentioned in the text." ;
     schema:name "Sources" .
+
+dw:SyntheticImage a dw:Task ;
+    dw:parentNode dw:SyntheticMedia ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "na" ) ;
+    rdfs:comment ( "is an computer genereated, non-existing image. So far, all the images generated with Artificial Intelligence that have made their way into the public, technical errors have been noticeable when zoomed in. The technology, including in the case of \"Firefly,\" is not yet capable of correctly identifying and adding fine details. As an attempt to conceal this, an unnatural blur is often applied to parts of an image." ) ;
+    schema:name "Synthetic Image" .
 
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
@@ -1293,6 +1311,18 @@ dw:Who_created_content a dw:SubQuestion ;
     rdfs:comment "refers to the primary source (a person or a group) that eywitnessed the event. It is not necessarily the same person who uploaded the content. Remember, it is very easy to download or reshare content from any social platform and re-publish it on another." ;
     schema:name "Who created content" .
 
+dw:What a dw:Question ;
+    dw:parentNode dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks ( "Check local media " "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
+    rdfs:comment """has happened? 
+
+The information in the content you are investigating indicates that an event took place. Can you corroborate that the event and the claim shared by the source occured via other sources? Is there more information available on the event? And are you looking at or listening to the original file or is it a (manipulated) copy?""" ;
+    schema:name "What" .
+
 dw:SyntheticMedia a dw:MediaObject ;
     dw:remarks ( "Follow experts and tech journalists on the latest developement on AI techniques " "Explore generative media tools to understand their possibilities and limitations in manipulation" ) ;
     rdfs:comment """Detecting and verifying synthetic media can be a complex task, and new advancements in technology may make it more challenging. 
@@ -1318,18 +1348,6 @@ And of course, in general the same verification workflow of answering the W-ques
 
 \\- How did this happen?""" ;
     schema:name "Synthetic Media" .
-
-dw:What a dw:Question ;
-    dw:parentNode dw:Audio,
-        dw:Image,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    dw:remarks ( "Check local media " "Search cross-medial on different social media platforms" "Reach out to eyewitnesses and reporters on the ground" ) ;
-    rdfs:comment """has happened? 
-
-The information in the content you are investigating indicates that an event took place. Can you corroborate that the event and the claim shared by the source occured via other sources? Is there more information available on the event? And are you looking at or listening to the original file or is it a (manipulated) copy?""" ;
-    schema:name "What" .
 
 dw:Audio a dw:MediaObject ;
     dw:remarks ( "Close your eyes and use good headphones to listen carefully" "Listen carefully what and how something is being said" ) ;
