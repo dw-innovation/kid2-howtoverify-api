@@ -3,6 +3,15 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 
+dw:AI_audio_tools a dw:Task ;
+    dw:parentNode dw:SyntheticAudio ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
+    rdfs:comment """analyze content using advanced algorithms, which detect subtle clues to distinguish the images that are computer-generated. 
+Their results show that these services are swiftly evolving and improving, though they may not fully achieve their potential to detect synthetic media.
+Tools might focus on specific details to detect the use of A.I. in visuals By assessing aspects such as perspective and limb proportions, as well as closely examining pixels.""" ;
+    schema:name "AI audio tools" .
+
 dw:Background_Removal a dw:SoftwareApplication ;
     dw:howTo ( "Upload an image " "Wait for the software to identify the background" "Adjust the selection manually if necessary using the tools at the top" "Download the image and use it in your reverse image search for better results" ) ;
     dw:parentNode dw:Enhance_Image_\(Image\),
@@ -62,6 +71,17 @@ dw:ContentWs a dw:Task ;
 
 \\- How did this happen?""" ;
     schema:name "Content" .
+
+dw:Deepware a dw:SoftwareApplication ;
+    dw:howTo ( "Open the tool URL" "Enter the URL of a video or click the search button to browse for a video on your computer" "Click the upload button and let the machine do the analysis" ) ;
+    dw:parentNode dw:AI_video_tools ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Maximum limit of 10 minutes for each video" "Scan videos from platforms such as YouTube, Facebook, and Twitter" """The developers behind say, that [[the results are stating the chances of a specific video can be whether deepfake or not]](https://deepware.ai/faq/) 
+so check for more hints and sources.                                                                            """ ) ;
+    rdfs:comment "is a deepfake detection technology designed to detect AI-generated face manipulations. Their model is looking for signs of manipulation on the human face." ;
+    schema:applicationUrl "https://scanner.deepware.ai/" ;
+    schema:name "Deepware" ;
+    schema:publisher "Zemana" .
 
 dw:Edit_photo a dw:SoftwareApplication ;
     dw:howTo ( "Load images by pasting an image URL, dropping an image, or pasting an image file" "Choose the tool you need from the menue bar at the left" "Select the detailed functionality from above or below the image" "Hit the export button at the top right of the image to download your enhanced image" ) ;
@@ -343,6 +363,18 @@ Try to answer the following questions, to get an understanding of what you are l
 All of this will help you put the recording into perspective.""" ;
     schema:name "Listen to the audio" .
 
+dw:Listening a dw:Task ;
+    dw:parentNode dw:SyntheticAudio ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Examine the content of the statements for inconsistencies" "Ask yourself, does it make sense that the person speaks about the topic and in this context?" "trancribe the audio for a better analyses of the content" ) ;
+    rdfs:comment """carefully and to the details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and listen carefully for the details in the audio:
+Listen to
+\\- listen to a change of voice emphasis
+\\- accent, unique speech patterns and behaviors
+\\- the real voice to compare
+\\- low-quality audio""" ;
+    schema:name "Listening" .
+
 dw:Magnifier a dw:SoftwareApplication ;
     dw:howTo ( "Install the Invid browser plugin on Firefox or Chrome" "On a web page just right click on the image and select 'Image Magnifier' from the plugin menue" "Or click on the plugin, open the toolbox, select 'Image magnifier' on the left and upload your image" "Select the zoom by browsing over the image" ) ;
     dw:parentNode dw:Zoom_in_details ;
@@ -478,6 +510,16 @@ dw:RIS_\(Video\) a dw:Task ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
+dw:Search4faces a dw:SoftwareApplication ;
+    dw:howTo ( "nana" ) ;
+    dw:parentNode dw:Profile_picture ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "nana" ) ;
+    rdfs:comment "allows you to search for faces on platforms like TikTok and VKontakte." ;
+    schema:applicationUrl "https://search4faces.com/en/" ;
+    schema:name "Search4Faces" ;
+    schema:publisher "unknown" .
+
 dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     dw:howTo ( "Open the Explorer" "Enter a place or the exact Geo-Coordinates  " "On the left choose the satellite and timeframe you want to get data from and for" ) ;
     dw:parentNode dw:Satellite_data ;
@@ -488,6 +530,15 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     schema:applicationUrl "https://apps.sentinel-hub.com/eo-browser" ;
     schema:name "Sentinel Hub EO Browser" ;
     schema:publisher "Sinergise" .
+
+dw:Sharpen_your_senses a dw:Task ;
+    dw:parentNode dw:SyntheticAudio,
+        dw:SyntheticVideo ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "listen to your favourite song more carefully and you will find more instruments " "being attentive, looking at visuals more than twice and asking a colleague to check as well" ) ;
+    rdfs:comment dw:Here,
+        dw:training_page ;
+    schema:name "Sharpen your senses" .
 
 dw:Sound a dw:Task ;
     dw:parentNode dw:SyntheticAudio ;
@@ -530,6 +581,26 @@ dw:Spoken_language_identifier a dw:SoftwareApplication ;
     schema:name "Spoken language identifier" ;
     schema:publisher "translated." .
 
+dw:Spotting a dw:Task ;
+    dw:parentNode dw:SyntheticVideo ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Zoom in details [[here]](https://www.howtoverify.info/Image/What/Zoom_in_details) " ) ;
+    rdfs:comment """the (in)vsible and focus on details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and look for the details in the video:
+Look for:
+\\- strange "jumps"
+\\- blurred spots
+\\- strange shapes of limbs and hair or fingers that are not connected 
+\\- a perfectly symmetrical face
+\\- mismatched earrings or glass frames
+\\- unusual ear, nose and tooth shapes
+\\- inconsistencies in the neck area
+\\- lip movements and compare them with your own
+
+Listen to:
+\\- listen to a change of voice emphasis
+\\- low-quality audio""" ;
+    schema:name "Spotting" .
+
 dw:Suncalc a dw:SoftwareApplication ;
     dw:howTo ( "Type in an address or add the coordinates in the left menu" "Select a specific date" "Switch to satellite view " "Zoom into the map and click on any spot to move the position" "Change the position of the sun by using the timeslider at the top " ) ;
     dw:parentNode dw:Shadow_analyses ;
@@ -547,13 +618,6 @@ dw:SyntheticText a dw:Task ;
     dw:remarks ( "na" ) ;
     rdfs:comment ( "na" ) ;
     schema:name "Synthetic Text" .
-
-dw:SyntheticVideo a dw:Task ;
-    dw:parentNode dw:SyntheticMedia ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "na" ) ;
-    rdfs:comment ( "na" ) ;
-    schema:name "Synthetic Video" .
 
 dw:Telemetrio a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Sort the list on the front page by the attribute most useful to you" "Narrow down the results by using the fiters at the top of the list" ) ;
@@ -821,15 +885,14 @@ dw:newsgathering a dw:Task ;
     rdfs:comment "describes the process of collecting and analysing content. Set up a content monitoring system with trustworthy and local accounts to find relevant content." ;
     schema:name "Newsgathering" .
 
-dw:search4faces a dw:SoftwareApplication ;
-    dw:howTo ( "nana" ) ;
-    dw:parentNode dw:Profile_picture ;
+dw:AI_video_tools a dw:Task ;
+    dw:parentNode dw:SyntheticVideo ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "nana" ) ;
-    rdfs:comment "allows you to search for faces on platforms like TikTok and VKontakte." ;
-    schema:applicationUrl "https://search4faces.com/en/" ;
-    schema:name "Search4Faces" ;
-    schema:publisher "unknown" .
+    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
+    rdfs:comment """analyze content using advanced algorithms, which detect subtle clues to distinguish the images that are computer-generated. 
+Their results show that these services are swiftly evolving and improving, though they may not fully achieve their potential to detect synthetic media.
+Tools might focus on specific details to detect the use of A.I. in visuals By assessing aspects such as perspective and limb proportions, as well as closely examining pixels.""" ;
+    schema:name "AI video tools" .
 
 dw:Address a dw:Task ;
     dw:parentNode dw:Author,
@@ -1164,12 +1227,14 @@ dw:Shadow_analyses a dw:Task ;
     rdfs:comment "refers to the defined shadow cast by an object via a light source e.g. the sun. The shadow's direction and its length provide information about the position of the sun which helps to determine the exact time." ;
     schema:name "Shadow analysis" .
 
-dw:SyntheticAudio a dw:Task ;
+dw:SyntheticVideo a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "na" ) ;
-    rdfs:comment ( "na" ) ;
-    schema:name "Synthetic Audio" .
+    dw:remarks ( "Face swaps involves substituting one person's face with another's" "Lip syncing adjusts the speaking individual's mouth movements to align with a separate audio track that differs from the original" "Voice duplication involves mimicking a voice to say different words or sentences" "Do a quick check to see if you can find the same story or narrative from different and trustworthy sources with an [[advanced research]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version and compare with Reverse Image Search with [[InVid]](https://www.howtoverify.info/Video/What/Context/InVid) " ) ;
+    rdfs:comment """is digital content produced or modified through computer algorithms, often using AI techniques. It can create effects like face swapping, lip syncing, or voice cloning.
+These synthetic video manipulations are produced with so-called Generative Adversarial Networks, or GANs. A GAN is a machine learning model in which two neural networks compete with each other to become more accurate in their results.
+In simple terms: One computer is telling the other computer if the digital clone it has created of you is convincing enough by comparing it with the original material. Do you move the same, do you sound the same, is your expression the same? The system improves itself with multiple attempts until it’s happy with the result.""" ;
+    schema:name "Synthetic Video" .
 
 dw:Weather_analyses a dw:Task ;
     dw:parentNode dw:When ;
@@ -1277,6 +1342,13 @@ dw:Reverse_Image_Search a dw:Task ;
     dw:remarks ( "remark 1" "remark 2" ) ;
     rdfs:comment "is a" ;
     schema:name "Reverse Image Search" .
+
+dw:SyntheticAudio a dw:Task ;
+    dw:parentNode dw:SyntheticMedia ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "na" ) ;
+    rdfs:comment ( "na" ) ;
+    schema:name "Synthetic Audio" .
 
 dw:When a dw:Question ;
     dw:parentNode dw:Audio,
