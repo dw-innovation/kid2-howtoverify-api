@@ -74,7 +74,7 @@ dw:ContentWs a dw:Task ;
 
 dw:Deepware a dw:SoftwareApplication ;
     dw:howTo ( "Open the tool URL" "Enter the URL of a video or click the search button to browse for a video on your computer" "Click the upload button and let the machine do the analysis" ) ;
-    dw:parentNode dw:AI_video_tools ;
+    dw:parentNode dw:AI_tools ;
     dw:relatedMediaType dw:SyntheticMedia ;
     dw:remarks ( "Maximum limit of 10 minutes for each video" "Scan videos from platforms such as YouTube, Facebook, and Twitter" """The developers behind say, that [[the results are stating the chances of a specific video can be whether deepfake or not]](https://deepware.ai/faq/) 
 so check for more hints and sources.                                                                            """ ) ;
@@ -239,6 +239,16 @@ dw:Have_I_been_pwned a dw:SoftwareApplication ;
     schema:name "Have I been pwned" ;
     schema:publisher "Troy Hunt" .
 
+dw:Hugging_Face a dw:SoftwareApplication ;
+    dw:howTo ( "Open the tool URL" "Enter the URL of a video or click the search button to browse for an image on your computer" "Click the upload button and let the machine do the analysis" ) ;
+    dw:parentNode dw:AI_tools ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Maximum                                                                            " ) ;
+    rdfs:comment "is a deepfake detection technology designed to detect AI-generated images" ;
+    schema:applicationUrl "https://huggingface.co/spaces/umm-maybe/AI-image-detector" ;
+    schema:name "Hugging Face" ;
+    schema:publisher "Zemana" .
+
 dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
     dw:howTo ( "Download and install the application from its website." "Select the images (e.g. frames from a video) you want to stich together " "Put the images into one folder" "Load the images in _Hugin_ and use the \"Align\" feature" "Optimize the settings (if necessary)" "Let the software finalise the the panorama" ) ;
     dw:parentNode dw:Panorama_stitch ;
@@ -363,18 +373,6 @@ Try to answer the following questions, to get an understanding of what you are l
 All of this will help you put the recording into perspective.""" ;
     schema:name "Listen to the audio" .
 
-dw:Listening a dw:Task ;
-    dw:parentNode dw:SyntheticAudio ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Examine the content of the statements for inconsistencies" "Ask yourself, does it make sense that the person speaks about the topic and in this context?" "trancribe the audio for a better analyses of the content" ) ;
-    rdfs:comment """carefully and to the details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and listen carefully for the details in the audio:
-Listen to
-\\- listen to a change of voice emphasis
-\\- accent, unique speech patterns and behaviors
-\\- the real voice to compare
-\\- low-quality audio""" ;
-    schema:name "Listening" .
-
 dw:Magnifier a dw:SoftwareApplication ;
     dw:howTo ( "Install the Invid browser plugin on Firefox or Chrome" "On a web page just right click on the image and select 'Image Magnifier' from the plugin menue" "Or click on the plugin, open the toolbox, select 'Image magnifier' on the left and upload your image" "Select the zoom by browsing over the image" ) ;
     dw:parentNode dw:Zoom_in_details ;
@@ -489,6 +487,18 @@ dw:Peakfinder a dw:SoftwareApplication ;
     schema:name "Peakfinder" ;
     schema:publisher "Fabio Soldati [About](https://www.peakfinder.org/about/peakfinder/)" .
 
+dw:Precise_listening a dw:Task ;
+    dw:parentNode dw:SyntheticAudio ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Examine the content of the statements for inconsistencies" "Ask yourself, does it make sense that the person speaks about the topic and in this context?" "trancribe the audio for a better analyses of the content" ) ;
+    rdfs:comment """carefully and to the details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and listen carefully for the details in the audio:
+Listen to
+\\- listen to a change of voice emphasis
+\\- accent, unique speech patterns and behaviors
+\\- the real voice to compare
+\\- low-quality audio""" ;
+    schema:name "Precise listening" .
+
 dw:RIS_\(Image\) a dw:Task ;
     dw:parentNode dw:Context,
         dw:Object_identification,
@@ -533,6 +543,7 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
 
 dw:Sharpen_your_senses a dw:Task ;
     dw:parentNode dw:SyntheticAudio,
+        dw:SyntheticImage,
         dw:SyntheticVideo ;
     dw:relatedMediaType dw:SyntheticMedia ;
     dw:remarks ( "listen to your favourite song more carefully and you will find more instruments " "being attentive, looking at visuals more than twice and asking a colleague to check as well" ) ;
@@ -582,19 +593,24 @@ dw:Spoken_language_identifier a dw:SoftwareApplication ;
     schema:publisher "translated." .
 
 dw:Spotting a dw:Task ;
-    dw:parentNode dw:SyntheticVideo ;
+    dw:parentNode dw:SyntheticImage,
+        dw:SyntheticVideo ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Zoom in details [[here]](https://www.howtoverify.info/Image/What/Zoom_in_details) " ) ;
+    dw:remarks ( "Zoom in details [[here]](https://www.howtoverify.info/Image/What/Zoom_in_details)" "Watch frame-by-frame with the VLC Player on your computer " ) ;
     rdfs:comment """the (in)vsible and focus on details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and look for the details in the video:
 Look for:
-\\- strange "jumps"
 \\- blurred spots
+\\- distorted backgrounds
 \\- strange shapes of limbs and hair or fingers that are not connected 
 \\- a perfectly symmetrical face
 \\- mismatched earrings or glass frames
 \\- unusual ear, nose and tooth shapes
+\\- teeth that look unrealistic
 \\- inconsistencies in the neck area
+\\- light reflections in the eye from different angles
 \\- lip movements and compare them with your own
+\\- strange "jumps"
+\\- generally unexplained image defects
 
 Listen to:
 \\- listen to a change of voice emphasis
@@ -885,15 +901,6 @@ dw:newsgathering a dw:Task ;
     rdfs:comment "describes the process of collecting and analysing content. Set up a content monitoring system with trustworthy and local accounts to find relevant content." ;
     schema:name "Newsgathering" .
 
-dw:AI_video_tools a dw:Task ;
-    dw:parentNode dw:SyntheticVideo ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
-    rdfs:comment """analyze content using advanced algorithms, which detect subtle clues to distinguish the images that are computer-generated. 
-Their results show that these services are swiftly evolving and improving, though they may not fully achieve their potential to detect synthetic media.
-Tools might focus on specific details to detect the use of A.I. in visuals By assessing aspects such as perspective and limb proportions, as well as closely examining pixels.""" ;
-    schema:name "AI video tools" .
-
 dw:Address a dw:Task ;
     dw:parentNode dw:Author,
         dw:Contact ;
@@ -981,19 +988,23 @@ dw:Sources a dw:Task ;
     rdfs:comment "refer to any name, company, institution, expert, interview partner or website being mentioned in the text." ;
     schema:name "Sources" .
 
-dw:SyntheticImage a dw:Task ;
-    dw:parentNode dw:SyntheticMedia ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "na" ) ;
-    rdfs:comment ( "is an computer genereated, non-existing image. So far, all the images generated with Artificial Intelligence that have made their way into the public, technical errors have been noticeable when zoomed in. The technology, including in the case of \"Firefly,\" is not yet capable of correctly identifying and adding fine details. As an attempt to conceal this, an unnatural blur is often applied to parts of an image." ) ;
-    schema:name "Synthetic Image" .
-
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Image ;
     dw:remarks ( "Write down at least 20 hints you find. It will help your ongoing investigation" "Cluster your hints by information about the scenery, location, time and people" ) ;
     rdfs:comment "to detect even more clues on the visual item, e.g. a phone number on a billboard" ;
     schema:name "Zoom in details" .
+
+dw:AI_tools a dw:Task ;
+    dw:parentNode dw:SyntheticAudio,
+        dw:SyntheticImage,
+        dw:SyntheticVideo ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
+    rdfs:comment """analyze content using advanced algorithms, which detect subtle clues to distinguish computer-generated video, image and audio. 
+While theses services are improving rapidly, they may not fully achieve their potential in detecting synthetic media.
+Tools focus on specific details like perspective and limb proportions, and pixels examination to identify the use of AI in visuals.""" ;
+    schema:name "AI tools" .
 
 dw:Business_name a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
@@ -1230,10 +1241,9 @@ dw:Shadow_analyses a dw:Task ;
 dw:SyntheticVideo a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Face swaps involves substituting one person's face with another's" "Lip syncing adjusts the speaking individual's mouth movements to align with a separate audio track that differs from the original" "Voice duplication involves mimicking a voice to say different words or sentences" "Do a quick check to see if you can find the same story or narrative from different and trustworthy sources with an [[advanced research]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version and compare with Reverse Image Search with [[InVid]](https://www.howtoverify.info/Video/What/Context/InVid) " ) ;
-    rdfs:comment """is digital content produced or modified through computer algorithms, often using AI techniques. It can create effects like face swapping, lip syncing, or voice cloning.
-These synthetic video manipulations are produced with so-called Generative Adversarial Networks, or GANs. A GAN is a machine learning model in which two neural networks compete with each other to become more accurate in their results.
-In simple terms: One computer is telling the other computer if the digital clone it has created of you is convincing enough by comparing it with the original material. Do you move the same, do you sound the same, is your expression the same? The system improves itself with multiple attempts until it’s happy with the result.""" ;
+    dw:remarks ( "Search for the same story or narrative in different and trustworthy sources with an [[advanced research]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version of the video to compare it with by using [[InVid]](https://www.howtoverify.info/Video/What/Context/InVid) " ) ;
+    rdfs:comment """is digital content created or modified through computer algorithms, often using AI techniques. It can create effects such as face swapping, lip syncing, or voice cloning.
+These manipulations are achieved through Generative Adversarial Networks (GANs), which are machine learning models where two neural networks compete to enhance their results. In simpler terms, one computer assesses the authenticity of a digital clone it has generated by comparing it to the original material. It evaluates factors like movement, sound, and expression, improving itself through multiple iterations until satisfactory outcomes are achieved.""" ;
     schema:name "Synthetic Video" .
 
 dw:Weather_analyses a dw:Task ;
@@ -1297,6 +1307,13 @@ dw:Social_Media_activities a dw:Task ;
     dw:remarks ( "There are different popular social platforms depending on the region a person is in" "Ask yourself where the user might most likely be and play around with different name combinations across networks to find more information" ) ;
     rdfs:comment "are the sum of interactions a person has done on any social media platform. They include publishing content and commenting as well as sharing, liking and following." ;
     schema:name "Social Media activities" .
+
+dw:SyntheticImage a dw:Task ;
+    dw:parentNode dw:SyntheticMedia ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Fake social media accounts often use synthetic profile images" "Search for the same story or narrative in different and trustworthy sources with an [[advanced research]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version of the image to compare it with a [[Reverse Image Search]](https://www.howtoverify.info/Image/What/Original)  " ) ;
+    rdfs:comment "is digital content created or modified through computer algorithms using AI techniques. These manipulations are achieved through Generative Adversarial Networks (GANs), which are machine learning models where two neural networks compete to enhance their results. In simpler terms, one computer assesses the authenticity of a digital clone it has generated by comparing it to the original material." ;
+    schema:name "Synthetic Image" .
 
 dw:Who_is_in_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
@@ -1397,28 +1414,7 @@ The information in the content you are investigating indicates that an event too
 
 dw:SyntheticMedia a dw:MediaObject ;
     dw:remarks ( "Follow experts and tech journalists on the latest developement on AI techniques " "Explore generative media tools to understand their possibilities and limitations in manipulation" ) ;
-    rdfs:comment """Detecting and verifying synthetic media can be a complex task, and new advancements in technology may make it more challenging. 
-Seek expert analysis from specialists
-
-\\- Train yourself in analyzing generative technology 
-
-\\- Find inconsistencies or artifacts in the media 
-
-\\- Seek expert analysis from specialists  
-
-\\- Use technology-assisted tools designed for detecting
-
-And of course, in general the same verification workflow of answering the W-questions applies here
-
-\\- What happens in the video?
-
-\\- Where did the event take place?
-
-\\- When did the event occur?
-
-\\- Who created the video?
-
-\\- How did this happen?""" ;
+    rdfs:comment dw:sharpen_your_senses ;
     schema:name "Synthetic Media" .
 
 dw:Audio a dw:MediaObject ;
