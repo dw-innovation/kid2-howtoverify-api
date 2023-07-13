@@ -1417,7 +1417,29 @@ The information in the content you are investigating indicates that an event too
 
 dw:SyntheticMedia a dw:MediaObject ;
     dw:remarks ( "Follow experts and tech journalists on the latest developement on AI techniques " "Explore generative media tools to understand their possibilities and limitations in manipulation" ) ;
-    rdfs:comment dw:sharpen_your_senses ;
+    rdfs:comment """Detecting and verifying synthetic media can be a complex task, and new advancements in technology may make it more challenging. 
+
+\\- Ask yourself, does it make senses what you see, hear or read?
+
+\\- Train yourself and [sharpen your senses](https://digger-project.com/sharpen-your-senses) 
+
+\\- Find inconsistencies or artifacts in the media 
+
+\\- Seek expert analysis from specialists  
+
+\\- Use technology-assisted tools designed for detecting
+
+And of course, in general the same verification workflow of answering the W-questions applies here
+
+\\- What happens in the video?
+
+\\- Where did the event take place?
+
+\\- When did the event occur?
+
+\\- Who created the video?
+
+\\- How did this happen?""" ;
     schema:name "Synthetic Media" .
 
 dw:Audio a dw:MediaObject ;
