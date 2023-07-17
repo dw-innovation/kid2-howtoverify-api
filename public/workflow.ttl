@@ -3,26 +3,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 
-dw:AI_audio_tools a dw:Task ;
-    dw:parentNode dw:SyntheticAudio ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
-    rdfs:comment """analyze content using advanced algorithms, which detect subtle clues to distinguish computer-generated visuals, audio and text. 
-While these services are improving, they do not fully achieve their potential in detecting synthetic media.
-Tools focus on specific details like perspective and limb proportions, and pixels examination. It is the combination of tools and humans 
-to identify the use of AI in media.""" ;
-    schema:name "AI audio tools" .
-
-dw:AI_text_tools a dw:Task ;
-    dw:parentNode dw:SyntheticText ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
-    rdfs:comment """analyze content using advanced algorithms, which detect subtle clues to distinguish computer-generated visuals, audio and text. 
-While these services are improving, they do not fully achieve their potential in detecting synthetic media.
-Tools focus on specific details like perspective and limb proportions, and pixels examination. It is the combination of tools and humans 
-to identify the use of AI in media.""" ;
-    schema:name "AI text tools" .
-
 dw:Background_Removal a dw:SoftwareApplication ;
     dw:howTo ( "Upload an image " "Wait for the software to identify the background" "Adjust the selection manually if necessary using the tools at the top" "Download the image and use it in your reverse image search for better results" ) ;
     dw:parentNode dw:Enhance_Image_\(Image\),
@@ -47,8 +27,10 @@ dw:Baidu_Images a dw:SoftwareApplication ;
 
 dw:Boom_3D a dw:SoftwareApplication ;
     dw:howTo ( "Download the free trial (30 days) to your desktop " "Turn off any channel in the audio and adjust the intensity of the sound you want to focus on" ) ;
-    dw:parentNode dw:Audio_enhancement ;
-    dw:relatedMediaType dw:Audio ;
+    dw:parentNode dw:AI_audio_tools,
+        dw:Audio_enhancement ;
+    dw:relatedMediaType dw:Audio,
+        dw:SyntheticMedia ;
     dw:remarks ( "Watch this [intro to the software](https://youtu.be/iIg7OHcUKis) for more details." "Use noise-canceling headphones for a better experience" "Check out this [list of other audio enhancing services](https://fixthephoto.com/best-free-audio-enhancers.html). (We have not tested them, but it's worth checking them out)" ) ;
     rdfs:comment "is a tool for cropping and removing unwanted noise. Boom 3D can enhance the sounds in your audio file and filter out ambient noise." ;
     schema:applicationUrl "https://www.globaldelight.com/boom/" ;
@@ -69,18 +51,8 @@ dw:Chronocalc a dw:SoftwareApplication ;
 dw:ContentWs a dw:Task ;
     dw:parentNode dw:Precise_listening ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "follow the workflow on [[Audio]](https://www.howtoverify.info/Audio) here at HowToVerify " ) ;
-    rdfs:comment """are included in the general audio verification workflows:
-
-\\- What happens in the audio?
-
-\\- Where did the event take place?
-
-\\- When did the event occur?
-
-\\- Who created the audio?
-
-\\- How did this happen?""" ;
+    dw:remarks ( "Follow the workflow on [[Audio]](https://www.howtoverify.info/Audio) here at HowToVerify" "Search for the same story or narrative in different and trustworthy sources with an [[advanced research]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " ) ;
+    rdfs:comment "refers to the information contained within the audio recording. What is the claim and the narrative in the text? One analyzes the content, sources, numbers, and images for their authenticity and whether they correspond to the truth." ;
     schema:name "Content" .
 
 dw:Deepware a dw:SoftwareApplication ;
@@ -93,6 +65,27 @@ so check for more hints and sources.                                            
     schema:applicationUrl "https://scanner.deepware.ai/" ;
     schema:name "Deepware" ;
     schema:publisher "Zemana" .
+
+dw:Digger a dw:SoftwareApplication ;
+    dw:howTo ( "Microphone analysis: Analysing the device being used for the recording of audio" "Electrical network Frequency Analysis: Detect editing (cut & paste analyses) of audio" "Codec Analysis: We follow the digital footprint of audio by extraction of ENF traces" ) ;
+    dw:parentNode dw:AI_audio_tools ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Read more about the project and insights by experts on the [[project website]](https://digger-project.com)  " ) ;
+    rdfs:comment """focuses on using audio forensics technologies to detect manipulations. DW´s Research & Cooperation teamed up with ATC, a technology company from Greece 
+and the Fraunhofer Institute for digital media technology.""" ;
+    schema:applicationUrl "https://digger-project.com" ;
+    schema:name "Digger" ;
+    schema:publisher "DW/Fraunhofer/ATC" .
+
+dw:DorkGPT a dw:SoftwareApplication ;
+    dw:howTo ( "Open the tool URL" "Write down what specific information you look for" "Press generate button and wait for the result" "Copy and paste the dork in the Google search bar" ) ;
+    dw:parentNode dw:AI_text_tools ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "It is not working when you search for information on a social media platform" "Explore more details on text verification [[here]](https://www.howtoverify.info/Text)                                                                             " ) ;
+    rdfs:comment "generates Google Dorks with AI." ;
+    schema:applicationUrl "https://www.dorkgpt.com/" ;
+    schema:name "Dork GPT" ;
+    schema:publisher "Predicta Lab" .
 
 dw:Edit_photo a dw:SoftwareApplication ;
     dw:howTo ( "Load images by pasting an image URL, dropping an image, or pasting an image file" "Choose the tool you need from the menue bar at the left" "Select the detailed functionality from above or below the image" "Hit the export button at the top right of the image to download your enhanced image" ) ;
@@ -128,9 +121,11 @@ dw:Exif_Data a dw:SoftwareApplication ;
 
 dw:Forensically a dw:SoftwareApplication ;
     dw:howTo ( "Open the tool URL" "Select open file on top of the site and select for the image on your computer you want to examine" "Once it is uploaded use the menue on the right side to navigate through the different analysis results " "Don't forget to hover your mouse over the image to see the results" ) ;
-    dw:parentNode dw:Manipulation_detection,
+    dw:parentNode dw:AI_image_tools,
+        dw:Manipulation_detection,
         dw:Metadata ;
-    dw:relatedMediaType dw:Image ;
+    dw:relatedMediaType dw:Image,
+        dw:SyntheticMedia ;
     dw:remarks ( "[Here](https://www.youtube.com/watch?v=XRCq8CJrI_s) is a tutorial by the creator Jonas Wagner itself to understand the different tools and interprete the results" "Under the button [help](https://29a.ch/photo-forensics/#help) you get an explaination of the different options in Forensically " "Be aware, third party tools can also save the metadata attached to the image. Jonas Wagner mentions the image will be processed only in your browser. " ) ;
     rdfs:comment "is a collection of tools which allows you to detect hidden details or manipulation in an image as well as showing metadata." ;
     schema:applicationUrl "https://29a.ch/photo-forensics/" ;
@@ -250,16 +245,6 @@ dw:Have_I_been_pwned a dw:SoftwareApplication ;
     schema:name "Have I been pwned" ;
     schema:publisher "Troy Hunt" .
 
-dw:Hugging_Face a dw:SoftwareApplication ;
-    dw:howTo ( "Open the tool URL" "Enter the URL of a video or click the search button to browse for an image on your computer" "Click the upload button and let the machine do the analysis" ) ;
-    dw:parentNode dw:AI_image_tools ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Maximum                                                                            " ) ;
-    rdfs:comment "is a deepfake detection technology designed to detect AI-generated images" ;
-    schema:applicationUrl "https://huggingface.co/spaces/umm-maybe/AI-image-detector" ;
-    schema:name "Hugging Face" ;
-    schema:publisher "Zemana" .
-
 dw:Hugin_-_Panorama_photo_stitcher a dw:SoftwareApplication ;
     dw:howTo ( "Download and install the application from its website." "Select the images (e.g. frames from a video) you want to stich together " "Put the images into one folder" "Load the images in _Hugin_ and use the \"Align\" feature" "Optimize the settings (if necessary)" "Let the software finalise the the panorama" ) ;
     dw:parentNode dw:Panorama_stitch ;
@@ -280,9 +265,11 @@ dw:Impressum a dw:Task ;
 
 dw:InVid a dw:SoftwareApplication ;
     dw:howTo ( "Install the browser plugin in Firefox or Chrome" "Click on the plugin and open the toolbox" "Select Keyframes or Metadata" "Add the URL of the image/video or upload a local file " ) ;
-    dw:parentNode dw:Context,
+    dw:parentNode dw:AI_video_tools,
+        dw:Context,
         dw:Metadata ;
-    dw:relatedMediaType dw:Video ;
+    dw:relatedMediaType dw:SyntheticMedia,
+        dw:Video ;
     dw:remarks ( "Metadata can easily be manipulated, always cross-reference the information" "Pick keyframes that have the best resolution and show most of the scenery for a reverse image search" ) ;
     rdfs:comment "is a web-based integrated toolset for image and video verification. It allows you to generate several keyframes for a reverse image search. As well as extracting metadata from images and videos. There are also other features to analyse photos and videos, like a magnifier, photo forensic tool and a copyright check." ;
     schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
@@ -338,9 +325,11 @@ dw:LatLong a dw:SoftwareApplication ;
 
 dw:Lets_Enhance_io a dw:SoftwareApplication ;
     dw:howTo ( "Upload the image you want to enhance" "Choose what you want/need from the automated options" "Start the process and wait" ) ;
-    dw:parentNode dw:Enhance_Image_\(Image\),
+    dw:parentNode dw:AI_image_tools,
+        dw:Enhance_Image_\(Image\),
         dw:Enhance_Image_\(Video\) ;
     dw:relatedMediaType dw:Image,
+        dw:SyntheticMedia,
         dw:Video ;
     dw:remarks ( "You have to sign up for an account" "You can enhance 10 images for free" "[Gigapixel AI](https://www.topazlabs.com/downloads) is a useful alternative, but install only" ) ;
     rdfs:comment "is an image editor using artifical intelligence. You can enhance the resolution, the contrast and much more." ;
@@ -536,9 +525,8 @@ dw:Sharpen_your_senses a dw:Task ;
         dw:SyntheticText,
         dw:SyntheticVideo ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "listen to your favourite song more carefully and you will find more instruments " "being attentive, looking at visuals more than twice and asking a colleague to check as well" ) ;
-    rdfs:comment """and strengthen your verification skills. Verification is not just about tools. Essential are our human senses. Whom can we trust, if not our own senses? 
-This is a [training page](https://digger-project.com/sharpen-your-senses/) we developed to sharpen your vision and hearing skills. It will make you more confident to detect almost (in)visible traces in synthtetic and manipulated media like blurred spots, missing pieces or a change of voice emphasis and cut & paste manipulation within a speech. [Here](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) you can test yourself.""" ;
+    dw:remarks ( "listen to your favourite song more carefully and be surprised what instruments are in it" "take your time and ask a colleague to look at the item as well" ) ;
+    rdfs:comment "and strengthen your verification skills. This is a [training page](https://digger-project.com/sharpen-your-senses/) we developed to sharpen your vision and hearing skills. It will make you more confident to detect almost (in)visible traces in synthtetic and manipulated media like blurred spots, a change of voice emphasis and cut & paste manipulation within a speech or text." ;
     schema:name "Sharpen your senses" .
 
 dw:Sowsearch a dw:SoftwareApplication ;
@@ -557,8 +545,10 @@ dw:Sowsearch a dw:SoftwareApplication ;
 
 dw:Speech_to_text_Google a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL or use the Google Translate app" "Click on the microphone icon " "Play the audio recording from your device close to your microphone" "Google translate will transcribe the audio and automatically detect the spoken language" ) ;
-    dw:parentNode dw:Language_detection ;
-    dw:relatedMediaType dw:Audio ;
+    dw:parentNode dw:AI_audio_tools,
+        dw:Language_detection ;
+    dw:relatedMediaType dw:Audio,
+        dw:SyntheticMedia ;
     dw:remarks ( "It also works on mobile devices with the Google Translate app " "You can also do live transcribing via the app ([tutorial](https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop) )" "Language detection might not always be 100% correct" ) ;
     rdfs:comment "is a transcription of your audio conversation into text-format for analysing, detecting languages and collecting keywords." ;
     schema:applicationUrl "https://translate.google.com/" ;
@@ -580,24 +570,7 @@ dw:Spotting a dw:Task ;
         dw:SyntheticVideo ;
     dw:relatedMediaType dw:SyntheticMedia ;
     dw:remarks ( "Zoom in details [[here]](https://www.howtoverify.info/Image/What/Zoom_in_details)" "Watch frame-by-frame with the VLC Player on your computer " ) ;
-    rdfs:comment """the (in)vsible and focus on details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and look for the details in the video:
-Look for:
-\\- blurred spots
-\\- distorted backgrounds
-\\- strange shapes of limbs and hair or fingers that are not connected 
-\\- a perfectly symmetrical face
-\\- mismatched earrings or glass frames
-\\- unusual ear, nose and tooth shapes
-\\- teeth that look unrealistic
-\\- inconsistencies in the neck area
-\\- light reflections in the eye from different angles
-\\- lip movements and compare them with your own
-\\- strange "jumps"
-\\- generally unexplained image defects
-
-Listen to:
-\\- listen to a change of voice emphasis
-\\- low-quality audio""" ;
+    rdfs:comment dw:here ;
     schema:name "Spotting" .
 
 dw:Suncalc a dw:SoftwareApplication ;
@@ -628,8 +601,8 @@ dw:Telemetrio a dw:SoftwareApplication ;
 dw:Text_analyses a dw:Task ;
     dw:parentNode dw:SyntheticText ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Search for the same story or narrative in different and trustworthy sources with an [advanced search](https://www.howtoverify.info/Text/What/Content_analysis) on headline, keywords and sources " ) ;
-    rdfs:comment "the (in)vsible and focus on details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and look for the details in the video:" ;
+    dw:remarks ( "Use the text phrases and search with them on Google e.g. inurl:post \"as an AI language model\" -ChatGPT -ChatGPT3" "Search for the same story or narrative in different and trustworthy sources with an [advanced search](https://www.howtoverify.info/Text/What/Content_analysis) on headline, keywords and sources " ) ;
+    rdfs:comment dw:analyses ;
     schema:name "Text analyses" .
 
 dw:Tgstat a dw:SoftwareApplication ;
@@ -670,8 +643,10 @@ dw:TimeandDate a dw:SoftwareApplication ;
 
 dw:TinEye a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Start the search by either dragging the photo on the search bar, pasting the URL or uploading an image from your desktop" "Use the filters on the left side to sort the images according to what you need to find" ) ;
-    dw:parentNode dw:Reverse_Image_Search ;
+    dw:parentNode dw:AI_image_tools,
+        dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image,
+        dw:SyntheticMedia,
         dw:Video ;
     dw:remarks ( "Has a smaller database than the others, hence doesn't always yield results" "Does not work well on very new images, but delivers good results when using stock images" "Check out the [TinEye Tutorial](https://tineye.com/how ) for how to best use it" ) ;
     rdfs:comment "is very efficient when it comes to altered versions and showing results in chronological order." ;
@@ -758,14 +733,14 @@ dw:ViewDNS a dw:SoftwareApplication ;
 dw:Voice a dw:Task ;
     dw:parentNode dw:Precise_listening ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Note that these methods may generally be less reliable than technology-based approaches and often rely on subjective assessments." ) ;
-    rdfs:comment """Verifying synthetic or artificial voices can be performed at various levels and by using different methods. 
-While many methods rely on technology, there are some approaches that are less tech-oriented:
+    dw:remarks ( "Put yourself in the perspective of the speaker to avoid subjective assessments" ) ;
+    rdfs:comment """synthesis or artificial voices detection can be performed some less tech-oriented approaches:
 
-\\- Voice Comparison: By directly comparing the voice in question with the actual voice of the person, it can often be determined if it's an imitation. 
-\\- Content Analysis: Synthetic voices can be identified through analysis of the content of the statements. If the statements are inconsistent or uncharacteristic for the person, it might be a hint that the voice has been synthesized.
-\\- Situational Analysis: You might have concerns about the authenticity of a voice based on the context or situation in which the voice is presented. If it's unlikely for the person to be speaking in that context, it could be a hint that the voice has been synthesized.
-\\- Behavioral Analysis: People typically have unique speech patterns and behaviors that are difficult to imitate. Analyzing such behavior patterns can help identify synthetic voices""" ;
+\\- Voice Comparison with the real voice of the person
+\\- Content Analysis by checking if the statements are inconsistent or uncharacteristic for the person
+\\- Situational Analysis and if it's unlikely for the person to be speaking in that context
+\\- Behavioral Analysis and listening to each's unique speech patterns and behaviors that are difficult to imitate
+\\- Listen carefully to the emphasis and pauses of the speaker""" ;
     schema:name "Voice" .
 
 dw:WhatsMyName a dw:SoftwareApplication ;
@@ -873,6 +848,16 @@ dw:Yandex_Maps a dw:SoftwareApplication ;
     schema:name "Yandex Maps" ;
     schema:publisher "[Yandex](https://yandex.com/company/)" .
 
+dw:ZeroGPT a dw:SoftwareApplication ;
+    dw:howTo ( "Open the tool URL" "Drop the text you want to check if it is AI generated" "Click the detect button and let the machine do the analysis" "The results are in percentage and it highlights parts of the text that it thinks came from AI" ) ;
+    dw:parentNode dw:AI_text_tools ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "The results only provide an indication, and further research and analyses is necessary." "Explore more details on text verification [[here]](https://www.howtoverify.info/Text)                                                                             " ) ;
+    rdfs:comment "is a ChatGPT detector." ;
+    schema:applicationUrl "https://www.zerogpt.com/" ;
+    schema:name "ZeroGPT" ;
+    schema:publisher "Zero GPT" .
+
 dw:newsgathering a dw:Task ;
     dw:parentNode dw:How ;
     dw:relatedMediaType dw:Audio,
@@ -883,26 +868,6 @@ dw:newsgathering a dw:Task ;
     dw:remarks ( "Collaboration is key" "Organize the relevant content you found. An easy way is to create a shared excel sheet and add descriptions to it. This will safe time" "You can set up a monitoring system with e.g. Tweetdeck, Google Alerts and newsletter subscriptions" ) ;
     rdfs:comment "describes the process of collecting and analysing content. Set up a content monitoring system with trustworthy and local accounts to find relevant content." ;
     schema:name "Newsgathering" .
-
-dw:AI_image_tools a dw:Task ;
-    dw:parentNode dw:SyntheticImage ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
-    rdfs:comment """analyze content using advanced algorithms, which detect subtle clues to distinguish computer-generated visuals, audio and text. 
-While these services are improving, they do not fully achieve their potential in detecting synthetic media.
-Tools focus on specific details like perspective and limb proportions, and pixels examination. It is the combination of tools and humans 
-to identify the use of AI in media.""" ;
-    schema:name "AI image tools" .
-
-dw:AI_video_tools a dw:Task ;
-    dw:parentNode dw:SyntheticVideo ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
-    rdfs:comment """analyze content using advanced algorithms, which detect subtle clues to distinguish computer-generated visuals, audio and text. 
-While these services are improving, they do not fully achieve their potential in detecting synthetic media.
-Tools focus on specific details like perspective and limb proportions, and pixels examination. It is the combination of tools and humans 
-to identify the use of AI in media.""" ;
-    schema:name "AI video tools" .
 
 dw:Address a dw:Task ;
     dw:parentNode dw:Author,
@@ -989,6 +954,20 @@ dw:Zoom_in_details a dw:Task ;
     dw:remarks ( "Write down at least 20 hints you find. It will help your ongoing investigation" "Cluster your hints by information about the scenery, location, time and people" ) ;
     rdfs:comment "to detect even more clues on the visual item, e.g. a phone number on a billboard" ;
     schema:name "Zoom in details" .
+
+dw:AI_text_tools a dw:Task ;
+    dw:parentNode dw:SyntheticText ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
+    rdfs:comment "using advanced algorithms to detect subtle clues in computer-generated texts. Tools are improving but still not sufficient enough to give you reliable results. So, be aware that the results only provide a hint, and further research and analyses is necessary." ;
+    schema:name "AI text tools" .
+
+dw:AI_video_tools a dw:Task ;
+    dw:parentNode dw:SyntheticVideo ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "The majority of tools require users to upload confidential content to a third party " ) ;
+    rdfs:comment "using advanced algorithms to detect subtle clues in computer-generated visuals and audios. Tools are improving but still not sufficient enough to give you reliable results. These services might also focus only on specific details like perspective, head movements, limb proportions, and pixels examination. So, be aware that the results only provide a hint, and further research and analyses is necessary." ;
+    schema:name "AI video tools" .
 
 dw:Business_name a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
@@ -1085,8 +1064,8 @@ dw:Original a dw:Task ;
 dw:Precise_listening a dw:Task ;
     dw:parentNode dw:SyntheticAudio ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Examine the content of the statements for inconsistencies" "Ask yourself, does it make sense that the person speaks about the topic and in this context?" "trancribe the audio for a better analyses of the content" ) ;
-    rdfs:comment """carefully and to the details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and listen carefully for the details in the audio:
+    dw:remarks ( "Examine the content of the statements for inconsistencies" "Ask yourself, does it make sense that the person speaks about the topic and in this context?" "trancribe the audio for a better analyses of the content" "Compare the lip movements with your own and pay attention to the language" ) ;
+    rdfs:comment """and taking your time and paying attention to the details is key. You don't have to be a deepfake expert to differentiate between what is real and what is fake. Just listen carefully for the nuances in the audio.
 Listen to
 \\- listen to a change of voice emphasis
 \\- accent, unique speech patterns and behaviors
@@ -1150,6 +1129,20 @@ dw:eMail a dw:Task ;
     dw:remarks ( "Try searching for this address in quotation marks" "Search with the username of the email address" "Beware of the dots: In Gmail 'johndoe' is owned by the same person as 'john.doe' or 'jo.hn.doe'" ) ;
     rdfs:comment "is the unique digital address of a user. There may be a thousand John Does but only one john.doe @ yahoo com." ;
     schema:name "eMail" .
+
+dw:AI_audio_tools a dw:Task ;
+    dw:parentNode dw:SyntheticAudio ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "The majority of tools require users to upload confidential content to a third party " ) ;
+    rdfs:comment "using advanced algorithms to detect subtle clues in computer-generated visuals and audios. Tools are improving but still not sufficient enough to give you reliable results. So, be aware that the results only provide an indication, and further research and analyses is necessary." ;
+    schema:name "AI audio tools" .
+
+dw:AI_image_tools a dw:Task ;
+    dw:parentNode dw:SyntheticImage ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
+    rdfs:comment "using advanced algorithms to detect subtle clues in computer-generated visuals, audios and texts. Tools are improving but still not sufficient enough to give you reliable results. These services might also focus only on specific details like perspective, head movements, limb proportions, and pixels examination. So, be aware that the results only provide a hint, and further research and analyses is necessary." ;
+    schema:name "AI image tools" .
 
 dw:Content_analysis a dw:Task ;
     dw:parentNode dw:What ;
@@ -1237,8 +1230,8 @@ dw:Shadow_analyses a dw:Task ;
 dw:SyntheticAudio a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Siri is one of the most famous synthetic voices" ) ;
-    rdfs:comment "is digital content created or modified through computer algorithms using AI techniques. It can create synthetic speech, music, sounds. For example voice clones or environmental sounds. These manipulations are achieved through Generative Adversarial Networks (GANs), which are machine learning models where two neural networks compete to enhance their results. In simpler terms, one computer assesses the authenticity of a digital clone it has generated by comparing it to the original material. It evaluates factors like movement, sound, and expression, improving itself through multiple iterations until satisfactory outcomes are achieved." ;
+    dw:remarks ( "Lip synching is also typical for AI manipulations in videos. Matching movements of a character's lips with the corresponding audio or speech which is not its own." ) ;
+    rdfs:comment "describes audio files that have been created using artificial intelligence, \"machine learning\" to be more exact. It is often refer to as voice cloning. It can create synthetic speech, music, sounds. For example voice clones or environmental sounds. Carefully analyze the audio's features, compare them with known references, and look for any irregularities or inconsistencies." ;
     schema:name "Synthetic Audio" .
 
 dw:SyntheticImage a dw:Task ;
@@ -1251,16 +1244,15 @@ dw:SyntheticImage a dw:Task ;
 dw:SyntheticText a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "na" ) ;
-    rdfs:comment ( "na" ) ;
+    dw:remarks ( "Understanding the specific characteristics of different text generation models helps in verifying AI generated texts" ) ;
+    rdfs:comment "refers to written content that is generated by a computer program, often leveraging machine learning models like natural language processing (NLP). Most famous are ChatGPT by OpenAi and Bard by Google." ;
     schema:name "Synthetic Text" .
 
 dw:SyntheticVideo a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Search for the same story or narrative in different and trustworthy sources with an [[advanced research]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version of the video to compare it with by using [[InVid]](https://www.howtoverify.info/Video/What/Context/InVid) " ) ;
-    rdfs:comment """is digital content created or modified through computer algorithms, often using AI techniques. It can create effects such as face swapping, lip syncing, or voice cloning.
-These manipulations are achieved through Generative Adversarial Networks (GANs), which are machine learning models where two neural networks compete to enhance their results. In simpler terms, one computer assesses the authenticity of a digital clone it has generated by comparing it to the original material. It evaluates factors like movement, sound, and expression, improving itself through multiple iterations until satisfactory outcomes are achieved.""" ;
+    dw:remarks ( "Search for the same story or narrative in different and trustworthy sources with an [[advanced research]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version of the video to compare it with by using [[InVid]](https://www.howtoverify.info/Video/What/Context/InVid)" "live deepfakes are still not possible " ) ;
+    rdfs:comment "describes video files that have been created using artificial intelligence, \"machine learning\" to be more exact. It is often refer to as deepfakes. All sorts of deepfakes are possible: Face swaps, change of body movements and gestures, lip syncing where the mouth is adjusted to an audio track that is different from the original and voice cloning." ;
     schema:name "Synthetic Video" .
 
 dw:Weather_analyses a dw:Task ;
@@ -1417,19 +1409,19 @@ The information in the content you are investigating indicates that an event too
 
 dw:SyntheticMedia a dw:MediaObject ;
     dw:remarks ( "Follow experts and tech journalists on the latest developement on AI techniques " "Explore generative media tools to understand their possibilities and limitations in manipulation" ) ;
-    rdfs:comment """Detecting and verifying synthetic media can be a complex task, and new advancements in technology may make it more challenging. 
+    rdfs:comment """Detecting and verifying synthetic media can be a complex task. New and fast advancements in technology make it more challenging. Here are tips to identify generated AI media.
 
 \\- Ask yourself, does it make senses what you see, hear or read?
 
-\\- Train yourself and [sharpen your senses](https://digger-project.com/sharpen-your-senses) 
-
 \\- Find inconsistencies or artifacts in the media 
 
-\\- Seek expert analysis from specialists  
+\\- Train yourself and [sharpen your senses](https://digger-project.com/sharpen-your-senses) 
 
 \\- Use technology-assisted tools designed for detecting
 
-And of course, in general the same verification workflow of answering the W-questions applies here
+\\- Seek expert analysis from specialists  
+
+And of course, the same verification workflow of answering the W-questions applies here
 
 \\- What happens in the video?
 
