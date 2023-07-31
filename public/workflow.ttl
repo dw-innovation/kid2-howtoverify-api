@@ -66,6 +66,14 @@ so check for more hints and sources.                                            
     schema:name "Deepware" ;
     schema:publisher "Zemana" .
 
+dw:Detection a dw:Task ;
+    dw:parentNode dw:SyntheticImage,
+        dw:SyntheticVideo ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Zoom in on details, [here is how](https://www.howtoverify.info/Image/What/Zoom_in_details)" "Watch frame-by-frame with VLC Player (https://www.howtoverify.info/Video/Who/Who_created_content/Audio_from_video_extraction/VLC_audio_extraction)" ) ;
+    rdfs:comment dw:here ;
+    schema:name "Detection" .
+
 dw:Digger a dw:SoftwareApplication ;
     dw:howTo ( "Microphone analysis: Analysing the device being used for the recording of audio" "Electrical network Frequency Analysis: Detect editing (cut & paste analyses) of audio" "Codec Analysis: We follow the digital footprint of audio by extraction of ENF traces" ) ;
     dw:parentNode dw:AI_audio_tools ;
@@ -564,13 +572,6 @@ dw:Spoken_language_identifier a dw:SoftwareApplication ;
     schema:applicationUrl "https://translatedlabs.com/spoken-language-identifier" ;
     schema:name "Spoken language identifier" ;
     schema:publisher "translated." .
-
-dw:Spotting dw:parentNode dw:SyntheticImage,
-        dw:SyntheticVideo ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Zoom in on details, [here is how](https://www.howtoverify.info/Image/What/Zoom_in_details)" "Watch frame-by-frame with VLC Player (https://www.howtoverify.info/Video/Who/Who_created_content/Audio_from_video_extraction/VLC_audio_extraction)" ) ;
-    rdfs:comment dw:here ;
-    schema:name "Detection" .
 
 dw:Suncalc a dw:SoftwareApplication ;
     dw:howTo ( "Type in an address or add the coordinates in the left menu" "Select a specific date" "Switch to satellite view " "Zoom into the map and click on any spot to move the position" "Change the position of the sun by using the timeslider at the top " ) ;
@@ -1406,7 +1407,7 @@ The information in the content you are investigating indicates that an event too
 
 dw:SyntheticMedia a dw:MediaObject ;
     dw:remarks ( "Follow [experts](https://twitter.com/HenryAjder) and tech journalists on the latest developements in generative AI " "Explore generative AI tools to understand their possibilities and limitations better" ) ;
-    rdfs:comment """Detecting and verifying synthetic media is a complex task. Fast advancements in technology make it more challenging. Here are tips to identify AI generated media:
+    rdfs:comment """Detecting and verifying synthetic media is a complex task. Fast advancements in technology make it even more challenging. Here are tips to identify AI generated media:
 
 \\- Ask yourself, does it make senses what you see, hear or read?
 
