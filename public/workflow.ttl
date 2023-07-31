@@ -71,7 +71,24 @@ dw:Detection a dw:Task ;
         dw:SyntheticVideo ;
     dw:relatedMediaType dw:SyntheticMedia ;
     dw:remarks ( "Zoom in on details, [here is how](https://www.howtoverify.info/Image/What/Zoom_in_details)" "Watch frame-by-frame with VLC Player (https://www.howtoverify.info/Video/Who/Who_created_content/Audio_from_video_extraction/VLC_audio_extraction)" ) ;
-    rdfs:comment dw:here ;
+    rdfs:comment """Spot the (in)visible and focus on details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and look for the details in the image or video. Look out for:
+\\- blurred spots
+\\- distorted backgrounds
+\\- strange shapes of limbs and hair or fingers that are not connected to anything
+\\- a perfectly symmetrical face
+\\- earrings or glasses that are not the same on both sides of the face
+\\- unusual ear, nose and tooth shapes
+\\- teeth that look unrealistic
+\\- inconsistencies in the neck area
+\\- light reflections in the eye from different angles
+\\- lip movements and compare them with your own
+\\- generally unexplained image defects
+\\- strange "jumps" in video
+
+Listen to:
+\\- changes of voice emphasis
+\\- low-quality audio, multiple times on good headphones
+\\- explore tips and specifics on synthetic audio [here](https://kid-howtoverify-frontend-dev.vercel.app/SyntheticMedia/SyntheticAudio)""" ;
     schema:name "Detection" .
 
 dw:Digger a dw:SoftwareApplication ;
