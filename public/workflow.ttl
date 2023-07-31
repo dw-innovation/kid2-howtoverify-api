@@ -31,8 +31,8 @@ dw:Boom_3D a dw:SoftwareApplication ;
         dw:Audio_enhancement ;
     dw:relatedMediaType dw:Audio,
         dw:SyntheticMedia ;
-    dw:remarks ( "Watch this [intro to the software](https://youtu.be/iIg7OHcUKis) for more details." "Use noise-canceling headphones for a better experience" "Check out this [list of other audio enhancing services](https://fixthephoto.com/best-free-audio-enhancers.html). (We have not tested them, but it's worth checking them out)" ) ;
-    rdfs:comment "is a tool for cropping and removing unwanted noise. Boom 3D can enhance the sounds in your audio file and filter out ambient noise." ;
+    dw:remarks ( "Watch this [intro to the software](https://youtu.be/iIg7OHcUKis) for more details." "Use noise-canceling headphones for a better experience" "Check out this [list of other audio enhancing services](https://fixthephoto.com/best-free-audio-enhancers.html). (We have not tested them all, but it's worth checking them out)" ) ;
+    rdfs:comment "is a tool for trimming and removing unwanted noise. Boom 3D can enhance the sounds in your audio file and filter out ambient noise." ;
     schema:applicationUrl "https://www.globaldelight.com/boom/" ;
     schema:name "Boom 3D" ;
     schema:publisher "Global Delight" .
@@ -51,8 +51,8 @@ dw:Chronocalc a dw:SoftwareApplication ;
 dw:ContentWs a dw:Task ;
     dw:parentNode dw:Detection_\(SyntAudio\) ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Follow the workflow on [[Audio]](https://www.howtoverify.info/Audio) here at HowToVerify" "Search for the same story or narrative in different and trustworthy sources with an [[advanced research]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " ) ;
-    rdfs:comment "refers to the information contained within the audio recording. What is the claim and the narrative in the text? One analyzes the content, sources, numbers, and images for their authenticity and whether they correspond to the truth." ;
+    dw:remarks ( "Follow the verification workflow for audio [here](https://www.howtoverify.info/Audio)" "Search for the same story or narrative in different and trustworthy sources with an [advanced search](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " ) ;
+    rdfs:comment "refers to the information contained in the audio recording. What is the claim and the narrative in the text? Analyse the content, numbers and sources for authenticity and truthfulness." ;
     schema:name "Content" .
 
 dw:Deepware a dw:SoftwareApplication ;
@@ -71,7 +71,7 @@ dw:Detection a dw:Task ;
         dw:SyntheticVideo ;
     dw:relatedMediaType dw:SyntheticMedia ;
     dw:remarks ( "Zoom in on details, [here is how](https://www.howtoverify.info/Image/What/Zoom_in_details)" "Watch frame-by-frame with VLC Player (https://www.howtoverify.info/Video/Who/Who_created_content/Audio_from_video_extraction/VLC_audio_extraction)" ) ;
-    rdfs:comment """Spot the (in)visible and focus on details. You do not need to become a deepfake expert to distinguish what is real from what is fake. Just take your time and look for the details in the image or video. Look out for:
+    rdfs:comment """Spot the (in)visible and focus on details. You do not need to become a deepfake expert to tell the difference between real and fake. Just take your time and look for the details in the image or video. What to look for:
 \\- blurred spots
 \\- distorted backgrounds
 \\- strange shapes of limbs and hair or fingers that are not connected to anything
@@ -104,15 +104,14 @@ dw:Detection_\(SyntText\) a dw:Task ;
     schema:name "Detection" .
 
 dw:Digger a dw:SoftwareApplication ;
-    dw:howTo ( "Microphone analysis: Analysing the device being used for the recording of audio" "Electrical network Frequency Analysis: Detect editing (cut & paste analyses) of audio" "Codec Analysis: We follow the digital footprint of audio by extraction of ENF traces" ) ;
+    dw:howTo ( "Microphone analysis detects the device being used for the recording of audio" "Electrical Network Frequency Analysis detects editing (cut & paste analyses) of audio" "Codec Analysis follows the digital footprint of audio" "Synthetic voice detection analyses the traces the voice generation tool leaves in the audio " ) ;
     dw:parentNode dw:AI_audio_tools ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Read more about the project and insights by experts on the [[project website]](https://digger-project.com)  " ) ;
-    rdfs:comment """focuses on using audio forensics technologies to detect manipulations. DW´s Research & Cooperation teamed up with ATC, a technology company from Greece 
-and the Fraunhofer Institute for digital media technology.""" ;
+    dw:remarks ( "Read more about the project and insights by experts on the [project website](https://digger-project.com)  " ) ;
+    rdfs:comment "focuses on using audio forensics technologies to detect manipulations. The project focussed on multiple technologies:" ;
     schema:applicationUrl "https://digger-project.com" ;
     schema:name "Digger" ;
-    schema:publisher "DW/Fraunhofer/ATC" .
+    schema:publisher "DW/Fraunhofer IDMT/ATC" .
 
 dw:DorkGPT a dw:SoftwareApplication ;
     dw:howTo ( "Open the tool URL" "Type your detailed search in the search box" "Press generate button and wait for the result" "Copy and paste the Dork in the Google search bar" ) ;
@@ -581,13 +580,13 @@ dw:Sowsearch a dw:SoftwareApplication ;
     schema:publisher "Sowdust" .
 
 dw:Speech_to_text_Google a dw:SoftwareApplication ;
-    dw:howTo ( "Open the URL or use the Google Translate app" "Click on the microphone icon " "Play the audio recording from your device close to your microphone" "Google translate will transcribe the audio and automatically detect the spoken language" ) ;
+    dw:howTo ( "Open the URL or use the Google Translate app" "Click on the microphone icon" "Play the audio recording from your device close to your microphone" "Google translate will transcribe the audio and automatically detect the spoken language" ) ;
     dw:parentNode dw:AI_audio_tools,
         dw:Language_detection ;
     dw:relatedMediaType dw:Audio,
         dw:SyntheticMedia ;
     dw:remarks ( "It also works on mobile devices with the Google Translate app " "You can also do live transcribing via the app ([tutorial](https://support.google.com/translate/answer/6142468?hl=en&co=GENIE.Platform%3DDesktop) )" "Language detection might not always be 100% correct" ) ;
-    rdfs:comment "is a transcription of your audio conversation into text-format for analysing, detecting languages and collecting keywords." ;
+    rdfs:comment "is the process of transcribing your audio conversation into text. This is used for content analysis, languages recognition and keyword extraction." ;
     schema:applicationUrl "https://translate.google.com/" ;
     schema:name "Speech to text" ;
     schema:publisher "[Google](https://about.google/)" .
@@ -768,13 +767,13 @@ dw:Voice a dw:Task ;
     dw:parentNode dw:Detection_\(SyntAudio\) ;
     dw:relatedMediaType dw:SyntheticMedia ;
     dw:remarks ( "Put yourself in the perspective of the speaker to avoid subjective assessments" ) ;
-    rdfs:comment """synthesis or artificial voices detection can be performed some less tech-oriented approaches:
+    rdfs:comment """There are no reliable tools for synthetic voice detection yet. Therefore, we have to use less technical approaches such as:
 
-\\- Voice Comparison with the real voice of the person
+\\- Voice comparison with the certified real voice of the person
 \\- Content Analysis by checking if the statements are inconsistent or uncharacteristic for the person
-\\- Situational Analysis and if it's unlikely for the person to be speaking in that context
-\\- Behavioral Analysis and listening to each's unique speech patterns and behaviors that are difficult to imitate
-\\- Listen carefully to the emphasis and pauses of the speaker""" ;
+\\- Situational Analysis to check if it's unlikely for the person to be speaking in that context
+\\- Behavioral Analysis with a focus on elements that are difficult to imitate
+\\- Careful listening for unique speech patterns, emphasis in speech and pauses of the speaker""" ;
     schema:name "Voice" .
 
 dw:WhatsMyName a dw:SoftwareApplication ;
@@ -1008,8 +1007,9 @@ dw:Business_name a dw:Task ;
 dw:Detection_\(SyntAudio\) a dw:Task ;
     dw:parentNode dw:SyntheticAudio ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Examine the content of the statements for inconsistencies" "Ask yourself, does it make sense that this person speaks about this topic in this context?" "Trancribe the audio for a better analyses of the content" "Compare the lip movements with your own and pay attention to the language" ) ;
-    rdfs:comment """Precise listening, taking your time and paying attention to the details is key. You do not have to be a deepfake expert to differentiate between what is real and what is fake. Just listen carefully for the nuances in the audio. And use good headphones.
+    dw:remarks ( "Examine the content of the statements for inconsistencies" "Ask yourself, does it make sense that this person speaks about this topic in this context?" "Transcribe the audio for better analyses of the content" "Compare the lip movements with your own and pay attention to the language" ) ;
+    rdfs:comment """Listening carefully, taking your time and paying attention to detail is key. You do not need to be a deepfake expert to tell the difference between what is real and what is fake. Just listen carefully for the nuances in the audio. And use good headphones.
+
 Listen to
 \\- changes of voice emphasis
 \\- accent, unique speech patterns and behaviors
@@ -1160,9 +1160,9 @@ dw:eMail a dw:Task ;
 dw:AI_audio_tools a dw:Task ;
     dw:parentNode dw:SyntheticAudio ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "The majority of tools require users to upload confidential content to a third party " ) ;
-    rdfs:comment "using advanced algorithms to detect subtle clues in computer-generated visuals and audios. Tools are improving but still not sufficient enough to give you reliable results. So, be aware that the results only provide an indication, and further research and analyses is necessary." ;
-    schema:name "AI audio tools" .
+    dw:remarks ( "Use good headphones " ) ;
+    rdfs:comment "There are currently no publically available tools to detect computer-generated audio. These tools are being developed but are not good enough yet to give you reliable results. Therefore, we have listed a couple of tools to help with your investigation. And we listed a research project that might provide you with some insights." ;
+    schema:name "Tools" .
 
 dw:AI_image_tools a dw:Task ;
     dw:parentNode dw:SyntheticImage ;
