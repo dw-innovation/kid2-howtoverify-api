@@ -556,16 +556,6 @@ dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     schema:name "Sentinel Hub EO Browser" ;
     schema:publisher "Sinergise" .
 
-dw:Sharpen_your_senses a dw:Task ;
-    dw:parentNode dw:SyntheticAudio,
-        dw:SyntheticImage,
-        dw:SyntheticText,
-        dw:SyntheticVideo ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Listen to your favourite song more carefully and be surprised what instruments are in it" "Take your time and ask a colleague to look at the item as well" "Use good headphones" ) ;
-    rdfs:comment "Sharpen your sensen and strengthen your verification skills. This is a [training page](https://digger-project.com/sharpen-your-senses/) we developed to sharpen your vision and hearing skills. It will make you more confident to detect almost (in)visible and (in)audible traces in synthetic and manipulated media like blurred spots, a change of voice emphasis and cut & paste manipulation within visuals, speech or text." ;
-    schema:name "Training" .
-
 dw:Sowsearch a dw:SoftwareApplication ;
     dw:howTo ( "Open the link" "Open the dropdown menu and select what you are looking for" "Select the filters you need and click \"add filter\"" "Press \"open URL\" to see the results" ) ;
     dw:parentNode dw:Facebook ;
@@ -675,6 +665,16 @@ dw:TinEye a dw:SoftwareApplication ;
     schema:applicationUrl "https://tineye.com/" ;
     schema:name "TinEye" ;
     schema:publisher "[TinEye](https://tineye.com/about)" .
+
+dw:Training a dw:Task ;
+    dw:parentNode dw:SyntheticAudio,
+        dw:SyntheticImage,
+        dw:SyntheticText,
+        dw:SyntheticVideo ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Listen to your favourite song more carefully and be surprised what instruments are in it" "Take your time and ask a colleague to look at the item as well" "Use good headphones" ) ;
+    rdfs:comment "Sharpen your sensen and strengthen your verification skills. This is a [training page](https://digger-project.com/sharpen-your-senses/) we developed to sharpen your vision and hearing skills. It will make you more confident to detect almost (in)visible and (in)audible traces in synthetic and manipulated media like blurred spots, a change of voice emphasis and cut & paste manipulation within visuals, speech or text." ;
+    schema:name "Training" .
 
 dw:Tweetbeaver a dw:SoftwareApplication ;
     dw:howTo ( "Connect Tweetbeaver to your Twitter account" "Choose the action you want to perform" "Follow the onscreen instructions" ) ;
