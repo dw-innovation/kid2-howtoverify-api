@@ -56,12 +56,11 @@ dw:ContentWs a dw:Task ;
     schema:name "Content" .
 
 dw:Deepware a dw:SoftwareApplication ;
-    dw:howTo ( "Open the tool URL" "Enter the URL of a video or click the search button to browse for a video on your computer" "Click the upload button and let the machine do the analysis" ) ;
+    dw:howTo ( "Open the tool URL" "Enter the URL of a video or click the search button to browse for a video on your computer (the upload function works better)" "Click the upload button and let the machine do the analysis" ) ;
     dw:parentNode dw:AI_video_tools ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Maximum limit of 10 minutes for each video" "Scan videos from platforms such as YouTube, Facebook, and Twitter" """The developers behind say, that [[the results are stating the chances of a specific video can be whether deepfake or not]](https://deepware.ai/faq/) 
-so check for more hints and sources.                                                                            """ ) ;
-    rdfs:comment "is a deepfake detection technology designed to detect AI-generated face manipulations. Their model is looking for signs of manipulation on the human face." ;
+    dw:remarks ( "Maximum limit of 10 minutes for each video" "Scan videos from platforms such as YouTube, Facebook, and Twitter" "The developers say, that [the results are only indicating whether a video is a deepfake](https://deepware.ai/faq/)" "Caution: results are only an indication, not the absolute truth, further research and analysis is required                                                                           " ) ;
+    rdfs:comment "is a deepfake detection tool designed to detect AI-generated video. This tool specifically looks for signs of manipulation on the human face. Note that all tools make mistakes, so it is impossible to rely solely on deepfake detection tools. Further research and analysis is needed." ;
     schema:applicationUrl "https://scanner.deepware.ai/" ;
     schema:name "Deepware" ;
     schema:publisher "Zemana" .
@@ -156,14 +155,14 @@ dw:Exif_Data a dw:SoftwareApplication ;
     schema:publisher "Unknown" .
 
 dw:Forensically a dw:SoftwareApplication ;
-    dw:howTo ( "Open the tool URL" "Select open file on top of the site and select for the image on your computer you want to examine" "Once it is uploaded use the menue on the right side to navigate through the different analysis results " "Don't forget to hover your mouse over the image to see the results" ) ;
+    dw:howTo ( "Open the tool URL" "Select open file on top of the site and select for the image on your computer you want to examine" "Once it is uploaded use the menue on the right side to navigate through the different analysis results " "Hover your mouse over the image to see the results" ) ;
     dw:parentNode dw:AI_image_tools,
         dw:Manipulation_detection,
         dw:Metadata ;
     dw:relatedMediaType dw:Image,
         dw:SyntheticMedia ;
-    dw:remarks ( "[Here](https://www.youtube.com/watch?v=XRCq8CJrI_s) is a tutorial by the creator Jonas Wagner itself to understand the different tools and interprete the results" "Under the button [help](https://29a.ch/photo-forensics/#help) you get an explaination of the different options in Forensically " "Be aware, third party tools can also save the metadata attached to the image. Jonas Wagner mentions the image will be processed only in your browser. " ) ;
-    rdfs:comment "is a collection of tools which allows you to detect hidden details or manipulation in an image as well as showing metadata." ;
+    dw:remarks ( "[Here](https://www.youtube.com/watch?v=XRCq8CJrI_s) is a tutorial by the creator Jonas Wagner itself to understand the different tools and interprete the results" "Under the button [help](https://29a.ch/photo-forensics/#help) you can get an explaination of the different options in Forensically " "Be aware: third party tools can also save the metadata attached to the image. Jonas Wagner mentions that the image will be processed only in your browser. " ) ;
+    rdfs:comment "is a set of tools that allows you to detect hidden details or manipulations in an image, as well as display all available metadata." ;
     schema:applicationUrl "https://29a.ch/photo-forensics/" ;
     schema:name "Forensically" ;
     schema:publisher "Jonas Wagner" .
@@ -316,8 +315,8 @@ dw:InVid a dw:SoftwareApplication ;
         dw:Metadata ;
     dw:relatedMediaType dw:SyntheticMedia,
         dw:Video ;
-    dw:remarks ( "Metadata can easily be manipulated, always cross-reference the information" "Pick keyframes that have the best resolution and show most of the scenery for a reverse image search" ) ;
-    rdfs:comment "is a web-based integrated toolset for image and video verification. It allows you to generate several keyframes for a reverse image search. As well as extracting metadata from images and videos. There are also other features to analyse photos and videos, like a magnifier, photo forensic tool and a copyright check." ;
+    dw:remarks ( "Metadata can easily be manipulated, always cross-reference the information" "Pick keyframes that have the best resolution and show most of the scenery for a reverse image search" "You can apply for Beta access to 'advanced tools'" ) ;
+    rdfs:comment "is a web-based integrated toolset for image and video verification. It allows you to generate multiple keyframes for a reverse image search. It also extracts metadata from images and videos. There are also other photo and video analysis features such as a magnifiyng glass, a photo forensica tool and a copyright checker." ;
     schema:applicationUrl "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" ;
     schema:name "InVid" ;
     schema:publisher "AFP Medialab, Deutsche Welle & partners" .
@@ -378,7 +377,7 @@ dw:Lets_Enhance_io a dw:SoftwareApplication ;
         dw:SyntheticMedia,
         dw:Video ;
     dw:remarks ( "You have to sign up for an account" "You can enhance 10 images for free" "[Gigapixel AI](https://www.topazlabs.com/downloads) is a useful alternative, but install only" ) ;
-    rdfs:comment "is an image editor using artifical intelligence. You can enhance the resolution, the contrast and much more." ;
+    rdfs:comment "is an image editor using artifical intelligence. You can use it to improve resolution, contrast and much more. It can help you to find the tiny details hidden in the content." ;
     schema:applicationUrl "https://letsenhance.io/" ;
     schema:name "Lets Enhance io" ;
     schema:publisher "Let’s Enhance, Inc" .
@@ -669,8 +668,8 @@ dw:TinEye a dw:SoftwareApplication ;
     dw:relatedMediaType dw:Image,
         dw:SyntheticMedia,
         dw:Video ;
-    dw:remarks ( "Has a smaller database than the others, hence doesn't always yield results" "Does not work well on very new images, but delivers good results when using stock images" "Check out the [TinEye Tutorial](https://tineye.com/how ) for how to best use it" ) ;
-    rdfs:comment "is very efficient when it comes to altered versions and showing results in chronological order." ;
+    dw:remarks ( "Has a smaller database than the other RIS tools, hence doesn't always yield results" "Does not work well on very new images, but delivers good results when using stock images" "Check out the [TinEye Tutorial](https://tineye.com/how ) for how to best use it" ) ;
+    rdfs:comment "is a reverse image search tool that is very efficient when it comes to altered versions. TinEye also shows results where only parts of images have been reused. It allows results to be sorted by best match, most changed, largest version and chronological order." ;
     schema:applicationUrl "https://tineye.com/" ;
     schema:name "TinEye" ;
     schema:publisher "[TinEye](https://tineye.com/about)" .
@@ -991,9 +990,9 @@ dw:Zoom_in_details a dw:Task ;
 dw:AI_video_tools a dw:Task ;
     dw:parentNode dw:SyntheticVideo ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "The majority of tools require users to upload confidential content to a third party " ) ;
-    rdfs:comment "using advanced algorithms to detect subtle clues in computer-generated visuals and audios. Tools are improving but still not sufficient enough to give you reliable results. These services might also focus only on specific details like perspective, head movements, limb proportions, and pixels examination. So, be aware that the results only provide a hint, and further research and analyses is necessary." ;
-    schema:name "AI video tools" .
+    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [here](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)" "Detection tools struggle with images that have been altered from high-res original input or are of low quality" "When the audio in a video is manipulated consider checking for synthetic audio, like [here](https://kid-howtoverify-frontend-dev.vercel.app/SyntheticMedia/SyntheticAudio) " "Caution: most tools require the user to upload (possibly confidential) content to a third party" "Caution: results are only an indication, not the absolute truth, further research and analysis is required" "Note: we have only listed tools that we consider useful & accurate. If you know of other good tools, please let us know using the feedback feature" ) ;
+    rdfs:comment "There are currently no publicly available tools that are flawless at detecting computer-generated videos. Available services may only focus on specific details such as perspective, head movement, limb proportions, and pixels analysis. Therefore it is impossible to rely solely on tools for detection. You, as a human, are still the most effective way to verify digital content, AI-generated or not. Because you can include context. So we have listed some tools to help you with your investigation." ;
+    schema:name "Tools" .
 
 dw:Business_name a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
@@ -1167,9 +1166,9 @@ dw:AI_audio_tools a dw:Task ;
 dw:AI_image_tools a dw:Task ;
     dw:parentNode dw:SyntheticImage ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [[here]](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)   " "Watch out, the majority of tools require users to upload confidential content to a third party " ) ;
-    rdfs:comment "using advanced algorithms to detect subtle clues in computer-generated visuals, audios and texts. Tools are improving but still not sufficient enough to give you reliable results. These services might also focus only on specific details like perspective, head movements, limb proportions, and pixels examination. So, be aware that the results only provide a hint, and further research and analyses is necessary." ;
-    schema:name "AI image tools" .
+    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [here](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)" "Detection tools struggle with images that have been altered from high-res original input or are of low quality" "The higher the resolution of the image you want to check, the better the detection tools will work" "Caution: most tools require the user to upload (possibly confidential) content to a third party" "Note: we have only listed tools that we consider useful & accurate. If you know of other good tools, please let us know using the feedback feature." ) ;
+    rdfs:comment "There are currently no publicly available tools that are flawless at detecting computer-generated images. All tools make mistakes, so it's impossible to rely solely on tools for detection. You, as a human, are still the most effective way to verify digital content, AI-generated or not. Because you can include context. Therefore, we have listed some tools to help you with your investigation." ;
+    schema:name "Tools" .
 
 dw:AI_text_tools a dw:Task ;
     dw:parentNode dw:SyntheticText ;
