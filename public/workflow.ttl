@@ -1270,7 +1270,7 @@ dw:SyntheticAudio a dw:Task ;
 dw:SyntheticImage a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Search for the same story or narrative in different and trustworthy sources with an [[advanced search]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version of (part of) the image to compare with a [[Reverse Image Search]](https://www.howtoverify.info/Image/What/Original)" "Fake social media accounts often use synthetic profile images" "All tools to create synthetic images have their own rules & regulations concerning creation of harmful content" ) ;
+    dw:remarks ( "Search for the same story or narrative in different and trustworthy sources with an [advanced search](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version of (part of) the image to compare with a [Reverse Image Search](https://www.howtoverify.info/Image/What/Original)" "Fake social media accounts often use synthetic profile images" "All tools to create synthetic images have their own rules & regulations concerning creation of harmful content" ) ;
     rdfs:comment "refers to images that have been created in whole or in part using generative AI technologies. These images are created based on 'prompts', user descriptions of what the tool should create. The output of the these tools is often photorealistic. It is difficult to verify if an image has been computer-generated, so workarounds are needed to verify this type of digital content. EXIF data analysis and Reverse Image Search on parts of the image can help." ;
     schema:name "Synthetic Image" .
 
@@ -1284,7 +1284,7 @@ dw:SyntheticText a dw:Task ;
 dw:SyntheticVideo a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Search for the same story or narrative in different and trustworthy sources with an [[advanced research]](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version of the video to compare it with by using [[InVid]](https://www.howtoverify.info/Video/What/Context/InVid)" ) ;
+    dw:remarks ( "Search for the same story or narrative in different and trustworthy sources with an [advanced research](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version of the video to compare it with by using [InVid](https://www.howtoverify.info/Video/What/Context/InVid)" ) ;
     rdfs:comment "refers to video files that have been created in whole or in part using generative AI technologies. They are often refer to as deepfakes. Many types of deepfakes are possible: face swaps, changing body movements and gestures, lip syncing where the mouth is adjusted to an audio track that is different from the original, voice cloning, object removal, background manipulation and head-to-toe digital avatars. All of these manipulations can look extremely realistic." ;
     schema:name "Synthetic Video" .
 
