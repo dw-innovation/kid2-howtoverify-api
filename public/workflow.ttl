@@ -69,7 +69,7 @@ dw:Detection a dw:Task ;
     dw:parentNode dw:SyntheticImage,
         dw:SyntheticVideo ;
     dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Zoom in on details, [here is how](https://www.howtoverify.info/Image/What/Zoom_in_details)" "Watch frame-by-frame with VLC Player (https://www.howtoverify.info/Video/Who/Who_created_content/Audio_from_video_extraction/VLC_audio_extraction)" ) ;
+    dw:remarks ( "Zoom in on details, [here is how](https://www.howtoverify.info/Image/What/Zoom_in_details)" "Watch frame-by-frame with [VLC Player](https://www.howtoverify.info/Video/Who/Who_created_content/Audio_from_video_extraction/VLC_audio_extraction)" ) ;
     rdfs:comment """Spot the (in)visible and focus on details. You do not need to become a deepfake expert to tell the difference between real and fake. Just take your time and look for the details in the image or video. What to look for:
 \\- blurred spots
 \\- distorted backgrounds
