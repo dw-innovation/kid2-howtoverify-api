@@ -161,7 +161,7 @@ dw:Forensically a dw:SoftwareApplication ;
         dw:Metadata ;
     dw:relatedMediaType dw:Image,
         dw:SyntheticMedia ;
-    dw:remarks ( "[Here](https://www.youtube.com/watch?v=XRCq8CJrI_s) is a tutorial by the creator Jonas Wagner itself to understand the different tools and interprete the results" "Under the button [help](https://29a.ch/photo-forensics/#help) you can get an explaination of the different options in Forensically " "Be aware: third party tools can also save the metadata attached to the image. Jonas Wagner mentions that the image will be processed only in your browser. " ) ;
+    dw:remarks ( "[Here](https://www.youtube.com/watch?v=XRCq8CJrI_s) is a tutorial by the creator Jonas Wagner himself to understand the different tools and interprete the results" "Under the button [help](https://29a.ch/photo-forensics/#help) you can get an explaination of the different options in Forensically " "Be aware: third party tools can also save the metadata attached to the image. Jonas Wagner mentions that the image will be processed only in your browser. " ) ;
     rdfs:comment "is a set of tools that allows you to detect hidden details or manipulations in an image, as well as display all available metadata." ;
     schema:applicationUrl "https://29a.ch/photo-forensics/" ;
     schema:name "Forensically" ;
@@ -1285,7 +1285,7 @@ dw:SyntheticVideo a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
     dw:remarks ( "Search for the same story or narrative in different and trustworthy sources with an [advanced research](https://www.howtoverify.info/Audio/What/Context/Google_Advanced_Search) " "Find another version of the video to compare it with by using [InVid](https://www.howtoverify.info/Video/What/Context/InVid)" ) ;
-    rdfs:comment "refers to video files that have been created in whole or in part using generative AI technologies. They are often refer to as deepfakes. Many types of deepfakes are possible: face swaps, changing body movements and gestures, lip syncing where the mouth is adjusted to an audio track that is different from the original, voice cloning, object removal, background manipulation and head-to-toe digital avatars. All of these manipulations can look extremely realistic." ;
+    rdfs:comment "refers to video files that have been created in whole or in part using generative AI technologies. They are often called deepfakes. Many types of deepfakes are possible: face-swapping, altering body movements and gestures, lip-syncing where the mouth is adjusted to a different audio track from the original, voice cloning, object removal, background manipulation, and head-to-toe digital avatars. All of these manipulations can look extremely realistic." ;
     schema:name "Synthetic Video" .
 
 dw:Weather_analyses a dw:Task ;
