@@ -442,6 +442,17 @@ dw:Peakfinder a dw:SoftwareApplication ;
     schema:name "Peakfinder" ;
     schema:publisher "Fabio Soldati [About](https://www.peakfinder.org/about/peakfinder/)" .
 
+dw:Quicktime_player a dw:SoftwareApplication ;
+    dw:howTo ( "Open a video with the Quicktime player" "Play the video to the part you want to analyse more in-depth and stop the video there" "Use the arrows left or right on your keyboard to move the video frame-by-frame" ) ;
+    dw:parentNode dw:Frame_by_Frame ;
+    dw:relatedMediaType dw:SyntheticMedia,
+        dw:Video ;
+    dw:remarks ( "There are more features integrated like removing sound or cutting the video" "turn off the sound while watching frame-by-frame" ) ;
+    rdfs:comment "is a tool to play all kinds of video formats but only on Apple related products like iPhone, iPad, and Mac. It allows you to watch a video frame by frame." ;
+    schema:applicationUrl "https://support.apple.com/downloads/quicktime" ;
+    schema:name "Quicktime Player" ;
+    schema:publisher "Apple" .
+
 dw:RIS_\(Image\) a dw:Task ;
     dw:parentNode dw:Context,
         dw:Object_identification,
@@ -635,12 +646,14 @@ dw:Unix_timestamp a dw:SoftwareApplication ;
     schema:name "Unix Timestamp" ;
     schema:publisher "[@danstools00](https://twitter.com/danstools00)" .
 
-dw:VLC_audio_extraction a dw:SoftwareApplication ;
-    dw:howTo ( "Open a video with the VLC media player" "From the toolbar select File, then Convert/Stream" "Choose Audio-MP3 from the Profile dropdown box " "Save the MP3 file on your computer and add .mp3 at the end of the file name" ) ;
-    dw:parentNode dw:Audio_from_video_extraction ;
-    dw:relatedMediaType dw:Video ;
+dw:VLC_player a dw:SoftwareApplication ;
+    dw:howTo ( "Open a video with the VLC media player" "select Playback in the menue on top and turn down the playback speed to slower. (frame-by-frame) " "For audio extraction: From the toolbar select File, then Convert/Stream (audio extraction)" "Choose Audio-MP3 from the Profile dropdown box (audio extraction)" "Save the MP3 file on your computer and add .mp3 at the end of the file name (audio extraction) " ) ;
+    dw:parentNode dw:Audio_from_video_extraction,
+        dw:Frame_by_Frame ;
+    dw:relatedMediaType dw:SyntheticMedia,
+        dw:Video ;
     dw:remarks ( "You can also visualise audio waves by audio visualisations on VLC player" ) ;
-    rdfs:comment "is a great tool to play all kinds of video formats. It also allows you to separate the audio from the video." ;
+    rdfs:comment "is a great tool to play all kinds of video formats. It also allows you to separate the audio from the video and to watch a video frame by frame." ;
     schema:applicationUrl "https://www.videolan.org/vlc/" ;
     schema:name "VLC media player" ;
     schema:publisher "[VideoLAN organisation](https://www.videolan.org/videolan/)" .
@@ -885,6 +898,14 @@ dw:File_Name a dw:Task ;
     dw:remarks ( "This is an element information which can also guide you in the wrong direction." ) ;
     rdfs:comment "is a name used to identify a computer file in a directory structure. It can include valuable information to continue your search with." ;
     schema:name "File Name" .
+
+dw:Frame_by_Frame a dw:Task ;
+    dw:parentNode dw:What ;
+    dw:relatedMediaType dw:SyntheticMedia,
+        dw:Video ;
+    dw:remarks ( "Take your time and watch the video without sound" "Focus more on the background, surroundings and people because there you can detect more gaps by artificially-generated videos.   " ) ;
+    rdfs:comment "will allow you to analyse the video frame by frame to detect cuts, unnatural body movements, or implausiblitities." ;
+    schema:name "Frame by Frame" .
 
 dw:Headline a dw:Task ;
     dw:parentNode dw:Content_analysis ;
@@ -1287,6 +1308,21 @@ dw:Text a dw:MediaObject ;
 \\- How did this happen?""" ;
     schema:name "Text" .
 
+dw:Image a dw:MediaObject ;
+    dw:remarks ( "Look at all details in the image before you start digging." "If it looks too good to be true, there might be something fishy about it." ) ;
+    rdfs:comment """The image verification process involves answering the following questions:
+
+\\- What happens in the image?
+
+\\- Where did the event take place?
+
+\\- When did the event occur?
+
+\\- Who created the image?
+
+\\- How did this happen?""" ;
+    schema:name "Image" .
+
 dw:Video a dw:MediaObject ;
     dw:remarks ( "Watch a video frame-by-frame to see more details" "Turn off the sound when you watch the video several times; it helps you to focus" ) ;
     rdfs:comment """The video verification process involves answering the following questions:
@@ -1303,19 +1339,4 @@ dw:Video a dw:MediaObject ;
 
 The special thing about video is that you have loads of images (frames), time and sound. The audio in a video can be an important source of information!""" ;
     schema:name "Video" .
-
-dw:Image a dw:MediaObject ;
-    dw:remarks ( "Look at all details in the image before you start digging." "If it looks too good to be true, there might be something fishy about it." ) ;
-    rdfs:comment """The image verification process involves answering the following questions:
-
-\\- What happens in the image?
-
-\\- Where did the event take place?
-
-\\- When did the event occur?
-
-\\- Who created the image?
-
-\\- How did this happen?""" ;
-    schema:name "Image" .
 
