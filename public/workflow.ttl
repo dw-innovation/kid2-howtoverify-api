@@ -189,6 +189,17 @@ dw:Fotoforensic a dw:SoftwareApplication ;
     schema:name "Fotoforensics" ;
     schema:publisher "HackerFactor.com" .
 
+dw:Frame_by_frame a dw:SoftwareApplication ;
+    dw:howTo ( "Open the url and embed the url of the video or the video ID " "Move to the part you want to analyse more in-depth " "In the menue below you can select how many frames per click you want to see." "Select 1 frame not to miss anything and then use the arrows left or right to move the video frame by frame" ) ;
+    dw:parentNode dw:Frame_by_Frame ;
+    dw:relatedMediaType dw:SyntheticMedia,
+        dw:Video ;
+    dw:remarks ( "Turn off the sound" ) ;
+    rdfs:comment "is a tool to play Youtube and Vimeo videos frame-by-frame in slow motion. It can only be used in a browser." ;
+    schema:applicationUrl "http://www.watchframebyframe.com/" ;
+    schema:name "Watch frame by frame" ;
+    schema:publisher "Calum Eadie" .
+
 dw:GPTZero a dw:SoftwareApplication ;
     dw:howTo ( "Open the tool URL" "Drop the text you want to check" "Click the detect button and let the machine do the analysis" "The results are provided in a summary and detailed scores" ) ;
     dw:parentNode dw:AI_text_tools ;
@@ -1002,13 +1013,6 @@ dw:Zoom_in_details a dw:Task ;
     rdfs:comment "to detect even more clues on the visual item, e.g. a phone number on a billboard" ;
     schema:name "Zoom in details" .
 
-dw:AI_video_tools a dw:Task ;
-    dw:parentNode dw:SyntheticVideo ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [here](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)" "Detection tools struggle with images that have been altered from high-res original input or are of low quality" "When the audio in a video is manipulated consider checking for synthetic audio, like [here](https://kid-howtoverify-frontend-dev.vercel.app/SyntheticMedia/SyntheticAudio) " "Caution: most tools require the user to upload (possibly confidential) content to a third party" "Caution: results are only an indication, not the absolute truth, further research and analysis is required" "Note: we have only listed tools that we consider useful & accurate. If you know of other good tools, please let us know using the feedback feature" ) ;
-    rdfs:comment "There are currently no publicly available tools that are flawless at detecting computer-generated videos. Available services may only focus on specific details such as perspective, head movement, limb proportions, and pixels analysis. Therefore it is impossible to rely solely on tools for detection. You, as a human, are still the most effective way to verify digital content, AI-generated or not. Because you can include context. So we have listed some tools to help you with your investigation." ;
-    schema:name "Tools" .
-
 dw:Business_name a dw:Task ;
     dw:parentNode dw:Who_is_in_content ;
     dw:relatedMediaType dw:Audio,
@@ -1049,14 +1053,6 @@ dw:File_Name a dw:Task ;
     dw:remarks ( "This is an element information which can also guide you in the wrong direction." ) ;
     rdfs:comment "is a name used to identify a computer file in a directory structure. It can include valuable information to continue your search with." ;
     schema:name "File Name" .
-
-dw:Frame_by_Frame a dw:Task ;
-    dw:parentNode dw:What ;
-    dw:relatedMediaType dw:SyntheticMedia,
-        dw:Video ;
-    dw:remarks ( "Take your time and watch the video without sound" "Focus more on the background, surroundings and people because there you can detect more gaps by artificially-generated videos.   " ) ;
-    rdfs:comment "will allow you to analyse the video frame by frame to detect cuts, unnatural body movements, or implausiblitities." ;
-    schema:name "Frame by Frame" .
 
 dw:Headline a dw:Task ;
     dw:parentNode dw:Content_analysis ;
@@ -1200,6 +1196,13 @@ dw:AI_text_tools a dw:Task ;
     rdfs:comment "There are only a few tools that use advanced algorithms to detect computer-generated text. These tools are improving but are not good enough yet to give you reliable results. Therefore, we have only listed the most reliable ones. Please be aware that the results are only an indication, not the absolute truth, and that further research and analysis is required." ;
     schema:name "Tools" .
 
+dw:AI_video_tools a dw:Task ;
+    dw:parentNode dw:SyntheticVideo ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "The New York Times tested five new services using more than 100 synthetic images and real photos [here](https://www.nytimes.com/interactive/2023/06/28/technology/ai-detection-midjourney-stable-diffusion-dalle.html)" "Detection tools struggle with images that have been altered from high-res original input or are of low quality" "When the audio in a video is manipulated consider checking for synthetic audio, like [here](https://kid-howtoverify-frontend-dev.vercel.app/SyntheticMedia/SyntheticAudio) " "Caution: most tools require the user to upload (possibly confidential) content to a third party" "Caution: results are only an indication, not the absolute truth, further research and analysis is required" "Note: we have only listed tools that we consider useful & accurate. If you know of other good tools, please let us know using the feedback feature" ) ;
+    rdfs:comment "There are currently no publicly available tools that are flawless at detecting computer-generated videos. Available services may only focus on specific details such as perspective, head movement, limb proportions, and pixels analysis. Therefore it is impossible to rely solely on tools for detection. You, as a human, are still the most effective way to verify digital content, AI-generated or not. Because you can include context. So we have listed some tools to help you with your investigation." ;
+    schema:name "Tools" .
+
 dw:Content_analysis a dw:Task ;
     dw:parentNode dw:What ;
     dw:relatedMediaType dw:Text ;
@@ -1241,6 +1244,15 @@ dw:Enhance_Image_\(Video\) a dw:Task ;
     dw:remarks ( "Enhance the resolution and quality." "Sharpen the image and contrast-enhancement." "Take out the background to focus on the object." ) ;
     rdfs:comment "will help to get better results when the extracted keyframe is blurred or the resolution is low. It will support a more efficient reverse image search." ;
     schema:name "Enhance Image" .
+
+dw:Frame_by_Frame a dw:Task ;
+    dw:parentNode dw:AI_video_tools,
+        dw:What ;
+    dw:relatedMediaType dw:SyntheticMedia,
+        dw:Video ;
+    dw:remarks ( "Take your time and watch the video without sound" "Focus more on the background, surroundings and people because there you can detect more gaps by artificially-generated videos.   " ) ;
+    rdfs:comment "will allow you to analyse the video frame by frame to detect cuts, unnatural body movements, or implausiblitities." ;
+    schema:name "Frame by Frame" .
 
 dw:KeyframeExtraction a dw:Task ;
     dw:parentNode dw:What ;
