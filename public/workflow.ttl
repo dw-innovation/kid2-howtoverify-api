@@ -778,7 +778,7 @@ dw:ViewDNS a dw:SoftwareApplication ;
     schema:publisher "ViewDNS" .
 
 dw:Voice a dw:Task ;
-    dw:parentNode dw:SyntheticAudio ;
+    dw:parentNode dw:Detection_\(SyntAudio\) ;
     dw:relatedMediaType dw:SyntheticMedia ;
     dw:remarks ( "Put yourself in the perspective of the speaker to avoid subjective assessments" ) ;
     rdfs:comment """There are no reliable tools for synthetic voice detection yet. Therefore, we have to use less technical approaches such as:
@@ -948,19 +948,6 @@ dw:Contact a dw:Task ;
     rdfs:comment "data is the best way find out if the source is trustworthy. When you get access to a phone number you might want to contact the person to corroborate information and determine the legitimacy of both the source and that information. Does the person address match with collected information?" ;
     schema:name "Contact" .
 
-dw:Detection_\(SyntAudio\) a dw:Task ;
-    dw:parentNode dw:SyntheticAudio ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Examine the content of the statements for inconsistencies" "Ask yourself, does it make sense that this person speaks about this topic in this context?" "Transcribe the audio for better analyses of the content" "Compare the lip movements with your own and pay attention to the language" ) ;
-    rdfs:comment """Listening carefully, taking your time and paying attention to detail is key. You do not need to be a deepfake expert to tell the difference between what is real and what is fake. Just listen carefully for the nuances in the audio. And use good headphones.
-
-Listen to
-\\- changes of voice emphasis
-\\- accent, unique speech patterns and behaviors
-\\- the certified real voice for comparison
-\\- low-quality audio, over and over again""" ;
-    schema:name "Detection" .
-
 dw:GPS_Data a dw:Task ;
     dw:parentNode dw:Where ;
     dw:relatedMediaType dw:Image,
@@ -1030,6 +1017,19 @@ dw:Business_name a dw:Task ;
     dw:remarks ( "It is worth checking out who is on the board of a company to get better insight in the context of a company" "Export and import data of companies can be requested with official institutions" "Here is an overview of [international business registration organisations](https://www.icaew.com/library/research-guides/knowledge-guide-international-company-registration)" ) ;
     rdfs:comment "is any company name mentioned in the text or audio, visible as a logo or attached to the source. It might be the company someone is working for or a company which needs investigating because it seems fishy." ;
     schema:name "Business Name" .
+
+dw:Detection_\(SyntAudio\) a dw:Task ;
+    dw:parentNode dw:SyntheticAudio ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Examine the content of the statements for inconsistencies" "Ask yourself, does it make sense that this person speaks about this topic in this context?" "Transcribe the audio for better analyses of the content" "Compare the lip movements with your own and pay attention to the language" ) ;
+    rdfs:comment """Listening carefully, taking your time and paying attention to detail is key. You do not need to be a deepfake expert to tell the difference between what is real and what is fake. Just listen carefully for the nuances in the audio. And use good headphones.
+
+Listen to
+\\- changes of voice emphasis
+\\- accent, unique speech patterns and behaviors
+\\- the certified real voice for comparison
+\\- low-quality audio, over and over again""" ;
+    schema:name "Detection" .
 
 dw:Facebook a dw:Task ;
     dw:parentNode dw:Social_Media_activities ;
@@ -1283,6 +1283,13 @@ dw:Shadow_analyses a dw:Task ;
     rdfs:comment "refers to the defined shadow cast by an object via a light source e.g. the sun. The shadow's direction and its length provide information about the position of the sun which helps to determine the exact time." ;
     schema:name "Shadow analysis" .
 
+dw:SyntheticAudio a dw:Task ;
+    dw:parentNode dw:SyntheticMedia ;
+    dw:relatedMediaType dw:SyntheticMedia ;
+    dw:remarks ( "Lip syncing is also typical for AI based manipulations in video. The visual movements of a person's lips are being synchronised with audio that differs from the original." ) ;
+    rdfs:comment "refers to audio files that have been created using generative AI, based on \"machine learning\" to be precise. These can be synthetic speech, music, sounds, such as voice clones, or environmental sounds. You can detect them by carefully analysing the characteristics of the audio (use good headphones), comparing it with known references, and looking for any irregularities or inconsistencies." ;
+    schema:name "Synthetic Audio" .
+
 dw:SyntheticImage a dw:Task ;
     dw:parentNode dw:SyntheticMedia ;
     dw:relatedMediaType dw:SyntheticMedia ;
@@ -1365,13 +1372,6 @@ dw:Social_Media_activities a dw:Task ;
     dw:remarks ( "There are different popular social platforms depending on the region a person is in" "Ask yourself where the user might most likely be and play around with different name combinations across networks to find more information" ) ;
     rdfs:comment "are the sum of interactions a person has done on any social media platform. They include publishing content and commenting as well as sharing, liking and following." ;
     schema:name "Social Media activities" .
-
-dw:SyntheticAudio a dw:Task ;
-    dw:parentNode dw:SyntheticMedia ;
-    dw:relatedMediaType dw:SyntheticMedia ;
-    dw:remarks ( "Lip syncing is also typical for AI based manipulations in video. The visual movements of a person's lips are being synchronised with audio that differs from the original." ) ;
-    rdfs:comment "refers to audio files that have been created using generative AI, based on \"machine learning\" to be precise. These can be synthetic speech, music, sounds, such as voice clones, or environmental sounds. You can detect them by carefully analysing the characteristics of the audio (use good headphones), comparing it with known references, and looking for any irregularities or inconsistencies." ;
-    schema:name "Synthetic Audio" .
 
 dw:Who_is_in_content a dw:SubQuestion ;
     dw:parentNode dw:Who ;
