@@ -214,6 +214,8 @@ dw:Geohints a dw:SoftwareApplication ;
     dw:howTo ( "Open the URL" "Choose the category you are interested in " "Analyse the information and see if you can find useful tips" ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "Check out this [link](https://github.com/seintpl/osint/blob/main/Geolocation%20Analysis%20Diagram%20Outside%20clues.pdf) by [Seintpl](https://twitter.com/SEINT_pl) to get a better understanding of what to look for" ) ;
     rdfs:comment "provides structured lists of objects and landmarks that help to identify a location. It contains sorted lists of post boxes, logos, roadsigns, license plates, etc. per country." ;
@@ -240,14 +242,14 @@ dw:Google_Advanced_Search a dw:SoftwareApplication ;
     schema:publisher "[Google](https://about.google/)" .
 
 dw:Google_Earth_3D a dw:SoftwareApplication ;
-    dw:howTo ( "Type any adress or add geo-coordinates in the search bar " "Drag the map with your mouse " "Press cmd/ctrl or shift/ctrl to navigate in 3D" "draw lines to compare the shape of your landscape with the one from the visual" ) ;
+    dw:howTo ( "Type any adress or add geo-coordinates in the search bar " "Drag the map with your mouse " "Press cmd/ctrl or shift/ctrl to navigate in 3D" "Draw lines to compare the shape of your landscape with the one from the visual" "Select features like historical imagery, measure distance and add polygon in the menue" ) ;
     dw:parentNode dw:Landscape_identification ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
     dw:remarks ( "Save coordinates in a project which you can share in a GDrive folder" "Measure distances and save the data" ) ;
-    rdfs:comment "is a 3D representation of the earth based primarily on satellite imagery. It is the web version of Google Earth pro and lets you navigate the world in 3D." ;
+    rdfs:comment "is the web version of Google Earth Pro. It lets you navigate the world from a 3D perspective, offers a timeline to view past satellite images of the same location and lets you collaborate in real-time." ;
     schema:applicationUrl "https://earth.google.com/" ;
-    schema:name "Google Earth 3D" ;
+    schema:name "Google Earth web" ;
     schema:publisher "[Google](https://about.google/)" .
 
 dw:Google_Earth_Pro a dw:SoftwareApplication ;
@@ -266,7 +268,7 @@ dw:Google_Images a dw:SoftwareApplication ;
     dw:parentNode dw:Reverse_Image_Search ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "Try different crops to get a hit on an image. Its the little things that sometimes make the difference" "On your mobile device you can use Google Lens from within the Google app to perform this search" ) ;
+    dw:remarks ( "Try different crops to get a hit on an image. Its the little things that sometimes make the difference" "On your mobile device you can use [Google Lens](https://bellingcat.gitbook.io/toolkit/more/all-tools/google-lens) from within the Google app to perform this search" ) ;
     rdfs:comment "allows you to search Google with an image and discover all possible information about it." ;
     schema:applicationUrl "https://images.google.com/" ;
     schema:name "Google Images" ;
@@ -276,6 +278,8 @@ dw:Google_Maps a dw:SoftwareApplication ;
     dw:howTo ( "Type in a location or add GPS coordinates" "Check the gallery of pictures to get a first overview of the scenery" "Switch between map and satellite view" "Click on the little yellow person at the bottom right to see streetview availability " "Drop the little yellow person on one of the blue lines or dots to jump into streetview" "In streetview mode you can click on the small map to switch to another location " ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "3D view is hidden behind layers in the bottom left, just select Globe view and you can switch beweteen 2D and 3D on the right above the zoom icon" "There is also a mobile version" ) ;
     rdfs:comment "offers street maps, satellite imagery, aerial photography, 360° interactive panoramic views of streets and real-time traffic conditions." ;
@@ -456,6 +460,8 @@ dw:Mapillary a dw:SoftwareApplication ;
     dw:howTo ( "Type a location or GPS coordinates in to the search field at the top left" "The green circles show geo-tagged street view photos" "Select one green dot and navigate through the streets" "Switch between map and street view via the arrow icon at the top right of the small window" "Date and source of image are always available " "Map data in the top menu shows detected objects like street signs " ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "Good tool to find street view images from remote areas" "Time travel is a feature that compares multiple images of the same location " "Users can upload photos only with the mobile app and GPS turned on to reduce fake uploades" "Once selected, a series of images by the same source turns blue, making it easier to follow" "Larger translucent circles around the green dots indicate 360° images" ) ;
     rdfs:comment "is a map service with crowdsourced geo-tagged street view photos." ;
@@ -578,15 +584,15 @@ dw:RIS_\(Video\) a dw:Task ;
     schema:name "Reverse Image Search" .
 
 dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
-    dw:howTo ( "Open the Explorer" "Enter a place or the exact Geo-Coordinates  " "On the left choose the satellite and timeframe you want to get data from and for" ) ;
+    dw:howTo ( "Open the Explorer" "Enter a place or the exact Geo-Coordinates  " "On the left choose the satellite and timeframe you want to get data from" ) ;
     dw:parentNode dw:Satellite_data ;
     dw:relatedMediaType dw:Image,
         dw:Video ;
-    dw:remarks ( "You can also create or add a custom script for visualisation" "Data is free and the API can be used as well" "Check out SentinelHub's [user tutorial](https://www.sentinel-hub.com/explore/eobrowser/user-guide/) to get started" "An alternative with less features but easy to use is [Sentinel Playground](https://apps.sentinel-hub.com/sentinel-playground)" ) ;
+    dw:remarks ( "You can also create or add a custom script for visualisation" "Data is free and the API can be used as well" "Check out SentinelHub's [user tutorial](https://www.sentinel-hub.com/explore/eobrowser/user-guide/) to get started" ) ;
     rdfs:comment "allows you to browse through and visualize satellite data from numerous satellites. It includes both radar and optical satellites provided by Copernicus." ;
-    schema:applicationUrl "https://apps.sentinel-hub.com/eo-browser" ;
-    schema:name "Sentinel Hub EO Browser" ;
-    schema:publisher "Sinergise" .
+    schema:applicationUrl "[Sentinel Playground](https://apps.sentinel-hub.com/sentinel-playground)" ;
+    schema:name "Copernicus Browser" ;
+    schema:publisher "Copernicus Data Space Ecosystem" .
 
 dw:Sowsearch a dw:SoftwareApplication ;
     dw:howTo ( "Open the link" "Open the dropdown menu and select what you are looking for" "Select the filters you need and click \"add filter\"" "Press \"open URL\" to see the results" ) ;
@@ -709,20 +715,6 @@ dw:Training a dw:Task ;
 
 It will make you more confident in detecting almost (in)visible and (in)audible traces in synthetic and manipulated media, such as blurred spots, changes in voice emphasis and cut & paste manipulations within visuals, speech or text.""" ;
     schema:name "Training" .
-
-dw:Tweetbeaver a dw:SoftwareApplication ;
-    dw:howTo ( "Connect Tweetbeaver to your Twitter account" "Choose the action you want to perform" "Follow the onscreen instructions" ) ;
-    dw:parentNode dw:Twitter ;
-    dw:relatedMediaType dw:Audio,
-        dw:Image,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    dw:remarks ( "As with all external tools, this only works as long as Twitter allows it" "There are some limitations on the amount of data you can get due to the API" ) ;
-    rdfs:comment "gathers Ttwitter data you need quickly, simply and easily. It can gather data on any public account and returns most searches as a csv for filtering and analysis." ;
-    schema:applicationUrl "https://tweetbeaver.com/" ;
-    schema:name "Tweetbeaver" ;
-    schema:publisher "Tweetbeaver" .
 
 dw:Twitter_Advanced_Search a dw:SoftwareApplication ;
     dw:howTo ( "Open the advanced search URL" "Fill out the fields that correspond with your search questions" "Edit the search query in the search bar directly" ) ;
@@ -855,6 +847,8 @@ dw:Wikimapia a dw:SoftwareApplication ;
     dw:howTo ( "Enter GPS coordinates" "Click on areas and objects to get additional information" "Select categories like schools or parks and see them marked on the map" ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "It is a wiki which is editable by everyone. Always double check the information" "It is a great wiki map for getting information on areas you are not too familiar with" ) ;
     rdfs:comment "is a multilingual open-content collaborative map, where anyone can create place tags and share their knowledge. It utilizes different map services with a wiki system to mark and describe geographical objects all around the world." ;
@@ -899,6 +893,8 @@ dw:Yandex_Maps a dw:SoftwareApplication ;
     dw:howTo ( "Type in a location or add GPS coordinates" "Switch between map, satellite and hybrid view" "Click on street panoramas to get street view" "Measure distance and get directions by dragging between spots on a map" ) ;
     dw:parentNode dw:Manual_geolocation ;
     dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
         dw:Video ;
     dw:remarks ( "With an account you can mark places" "There is also a mobile version available" ) ;
     rdfs:comment "is a Russian map service. Initially it only provided maps of Russia and Ukraine, but now it also includes world maps. It is very strong in the Russian region when it comes to high resolution visual information and data." ;
@@ -1005,6 +1001,17 @@ dw:Sources a dw:Task ;
     dw:remarks ( "There might be typos in the name, so play around with different writings " "Keep in mind that names might be spelled differently in another language" ) ;
     rdfs:comment "refer to any name, company, institution, expert, interview partner or website being mentioned in the text." ;
     schema:name "Sources" .
+
+dw:Twitter a dw:Task ;
+    dw:parentNode dw:Social_Media_activities ;
+    dw:relatedMediaType dw:Audio,
+        dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks ( "Twitter lists are a great feature to set up a monitoring system of specific accounts. You can find other lists via Google search: site:twitter.com/*/lists [Keyword]" "You can find a lot of reshares from chat apps here" ) ;
+    rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter." ;
+    schema:name "Twitter" .
 
 dw:Zoom_in_details a dw:Task ;
     dw:parentNode dw:What ;
@@ -1156,17 +1163,6 @@ dw:Timecodes a dw:Task ;
     dw:remarks ( "On Instagram for example, do a a right-click on the date of the post, then \"Inspect\", copy timestamp and convert it" "On TikTok, do a right click next to the video, then select \"View page source\", search for \"createtime\" with Ctrl+F" "During breaking news it is worth it to change your settings to the timezone the event enfolds" ) ;
     rdfs:comment "are the internal time stamps social media posts get, when they are being uploaded to a network. How that time stamp is shown to you depends on the platform. In some cases it refers to the time zone you set on your device (e.g. Facebook) or the timezone set in the network (e.g. Twitter). In some cases, the timecode is shown in the time zone of the network's headquarter (e.g. Youtube or Instagram). Checking the source code of a post often reveals the exact time in UTC (coordinated universal time)." ;
     schema:name "Timecodes" .
-
-dw:Twitter a dw:Task ;
-    dw:parentNode dw:Social_Media_activities ;
-    dw:relatedMediaType dw:Audio,
-        dw:Image,
-        dw:Source,
-        dw:Text,
-        dw:Video ;
-    dw:remarks ( "Twitter lists are a great feature to set up a monitoring system of specific accounts. You can find other lists via Google search: site:twitter.com/*/lists [Keyword]" "You can find a lot of reshares from chat apps here" ) ;
-    rdfs:comment "is a micro-blogging social network. Users can share visuals with short texts. It is frequently used in breaking news situation. A lot of journalists and experts use Twitter." ;
-    schema:name "Twitter" .
 
 dw:eMail a dw:Task ;
     dw:parentNode dw:Author ;
