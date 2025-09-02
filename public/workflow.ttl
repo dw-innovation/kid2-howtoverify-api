@@ -583,6 +583,19 @@ dw:RIS_\(Video\) a dw:Task ;
     rdfs:subClassOf dw:Reverse_Image_Search ;
     schema:name "Reverse Image Search" .
 
+dw:SPOT a dw:SoftwareApplication ;
+    dw:howTo ( "Sign in to SPOT using your GitHub or Google account" "Write a promt by using 2 - 4 entities and their distances to each other like \"Find public hospitals near a park in Buenos Aires\"" "Results are displayed in an interactive map" "Zoom in and select one of the coloured dots to check the result on Street View" "You can edit the prompt anytime and adjust the relations for better results" "You can change the map to Satellite view  " "Share your findings with others or add them in your Earth Pro collection" ) ;
+    dw:parentNode dw:Manual_geolocation ;
+    dw:relatedMediaType dw:Image,
+        dw:Source,
+        dw:Text,
+        dw:Video ;
+    dw:remarks ( "Multiple languages are supported but English provides the best results " "You can only find things on SPOT that have been marked in OpenStreetMap " "Here are also [video tutorials](https://www.findthatspot.io/tutorial/videos) how to use SPOT" ) ;
+    rdfs:comment "is an AI supported application that allows users to find geospatial patterns by using natural language prompts on OpenStreetMap. A good prompt is a clear sentence that includes visual clues like building types and infrastructure and their distances to each other." ;
+    schema:applicationUrl "https://www.findthatspot.io/" ;
+    schema:name "SPOT" ;
+    schema:publisher "DW Innovation" .
+
 dw:Sentinel_Hub_EO_Browser a dw:SoftwareApplication ;
     dw:howTo ( "Open the Explorer" "Enter a place or the exact Geo-Coordinates  " "On the left choose the satellite and timeframe you want to get data from" ) ;
     dw:parentNode dw:Satellite_data ;
@@ -1405,6 +1418,16 @@ dw:Geolocation a dw:Task ;
     rdfs:comment "of visual information refers to the location where the image or video was captured. By analyzing the available visual information, you can determine its location. Any visual information that you can detect might lead you there. A good starting point is the claim in the content and the comments section." ;
     schema:name "Geolocation" .
 
+dw:Reverse_Image_Search a dw:Task ;
+    dw:relatedMediaType dw:Enhance_Image,
+        dw:Image,
+        dw:KeyframeExtraction,
+        dw:Object_identification,
+        dw:Video ;
+    dw:remarks ( "remark 1" "remark 2" ) ;
+    rdfs:comment "is a" ;
+    schema:name "Reverse Image Search" .
+
 dw:Manual_geolocation a dw:Task ;
     dw:parentNode dw:Address,
         dw:Geolocation ;
@@ -1415,16 +1438,6 @@ dw:Manual_geolocation a dw:Task ;
     dw:remarks ( "Each map service has its pros and cons in terms of which objects it can detect well and in which regions it works best" "There might be more clues in other, related content around an event" ) ;
     rdfs:comment "is the process of manually combining all information found in audiovisual content like street names, restaurants, public transport, etc. into a precise location. Knowing how to search on map services is very helpful." ;
     schema:name "Manual Geolocation" .
-
-dw:Reverse_Image_Search a dw:Task ;
-    dw:relatedMediaType dw:Enhance_Image,
-        dw:Image,
-        dw:KeyframeExtraction,
-        dw:Object_identification,
-        dw:Video ;
-    dw:remarks ( "remark 1" "remark 2" ) ;
-    rdfs:comment "is a" ;
-    schema:name "Reverse Image Search" .
 
 dw:When a dw:Question ;
     dw:parentNode dw:Audio,
