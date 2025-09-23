@@ -1,3 +1,5 @@
+<img width="1280" height="200" alt="Github-Banner__htv" src="https://github.com/user-attachments/assets/0ad89c6c-7e8a-412e-a7f2-8bb505e2e802" />
+
 # KID howtoverify.info backend
 
 It is a repository that contains the source code for implementing the backend of the website. 
